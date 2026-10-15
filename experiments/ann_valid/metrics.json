@@ -1,0 +1,51 @@
+{
+  "protocol": "first 256 known validation users; frozen train embeddings; GPU query-by-query synchronized wall time; no task labels",
+  "device": "cuda",
+  "queries": 256,
+  "items": 951625,
+  "coarse_clusters": 64,
+  "numpy_seed": 2026,
+  "exact_p95_ms": 0.6189000000000888,
+  "exact_p50_ms": 0.3975000000000506,
+  "embedding_bytes": 121808000,
+  "index_file_bytes": 3116319,
+  "variants": [
+    {
+      "nprobe": 1,
+      "ann_recall_at_100_vs_exact": 0.512109375,
+      "mean_scored_items": 14862.36328125,
+      "p50_ms": 0.3246500000004815,
+      "p95_ms": 0.5724249999992104
+    },
+    {
+      "nprobe": 4,
+      "ann_recall_at_100_vs_exact": 0.867421875,
+      "mean_scored_items": 59407.4296875,
+      "p50_ms": 0.49785000000035495,
+      "p95_ms": 0.7939499999993771
+    },
+    {
+      "nprobe": 8,
+      "ann_recall_at_100_vs_exact": 0.9612109375,
+      "mean_scored_items": 118328.4921875,
+      "p50_ms": 0.697649999999328,
+      "p95_ms": 1.1583000000006116
+    },
+    {
+      "nprobe": 16,
+      "ann_recall_at_100_vs_exact": 0.9947265625,
+      "mean_scored_items": 235203.75,
+      "p50_ms": 1.2855499999995246,
+      "p95_ms": 1.7073500000002184
+    },
+    {
+      "nprobe": 32,
+      "ann_recall_at_100_vs_exact": 0.9999218750000001,
+      "mean_scored_items": 468952.74609375,
+      "p50_ms": 1.9427999999992451,
+      "p95_ms": 2.3433499999998553
+    }
+  ],
+  "selected_backend": "exact",
+  "final_pipeline_backend": "exact; ANN remains an efficiency experiment and does not change final candidate protocol"
+}

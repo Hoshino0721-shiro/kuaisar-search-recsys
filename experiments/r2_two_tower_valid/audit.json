@@ -1,0 +1,36 @@
+{
+  "checks": "passed",
+  "checkpoint_sha256": "aec568f8a1d3e830450c68c4846455ba1375fe78643748a83ff8401cc880b04d",
+  "unique_users": 8495,
+  "groups": {
+    "known_train_click_user": {
+      "users": 6085,
+      "positive_events": 296632,
+      "hits_at_50": 357,
+      "popular_hits_at_50": 976,
+      "hits_at_100": 651,
+      "popular_hits_at_100": 1904,
+      "recall_at_50": 0.0012035114215593733,
+      "popular_recall_at_50": 0.00329027212168613,
+      "recall_at_100": 0.002194638474608269,
+      "popular_recall_at_100": 0.00641872758164999
+    },
+    "no_train_click_user": {
+      "users": 2410,
+      "positive_events": 57994,
+      "hits_at_50": 841,
+      "popular_hits_at_50": 841,
+      "hits_at_100": 1416,
+      "popular_hits_at_100": 1416,
+      "recall_at_50": 0.014501500155188468,
+      "popular_recall_at_50": 0.014501500155188468,
+      "recall_at_100": 0.024416318929544437,
+      "popular_recall_at_100": 0.024416318929544437
+    }
+  },
+  "macro_user_period_recall": {
+    "50": 0.005637633984419483,
+    "100": 0.009577420187428678
+  },
+  "macro_definition": "mean over users with validation clicks of distinct relevant-item Recall in the whole validation period, not request-level Recall"
+}

@@ -1,0 +1,7 @@
+# Versions verified in the project environment; see docs/ENVIRONMENT.md for Torch.
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.6.1
+joblib==1.4.2
+threadpoolctl==3.5.0
+torch>=2.6,<2.9

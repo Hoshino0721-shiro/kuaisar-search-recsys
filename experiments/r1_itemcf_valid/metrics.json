@@ -1,0 +1,72 @@
+{
+  "protocol": {
+    "fit": "rec train",
+    "evaluate": "rec valid",
+    "history": "last 30 distinct train clicks, binary per user",
+    "similarity": "cosine cooccurrence; diagonal zero; no neighbor pruning",
+    "cooccurrence_history": "last 30 distinct train clicks",
+    "scores": "sum similarities over train history",
+    "history_filter": false,
+    "test_used": false,
+    "recall": "positive-event weighted, same as R0",
+    "latency": "CPU per-user sparse computation including ranking, not serving benchmark"
+  },
+  "manifest_sha256": "84bc856e6f1ee096e9bbf285db8c7fef2ed3832c561a8baa3f16498eafdf5a8f",
+  "source_sha256": "bf214b5ff59bf7a230470344fda774b9b18341a1cb2fa5fd04875c622ee65f93",
+  "numpy": "1.26.4",
+  "scipy": "1.13.1",
+  "history_items": 246384,
+  "train_catalog_items": 1806625,
+  "evaluated_users": 8495,
+  "positive_events": 354626,
+  "warm_positive_events": 214739,
+  "cooccurrence_catalog_positive_events": 142404,
+  "cooccurrence_catalog_recall_ceiling": 0.4015610812517977,
+  "metrics": {
+    "itemcf": {
+      "50": {
+        "hits": 118,
+        "recall": 0.0003327449200002256,
+        "warm_recall": 0.0005495042819422648
+      },
+      "100": {
+        "hits": 378,
+        "recall": 0.0010659116928820787,
+        "warm_recall": 0.0017602764285947127
+      }
+    },
+    "itemcf_popular_fill": {
+      "50": {
+        "hits": 972,
+        "recall": 0.0027409157816967733,
+        "warm_recall": 0.00452642510210069
+      },
+      "100": {
+        "hits": 1828,
+        "recall": 0.005154726387800105,
+        "warm_recall": 0.008512659554156442
+      }
+    },
+    "popular": {
+      "50": {
+        "hits": 1817,
+        "recall": 0.005123707793562796,
+        "warm_recall": 0.008461434578721146
+      },
+      "100": {
+        "hits": 3320,
+        "recall": 0.009361975715260585,
+        "warm_recall": 0.015460628949562027
+      }
+    }
+  },
+  "itemcf_user_coverage": 0.7015891701000588,
+  "itemcf_distinct_candidates": 208744,
+  "itemcf_mean_candidates": 67.03284284873455,
+  "latency_ms": {
+    "50": 0.388599999999073,
+    "95": 1.430410000000037,
+    "99": 1.9624860000005724
+  },
+  "elapsed_seconds": 15.675065400000001
+}

@@ -1,0 +1,116 @@
+{
+  "config": {
+    "split": "rec valid",
+    "protocol": "one fixed recommendation list per user at train cutoff; positive events in next validation period",
+    "candidate_lists": "train global top200; last train day top200; history-attribute tower top100",
+    "ranking_model": "mlp_gate",
+    "selection": "max Recall@100, tie NDCG@10; frozen before test",
+    "selected_retrieval": "recent",
+    "selected_ctr_pipeline": "ctr_rerank_0.0",
+    "test_used": false,
+    "rerank_selection": "max observed-positive user-period NDCG@10 among three penalties",
+    "source_sha256": "053d62250e3489aac71123df5b87db114e39d1888452b2bb711c30ceddc805ce"
+  },
+  "variants": {
+    "popular": {
+      "positive_events": 354626,
+      "hits_at_50": 1817,
+      "hits_at_100": 3320,
+      "recall_at_50": 0.005123707793562796,
+      "recall_at_100": 0.009361975715260585,
+      "user_period_observed_positive_ndcg_at_10": 0.004627718073980213,
+      "user_period_observed_positive_mrr_at_10": 0.012457167642593796,
+      "category_diversity_at_10": 0.5,
+      "distinct_candidates": 100
+    },
+    "recent": {
+      "positive_events": 354626,
+      "hits_at_50": 3269,
+      "hits_at_100": 5864,
+      "recall_at_50": 0.009218162232887605,
+      "recall_at_100": 0.016535730600689177,
+      "user_period_observed_positive_ndcg_at_10": 0.01610819815290287,
+      "user_period_observed_positive_mrr_at_10": 0.04649161941940081,
+      "category_diversity_at_10": 0.8000000000000002,
+      "distinct_candidates": 100
+    },
+    "rrf_equal": {
+      "positive_events": 354626,
+      "hits_at_50": 3097,
+      "hits_at_100": 4657,
+      "recall_at_50": 0.008733144213904226,
+      "recall_at_100": 0.013132144851195343,
+      "user_period_observed_positive_ndcg_at_10": 0.010780099863859863,
+      "user_period_observed_positive_mrr_at_10": 0.026881525544505375,
+      "category_diversity_at_10": 0.9000000000000002,
+      "distinct_candidates": 100
+    },
+    "rrf_recent": {
+      "positive_events": 354626,
+      "hits_at_50": 3377,
+      "hits_at_100": 5397,
+      "recall_at_50": 0.009522708430853915,
+      "recall_at_100": 0.015218850281705233,
+      "user_period_observed_positive_ndcg_at_10": 0.01280711930152127,
+      "user_period_observed_positive_mrr_at_10": 0.030499736654583758,
+      "category_diversity_at_10": 0.9282048263684521,
+      "distinct_candidates": 134
+    },
+    "rrf_tower": {
+      "positive_events": 354626,
+      "hits_at_50": 2882,
+      "hits_at_100": 4187,
+      "recall_at_50": 0.008126871690175001,
+      "recall_at_100": 0.011806804915601226,
+      "user_period_observed_positive_ndcg_at_10": 0.010814271117687438,
+      "user_period_observed_positive_mrr_at_10": 0.027560182173064413,
+      "category_diversity_at_10": 0.8435785756327252,
+      "distinct_candidates": 120246
+    },
+    "quota_recent": {
+      "positive_events": 354626,
+      "hits_at_50": 3269,
+      "hits_at_100": 5264,
+      "recall_at_50": 0.009218162232887605,
+      "recall_at_100": 0.014843807278654132,
+      "user_period_observed_positive_ndcg_at_10": 0.01610819815290287,
+      "user_period_observed_positive_mrr_at_10": 0.04649161941940081,
+      "category_diversity_at_10": 0.8000000000000002,
+      "distinct_candidates": 100
+    },
+    "ctr_rerank_0.0": {
+      "positive_events": 354626,
+      "hits_at_50": 2243,
+      "hits_at_100": 3909,
+      "recall_at_50": 0.006324973352207678,
+      "recall_at_100": 0.011022880443058321,
+      "user_period_observed_positive_ndcg_at_10": 0.00827258095431542,
+      "user_period_observed_positive_mrr_at_10": 0.021386023071123916,
+      "category_diversity_at_10": 0.3820482636845203,
+      "distinct_candidates": 111980
+    },
+    "ctr_rerank_0.01": {
+      "positive_events": 354626,
+      "hits_at_50": 2344,
+      "hits_at_100": 3787,
+      "recall_at_50": 0.006609780444750244,
+      "recall_at_100": 0.010678856034244528,
+      "user_period_observed_positive_ndcg_at_10": 0.008244098638267052,
+      "user_period_observed_positive_mrr_at_10": 0.021353801984901527,
+      "category_diversity_at_10": 0.4542554443790465,
+      "distinct_candidates": 96515
+    },
+    "ctr_rerank_0.03": {
+      "positive_events": 354626,
+      "hits_at_50": 2256,
+      "hits_at_100": 3686,
+      "recall_at_50": 0.00636163169085177,
+      "recall_at_100": 0.010394048941701962,
+      "user_period_observed_positive_ndcg_at_10": 0.008139492983954767,
+      "user_period_observed_positive_mrr_at_10": 0.021093193295535523,
+      "category_diversity_at_10": 0.5481812831077104,
+      "distinct_candidates": 76576
+    }
+  },
+  "candidate_scoring_and_evaluation_seconds": 14.6597274
+}

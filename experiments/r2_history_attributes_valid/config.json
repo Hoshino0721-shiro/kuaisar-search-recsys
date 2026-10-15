@@ -1,0 +1,28 @@
+{
+  "seed": 2026,
+  "epochs": 2,
+  "batch_size": 1024,
+  "history_length": 20,
+  "dimension": 32,
+  "temperature": 0.1,
+  "history_rule": "strictly earlier train clicks; exclude same-time peers; fixed train history for validation",
+  "features": [
+    "user_id",
+    "mean_history_item_tower",
+    "item_id",
+    "first_level_category_id",
+    "feature_type"
+  ],
+  "metadata_assumption": "category/type treated as static; release has no feature snapshot times",
+  "candidate_catalog": "rec train clicked items",
+  "cold_user": "same train-popular top100 fallback as ID tower",
+  "selection": "fixed final epoch; no sweep",
+  "test_used": false,
+  "negative_sampling": "in-batch positive-event items; same-user/same-item pairs positive",
+  "source_sha256": "17521cfe39e1a432ddea713ed8b4332abbb05eea777ba2ca84557ce2243c977e",
+  "manifest_sha256": "84bc856e6f1ee096e9bbf285db8c7fef2ed3832c561a8baa3f16498eafdf5a8f",
+  "device": "cuda",
+  "torch": "2.8.0.dev20250611+cu128",
+  "ties": "native GPU topk",
+  "history_filter": false
+}

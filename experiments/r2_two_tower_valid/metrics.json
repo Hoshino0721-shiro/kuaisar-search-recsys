@@ -1,0 +1,62 @@
+{
+  "config": {
+    "seed": 2026,
+    "epochs": 2,
+    "batch_size": 1024,
+    "dimension": 32,
+    "temperature": 0.1,
+    "sparse_lr": 0.01,
+    "dense_lr": 0.001,
+    "fit": "rec train positive events",
+    "candidate_catalog": "all distinct rec train clicked items; no unseen item vectors",
+    "negative_sampling": "in-batch positive-event items; same-user or same-item pairs are positives",
+    "query_features": "user ID only; no validation updates",
+    "retrieval": "exact cosine top100; no history filtering",
+    "cold_user": "train-popular top100 fallback",
+    "ties": "GPU topk native, not guaranteed item-id order",
+    "selection": "fixed final epoch; no checkpoint selection or parameter sweep",
+    "test_used": false,
+    "device": "cuda",
+    "torch": "2.8.0.dev20250611+cu128",
+    "numpy": "1.26.4",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "source_sha256": "04c4ec58a90a4ae037fdad8c3de03924cd04583a7597f449d4050578dfd46c85",
+    "manifest_sha256": "84bc856e6f1ee096e9bbf285db8c7fef2ed3832c561a8baa3f16498eafdf5a8f"
+  },
+  "training": [
+    {
+      "epoch": 1,
+      "loss": 6.544703118482329
+    },
+    {
+      "epoch": 2,
+      "loss": 5.924033911733968
+    }
+  ],
+  "train_positive_events": 2860013,
+  "candidate_items": 951625,
+  "eval_users": 8495,
+  "cold_users": 2410,
+  "positive_events": 354626,
+  "warm_positive_events": 214739,
+  "catalog_positive_event_ceiling": 0.5460372335925736,
+  "distinct_returned_items": 221009,
+  "metrics": {
+    "50": {
+      "hits": 1198,
+      "recall": 0.0033782068996633073,
+      "warm_recall": 0.005578865506498587,
+      "popular_hits": 1817
+    },
+    "100": {
+      "hits": 2067,
+      "recall": 0.005828675844410732,
+      "warm_recall": 0.009625638565886961,
+      "popular_hits": 3320
+    }
+  },
+  "train_seconds": 18.0842423,
+  "exact_retrieval_seconds": 0.8518433999999999,
+  "timing_scope": "retrieval includes vector generation, scoring, topk, result serialization and evaluation; not serving latency",
+  "checkpoint_sha256": "aec568f8a1d3e830450c68c4846455ba1375fe78643748a83ff8401cc880b04d"
+}

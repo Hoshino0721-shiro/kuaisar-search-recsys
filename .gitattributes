@@ -1,0 +1,2 @@
+# Preserve exact bytes so frozen source SHA256 values survive Windows/Linux clones.
+* -text

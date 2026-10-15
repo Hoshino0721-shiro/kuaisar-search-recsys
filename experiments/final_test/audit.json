@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "frozen_asset_hashes": "verified",
+  "test_ctr_rows": 1015181,
+  "checkpoint_reloaded_predictions": "matched within 1e-6",
+  "independent_ctr_auc": 0.7090787022567063,
+  "independent_ctr_logloss": 0.6226219953138301,
+  "candidate_checks": {
+    "popular": {
+      "users": 9657,
+      "independent_hits_at_100": 2785
+    },
+    "selected_retrieval": {
+      "users": 9657,
+      "independent_hits_at_100": 4533
+    },
+    "selected_ctr_pipeline": {
+      "users": 9657,
+      "independent_hits_at_100": 2979
+    }
+  },
+  "test_used_to_change_configuration": false
+}

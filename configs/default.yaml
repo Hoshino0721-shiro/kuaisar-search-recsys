@@ -1,0 +1,31 @@
+project_name: kuaisar-search-recsys
+data:
+  dataset_name: kuaisar
+  raw_dir: data/raw
+  processed_dir: data/processed
+  version: kuaisar-small-v1-md5-daea8cbf605db6bd5841740f0e4a12d9
+  time_split: shared_beijing_midnight_2023-05-29_2023-05-30
+  seed: 2026
+  label_definition: rec.click; search.click_cnt_positive
+  prepared_db: data/processed/kuaisar_small_v1/dataset.sqlite
+  clean_view: clean_events
+  missing_item_policy: left_join_with_missing_item_features_flag
+  excluded_records: duplicate_source_record,ambiguous_event_key,inconsistent_session
+recall:
+  selected: recent_popular
+  topk: [50, 100]
+  methods: [popular, itemcf, two_tower]
+ranking:
+  baseline: item_ctr
+  selected_model: mlp_gate
+  candidates: [lr, hgb_rec, hgb_search, mlp_concat, mlp_gate]
+  metrics: [auc, gauc, logloss, brier, ndcg_at_10, mrr_at_10]
+rerank:
+  enabled: true
+  methods: [category_diversity]
+  selected_penalty: 0.0
+system:
+  ann_backend: exact_gpu
+  ann_experiment: custom_ivf_flat
+  measure_latency: true
+  latency_percentiles: [50, 95, 99]

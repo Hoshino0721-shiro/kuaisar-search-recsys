@@ -1,0 +1,167 @@
+{
+  "protocol": "search logged session lists; binary click_cnt>0; prior-day search statistics and request type/source/query length; no semantic text matching",
+  "test_used": false,
+  "fit_sample_rows": 1000000,
+  "constant": {
+    "rows": 162964,
+    "auc": 0.5,
+    "gauc": 0.5,
+    "gauc_effective_rows": 153050,
+    "gauc_groups": 8234,
+    "logloss": 0.3596784389958207,
+    "brier": 0.1028464221452945,
+    "ece_10_bins": 0.00036765019452762726,
+    "reliability": [
+      {
+        "bin": 0,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 1,
+        "rows": 162964,
+        "predicted": 0.11676145496122457,
+        "observed": 0.11639380476669695
+      },
+      {
+        "bin": 2,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 3,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 4,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 5,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 6,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 7,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 8,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 9,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      }
+    ]
+  },
+  "model": {
+    "rows": 162964,
+    "auc": 0.6600660793227667,
+    "gauc": 0.5439182416912067,
+    "gauc_effective_rows": 153050,
+    "gauc_groups": 8234,
+    "logloss": 0.34116825756848923,
+    "brier": 0.09903059512025503,
+    "ece_10_bins": 0.007365752830471939,
+    "reliability": [
+      {
+        "bin": 0,
+        "rows": 54811,
+        "predicted": 0.0641999979963615,
+        "observed": 0.05721479265111018
+      },
+      {
+        "bin": 1,
+        "rows": 94368,
+        "predicted": 0.1391879393834207,
+        "observed": 0.13150644286198712
+      },
+      {
+        "bin": 2,
+        "rows": 12587,
+        "predicted": 0.2292820641570486,
+        "observed": 0.2311909112576468
+      },
+      {
+        "bin": 3,
+        "rows": 932,
+        "predicted": 0.3353149623880678,
+        "observed": 0.36802575107296137
+      },
+      {
+        "bin": 4,
+        "rows": 160,
+        "predicted": 0.4369311551367425,
+        "observed": 0.58125
+      },
+      {
+        "bin": 5,
+        "rows": 65,
+        "predicted": 0.5274361668075496,
+        "observed": 0.6615384615384615
+      },
+      {
+        "bin": 6,
+        "rows": 41,
+        "predicted": 0.6517509144723187,
+        "observed": 0.8048780487804879
+      },
+      {
+        "bin": 7,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 8,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      },
+      {
+        "bin": 9,
+        "rows": 0,
+        "predicted": null,
+        "observed": null
+      }
+    ]
+  },
+  "lists": {
+    "sessions": 13577,
+    "positive_sessions": 8247,
+    "zero_click_sessions": 5330,
+    "ndcg_at_10_positive_sessions": 0.5178035653992723,
+    "ndcg_at_10_all_sessions": 0.3145264788869263,
+    "mrr_at_10_positive_sessions": 0.4626526047952021,
+    "ties": "score descending, item_id ascending; labels click_cnt>0"
+  },
+  "constant_lists": {
+    "sessions": 13577,
+    "positive_sessions": 8247,
+    "zero_click_sessions": 5330,
+    "ndcg_at_10_positive_sessions": 0.46763880426834614,
+    "ndcg_at_10_all_sessions": 0.2840551829418171,
+    "mrr_at_10_positive_sessions": 0.3944860661212061,
+    "ties": "score descending, item_id ascending; labels click_cnt>0"
+  }
+}

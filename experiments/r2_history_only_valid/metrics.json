@@ -1,0 +1,78 @@
+{
+  "config": {
+    "seed": 2026,
+    "epochs": 2,
+    "batch_size": 1024,
+    "history_length": 20,
+    "dimension": 32,
+    "temperature": 0.1,
+    "use_attributes": false,
+    "sparse_lr": 0.01,
+    "dense_lr": 0.001,
+    "history_rule": "strictly earlier train clicks; exclude same-time peers; fixed train history for validation",
+    "features": [
+      "user_id",
+      "mean_history_item_tower",
+      "item_id",
+      "first_level_category_id",
+      "feature_type"
+    ],
+    "metadata_assumption": "category/type treated as static; release has no feature snapshot times",
+    "candidate_catalog": "rec train clicked items",
+    "cold_user": "same train-popular top100 fallback as ID tower",
+    "selection": "fixed final epoch; no sweep",
+    "test_used": false,
+    "negative_sampling": "in-batch positive-event items; same-user/same-item pairs positive",
+    "source_sha256": "fdae404801861982a1858b96662fd43fecbe382a5225d80b09ed94ee44786f51",
+    "manifest_sha256": "84bc856e6f1ee096e9bbf285db8c7fef2ed3832c561a8baa3f16498eafdf5a8f",
+    "device": "cuda",
+    "torch": "2.8.0.dev20250611+cu128",
+    "ties": "native GPU topk",
+    "history_filter": false
+  },
+  "training": [
+    {
+      "epoch": 1,
+      "loss": 6.07288917917506
+    },
+    {
+      "epoch": 2,
+      "loss": 4.5797260362103245
+    }
+  ],
+  "train_seconds": 29.776989200000003,
+  "train_positive_events": 2860013,
+  "candidate_items": 951625,
+  "eval_users": 8495,
+  "positive_events": 354626,
+  "groups": {
+    "known_train_click_user": {
+      "users": 6085,
+      "positive_events": 296632,
+      "hits_at_50": 265,
+      "popular_hits_at_50": 976,
+      "hits_at_100": 517,
+      "popular_hits_at_100": 1904
+    },
+    "no_train_click_user": {
+      "users": 2410,
+      "positive_events": 57994,
+      "hits_at_50": 841,
+      "popular_hits_at_50": 841,
+      "hits_at_100": 1416,
+      "popular_hits_at_100": 1416
+    }
+  },
+  "distinct_returned_items": 263439,
+  "metrics": {
+    "50": {
+      "hits": 1106,
+      "recall": 0.003118778656951267
+    },
+    "100": {
+      "hits": 1933,
+      "recall": 0.005450812969156238
+    }
+  },
+  "checkpoint_sha256": "be584961689e316f42951d537f6338fdb2f730e10c9023b2f63aa3a6fbc7a6d0"
+}

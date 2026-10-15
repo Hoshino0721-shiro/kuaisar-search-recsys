@@ -1,0 +1,40 @@
+{
+  "seed": 2026,
+  "fit": "one million uniformly sampled rec train exposures; no class resampling",
+  "sample_rows": 1000000,
+  "feature_names": [
+    "global_ctr",
+    "user_ctr",
+    "item_ctr",
+    "category_ctr",
+    "user_category_ctr",
+    "log_user_count",
+    "log_item_count",
+    "log_category_count",
+    "log_user_category_count",
+    "long_category_share",
+    "seen_item",
+    "seen_user",
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos",
+    "log_search_user_clicks",
+    "log_search_category_clicks",
+    "short_search_category_share",
+    "has_search_clicks"
+  ],
+  "features_rule": "previous complete calendar days; frozen train snapshot at evaluation",
+  "selection": "minimum valid logloss, then maximum valid AUC",
+  "test_used": false,
+  "hgb": {
+    "max_iter": 120,
+    "max_leaf_nodes": 15,
+    "learning_rate": 0.06,
+    "l2_regularization": 10,
+    "min_samples_leaf": 100,
+    "max_bins": 128,
+    "early_stopping": false
+  },
+  "source_sha256": "09ac1e7a4476ba10f5b03504b49ca7edea80e9e48448fc1cde0b50206a1a23ae"
+}

@@ -1,0 +1,45 @@
+{
+  "split": "rec valid",
+  "test_used": false,
+  "positive_events": 354626,
+  "runs": {
+    "r2_two_tower_valid": {
+      "hits_at_100": 2067,
+      "recall_at_100": 0.005828675844410732
+    },
+    "r2_history_only_valid": {
+      "hits_at_100": 1933,
+      "recall_at_100": 0.005450812969156238
+    },
+    "r2_history_attributes_valid": {
+      "hits_at_100": 2155,
+      "recall_at_100": 0.006076824598309205
+    }
+  },
+  "comparisons": [
+    {
+      "base": "r2_two_tower_valid",
+      "new": "r2_history_attributes_valid",
+      "delta_recall": 0.00024814875389847334,
+      "paired_user_bootstrap_95_interval": [
+        2.259274819150949e-05,
+        0.0004781850937950089
+      ]
+    },
+    {
+      "base": "r2_history_only_valid",
+      "new": "r2_history_attributes_valid",
+      "delta_recall": 0.0006260116291529668,
+      "paired_user_bootstrap_95_interval": [
+        0.00044398847681414343,
+        0.0008104093741432787
+      ]
+    }
+  ],
+  "bootstrap": {
+    "unit": "user",
+    "replicates": 2000,
+    "seed": 2026,
+    "limitations": "exploratory single-seed validation comparison, not independent test significance; no multiplicity correction"
+  }
+}
