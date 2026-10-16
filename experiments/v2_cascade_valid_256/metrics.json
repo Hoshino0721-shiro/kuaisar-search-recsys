@@ -1,0 +1,108 @@
+{
+  "split": "valid",
+  "users": 256,
+  "seed": 2026,
+  "baselines": {
+    "popular": {
+      "observed_event_recall_at_20": 0.0025120368432070338,
+      "user_period_ndcg_at_20_positive_users": 0.005952404095683512,
+      "category_diversity_at_20": 0.5,
+      "request_p95_ms": null
+    },
+    "recent": {
+      "observed_event_recall_at_20": 0.004814737282813481,
+      "user_period_ndcg_at_20_positive_users": 0.014422908208149194,
+      "category_diversity_at_20": 0.6999999999999998,
+      "request_p95_ms": null
+    },
+    "without_rerank": {
+      "observed_event_recall_at_20": 0.0009420138162026376,
+      "user_period_ndcg_at_20_positive_users": 0.0021407134978130415,
+      "category_diversity_at_20": 0.318359375,
+      "request_p95_ms": 52.58312499972817
+    },
+    "without_coarse": {
+      "observed_event_recall_at_20": 0.00136068662340381,
+      "user_period_ndcg_at_20_positive_users": 0.002857189246887495,
+      "category_diversity_at_20": 0.4615234375,
+      "request_p95_ms": 56.130450001546706
+    }
+  },
+  "scope": "fixed train-cutoff lists; observed-positive events, not request-level outcomes",
+  "max_users": 256,
+  "test_used": false,
+  "config": {
+    "coarse_model": "experiments/v2_coarse_lr/model.pt",
+    "fine_model": "experiments/v2_fine_dcn/model.pt",
+    "route_k": 1000,
+    "route_weights": {
+      "popular": 1.0,
+      "recent": 2.0,
+      "itemcf": 1.0
+    },
+    "budget": {
+      "recall": 2000,
+      "coarse": 400,
+      "fine": 80,
+      "output": 20,
+      "category_penalty": 0.01
+    }
+  },
+  "coarse_sha256": "5bae0ded9d0ed61eaa44f52e96cf1e9c92e544b41fe78fd00b339c23de02a52a",
+  "fine_sha256": "020b93539a196026ccb1b7da1b087f32f67cfa4a3fabef75ffc9632b7b3739a4",
+  "stages": {
+    "recall": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 748,
+      "observed_event_recall_at_stage_budget": 0.07829181494661921,
+      "positive_retention_vs_previous": null,
+      "observed_event_recall_at_20": 0.005547414695415533,
+      "mean_candidates": 1842.55078125,
+      "user_period_ndcg_at_20_positive_users": 0.012824719110408996,
+      "category_diversity_at_20": 0.7001953124999999,
+      "p50_ms": 2.619000000777305,
+      "p95_ms": 37.228875000437256
+    },
+    "coarse": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 224,
+      "observed_event_recall_at_stage_budget": 0.02344567720326565,
+      "positive_retention_vs_previous": 0.2994652406417112,
+      "observed_event_recall_at_20": 0.0021980322378061545,
+      "mean_candidates": 400.0,
+      "user_period_ndcg_at_20_positive_users": 0.0042737513941237025,
+      "category_diversity_at_20": 0.22636718749999998,
+      "p50_ms": 1.2721499988401774,
+      "p95_ms": 1.4846750009382959
+    },
+    "fine": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 50,
+      "observed_event_recall_at_stage_budget": 0.005233410090014654,
+      "positive_retention_vs_previous": 0.22321428571428573,
+      "observed_event_recall_at_20": 0.0009420138162026376,
+      "mean_candidates": 80.0,
+      "user_period_ndcg_at_20_positive_users": 0.0021407134978130415,
+      "category_diversity_at_20": 0.318359375,
+      "p50_ms": 1.037549998727627,
+      "p95_ms": 1.3695500010726391
+    },
+    "rerank": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 9,
+      "observed_event_recall_at_stage_budget": 0.0009420138162026376,
+      "positive_retention_vs_previous": 0.18,
+      "observed_event_recall_at_20": 0.0009420138162026376,
+      "mean_candidates": 20.0,
+      "user_period_ndcg_at_20_positive_users": 0.0022332425889085854,
+      "category_diversity_at_20": 0.41250000000000003,
+      "p50_ms": 0.377200000002631,
+      "p95_ms": 0.4064249988005031
+    }
+  },
+  "request_p50_ms": 15.375199998743483,
+  "request_p95_ms": 52.85857499984559,
+  "warmup_request_ms_excluded": 53.370300000096904,
+  "startup_ms": 17054.624100001092,
+  "timing_scope": "single-process CPU, includes retrieval and feature construction; no network or concurrency"
+}

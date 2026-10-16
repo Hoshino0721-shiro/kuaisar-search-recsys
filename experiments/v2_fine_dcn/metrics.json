@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "kind": "fine_dcn",
+    "seed": 2026,
+    "sample_rows": 1000000,
+    "epochs": 5,
+    "batch_size": 4096,
+    "columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "feature_names": [
+      "global_ctr",
+      "user_ctr",
+      "item_ctr",
+      "category_ctr",
+      "user_category_ctr",
+      "log_user_count",
+      "log_item_count",
+      "log_category_count",
+      "log_user_category_count",
+      "long_category_share",
+      "seen_item",
+      "seen_user",
+      "hour_sin",
+      "hour_cos",
+      "weekday_sin",
+      "weekday_cos",
+      "log_search_user_clicks",
+      "log_search_category_clicks",
+      "short_search_category_share",
+      "has_search_clicks"
+    ],
+    "selection": "minimum validation LogLoss across epochs; no test reads",
+    "training_labels": "observed rec exposure click; no candidate pseudo-negatives",
+    "feature_cache_sha256": "874b74b6bbc6d4d875175c2c86cf2abe623e4b6f5014f7236597b86b1eaa0cc1",
+    "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+    "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+    "trainer_source_sha256": "7be5d226eebe379e08292f3c881d0ba79de1842ca8ae3d2ae35b1af471f27f33",
+    "device": "cpu"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_logloss": 0.6351623750457763,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.7103187443733072,
+        "logloss": 0.6219456190686793
+      }
+    },
+    {
+      "epoch": 2,
+      "train_logloss": 0.6276683925094605,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.7118110388770457,
+        "logloss": 0.6203640440167141
+      }
+    },
+    {
+      "epoch": 3,
+      "train_logloss": 0.6272373933143616,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.7121790820129464,
+        "logloss": 0.6206825735127044
+      }
+    },
+    {
+      "epoch": 4,
+      "train_logloss": 0.6270161477394104,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.7124873325779474,
+        "logloss": 0.62018098701945
+      }
+    },
+    {
+      "epoch": 5,
+      "train_logloss": 0.626888899734497,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.7126906398878378,
+        "logloss": 0.6197981841694026
+      }
+    }
+  ],
+  "selected_epoch": 5,
+  "selected_validation": {
+    "rows": 725753,
+    "auc": 0.7126906398878377,
+    "gauc": 0.6053807918136886,
+    "gauc_effective_rows": 721659,
+    "gauc_groups": 7345,
+    "logloss": 0.6197981841694026,
+    "brier": 0.2155972351596929,
+    "ece_10_bins": 0.007813493271001183,
+    "reliability": [
+      {
+        "bin": 0,
+        "rows": 3767,
+        "predicted": 0.08464818465282865,
+        "observed": 0.05574727900185824
+      },
+      {
+        "bin": 1,
+        "rows": 39064,
+        "predicted": 0.15691626093005326,
+        "observed": 0.1395658406717182
+      },
+      {
+        "bin": 2,
+        "rows": 68125,
+        "predicted": 0.25450711156862593,
+        "observed": 0.24453577981651375
+      },
+      {
+        "bin": 3,
+        "rows": 114536,
+        "predicted": 0.3531582367252523,
+        "observed": 0.3349776489488021
+      },
+      {
+        "bin": 4,
+        "rows": 137058,
+        "predicted": 0.4507000848280627,
+        "observed": 0.4398575785433904
+      },
+      {
+        "bin": 5,
+        "rows": 143022,
+        "predicted": 0.5489090921008271,
+        "observed": 0.5487896966900198
+      },
+      {
+        "bin": 6,
+        "rows": 116219,
+        "predicted": 0.6484715594256271,
+        "observed": 0.6497474595375972
+      },
+      {
+        "bin": 7,
+        "rows": 75596,
+        "predicted": 0.7434992386686833,
+        "observed": 0.7384649981480501
+      },
+      {
+        "bin": 8,
+        "rows": 26613,
+        "predicted": 0.8374029458615053,
+        "observed": 0.8344793897719159
+      },
+      {
+        "bin": 9,
+        "rows": 1753,
+        "predicted": 0.9152278381963491,
+        "observed": 0.9224187107815174
+      }
+    ]
+  },
+  "trainable_parameters": 3557,
+  "checkpoint_sha256": "020b93539a196026ccb1b7da1b087f32f67cfa4a3fabef75ffc9632b7b3739a4",
+  "elapsed_seconds": 6.839947700002085,
+  "test_used": false,
+  "scope": "exposure validation only; cascade retention still requires separate evaluation"
+}

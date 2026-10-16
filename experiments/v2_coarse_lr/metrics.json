@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "kind": "coarse_lr",
+    "seed": 2026,
+    "sample_rows": 1000000,
+    "epochs": 5,
+    "batch_size": 4096,
+    "columns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "feature_names": [
+      "user_ctr",
+      "item_ctr",
+      "category_ctr",
+      "user_category_ctr",
+      "log_user_count",
+      "log_item_count",
+      "long_category_share",
+      "seen_item"
+    ],
+    "selection": "minimum validation LogLoss across epochs; no test reads",
+    "training_labels": "observed rec exposure click; no candidate pseudo-negatives",
+    "feature_cache_sha256": "874b74b6bbc6d4d875175c2c86cf2abe623e4b6f5014f7236597b86b1eaa0cc1",
+    "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+    "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+    "trainer_source_sha256": "7be5d226eebe379e08292f3c881d0ba79de1842ca8ae3d2ae35b1af471f27f33",
+    "device": "cpu"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_logloss": 0.7555105014801026,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.5633750824402016,
+        "logloss": 0.6918467087287212
+      }
+    },
+    {
+      "epoch": 2,
+      "train_logloss": 0.6682832081451416,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.6757071840891863,
+        "logloss": 0.6485976309493086
+      }
+    },
+    {
+      "epoch": 3,
+      "train_logloss": 0.6444202670402527,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.6988021478082644,
+        "logloss": 0.6342694483141669
+      }
+    },
+    {
+      "epoch": 4,
+      "train_logloss": 0.6364503192787171,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.7053019450766879,
+        "logloss": 0.6288308968237094
+      }
+    },
+    {
+      "epoch": 5,
+      "train_logloss": 0.6337302113609314,
+      "valid": {
+        "rows": 725753,
+        "auc": 0.7072734672182226,
+        "logloss": 0.6271079417632336
+      }
+    }
+  ],
+  "selected_epoch": 5,
+  "selected_validation": {
+    "rows": 725753,
+    "auc": 0.7072734672182226,
+    "gauc": 0.5980451679225307,
+    "gauc_effective_rows": 721659,
+    "gauc_groups": 7345,
+    "logloss": 0.6271079417632336,
+    "brier": 0.21869895838205974,
+    "ece_10_bins": 0.03354979475249411,
+    "reliability": [
+      {
+        "bin": 0,
+        "rows": 1465,
+        "predicted": 0.09155192656169166,
+        "observed": 0.06416382252559727
+      },
+      {
+        "bin": 1,
+        "rows": 26584,
+        "predicted": 0.15942441296222526,
+        "observed": 0.13271140535660547
+      },
+      {
+        "bin": 2,
+        "rows": 55845,
+        "predicted": 0.2556589781624296,
+        "observed": 0.22107619303429135
+      },
+      {
+        "bin": 3,
+        "rows": 91366,
+        "predicted": 0.3530713174583208,
+        "observed": 0.30547468423702473
+      },
+      {
+        "bin": 4,
+        "rows": 142870,
+        "predicted": 0.4520672336622291,
+        "observed": 0.39784419402253796
+      },
+      {
+        "bin": 5,
+        "rows": 164671,
+        "predicted": 0.5494149874427138,
+        "observed": 0.524627894407637
+      },
+      {
+        "bin": 6,
+        "rows": 119126,
+        "predicted": 0.6478092129998075,
+        "observed": 0.632901297785538
+      },
+      {
+        "bin": 7,
+        "rows": 87924,
+        "predicted": 0.7459135948357528,
+        "observed": 0.7158455029343523
+      },
+      {
+        "bin": 8,
+        "rows": 33390,
+        "predicted": 0.8370924587751727,
+        "observed": 0.8068583408206049
+      },
+      {
+        "bin": 9,
+        "rows": 2512,
+        "predicted": 0.9163642153143883,
+        "observed": 0.8921178343949044
+      }
+    ]
+  },
+  "trainable_parameters": 9,
+  "checkpoint_sha256": "5bae0ded9d0ed61eaa44f52e96cf1e9c92e544b41fe78fd00b339c23de02a52a",
+  "elapsed_seconds": 2.948283099998662,
+  "test_used": false,
+  "scope": "exposure validation only; cascade retention still requires separate evaluation"
+}

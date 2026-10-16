@@ -1,0 +1,12 @@
+{
+  "neighbors": 100,
+  "max_user_items": 200,
+  "seed_items": 30,
+  "window_days": null,
+  "user_iuf": true,
+  "graph_half_life_days": null,
+  "query_half_life_days": 1,
+  "min_cooccurrence": 1,
+  "shrinkage": 0,
+  "block_items": 256
+}

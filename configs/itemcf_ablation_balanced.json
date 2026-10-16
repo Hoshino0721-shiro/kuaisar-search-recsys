@@ -1,0 +1,5 @@
+{
+  "indexes": {"balanced": "artifacts/itemcf_balanced_300"},
+  "variants": {"balanced_300": {"index": "balanced", "half_life_days": null}},
+  "contrasts": []
+}

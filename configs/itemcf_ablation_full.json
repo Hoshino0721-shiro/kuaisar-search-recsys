@@ -1,0 +1,26 @@
+{
+  "indexes": {
+    "cap200_cosine": "artifacts/itemcf_cosine_200x100",
+    "full_cosine": "artifacts/itemcf_full_cosine_1000",
+    "full_pop025": "artifacts/itemcf_full_pop025_1000"
+  },
+  "variants": {
+    "cap200_L100": {"index": "cap200_cosine", "neighbor_limit": 100},
+    "full_cosine_L100": {"index": "full_cosine", "neighbor_limit": 100},
+    "full_cosine_L300": {"index": "full_cosine", "neighbor_limit": 300},
+    "full_cosine_L1000": {"index": "full_cosine", "neighbor_limit": 1000},
+    "full_pop025_L100": {"index": "full_pop025", "neighbor_limit": 100},
+    "full_pop025_L300": {"index": "full_pop025", "neighbor_limit": 300},
+    "full_pop025_L1000": {"index": "full_pop025", "neighbor_limit": 1000},
+    "full_pop025_L1000_decay1d": {"index": "full_pop025", "neighbor_limit": 1000, "half_life_days": 1},
+    "full_cosine_L1000_decay1d": {"index": "full_cosine", "neighbor_limit": 1000, "half_life_days": 1}
+  },
+  "contrasts": [
+    ["full_cosine_L100", "cap200_L100"],
+    ["full_cosine_L300", "full_cosine_L100"],
+    ["full_cosine_L1000", "full_cosine_L300"],
+    ["full_pop025_L1000", "full_cosine_L1000"],
+    ["full_pop025_L1000_decay1d", "full_pop025_L1000"],
+    ["full_cosine_L1000_decay1d", "full_cosine_L1000"]
+  ]
+}

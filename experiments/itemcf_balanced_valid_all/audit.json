@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "users": 8495,
+  "checks": [
+    "exported-index per-user hit vectors exactly equal parent L300 across all 8495 validation users",
+    "positive denominators and raw hit sums independently recomputed",
+    "groupwise fusion matches parent experiment",
+    "query visits at most 9000 edges",
+    "current dataset manifest matches",
+    "real indexed cascade demo version and stage counts match"
+  ],
+  "test_labels_used": false
+}
