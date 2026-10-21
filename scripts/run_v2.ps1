@@ -12,6 +12,7 @@ function Invoke-V2Python([string[]]$Arguments) {
 }
 Push-Location $v2Root
 try {
+  Invoke-V2Python -Arguments @('-c', 'import sys; assert sys.version_info >= (3, 10), "V2 requires Python 3.10+; run scripts/setup_v2.ps1 with Python 3.12"')
   if (-not (Test-Path -LiteralPath 'data/raw/KuaiSAR.zip')) {
     if ($SkipDownload) { throw 'Official ZIP is missing' }
     & "$PSScriptRoot/download_kuaisar.ps1"

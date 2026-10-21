@@ -1,0 +1,119 @@
+{
+  "split": "valid",
+  "users": 256,
+  "seed": 2026,
+  "baselines": {
+    "popular": {
+      "observed_event_recall_at_20": 0.0025120368432070338,
+      "user_period_ndcg_at_20_positive_users": 0.005952404095683512,
+      "category_diversity_at_20": 0.5,
+      "request_p95_ms": null
+    },
+    "recent": {
+      "observed_event_recall_at_20": 0.004814737282813481,
+      "user_period_ndcg_at_20_positive_users": 0.014422908208149194,
+      "category_diversity_at_20": 0.6999999999999998,
+      "request_p95_ms": null
+    },
+    "without_rerank": {
+      "observed_event_recall_at_20": 0.0007326774126020515,
+      "user_period_ndcg_at_20_positive_users": 0.0015000343310347416,
+      "category_diversity_at_20": 0.3076171875,
+      "request_p95_ms": 69.41812500099331
+    },
+    "without_coarse": {
+      "observed_event_recall_at_20": 0.0008373456144023446,
+      "user_period_ndcg_at_20_positive_users": 0.0015486952626117244,
+      "category_diversity_at_20": 0.4412109375,
+      "request_p95_ms": 68.86759999952119
+    }
+  },
+  "scope": "fixed train-cutoff lists; observed-positive events, not request-level outcomes",
+  "max_users": 256,
+  "test_used": false,
+  "config": {
+    "coarse_model": "artifacts/ranking_v3/coarse_lr/model.pt",
+    "fine_model": "artifacts/ranking_v3/fine_dcn/model.pt",
+    "itemcf_index": "artifacts/itemcf_support2_300",
+    "itemcf_neighbor_limit": 300,
+    "itemcf_query_half_life_days": null,
+    "route_k": 1000,
+    "route_limits": {
+      "popular": 0,
+      "recent": 2000,
+      "itemcf": 1000
+    },
+    "route_weights": {
+      "popular": 0.0,
+      "recent": 1.0,
+      "itemcf": 1.0
+    },
+    "fusion": {
+      "method": "rrf"
+    },
+    "budget": {
+      "recall": 2000,
+      "coarse": 400,
+      "fine": 80,
+      "output": 20,
+      "category_penalty": 0.01
+    }
+  },
+  "coarse_sha256": "8013f4e58603159529e32c1f952aab120133d53170553bef61dfabc488bbbf06",
+  "fine_sha256": "d1cd761ef6f7f8ac6fcec8da058881bf138f4663bd4eb9b5e2a129bb9a8fbeca",
+  "stages": {
+    "recall": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 903,
+      "observed_event_recall_at_stage_budget": 0.09451538622566465,
+      "positive_retention_vs_previous": null,
+      "observed_event_recall_at_20": 0.004919405484613774,
+      "mean_candidates": 2000.0,
+      "user_period_ndcg_at_20_positive_users": 0.01406154805163625,
+      "category_diversity_at_20": 0.6351562499999999,
+      "p50_ms": 2.6687500003390596,
+      "p95_ms": 62.512274999335204
+    },
+    "coarse": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 243,
+      "observed_event_recall_at_stage_budget": 0.025434373037471217,
+      "positive_retention_vs_previous": 0.2691029900332226,
+      "observed_event_recall_at_20": 0.0025120368432070338,
+      "mean_candidates": 400.0,
+      "user_period_ndcg_at_20_positive_users": 0.004893668818161405,
+      "category_diversity_at_20": 0.22539062499999998,
+      "p50_ms": 1.5234499996950035,
+      "p95_ms": 2.1515749999707623
+    },
+    "fine": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 46,
+      "observed_event_recall_at_stage_budget": 0.004814737282813481,
+      "positive_retention_vs_previous": 0.18930041152263374,
+      "observed_event_recall_at_20": 0.0007326774126020515,
+      "mean_candidates": 80.0,
+      "user_period_ndcg_at_20_positive_users": 0.0015000343310347416,
+      "category_diversity_at_20": 0.3076171875,
+      "p50_ms": 0.8570500003770576,
+      "p95_ms": 1.177049999114388
+    },
+    "rerank": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 10,
+      "observed_event_recall_at_stage_budget": 0.0010466820180029307,
+      "positive_retention_vs_previous": 0.21739130434782608,
+      "observed_event_recall_at_20": 0.0010466820180029307,
+      "mean_candidates": 20.0,
+      "user_period_ndcg_at_20_positive_users": 0.001951436759946101,
+      "category_diversity_at_20": 0.38320312500000003,
+      "p50_ms": 0.4393499993966543,
+      "p95_ms": 0.5408749998423446
+    }
+  },
+  "request_p50_ms": 8.020399999622896,
+  "request_p95_ms": 70.915500000865,
+  "warmup_request_ms_excluded": 16.820700000607758,
+  "startup_ms": 7034.277000000657,
+  "timing_scope": "single-process CPU, includes retrieval and feature construction; no network or concurrency"
+}

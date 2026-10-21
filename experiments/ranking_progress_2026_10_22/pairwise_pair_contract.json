@@ -1,0 +1,92 @@
+{
+  "config": {
+    "enhanced_cache": "artifacts/dcn_enhancement_v3/cache",
+    "candidate_pool": "artifacts/dcn_enhancement_v1/candidates",
+    "window_ms": 1800000,
+    "pair_seed": 2026,
+    "negative_per_positive": 1,
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "models": [
+      "A",
+      "B"
+    ],
+    "objectives": [
+      "full_bce",
+      "paired_bce",
+      "pairwise",
+      "mixed"
+    ],
+    "mixed_weight": 0.5,
+    "epochs": 5,
+    "batch_size": 4096,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "selection": "minimum fixed validation-pair softplus loss; same selector for every objective; tie earliest epoch",
+    "cascade_methods": [
+      "A_full_bce_s2026",
+      "B_full_bce_s2026",
+      "B_mixed_s2026",
+      "B_pairwise_s2026"
+    ],
+    "pair_contract": "same user and fixed 30-minute exposure-time bin, distinct items; exclude within-bin contradictory-label items, collapse repeated consistent items to earliest event, one uniform observed nonclick per clicked item with replacement; only original fixed 1m training rows",
+    "scope": "pseudo-contexts, not recovered requests or slates; unclicked is observed click=0, not intrinsic dislike; feedback arrival unknown; validation development only, never test labels",
+    "default_changed": false
+  },
+  "config_sha256": "4bd55e29615c19a9bb1c2d887c6f3720a9b598949c778eb55a61f79cfb55ee1c",
+  "enhanced_data_sha256": "39ac6a09e0808f2a6498b78e0567e490c9ca8b39304fdfcc84d93d28494fe887",
+  "sample_sha256": "d6033676a96bfeeb71d8f95aaa8f9642999c3269b5221aa663fb46c9f810b215",
+  "state_sha256": "0fa305a94c28cb69bf7129ea26350dcbe759137c2cf6c60cf046ea7efbc9c873",
+  "source_sha256": "a4d7ccb1c154a6b7203e3a40feca583e51cda342c501352cda4733399304c36b",
+  "test_used": false,
+  "all_training_rows_aligned": true,
+  "splits": {
+    "train": {
+      "rows": 1000000,
+      "pseudo_contexts": 205790,
+      "usable_contexts": 113675,
+      "pairs": 385577,
+      "paired_users": 17143,
+      "unique_endpoint_rows": 603930,
+      "contradictory_item_rows_excluded": 38,
+      "consistent_duplicate_rows_collapsed": 154,
+      "gap_ms_p50_p95_max": [
+        311829.0,
+        1237066.2000000002,
+        1795757.0
+      ],
+      "equal_timestamp_pairs": 54127,
+      "all_pair_invariants_pass": true,
+      "negative_reuse_allowed": true,
+      "not_actual_requests": true
+    },
+    "valid": {
+      "rows": 725753,
+      "pseudo_contexts": 36404,
+      "usable_contexts": 27861,
+      "pairs": 345061,
+      "paired_users": 7243,
+      "unique_endpoint_rows": 522496,
+      "contradictory_item_rows_excluded": 164,
+      "consistent_duplicate_rows_collapsed": 630,
+      "gap_ms_p50_p95_max": [
+        277482.0,
+        1205074.0,
+        1794804.0
+      ],
+      "equal_timestamp_pairs": 63031,
+      "all_pair_invariants_pass": true,
+      "negative_reuse_allowed": true,
+      "not_actual_requests": true
+    }
+  },
+  "files": {
+    "train_positive.npy": "9fe638d3d1ea91d69ad34dd40cae321576a20411192547146a5a089e68329369",
+    "train_negative.npy": "c604a378261221d61228c4477f8289e7f153082e046934a835f4d1c3be69e78d",
+    "valid_positive.npy": "42569e607d9f43aa24eb4b5da9f16faa9d267211cec2a0bdc3532139f352ae29",
+    "valid_negative.npy": "d8ff954f0245647ba77d44c8f8997a9fc8093c197edfd9b4be769444941fb755"
+  }
+}

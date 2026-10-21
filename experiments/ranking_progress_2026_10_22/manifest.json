@@ -1,0 +1,91 @@
+{
+  "published_date": "2026-10-22",
+  "scope": "aggregate validation-development evidence; not independent test or online gains",
+  "test_used": false,
+  "default_models_changed": false,
+  "raw_data_arrays_per_user_rows_and_checkpoints_excluded": true,
+  "dcn_final_model_runs": 24,
+  "pairwise_final_model_runs": 30,
+  "tests_passed": 99,
+  "files": {
+    "ranking_root_cause.json": {
+      "source": "artifacts/ranking_v3/root_cause_controls_valid_all/metrics.json",
+      "source_sha256": "40e9fbff3a8d160b8d64570323204f4da7a5e02bff3719f70ab5e7e22047bd49",
+      "published_sha256": "01e911570bde4c001c896ea0d6c1b262b6c733c47dddc3dc563e7f5f2d43727d",
+      "published_bytes": 18473
+    },
+    "ranking_sensitivity.json": {
+      "source": "artifacts/ranking_v3/sensitivity_valid_all/metrics.json",
+      "source_sha256": "8f63b629263034beaf431d49e6100c6824bcad2bb8f06d2a2df4484d2a02d282",
+      "published_sha256": "970b7fef110b72268f2fb36b5f7bd9e06564fc792e86789a505232919fadcde0",
+      "published_bytes": 10590
+    },
+    "training_cache_audit.json": {
+      "source": "artifacts/ranking_v3/training_cache_audit/metrics.json",
+      "source_sha256": "607441f215443a654cfa93c16beea59a8c6acdd33d6d528e5c2a1a19b72c1630",
+      "published_sha256": "a8f393e1ef64d07c542c4f4b79b80c3ab5aac82c4dcb73c655c1b420fff8f4c1",
+      "published_bytes": 9013
+    },
+    "ranking_controlled_ablation.json": {
+      "source": "artifacts/ranking_v3/controlled_ablation_v1/metrics.json",
+      "source_sha256": "4c735a364364973358bd1aa97db0cbb0b8569a6f76ef396265417d3e475ef186",
+      "published_sha256": "b25223f8eedf026a83f0fbfe5625706873ade9278c36f9069483ea3f4a79f7a4",
+      "published_bytes": 95739
+    },
+    "dcn_aggregate.json": {
+      "source": "artifacts/dcn_enhancement_v3/summary.json",
+      "source_sha256": "a78b3e7ac9a9b93a3359431aa5eacf92bc50c77727231aa8a2b426f5ef4956aa",
+      "published_sha256": "dad479072fb76b1bd1908b035046b8c38b775756fc7d9c7bb867626ab27706a9",
+      "published_bytes": 221350
+    },
+    "dcn_fixed_pool.json": {
+      "source": "artifacts/dcn_enhancement_v3/evaluation/metrics.json",
+      "source_sha256": "84c10e57df4f8d38266cff72f922e36355d6b3024cbf264cc66280b619a711b9",
+      "published_sha256": "3d81992ff589e4e2b83f802b8153e99107d5943fc889d856b21d6193aaf63706",
+      "published_bytes": 8761
+    },
+    "dcn_input_audit.json": {
+      "source": "artifacts/dcn_enhancement_v3/audit/metrics.json",
+      "source_sha256": "cb6a015d76b865df359fcfe7620d4ba96bba8df3bbd0bbcb5b160aa41c343b02",
+      "published_sha256": "401e5f43879a3b474b61e28b6ea0f6b74ae30f46d37b4953e92b2341d191f7e6",
+      "published_bytes": 1930
+    },
+    "dcn_runtime_256.json": {
+      "source": "artifacts/dcn_enhancement_v3/runtime_valid_256.json",
+      "source_sha256": "f8886ee49c711571380ee6ff578ca5de1354a7f13863f82305575f9e82552e22",
+      "published_sha256": "1bd10bedee4cdcde3497c5398d2cd0d981a5a77c489802cfddfab4e2615b31f0",
+      "published_bytes": 4886
+    },
+    "dcn_baseline_runtime_256.json": {
+      "source": "artifacts/dcn_enhancement_v3/runtime_baseline_256.json",
+      "source_sha256": "cfc53cc9f31cae622427417f238600c6931255200a417e63902a368486b3a41d",
+      "published_sha256": "8010ecd057b458251e2db9fb85abb1eb3cd2c29a129655e5451ce72141578de3",
+      "published_bytes": 4305
+    },
+    "pairwise_pair_contract.json": {
+      "source": "artifacts/pairwise_v1/pairs/metadata.json",
+      "source_sha256": "7b816b1fe8baef80d5e12efa70883f52e8d0f8e40e964165f2d545525c13c966",
+      "published_sha256": "18bca85343679bd8c8aa8d2749062d91cb157b0c1acdb6cd616b872f541c087f",
+      "published_bytes": 3311
+    },
+    "pairwise_training.json": {
+      "source": "artifacts/pairwise_final_v1/models/metrics.json",
+      "source_sha256": "9e9b0a0ba591cb029255749dbc44e0a9d7801f28986bfac7087461697e72ab6c",
+      "published_sha256": "cb6b13f6bbedb83f718c9f314f00c109495b9f940f10b4eda22b75d7b3638fba",
+      "published_bytes": 374079
+    },
+    "pairwise_fixed_pool.json": {
+      "source": "artifacts/pairwise_final_v1/evaluation/metrics.json",
+      "source_sha256": "6906ad2caa9d704777ae85df5f27bb68945b6fa36f65106732cb86050d7a4394",
+      "published_sha256": "ac4513f7907d2e040b106fbd841c1c61d9227e3d9bfbdec7c70aee1a18fb5a6d",
+      "published_bytes": 10270
+    },
+    "pairwise_audit.json": {
+      "source": "artifacts/pairwise_final_v1/audit.json",
+      "source_sha256": "9c50e8ac946b99a3567e0011b027ddfa3e41a5817de1b551c63e6dc4596ffe6b",
+      "published_sha256": "585a2d8a44b7cb0f7119bde7a1dd009e048e10624cf335d129c57f5106b70611",
+      "published_bytes": 20550
+    }
+  },
+  "exporter_sha256": "d4268dc3fabcaae92db8ad2a6dba0ecc848c9bbb8bf093d01f46e346d900b84e"
+}

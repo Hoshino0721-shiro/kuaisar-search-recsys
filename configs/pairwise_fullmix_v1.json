@@ -1,0 +1,12 @@
+{
+  "base_run": "artifacts/pairwise_v1",
+  "added_objective": "full_mixed",
+  "mixed_weight": 0.5,
+  "pair_draw_seed_offset": 10000,
+  "pair_sampling": "independent-generator uniform draws with replacement, one pair per full exposure row per epoch",
+  "selection": "same fixed validation pair loss as initial protocol",
+  "reason": "exposure AUC dropped under balanced pair-endpoint BCE; test full-exposure BCE plus pair loss without removing original samples",
+  "declared_before_full_candidate_evaluation": true,
+  "not_a_preregistered_initial_arm": true,
+  "default_changed": false
+}

@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "test_used": false,
+  "all_exposure_fields_and_context_users_aligned": true,
+  "vocabulary": {
+    "user": {
+      "cardinality": 16798,
+      "allocated_but_unseen_in_fit": 0,
+      "minimum_known_fit_frequency": 5,
+      "validation_unk_fraction": 0.23728871944036056
+    },
+    "item": {
+      "cardinality": 375945,
+      "allocated_but_unseen_in_fit": 0,
+      "minimum_known_fit_frequency": 5,
+      "validation_unk_fraction": 0.7338943139056952
+    },
+    "author": {
+      "cardinality": 40268,
+      "allocated_but_unseen_in_fit": 0,
+      "minimum_known_fit_frequency": 5,
+      "validation_unk_fraction": 0.46691780812480277
+    },
+    "category": {
+      "cardinality": 38,
+      "allocated_but_unseen_in_fit": 0,
+      "minimum_known_fit_frequency": 2316,
+      "validation_unk_fraction": 0.06503590064388297
+    }
+  },
+  "histories": {
+    "train_rec_contexts": {
+      "rows": 53694,
+      "nonempty_fraction": 0.6078891496256565,
+      "unk_fraction_of_nonpad": 0.039350332321326
+    },
+    "train_search_contexts": {
+      "rows": 53694,
+      "nonempty_fraction": 0.25136886802994746,
+      "unk_fraction_of_nonpad": 0.32570714105531
+    },
+    "valid_rec_rows": {
+      "rows": 725753,
+      "nonempty_fraction": 0.8426461895438255,
+      "unk_fraction_of_nonpad": 0.5578213266755018
+    },
+    "valid_search_rows": {
+      "rows": 725753,
+      "nonempty_fraction": 0.23900280122851714,
+      "unk_fraction_of_nonpad": 0.8931343947958941
+    }
+  },
+  "data_sha256": "39ac6a09e0808f2a6498b78e0567e490c9ca8b39304fdfcc84d93d28494fe887",
+  "source_sha256": "4ab5f0df347be161d6efe6da8d3d4dbc50e886f553e9f723ef55f0f83f5b8052",
+  "scope": "full field alignment, sampled SQL history replay; static attributes assumed, not proven time-available",
+  "history_sql_check_summary": {
+    "checks": 29,
+    "rec_all_match": true,
+    "search_all_match": true,
+    "sample_user_ids_omitted": true
+  }
+}

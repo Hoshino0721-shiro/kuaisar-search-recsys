@@ -10,7 +10,13 @@ ItemCF 新增[离线邻居索引与查询组件](docs/ITEMCF_INDEX.md)：分块�
 
 [双塔召回 v2](docs/DUAL_TOWER_V2.md) 已补齐属性/历史双塔、训练、导出、精确检索和级联入口，真实缓存包含 286 万正点击、约 5.6 万共享上下文。按本机不训练的约束，真实模型尚未训练；新双塔没有效果指标，不沿用旧双塔或 ItemCF 的结果。
 
-下一步精排实验见 [DCN 特征增强计划](docs/DCN_FEATURE_PLAN.md)：保留 Cross + Deep，分组加入作者/类目、用户/物品 embedding，再验证推荐与搜索点击历史；包含容量对照、时间约束、冷 ID 处理和固定候选评测。本次仅确定计划，尚未实现或训练增强模型。
+精排特征增强已实现并完成 24 组真实曝光训练，见 [验证结果](docs/DCN_FEATURE_RESULTS.md) 与 [实施及复现说明](docs/DCN_ENHANCEMENT_IMPLEMENTATION.md)：保留 Cross + Deep，比较属性、身份和推荐/搜索历史；属性有小幅曝光收益，历史池化没有稳定收益。增强推理使用独立实验配置，不修改默认模型，也不将验证结果称为新独立测试或线上收益。
+
+随后完成 [Pairwise 训练对照](docs/PAIRWISE_RESULTS.md)：数值/属性 DCN 比较完整 BCE、配对端点 BCE、pairwise 与两类混合损失，最终 30 模型、8495 用户同池评测、99 项测试通过。数值 DCN 的完整曝光混合有小幅排序信号，但采样影响、曝光退化与级联瓶颈仍在，不切换默认推荐。协议及复现见 [训练说明](docs/PAIRWISE_TRAINING.md)。
+
+2026-10-22 已整理发布 [13 份聚合 JSON 与 SHA256 清单](experiments/ranking_progress_2026_10_22/manifest.json)，不含逐用户记录或新权重。[下一阶段方向及已知问题](docs/NEXT_RANKING_DIRECTIONS.md) 明确区分可行性分析与已实现功能，包括尚未修正的 raw author 0 padding 处理。
+
+排序优化从[固定候选诊断](docs/RANKING_V3.md)开始：同一改进 ItemCF 候选池比较 RRF、LR、DCN 与粗排预算，保存候选及逐用户指标，不使用测试标签。
 
 已完成数据审计、时间切分、热门/ItemCF/双塔召回、多路融合、CTR 精排、搜索会话排序、类别多样性重排和近似检索实验。验证集选型后冻结代码与模型校验值，完成测试集评测和独立复核。
 

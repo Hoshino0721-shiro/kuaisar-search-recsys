@@ -1,0 +1,14 @@
+{
+  "coarse_model": "artifacts/ranking_v3/coarse_lr/model.pt",
+  "baseline_fine_model": "artifacts/ranking_v3/fine_dcn/model.pt",
+  "fine_model": "artifacts/dcn_enhancement_v3/models/item_only_s2027/model.pt",
+  "enhanced_data": "artifacts/dcn_enhancement_v3/cache",
+  "itemcf_index": "artifacts/itemcf_support2_300",
+  "itemcf_neighbor_limit": 300,
+  "itemcf_query_half_life_days": null,
+  "route_k": 1000,
+  "route_limits": {"popular": 0, "recent": 2000, "itemcf": 1000},
+  "route_weights": {"popular": 0.0, "recent": 1.0, "itemcf": 1.0},
+  "fusion": {"method": "rrf"},
+  "budget": {"recall": 2000, "coarse": 400, "fine": 80, "output": 20, "category_penalty": 0.01}
+}

@@ -1,6 +1,7 @@
 {
-  "updated": "2026-10-21",
-  "scope": "v2 offline development; no new real neural-model training in this update",
+  "updated": "2026-10-22",
+  "scope": "offline ranking diagnostics, 24 DCN feature runs and 30 final pairwise models; aggregate reports published, new weights remain local; no independent test or online gains",
+  "ranking_progress_manifest": "experiments/ranking_progress_2026_10_22/manifest.json",
   "published_checkpoints": [
     {
       "path": "experiments/v2_coarse_lr/model.pt",
@@ -30,6 +31,13 @@
     }
   ],
   "unpublished_artifacts": [
+    {
+      "kind": "enhanced_dcn_and_pairwise_checkpoints_and_caches",
+      "status": "trained_locally_aggregate_reports_only",
+      "dcn_final_models": "artifacts/dcn_enhancement_v3/models",
+      "pairwise_final_models": "artifacts/pairwise_final_v1/models",
+      "default_models_changed": false
+    },
     {
       "kind": "itemcf_index",
       "path": "artifacts/itemcf_support2_300",

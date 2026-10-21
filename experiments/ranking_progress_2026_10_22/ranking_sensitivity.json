@@ -1,0 +1,361 @@
+{
+  "test_used": false,
+  "diagnosis_only": true,
+  "users": 8495,
+  "positive_events": 354626,
+  "candidate_sha256": "3d6b3da597395244bc998c1790cf3c380a9279c7ddde15523c540ade3c4ed764",
+  "fine_sha256": "d1cd761ef6f7f8ac6fcec8da058881bf138f4663bd4eb9b5e2a129bb9a8fbeca",
+  "source_sha256": "6adbe08f037ef07db5f4d30a582913740e830f4e9b29a6fd76cf1f7ffacf7c62",
+  "snapshot_ms": 1685289600000,
+  "time_list_controls": {
+    "hour_00": {
+      "hit_events": 412,
+      "event_recall_at20": 0.0011617873477973977,
+      "ndcg_at20_positive_users": 0.0026317039611469736,
+      "top20_overlap_fraction_vs_midnight": 1.0,
+      "identical_top20_order_user_fraction": 1.0,
+      "paired_ndcg_difference_vs_midnight": {
+        "users": 7685,
+        "mean_delta": 0.0,
+        "exploratory_95pct_user_bootstrap": [
+          0.0,
+          0.0
+        ]
+      },
+      "matched_logged_exposure_metrics": {
+        "rows": 45377,
+        "clicks": 29530,
+        "auc": 0.6767113994384714,
+        "logloss": 0.5999638541612271,
+        "observed_ctr": 0.6507702139850585
+      }
+    },
+    "hour_06": {
+      "hit_events": 406,
+      "event_recall_at20": 0.0011448681145770473,
+      "ndcg_at20_positive_users": 0.0025412734696486482,
+      "top20_overlap_fraction_vs_midnight": 0.8277221895232488,
+      "identical_top20_order_user_fraction": 0.0003531489111241907,
+      "paired_ndcg_difference_vs_midnight": {
+        "users": 7685,
+        "mean_delta": -9.043049149832555e-05,
+        "exploratory_95pct_user_bootstrap": [
+          -0.00025503965276202356,
+          4.955483012719206e-05
+        ]
+      },
+      "matched_logged_exposure_metrics": {
+        "rows": 45377,
+        "clicks": 29530,
+        "auc": 0.6762526420152444,
+        "logloss": 0.5996027350624858,
+        "observed_ctr": 0.6507702139850585
+      }
+    },
+    "hour_12": {
+      "hit_events": 421,
+      "event_recall_at20": 0.0011871661976279235,
+      "ndcg_at20_positive_users": 0.0025913122026693177,
+      "top20_overlap_fraction_vs_midnight": 0.7823013537374927,
+      "identical_top20_order_user_fraction": 0.0,
+      "paired_ndcg_difference_vs_midnight": {
+        "users": 7685,
+        "mean_delta": -4.0391758477655506e-05,
+        "exploratory_95pct_user_bootstrap": [
+          -0.00020816409940501804,
+          0.00012285383425554477
+        ]
+      },
+      "matched_logged_exposure_metrics": {
+        "rows": 45377,
+        "clicks": 29530,
+        "auc": 0.6767466245276245,
+        "logloss": 0.5992150599756227,
+        "observed_ctr": 0.6507702139850585
+      }
+    },
+    "hour_18": {
+      "hit_events": 425,
+      "event_recall_at20": 0.0011984456864414905,
+      "ndcg_at20_positive_users": 0.0026628378035037457,
+      "top20_overlap_fraction_vs_midnight": 0.8544320188346085,
+      "identical_top20_order_user_fraction": 0.00011771630370806356,
+      "paired_ndcg_difference_vs_midnight": {
+        "users": 7685,
+        "mean_delta": 3.113384235677172e-05,
+        "exploratory_95pct_user_bootstrap": [
+          -0.00010070100142588874,
+          0.00017092018222670836
+        ]
+      },
+      "matched_logged_exposure_metrics": {
+        "rows": 45377,
+        "clicks": 29530,
+        "auc": 0.676737556481894,
+        "logloss": 0.5989656495418317,
+        "observed_ctr": 0.6507702139850585
+      }
+    },
+    "other_user_hour_00": {
+      "hit_events": 394,
+      "event_recall_at20": 0.0011110296481363464,
+      "ndcg_at20_positive_users": 0.002513526295359213,
+      "top20_overlap_fraction_vs_midnight": 0.4572336668628605,
+      "identical_top20_order_user_fraction": 0.016127133608004707,
+      "paired_ndcg_difference_vs_midnight": {
+        "users": 7685,
+        "mean_delta": -0.0001181776657877607,
+        "exploratory_95pct_user_bootstrap": [
+          -0.0004370286616463824,
+          0.0001885851135743751
+        ]
+      },
+      "matched_logged_exposure_metrics": {
+        "rows": 45377,
+        "clicks": 29530,
+        "auc": 0.5771454454487546,
+        "logloss": 0.661348727843049,
+        "observed_ctr": 0.6507702139850585
+      }
+    }
+  },
+  "exposure_feature_permutation": {
+    "seed": 2026,
+    "sample_rows": 100000,
+    "baseline": {
+      "rows": 100000,
+      "auc": 0.7122572212659747,
+      "logloss": 0.6200795474139155
+    },
+    "groups": {
+      "user_context": {
+        "columns": [
+          "user_ctr",
+          "log_user_count",
+          "seen_user"
+        ],
+        "runs": [
+          {
+            "seed": 2026,
+            "rows": 100000,
+            "auc": 0.6432413342214455,
+            "logloss": 0.665052593067715
+          },
+          {
+            "seed": 2027,
+            "rows": 100000,
+            "auc": 0.6458779218187681,
+            "logloss": 0.6633328912104888
+          },
+          {
+            "seed": 2028,
+            "rows": 100000,
+            "auc": 0.6440930659640576,
+            "logloss": 0.6647476208673149
+          },
+          {
+            "seed": 2029,
+            "rows": 100000,
+            "auc": 0.6456601390984174,
+            "logloss": 0.663564538554936
+          },
+          {
+            "seed": 2030,
+            "rows": 100000,
+            "auc": 0.6429265033737885,
+            "logloss": 0.6653436765621535
+          }
+        ],
+        "mean_auc_drop": 0.06789742837067925,
+        "mean_logloss_increase": 0.04432871663860616
+      },
+      "item_statistics": {
+        "columns": [
+          "item_ctr",
+          "log_item_count",
+          "seen_item"
+        ],
+        "runs": [
+          {
+            "seed": 2026,
+            "rows": 100000,
+            "auc": 0.6764505967197226,
+            "logloss": 0.6433679230168405
+          },
+          {
+            "seed": 2027,
+            "rows": 100000,
+            "auc": 0.6774617030322749,
+            "logloss": 0.6427405074619598
+          },
+          {
+            "seed": 2028,
+            "rows": 100000,
+            "auc": 0.6771362150061367,
+            "logloss": 0.6427022952712873
+          },
+          {
+            "seed": 2029,
+            "rows": 100000,
+            "auc": 0.6766136712430122,
+            "logloss": 0.6433406382895502
+          },
+          {
+            "seed": 2030,
+            "rows": 100000,
+            "auc": 0.6772463894824361,
+            "logloss": 0.6429359778313046
+          }
+        ],
+        "mean_auc_drop": 0.03527550616925812,
+        "mean_logloss_increase": 0.02293792096027303
+      },
+      "category_and_user_category": {
+        "columns": [
+          "category_ctr",
+          "user_category_ctr",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share"
+        ],
+        "runs": [
+          {
+            "seed": 2026,
+            "rows": 100000,
+            "auc": 0.6517708674173874,
+            "logloss": 0.6585862303200274
+          },
+          {
+            "seed": 2027,
+            "rows": 100000,
+            "auc": 0.6538105857769865,
+            "logloss": 0.6571605474523486
+          },
+          {
+            "seed": 2028,
+            "rows": 100000,
+            "auc": 0.6523898679316742,
+            "logloss": 0.6584210106010844
+          },
+          {
+            "seed": 2029,
+            "rows": 100000,
+            "auc": 0.6518627188393374,
+            "logloss": 0.6585754669746448
+          },
+          {
+            "seed": 2030,
+            "rows": 100000,
+            "auc": 0.6518517582678834,
+            "logloss": 0.6588524065956408
+          }
+        ],
+        "mean_auc_drop": 0.05992006161932095,
+        "mean_logloss_increase": 0.03823958497483371
+      },
+      "time": {
+        "columns": [
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos"
+        ],
+        "runs": [
+          {
+            "seed": 2026,
+            "rows": 100000,
+            "auc": 0.7117808374628188,
+            "logloss": 0.6203740370286823
+          },
+          {
+            "seed": 2027,
+            "rows": 100000,
+            "auc": 0.7119120297074362,
+            "logloss": 0.6202738168263612
+          },
+          {
+            "seed": 2028,
+            "rows": 100000,
+            "auc": 0.711979306098477,
+            "logloss": 0.6202650634665151
+          },
+          {
+            "seed": 2029,
+            "rows": 100000,
+            "auc": 0.711902504649038,
+            "logloss": 0.6203133039929498
+          },
+          {
+            "seed": 2030,
+            "rows": 100000,
+            "auc": 0.7119788658184376,
+            "logloss": 0.6202300428122223
+          }
+        ],
+        "mean_auc_drop": 0.00034651251873307753,
+        "mean_logloss_increase": 0.00021170541143067378
+      },
+      "search": {
+        "columns": [
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks"
+        ],
+        "runs": [
+          {
+            "seed": 2026,
+            "rows": 100000,
+            "auc": 0.7117259491511961,
+            "logloss": 0.6204067735222938
+          },
+          {
+            "seed": 2027,
+            "rows": 100000,
+            "auc": 0.7117459796915893,
+            "logloss": 0.6204007321938672
+          },
+          {
+            "seed": 2028,
+            "rows": 100000,
+            "auc": 0.7118781573629857,
+            "logloss": 0.620305308838877
+          },
+          {
+            "seed": 2029,
+            "rows": 100000,
+            "auc": 0.7117646381592778,
+            "logloss": 0.6204147441384292
+          },
+          {
+            "seed": 2030,
+            "rows": 100000,
+            "auc": 0.7118098361073604,
+            "logloss": 0.6203547488295645
+          }
+        ],
+        "mean_auc_drop": 0.0004723091714927685,
+        "mean_logloss_increase": 0.0002969140906908807
+      }
+    }
+  },
+  "coherent_user_swap_exposure_metrics": {
+    "actual_logged_time": {
+      "rows": 725753,
+      "auc": 0.584595791745552,
+      "logloss": 0.7022832219812056
+    },
+    "midnight": {
+      "rows": 725753,
+      "auc": 0.5829647745083656,
+      "logloss": 0.7009675573135149
+    }
+  },
+  "warnings": [
+    "Permutation breaks feature dependencies; it is sensitivity, not causal attribution.",
+    "Future hours keep counters and candidates frozen; same all-day labels, not request-level outcomes.",
+    "User replacement tests identity sensitivity on original pools, not a new recommendation policy.",
+    "Bootstrap intervals are exploratory; no best hour or parameter is selected.",
+    "No weights, source features, business configuration or final test labels changed."
+  ]
+}

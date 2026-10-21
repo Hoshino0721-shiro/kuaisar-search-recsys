@@ -1,0 +1,14 @@
+{
+  "protocol": "diagnostic_factorial_v1",
+  "sample_seed": 2026,
+  "model_seeds": [2026, 2027, 2028],
+  "sample_rows": 1000000,
+  "epochs": 5,
+  "batch_size": 4096,
+  "learning_rate": 0.001,
+  "weight_decay": 0.00001,
+  "warm_weights": [1.0, 3.0],
+  "search_enabled": [true, false],
+  "checkpoint_rule": "fixed final epoch; no validation-based checkpoint selection",
+  "candidate_archive": "artifacts/ranking_v3/diagnostics_valid_all"
+}

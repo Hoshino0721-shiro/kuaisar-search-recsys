@@ -1,0 +1,20 @@
+{
+  "enhanced_cache": "artifacts/dcn_enhancement_v3/cache",
+  "candidate_pool": "artifacts/dcn_enhancement_v1/candidates",
+  "window_ms": 1800000,
+  "pair_seed": 2026,
+  "negative_per_positive": 1,
+  "seeds": [2026, 2027, 2028],
+  "models": ["A", "B"],
+  "objectives": ["full_bce", "paired_bce", "pairwise", "mixed"],
+  "mixed_weight": 0.5,
+  "epochs": 5,
+  "batch_size": 4096,
+  "learning_rate": 0.001,
+  "weight_decay": 0.00001,
+  "selection": "minimum fixed validation-pair softplus loss; same selector for every objective; tie earliest epoch",
+  "cascade_methods": ["A_full_bce_s2026", "B_full_bce_s2026", "B_mixed_s2026", "B_pairwise_s2026"],
+  "pair_contract": "same user and fixed 30-minute exposure-time bin, distinct items; exclude within-bin contradictory-label items, collapse repeated consistent items to earliest event, one uniform observed nonclick per clicked item with replacement; only original fixed 1m training rows",
+  "scope": "pseudo-contexts, not recovered requests or slates; unclicked is observed click=0, not intrinsic dislike; feedback arrival unknown; validation development only, never test labels",
+  "default_changed": false
+}

@@ -1,0 +1,129 @@
+{
+  "split": "valid",
+  "users": 256,
+  "seed": 2026,
+  "baselines": {
+    "popular": {
+      "observed_event_recall_at_20": 0.0025120368432070338,
+      "user_period_ndcg_at_20_positive_users": 0.005952404095683512,
+      "category_diversity_at_20": 0.5,
+      "request_p95_ms": null
+    },
+    "recent": {
+      "observed_event_recall_at_20": 0.004814737282813481,
+      "user_period_ndcg_at_20_positive_users": 0.014422908208149194,
+      "category_diversity_at_20": 0.6999999999999998,
+      "request_p95_ms": null
+    },
+    "without_rerank": {
+      "observed_event_recall_at_20": 0.0009420138162026376,
+      "user_period_ndcg_at_20_positive_users": 0.0014738462724309758,
+      "category_diversity_at_20": 0.448828125,
+      "request_p95_ms": 76.07827499896302
+    },
+    "without_coarse": {
+      "observed_event_recall_at_20": 0.0007326774126020515,
+      "user_period_ndcg_at_20_positive_users": 0.001406679015752068,
+      "category_diversity_at_20": 0.64609375,
+      "request_p95_ms": 88.7031250003929
+    }
+  },
+  "scope": "fixed train-cutoff lists; observed-positive events, not request-level outcomes",
+  "max_users": 256,
+  "test_used": false,
+  "config": {
+    "coarse_model": "artifacts/ranking_v3/coarse_lr/model.pt",
+    "baseline_fine_model": "artifacts/ranking_v3/fine_dcn/model.pt",
+    "fine_model": "artifacts/dcn_enhancement_v3/models/item_only_s2027/model.pt",
+    "enhanced_data": "artifacts/dcn_enhancement_v3/cache",
+    "itemcf_index": "artifacts/itemcf_support2_300",
+    "itemcf_neighbor_limit": 300,
+    "itemcf_query_half_life_days": null,
+    "route_k": 1000,
+    "route_limits": {
+      "popular": 0,
+      "recent": 2000,
+      "itemcf": 1000
+    },
+    "route_weights": {
+      "popular": 0.0,
+      "recent": 1.0,
+      "itemcf": 1.0
+    },
+    "fusion": {
+      "method": "rrf"
+    },
+    "budget": {
+      "recall": 2000,
+      "coarse": 400,
+      "fine": 80,
+      "output": 20,
+      "category_penalty": 0.01
+    }
+  },
+  "coarse_sha256": "8013f4e58603159529e32c1f952aab120133d53170553bef61dfabc488bbbf06",
+  "fine_sha256": "f1371a9c3d6e0ea2e9a4b748a3fb7bcdf21294224cf7a89370119c41dc9acffb",
+  "stages": {
+    "recall": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 903,
+      "observed_event_recall_at_stage_budget": 0.09451538622566465,
+      "positive_retention_vs_previous": null,
+      "observed_event_recall_at_20": 0.004919405484613774,
+      "mean_candidates": 2000.0,
+      "user_period_ndcg_at_20_positive_users": 0.01406154805163625,
+      "category_diversity_at_20": 0.6351562499999999,
+      "p50_ms": 3.218449998712458,
+      "p95_ms": 34.4568249997792
+    },
+    "coarse": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 243,
+      "observed_event_recall_at_stage_budget": 0.025434373037471217,
+      "positive_retention_vs_previous": 0.2691029900332226,
+      "observed_event_recall_at_20": 0.0025120368432070338,
+      "mean_candidates": 400.0,
+      "user_period_ndcg_at_20_positive_users": 0.004893668818161405,
+      "category_diversity_at_20": 0.22539062499999998,
+      "p50_ms": 1.6901500002859393,
+      "p95_ms": 3.594425001210766
+    },
+    "fine": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 46,
+      "observed_event_recall_at_stage_budget": 0.004814737282813481,
+      "positive_retention_vs_previous": 0.18930041152263374,
+      "observed_event_recall_at_20": 0.0009420138162026376,
+      "mean_candidates": 80.0,
+      "user_period_ndcg_at_20_positive_users": 0.0014738462724309758,
+      "category_diversity_at_20": 0.448828125,
+      "p50_ms": 1.321700000517012,
+      "p95_ms": 2.962099999876955
+    },
+    "rerank": {
+      "positive_events": 9554,
+      "hit_events_at_stage_budget": 9,
+      "observed_event_recall_at_stage_budget": 0.0009420138162026376,
+      "positive_retention_vs_previous": 0.1956521739130435,
+      "observed_event_recall_at_20": 0.0009420138162026376,
+      "mean_candidates": 20.0,
+      "user_period_ndcg_at_20_positive_users": 0.0015012512151020172,
+      "category_diversity_at_20": 0.475,
+      "p50_ms": 0.4547500011540251,
+      "p95_ms": 0.685349999457685
+    }
+  },
+  "request_p50_ms": 13.798800000586198,
+  "request_p95_ms": 106.53874999934487,
+  "warmup_request_ms_excluded": 124.7719999992114,
+  "startup_ms": 29070.290800000294,
+  "timing_scope": "single-process CPU, includes retrieval and feature construction; no network or concurrency",
+  "process_memory": {
+    "available": true,
+    "WorkingSet64": 459030528,
+    "PeakWorkingSet64": 542253056,
+    "scope": "whole inference process incl Python/Torch, feature state and mapped CF pages; peak is process lifetime, not isolated model RAM"
+  },
+  "enhanced_entry_source_sha256": "016432b99493df67f6f16da3e2242f70d728cc316cddaeabece17e7c77d66da9",
+  "enhanced_data_sha256": "39ac6a09e0808f2a6498b78e0567e490c9ca8b39304fdfcc84d93d28494fe887"
+}

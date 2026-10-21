@@ -1,0 +1,23 @@
+{
+  "schema": "enhanced_dcn_v1",
+  "sample_seed": 2026,
+  "seeds": [2026, 2027, 2028],
+  "sample_rows": 1000000,
+  "minimum_frequency": 5,
+  "history_length": 30,
+  "epochs": 5,
+  "batch_size": 4096,
+  "learning_rate": 0.001,
+  "weight_decay": 0.00001,
+  "embedding_optimizer": "SparseAdam, no weight decay; lr=0.001",
+  "selection": "minimum validation LogLoss checkpoint; validation development only",
+  "recall_config": "configs/cascade_v2_recall_optimized.json",
+  "first_stage": ["A", "A_capacity", "B", "C"],
+  "id_split_if_C_worse": ["user_only", "item_only"],
+  "history_stages": ["D", "E"],
+  "parent_rule": "lowest mean validation LogLoss among B,C and any ID splits; fixed samples, no test reads",
+  "embedding_dimensions": {"user":16,"item":16,"author":8,"category":8},
+  "static_attributes": "author/category assumed static; no historical attribute timestamps",
+  "history_rule": "previous complete Beijing days, rec latest 30 events with repeats; search previous day latest 30 events with repeats; timestamp,item_id,id tie ordering",
+  "final_test_policy": "not opened; old test already viewed, no new independent test claim"
+}

@@ -13,6 +13,8 @@ function Invoke-ItemCFPython {
 }
 Push-Location $itemcfRepo
 try {
+    if (-not (Test-Path -LiteralPath $itemcfPython)) { throw 'Run scripts/setup_v2.ps1 with Python 3.12 first.' }
+    Invoke-ItemCFPython -PythonArguments @('-c', 'import sys; assert sys.version_info >= (3, 10), "Indexed ItemCF requires Python 3.10+"')
     $itemcfRoot = "artifacts/$RunName"
     if ((Test-Path -LiteralPath $itemcfRoot) -or (Test-Path -LiteralPath "experiments/$RunName")) { throw 'Choose a new RunName; existing experiments are preserved.' }
     Invoke-ItemCFPython -PythonArguments @('-m', 'src.itemcf_index', 'build', '--config', 'configs/itemcf_index_cosine.json', '--out', "$itemcfRoot/cap200")

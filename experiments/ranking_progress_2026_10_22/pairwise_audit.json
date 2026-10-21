@@ -1,0 +1,616 @@
+{
+  "passed": true,
+  "test_used": false,
+  "models": {
+    "A_full_bce_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6431718844475152,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6389380944483937,
+          "accuracy_half_ties": 0.6217020196411289
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6441180959052842,
+          "accuracy_half_ties": 0.6123284756940751
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_full_bce_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6434307561057634,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6390948127629643,
+          "accuracy_half_ties": 0.6207977027177103
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6443997978560738,
+          "accuracy_half_ties": 0.6132680920469453
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_full_bce_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6430226646552974,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6390742405243587,
+          "accuracy_half_ties": 0.6228760451206549
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6439050995785228,
+          "accuracy_half_ties": 0.6127220508456547
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_paired_bce_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6440204002609069,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6400271893541505,
+          "accuracy_half_ties": 0.6200044422585712
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6449128445989695,
+          "accuracy_half_ties": 0.6116441513314187
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_paired_bce_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6432688948808707,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6388475796698597,
+          "accuracy_half_ties": 0.6214481762942045
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6442570164249095,
+          "accuracy_half_ties": 0.6131829947168741
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_paired_bce_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6433321631468348,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6395142537088685,
+          "accuracy_half_ties": 0.6209087591819898
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6441854292879705,
+          "accuracy_half_ties": 0.6122646526965216
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_pairwise_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.64299080892448,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6389837181472172,
+          "accuracy_half_ties": 0.6219558629880535
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6438863552804766,
+          "accuracy_half_ties": 0.6130518029996809
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_pairwise_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.642656252595139,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6381439547711544,
+          "accuracy_half_ties": 0.6214323110850216
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6436647078805467,
+          "accuracy_half_ties": 0.6136333014218346
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_pairwise_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6431178553128352,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6392377026571495,
+          "accuracy_half_ties": 0.6201472291412162
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6439850322161453,
+          "accuracy_half_ties": 0.6130908059426302
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_mixed_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6433218098969253,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6392941710162434,
+          "accuracy_half_ties": 0.6210356808554521
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6442219485569551,
+          "accuracy_half_ties": 0.6123532957486792
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_mixed_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6427581493767257,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6383987390674053,
+          "accuracy_half_ties": 0.6218606717329568
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6437324357689774,
+          "accuracy_half_ties": 0.6132716377690317
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_mixed_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6430641278290007,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6392457263485735,
+          "accuracy_half_ties": 0.6208135679268931
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6439175039369069,
+          "accuracy_half_ties": 0.6121831010885367
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_full_bce_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6386060763316955,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6336964338774029,
+          "accuracy_half_ties": 0.6294125113039616
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6397033343309743,
+          "accuracy_half_ties": 0.6192319965961068
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_full_bce_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6384399236400751,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6332118469535354,
+          "accuracy_half_ties": 0.6291745331662199
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6396083486361013,
+          "accuracy_half_ties": 0.6192178137077616
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_full_bce_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6377325061412519,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6320821855658332,
+          "accuracy_half_ties": 0.6307610540844981
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6389952985966261,
+          "accuracy_half_ties": 0.6186185866751764
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_paired_bce_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6435001194183619,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6408723017439792,
+          "accuracy_half_ties": 0.6204010724881408
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6440874114647188,
+          "accuracy_half_ties": 0.6165904336418112
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_paired_bce_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6424520037598263,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6386972456511384,
+          "accuracy_half_ties": 0.6230981580492139
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6432911561845635,
+          "accuracy_half_ties": 0.616026663830089
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_paired_bce_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6423196901345211,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6382809368734255,
+          "accuracy_half_ties": 0.6222255715441608
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6432223127519735,
+          "accuracy_half_ties": 0.6164769705350495
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_pairwise_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6422966797657849,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6384258191150105,
+          "accuracy_half_ties": 0.6236613729752026
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6431617799951184,
+          "accuracy_half_ties": 0.6154026167428996
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_pairwise_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6411334772241644,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6371020308501341,
+          "accuracy_half_ties": 0.6248274658501373
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6420344668224395,
+          "accuracy_half_ties": 0.6165762507534659
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_pairwise_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6425633758052683,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6381037593368555,
+          "accuracy_half_ties": 0.6216702892227634
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6435600573129822,
+          "accuracy_half_ties": 0.6146615608268624
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_mixed_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6427295272482104,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6391861018489778,
+          "accuracy_half_ties": 0.6233361361869556
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.643521448839314,
+          "accuracy_half_ties": 0.6159699322767082
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_mixed_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6413075424360415,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6374143499094838,
+          "accuracy_half_ties": 0.6241293966460948
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6421776336254238,
+          "accuracy_half_ties": 0.616718079636918
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_mixed_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6426998229859356,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6386606028211205,
+          "accuracy_half_ties": 0.6221621107074297
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6436025499518915,
+          "accuracy_half_ties": 0.6144488175016842
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_full_mixed_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6427220344051365,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.63870355967871,
+          "accuracy_half_ties": 0.6223366280084403
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6436201249645859,
+          "accuracy_half_ties": 0.613076623054285
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_full_mixed_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6422786399734877,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6376489407971245,
+          "accuracy_half_ties": 0.6224476844727198
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6433133333351347,
+          "accuracy_half_ties": 0.61345069673439
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "A_full_mixed_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6425508203776272,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.638768204649008,
+          "accuracy_half_ties": 0.6221303802890641
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6433961987132321,
+          "accuracy_half_ties": 0.6130978973868029
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_full_mixed_s2026": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6528801213603731,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6498420754229143,
+          "accuracy_half_ties": 0.6214164458758389
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6535590954889551,
+          "accuracy_half_ties": 0.6146473779385172
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_full_mixed_s2027": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6518469951706517,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6478730384097393,
+          "accuracy_half_ties": 0.6213212546207422
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6527351363917879,
+          "accuracy_half_ties": 0.6133141864340673
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    },
+    "B_full_mixed_s2028": {
+      "checkpoint_verified": true,
+      "input_coverage_verified": true,
+      "selected_epoch_verified": true,
+      "reload_probability_max_error": 0.0,
+      "valid_pair_loss_recomputed": 0.6503743483798063,
+      "posthoc_time_matching_sensitivity": {
+        "same_timestamp": {
+          "pairs": 63031,
+          "pair_logloss": 0.6466632773376242,
+          "accuracy_half_ties": 0.6208135679268931
+        },
+        "different_timestamp": {
+          "pairs": 282030,
+          "pair_logloss": 0.6512037371641901,
+          "accuracy_half_ties": 0.6145498705811439
+        }
+      },
+      "sigmoid_saturation_rows": 0
+    }
+  },
+  "users": 8495,
+  "all_pair_labels_and_users_match": true,
+  "valid_pair_time_bins_verified": true,
+  "train_time_alignment": "pair preparation already replayed full DB/cache order; not independently replayed again here",
+  "all_model_specific_coverage_exact": true,
+  "all_per_user_sums_match": true,
+  "frozen_v1_unchanged": true,
+  "source_sha256": "244d1c32e73403cec7fa0ca657d6854da5af226b03bb7c359de6e1e569a6381e",
+  "candidate_sha256": "99abfbdb6e69d33264ae2b5c2a00031cf4edd8f984ef7e4c98054e861a73346e",
+  "pair_metadata_sha256": "7b816b1fe8baef80d5e12efa70883f52e8d0f8e40e964165f2d545525c13c966"
+}
