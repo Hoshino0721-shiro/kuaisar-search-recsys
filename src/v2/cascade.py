@@ -8,6 +8,7 @@ from collections import defaultdict
 from math import isfinite, log1p, log2
 from time import perf_counter
 from typing import Callable, Mapping, Sequence
+from src.v2.recall_fusion import select_recall
 
 
 @dataclass(frozen=True)
@@ -76,7 +77,7 @@ class Cascade:
         self.authors = authors or {}
 
     def run(self, user_id: int, timestamp_ms: int, routes: Sequence[Candidate],
-            *, exclude_items=(), route_weights=None, positives=None):
+            *, exclude_items=(), route_weights=None, fusion_policy=None, positives=None):
         start = perf_counter()
         weights = route_weights or {}
         excluded = set(exclude_items)
@@ -94,16 +95,15 @@ class Cascade:
             # One item contributes once per route, even if a provider duplicates it.
             key = (c.item_id, c.source)
             ranks[key] = min(ranks.get(key, c.rank), c.rank)
-        fused = defaultdict(float)
         sources = defaultdict(set)
+        quota_mode = (fusion_policy or {}).get('method') == 'quota'
         for (iid, source), rank in ranks.items():
             weight = float(weights.get(source, 1.0))
             if not isfinite(weight) or weight < 0:
                 raise ValueError('Route weights must be finite and nonnegative')
-            if weight:
-                fused[iid] += weight / (60 + rank)
+            if weight or quota_mode:
                 sources[iid].add(source)
-        recalled = [i for i, _ in ordered_scores(list(fused), list(fused.values()))[:self.budget.recall]]
+        recalled = select_recall(ranks, self.budget.recall, weights, fusion_policy)
         recall_ms = (perf_counter() - start) * 1000
         steps = []
 

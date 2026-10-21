@@ -9,20 +9,16 @@ import numpy as np
 from src.ctr_features import connection
 from src.v2.recommend import Backend
 from src.v2.train_rankers import sha
+from src.v2.recall_fusion import select_recall
 
 
-def fuse(routes, weights, limit, timestamp):
+def fuse(routes, weights, limit, timestamp, policy=None):
     ranks = {}
     for c in routes:
         if c.available_at_ms <= timestamp:
             key = (c.item_id, c.source)
             ranks[key] = min(ranks.get(key, c.rank), c.rank)
-    scores = defaultdict(float)
-    for (iid, source), rank in ranks.items():
-        weight = weights.get(source, 1.)
-        if weight > 0:
-            scores[iid] += weight / (60 + rank)
-    return sorted(scores, key=lambda iid: (-scores[iid], iid))[:limit]
+    return select_recall(ranks, limit, weights, policy)
 
 
 def hits(items, positive):
@@ -56,8 +52,8 @@ def evaluate(config, output, max_users):
         (backend.snapshot - 86400000, budget))]
     db.close()
     catalog = set(backend.items.tolist())
-    names = ('popular', 'recent', 'itemcf')
-    cuts = sorted({20, 100, 400, backend.route_k, budget})
+    names = tuple(backend.route_limits)
+    cuts = sorted({20, 100, 400, budget, *(n for n in backend.route_limits.values() if n)})
     groups = defaultdict(lambda: {'users': 0, 'positive_events': 0, 'catalog_positive_events': 0})
     measures = defaultdict(lambda: {'hits': Counter(), 'candidates': 0})
     exclusive = Counter()
@@ -74,11 +70,11 @@ def evaluate(config, output, max_users):
         lists = {name: [c.item_id for c in routes if c.source == name] for name in names}
         pools = {name: set(lists[name]) for name in names}
         union = set().union(*pools.values())
-        fused = fuse(routes, config.get('route_weights', {}), budget, backend.snapshot)
+        fused = fuse(routes, config.get('route_weights', {}), budget, backend.snapshot, config.get('fusion'))
         variants = {**lists, 'fused': fused, 'popular_equal_budget': popular, 'recent_equal_budget': recent}
         for name in names:
             variants['without_' + name] = fuse([c for c in routes if c.source != name],
-                                              config.get('route_weights', {}), budget, backend.snapshot)
+                                              config.get('route_weights', {}), budget, backend.snapshot, config.get('fusion'))
             others = set().union(*(pools[n] for n in names if n != name))
             exclusive[name] += hits(pools[name] - others, positive)
         for a, b in combinations(names, 2):
@@ -122,7 +118,7 @@ def evaluate(config, output, max_users):
               'leave_one_out_fused_hit_delta': {
                   name: fused_hits - measures['all/without_' + name]['hits'][budget] for name in names},
               'mean_route_jaccard': {key: value / len(users) for key, value in overlap.items()},
-              'notes': ['Route lists have at most route_k items; values beyond route_k plateau.',
+              'notes': ['Each route obeys its own route_limits override or legacy route_k; longer metric cutoffs plateau.',
                         'Equal-budget popularity comparators independently retrieve up to the fusion budget.',
                         'Exclusive hits concern pre-fusion pools; leave-one-out includes budget reallocation.',
                         'No-train-click users receive an empty ItemCF route, not a duplicated fallback.',

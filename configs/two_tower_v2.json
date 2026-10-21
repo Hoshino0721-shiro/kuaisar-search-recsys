@@ -1,0 +1,18 @@
+{
+  "seed": 2026,
+  "dimension": 64,
+  "batch_size": 512,
+  "epochs": 3,
+  "temperature": 0.1,
+  "id_dropout": 0.1,
+  "sparse_lr": 0.01,
+  "dense_lr": 0.001,
+  "use_user_id": true,
+  "use_attributes": true,
+  "use_history": true,
+  "use_search": false,
+  "mask_history_negatives": true,
+  "logq_correction": false,
+  "export_batch_size": 2048,
+  "device": "cuda"
+}

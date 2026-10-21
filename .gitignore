@@ -9,6 +9,9 @@ logs/
 *.pth
 *.ckpt
 *.safetensors
+# Small, verified v2 ranker checkpoints published for reproducibility.
+!experiments/v2_coarse_lr/model.pt
+!experiments/v2_fine_dcn/model.pt
 *.faiss
 *.parquet
 *.jsonl

@@ -12,6 +12,7 @@ from src.ctr_features import FEATURES, FeatureState
 from src.v2 import recommend
 from src.v2.train_rankers import train
 from src.itemcf_index import IndexConfig, build, read_snapshot
+from src.itemcf_index import digest
 
 
 class BackendTests(unittest.TestCase):
@@ -75,6 +76,46 @@ class BackendTests(unittest.TestCase):
                     output = indexed.run(1)
                     self.assertEqual(output['itemcf_index_version'], indexed.itemcf_index.metadata['version'])
                     self.assertTrue(output['items'])
+                    # Per-route supply is independent of the old shared limit.
+                    expanded = {**config, 'itemcf_index': str(root / 'itemcf'),
+                                'route_k': 1,
+                                'route_limits': {'popular': 0, 'recent': 3, 'itemcf': 0}}
+                    with patch.object(recommend, 'ItemCFIndex', side_effect=AssertionError('Disabled graph loaded')):
+                        limited = recommend.Backend(expanded)
+                    try:
+                        self.assertIsNone(limited.itemcf_index)
+                        self.assertFalse(hasattr(limited, 'normalized'))
+                        candidates = limited.retrieve(1)
+                        self.assertEqual(len(candidates), 3)
+                        self.assertTrue(all(c.source == 'recent' for c in candidates))
+                    finally:
+                        limited.close()
+                    tower_root=root/'tower'
+                    tower_root.mkdir()
+                    for name,value in {
+                        'items':np.asarray([1,2,3],dtype=np.int64),
+                        'users':np.asarray([1,4],dtype=np.int64),
+                        'vectors':np.eye(3,dtype=np.float32),
+                        'queries':np.asarray([[1,0,0],[1,0,0]],dtype=np.float32),
+                        'query_signal':np.asarray([True,False])}.items():
+                        np.save(tower_root/(name+'.npy'),value)
+                    meta={'status':'ready','schema_version':1,'dimension':3,'cutoff_ms':100,
+                          'manifest_sha256':digest(root/'manifest.json'),'version':'synthetic-tower',
+                          'files':{p.name:digest(p) for p in tower_root.glob('*.npy')}}
+                    (tower_root/'metadata.json').write_text(json.dumps(meta),encoding='utf-8')
+                    with self.assertRaisesRegex(ValueError,'trained exported'):
+                        recommend.Backend({**config,'route_limits':{'tower':2}})
+                    tower_backend=recommend.Backend({**config,'itemcf_index':str(root/'itemcf'),
+                        'tower_index':str(tower_root),'route_limits':{'tower':2}})
+                    try:
+                        routes=tower_backend.retrieve(1)
+                        self.assertEqual([c.item_id for c in routes if c.source=='tower'],[1,2])
+                        self.assertEqual([c for c in tower_backend.retrieve(4) if c.source=='tower'],[])
+                        result=tower_backend.run(1)
+                        self.assertEqual(result['tower_index_version'],'synthetic-tower')
+                        self.assertIn('tower',result['candidate_sources']['1'])
+                    finally:
+                        tower_backend.close()
                 finally:
                     indexed.close()
 

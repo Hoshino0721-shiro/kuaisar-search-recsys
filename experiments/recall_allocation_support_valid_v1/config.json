@@ -1,0 +1,245 @@
+{
+  "itemcf_index": "artifacts/itemcf_support2_300",
+  "itemcf_neighbor_limit": 300,
+  "budget": 2000,
+  "seed": 2026,
+  "selection_user_fraction": 0.6,
+  "variants": {
+    "legacy_rrf": {
+      "route_limits": {
+        "popular": 1000,
+        "recent": 1000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 1,
+        "recent": 2,
+        "itemcf": 1
+      }
+    },
+    "expanded_rrf": {
+      "route_limits": {
+        "popular": 1000,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 1,
+        "recent": 2,
+        "itemcf": 1
+      }
+    },
+    "recent_only": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 0
+      },
+      "weights": {
+        "popular": 0,
+        "recent": 1,
+        "itemcf": 0
+      }
+    },
+    "recent_cf_rrf_005": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0,
+        "recent": 1,
+        "itemcf": 0.05
+      }
+    },
+    "recent_cf_rrf_010": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0,
+        "recent": 1,
+        "itemcf": 0.1
+      }
+    },
+    "recent_cf_rrf_025": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0,
+        "recent": 1,
+        "itemcf": 0.25
+      }
+    },
+    "recent_cf_rrf_050": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0,
+        "recent": 1,
+        "itemcf": 0.5
+      }
+    },
+    "recent_cf_rrf_100": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0,
+        "recent": 1,
+        "itemcf": 1
+      }
+    },
+    "expanded_rrf_light": {
+      "route_limits": {
+        "popular": 1000,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0.1,
+        "recent": 1,
+        "itemcf": 0.1
+      }
+    },
+    "expanded_rrf_medium": {
+      "route_limits": {
+        "popular": 1000,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0.25,
+        "recent": 1,
+        "itemcf": 0.25
+      }
+    },
+    "quota_cf_25": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "fusion": {
+        "method": "quota",
+        "allocations": [
+          [
+            "recent",
+            1975
+          ],
+          [
+            "itemcf",
+            25
+          ]
+        ],
+        "fill_order": [
+          "recent"
+        ]
+      }
+    },
+    "quota_cf_50": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "fusion": {
+        "method": "quota",
+        "allocations": [
+          [
+            "recent",
+            1950
+          ],
+          [
+            "itemcf",
+            50
+          ]
+        ],
+        "fill_order": [
+          "recent"
+        ]
+      }
+    },
+    "quota_cf_100": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "fusion": {
+        "method": "quota",
+        "allocations": [
+          [
+            "recent",
+            1900
+          ],
+          [
+            "itemcf",
+            100
+          ]
+        ],
+        "fill_order": [
+          "recent"
+        ]
+      }
+    },
+    "quota_cf_200": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "fusion": {
+        "method": "quota",
+        "allocations": [
+          [
+            "recent",
+            1800
+          ],
+          [
+            "itemcf",
+            200
+          ]
+        ],
+        "fill_order": [
+          "recent"
+        ]
+      }
+    },
+    "quota_cf_400": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "fusion": {
+        "method": "quota",
+        "allocations": [
+          [
+            "recent",
+            1600
+          ],
+          [
+            "itemcf",
+            400
+          ]
+        ],
+        "fill_order": [
+          "recent"
+        ]
+      }
+    }
+  },
+  "stage": "follow-up of first allocation run; same declared policy grid, stronger CF graph; same reused validation day"
+}

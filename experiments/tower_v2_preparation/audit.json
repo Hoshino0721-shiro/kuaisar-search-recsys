@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "sampled_targets": 64,
+  "sampled_frozen_queries": 32,
+  "checks": [
+    "prepared file checksums match",
+    "sampled training contexts equal independent SQL prefixes",
+    "sampled query histories equal train-end SQL snapshot",
+    "no validation/test history read"
+  ],
+  "data_metadata_sha256": "b9b294f4b307ee8ba5d63c1ea996c419daa93a7ecdd4e00cb0055ecad9f66709",
+  "source_sha256": "66e64759152b305d05135bbe582785b9207133e9f317dde056078fe14fb8c4f8",
+  "scope": "sampled data correctness, not model quality or exhaustive row audit",
+  "real_model_training_run": false,
+  "test_labels_used": false
+}

@@ -1,0 +1,5 @@
+{
+  "indexes": {"balanced": "artifacts/itemcf_balanced_300", "support2": "artifacts/itemcf_support2_300"},
+  "variants": {"balanced": {"index": "balanced"}, "support2": {"index": "support2"}},
+  "contrasts": [["support2", "balanced"]]
+}

@@ -1,0 +1,61 @@
+{
+  "updated": "2026-10-21",
+  "scope": "v2 offline development; no new real neural-model training in this update",
+  "published_checkpoints": [
+    {
+      "path": "experiments/v2_coarse_lr/model.pt",
+      "kind": "coarse_lr",
+      "status": "previously_trained_not_retrained_in_this_update",
+      "bytes": 3029,
+      "sha256": "5bae0ded9d0ed61eaa44f52e96cf1e9c92e544b41fe78fd00b339c23de02a52a",
+      "feature_count": 8,
+      "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+      "feature_cache_sha256": "874b74b6bbc6d4d875175c2c86cf2abe623e4b6f5014f7236597b86b1eaa0cc1",
+      "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+      "trainer_source_sha256": "7be5d226eebe379e08292f3c881d0ba79de1842ca8ae3d2ae35b1af471f27f33",
+      "load_mode": "torch.load(map_location=cpu, weights_only=True)"
+    },
+    {
+      "path": "experiments/v2_fine_dcn/model.pt",
+      "kind": "fine_dcn",
+      "status": "previously_trained_not_retrained_in_this_update",
+      "bytes": 19621,
+      "sha256": "020b93539a196026ccb1b7da1b087f32f67cfa4a3fabef75ffc9632b7b3739a4",
+      "feature_count": 20,
+      "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+      "feature_cache_sha256": "874b74b6bbc6d4d875175c2c86cf2abe623e4b6f5014f7236597b86b1eaa0cc1",
+      "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+      "trainer_source_sha256": "7be5d226eebe379e08292f3c881d0ba79de1842ca8ae3d2ae35b1af471f27f33",
+      "load_mode": "torch.load(map_location=cpu, weights_only=True)"
+    }
+  ],
+  "unpublished_artifacts": [
+    {
+      "kind": "itemcf_index",
+      "path": "artifacts/itemcf_support2_300",
+      "status": "built_locally_not_uploaded",
+      "version": "c5e5d6daaddf007507a5",
+      "array_bytes": 2297779648,
+      "metadata": "experiments/itemcf_support_valid_all/index_metadata.json",
+      "rebuild_config": "configs/itemcf_index_support2.json"
+    },
+    {
+      "kind": "tower_v2_checkpoint_and_vector_index",
+      "status": "not_created_real_training_not_run",
+      "training_config": "configs/two_tower_v2.json"
+    },
+    {
+      "kind": "tower_v2_training_cache",
+      "status": "prepared_locally_not_uploaded",
+      "summary": "experiments/tower_v2_preparation/summary.json"
+    },
+    {
+      "kind": "raw_data_database_and_ctr_feature_state",
+      "status": "local_only_rebuild_required"
+    },
+    {
+      "kind": "v1_tower_checkpoints",
+      "status": "missing_locally_not_published_historical_reports_only"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "status": "ready",
+  "cutoff_ms": 1685289600000,
+  "created_at": "2026-10-21T07:55:09.916349+00:00",
+  "config": {
+    "neighbors": 300,
+    "max_user_items": 4000,
+    "seed_items": 30,
+    "window_days": null,
+    "user_iuf": false,
+    "popularity_alpha": 0.25,
+    "graph_half_life_days": null,
+    "query_half_life_days": null,
+    "min_cooccurrence": 2,
+    "shrinkage": 0.0,
+    "block_items": 256
+  },
+  "manifest_sha256": "84bc856e6f1ee096e9bbf285db8c7fef2ed3832c561a8baa3f16498eafdf5a8f",
+  "source_sha256": "5c7a55937d6121b875097274296ac70e8da86c756b780ec03df9f6140d470f98",
+  "catalog_size": 951625,
+  "users": 21568,
+  "retained_train_edges": 2857896,
+  "window_train_edges_before_cap": 2857896,
+  "graph_edges": 20912618,
+  "zero_neighbor_items": 650446,
+  "array_bytes": 2297779648,
+  "build_seconds": 206.8132986999699,
+  "files": {
+    "items.npy": "75629e56f50ed670df1eef8e639b417ba29a4dedb7ef1726c7a241fd5af477fb",
+    "neighbors.npy": "ae9dd4293692749643dad1847c92fee2dc87317a3374293d6a5ee5cb362023a7",
+    "seed_columns.npy": "60636fd7ef954dfdd9e84ce605552c85353ca80a4f1c75f5012583b94105eceb",
+    "seed_offsets.npy": "38c386ef22d4952a7d83653f01f21c448033494ccebb54dbca5ccfb824132935",
+    "seed_times.npy": "8c7eba3eae05f2cf008b4d1ced48d7561c07ec2de263b183f9d975ac8399eba1",
+    "similarities.npy": "b2945eec2a8ca484dfc5dcc534b826ea0f5afc575ebab427f5231bc9ce9d3e15",
+    "users.npy": "6ecb0d3c5eb75925060000fb9ba2745f9e94cd2a04ff6fbb38624b22c0cd1c98"
+  },
+  "semantics": "latest distinct rec-train clicks; per-user cap; weighted cosine; zero diagonal; row-wise TopK is directed; no embedded popularity fallback",
+  "version": "c5e5d6daaddf007507a5"
+}

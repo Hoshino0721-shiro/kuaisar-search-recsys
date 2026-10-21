@@ -17,6 +17,8 @@ from src.v2.cascade import Budget, Candidate, Cascade, observed_positive_metrics
 from src.v2.train_rankers import Ranker, sha
 from src.v2.features import coarse_features
 from src.itemcf_index import ItemCFIndex
+from src.v2.recall_fusion import route_limits, validate_policy
+from src.v2.tower_retrieval import TowerIndex
 
 
 class Backend:
@@ -25,6 +27,9 @@ class Backend:
         torch.set_num_threads(4)
         self.config = config
         self.budget = Budget(**config['budget'])
+        self.route_limits = route_limits(config)
+        if self.route_limits.get('tower',0)>0 and not config.get('tower_index'):
+            raise ValueError('Enabled tower route requires a trained exported tower_index')
         self.state = FeatureState.load(CACHE / 'state.npz')
         self.snapshot = json.loads((DATA / 'manifest.json').read_text(encoding='utf-8'))['cutoffs_ms'][0]
         state_hash = sha(CACHE / 'state.npz')
@@ -38,21 +43,45 @@ class Backend:
         self.route_k = config['route_k']
         if not isinstance(self.route_k, int) or self.route_k < 1:
             raise ValueError('route_k must be positive')
+        validate_policy(config.get('fusion'), self.budget.recall)
         db = connection()
         counts = self.state.ip
         self.popular = sorted(np.flatnonzero(counts > 0).tolist(),
-                              key=lambda i: (-counts[i], i))[:self.route_k]
+                              key=lambda i: (-counts[i], i))[:self.route_limits['popular']]
         self.recent = [r[0] for r in db.execute(
             "SELECT item_id,count(*) n FROM clean_events WHERE scene='rec' AND split='train' "
             "AND label=1 AND timestamp_ms>=? GROUP BY item_id ORDER BY n DESC,item_id LIMIT ?",
-            (self.snapshot - 86400000, self.route_k))]
+            (self.snapshot - 86400000, self.route_limits['recent']))]
         self.itemcf_index = None
+        self.tower_index = None
+        if self.route_limits.get('tower',0)>0:
+            try:
+                self.tower_index = TowerIndex(config['tower_index'],sha(DATA/'manifest.json'))
+            except Exception:
+                db.close()
+                raise
+            if (self.tower_index.metadata['cutoff_ms']!=self.snapshot
+                    or not np.array_equal(self.tower_index.items,np.flatnonzero(counts>0))):
+                self.tower_index.close()
+                db.close()
+                raise ValueError('Tower must share the current cutoff and clicked-training catalog')
+        if self.route_limits['itemcf'] == 0:
+            # A popularity-only control must not build or load a CF graph.
+            db.close()
+            self.items = np.flatnonzero(counts > 0).astype(np.int64)
+            self.user_map = {int(u): None for u in np.flatnonzero(self.state.up > 0)}
+            self.startup_ms = (perf_counter() - tick) * 1000
+            return
         if config.get('itemcf_index'):
             db.close()
-            self.itemcf_index = ItemCFIndex(config['itemcf_index'],
-                                            expected_manifest_sha256=sha(DATA / 'manifest.json'))
+            try:
+                self.itemcf_index = ItemCFIndex(config['itemcf_index'],
+                                                expected_manifest_sha256=sha(DATA / 'manifest.json'))
+            except Exception:
+                self.close()
+                raise
             if self.itemcf_index.metadata['cutoff_ms'] != self.snapshot:
-                self.itemcf_index.close()
+                self.close()
                 raise ValueError('ItemCF and ranking feature cutoffs differ')
             self.items = self.itemcf_index.items
             self.user_map = {int(u): j for j, u in enumerate(self.itemcf_index.users)}
@@ -84,22 +113,27 @@ class Backend:
 
     def retrieve(self, uid, timestamp_ms=None):
         lists = {'popular': self.popular, 'recent': self.recent}
-        if self.itemcf_index is not None:
+        limits = getattr(self, 'route_limits', dict.fromkeys(('popular', 'recent', 'itemcf'), self.route_k))
+        if limits['itemcf'] == 0:
+            lists['itemcf'] = []
+        elif self.itemcf_index is not None:
             options = {}
             if 'itemcf_query_half_life_days' in self.config:
                 options['half_life_days'] = self.config['itemcf_query_half_life_days']
             if 'itemcf_neighbor_limit' in self.config:
                 options['neighbor_limit'] = self.config['itemcf_neighbor_limit']
             lists['itemcf'] = self.itemcf_index.query(
-                uid, self.route_k, timestamp_ms, **options)['items']
+                uid, limits['itemcf'], timestamp_ms, **options)['items']
         elif uid in self.user_map:
             indices = [self.item_map[i] for i in self.seeds[uid]]
             h = csr_matrix((np.ones(len(indices)), ([0] * len(indices), indices)),
                            shape=(1, len(self.items)))
             result = ((h @ self.transposed) @ self.normalized).tocsr()
-            lists['itemcf'] = rank_sparse(result, h, self.items, self.route_k)
+            lists['itemcf'] = rank_sparse(result, h, self.items, limits['itemcf'])
         else:
             lists['itemcf'] = []
+        if getattr(self,'tower_index',None) is not None and limits.get('tower',0)>0:
+            lists['tower'] = self.tower_index.query(uid,limits['tower'],timestamp_ms)['items']
         return [Candidate(i, source, j, self.snapshot)
                 for source, items in lists.items() for j, i in enumerate(items, 1)]
 
@@ -136,18 +170,23 @@ class Backend:
         cascade = Cascade(coarse, fine, active_budget, categories=categories, authors=authors)
         # Repeat interactions remain valid labels, so history exclusion is disabled.
         result = cascade.run(uid, timestamp_ms, routes,
-                             route_weights=self.config.get('route_weights'), positives=positives)
+                             route_weights=self.config.get('route_weights'),
+                             fusion_policy=self.config.get('fusion'), positives=positives)
         result.update({'retrieval_elapsed_ms': retrieval_ms,
                        'request_elapsed_ms': retrieval_ms + result['total_elapsed_ms'],
                        'feature_snapshot_ms': self.snapshot, 'mode': 'offline_v2_cascade',
                        'historical_catalog_only': True})
         if self.itemcf_index is not None:
             result['itemcf_index_version'] = self.itemcf_index.metadata['version']
+        if self.tower_index is not None:
+            result['tower_index_version'] = self.tower_index.metadata['version']
         return result
 
     def close(self):
         if self.itemcf_index is not None:
             self.itemcf_index.close()
+        if getattr(self,'tower_index',None) is not None:
+            self.tower_index.close()
 
 
 def evaluate_valid(backend, output, max_users, compare_without_coarse=False):
@@ -165,6 +204,12 @@ def evaluate_valid(backend, output, max_users, compare_without_coarse=False):
         users.add(u)
         if label:
             positives[u][i] += 1
+    popular_control = sorted(np.flatnonzero(backend.state.ip>0).tolist(),
+                             key=lambda i:(-backend.state.ip[i],i))[:20]
+    recent_control = [r[0] for r in db.execute(
+        "SELECT item_id,count(*) n FROM clean_events WHERE scene='rec' AND split='train' "
+        "AND label=1 AND timestamp_ms>=? AND timestamp_ms<? GROUP BY item_id ORDER BY n DESC,item_id LIMIT 20",
+        (backend.snapshot-86400000,backend.snapshot))]
     db.close()
     users = sorted(users)
     if max_users and len(users) > max_users:
@@ -209,7 +254,7 @@ def evaluate_valid(backend, output, max_users, compare_without_coarse=False):
                 items = alternative['items']
                 baseline['ms'].append(alternative['request_elapsed_ms'])
             else:
-                items = (backend.popular if name == 'popular' else backend.recent)[:20]
+                items = popular_control if name == 'popular' else recent_control
             baseline['diversity'].append(diversity(items))
             quality = observed_positive_metrics(items, positives[u])
             baseline['hits'] += quality['hit_events']

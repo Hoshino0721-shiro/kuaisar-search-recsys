@@ -1,0 +1,42 @@
+{
+  "scope": "follow-up development validation, same CF graph, recent/CF supply and weights held fixed",
+  "baseline": "current_two_route",
+  "variants": {
+    "add_popular_010": {
+      "net_hit_events_vs_current": -118,
+      "recall_delta": -0.0003327449200002256,
+      "exploratory_user_bootstrap_95_interval": [
+        -0.0004465100068018173,
+        -0.00021857932429435368
+      ],
+      "check_partition_net_events": -75
+    },
+    "add_popular_025": {
+      "net_hit_events_vs_current": -305,
+      "recall_delta": -0.0008600610220344814,
+      "exploratory_user_bootstrap_95_interval": [
+        -0.0010528011048492468,
+        -0.0006815226486123926
+      ],
+      "check_partition_net_events": -141
+    },
+    "add_popular_050": {
+      "net_hit_events_vs_current": -758,
+      "recall_delta": -0.0021374631301709405,
+      "exploratory_user_bootstrap_95_interval": [
+        -0.0024162110996770714,
+        -0.001854280522963818
+      ],
+      "check_partition_net_events": -322
+    },
+    "add_popular_100": {
+      "net_hit_events_vs_current": -1589,
+      "recall_delta": -0.0044807769311894785,
+      "exploratory_user_bootstrap_95_interval": [
+        -0.004853496807422749,
+        -0.004115022292718161
+      ],
+      "check_partition_net_events": -667
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "config": {
+    "coarse_model": "experiments/v2_coarse_lr/model.pt",
+    "fine_model": "experiments/v2_fine_dcn/model.pt",
+    "itemcf_index": "artifacts/itemcf_support2_300",
+    "itemcf_neighbor_limit": 300,
+    "itemcf_query_half_life_days": null,
+    "route_k": 1000,
+    "route_limits": {
+      "popular": 0,
+      "recent": 2000,
+      "itemcf": 1000
+    },
+    "route_weights": {
+      "popular": 0.0,
+      "recent": 1.0,
+      "itemcf": 1.0
+    },
+    "fusion": {
+      "method": "rrf"
+    },
+    "budget": {
+      "recall": 2000,
+      "coarse": 400,
+      "fine": 80,
+      "output": 20,
+      "category_penalty": 0.01
+    }
+  },
+  "user_id": 20235,
+  "stage_counts": [
+    2000,
+    400,
+    80,
+    20
+  ],
+  "actual_provider_full_validation_hits": 34647,
+  "index_version": "c5e5d6daaddf007507a5",
+  "scope": "real checkpoint inference and recall consistency; no Top20 quality claim"
+}

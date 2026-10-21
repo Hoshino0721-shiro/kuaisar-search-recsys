@@ -1,0 +1,11 @@
+{
+  "neighbors": 300,
+  "max_user_items": 4000,
+  "seed_items": 30,
+  "user_iuf": false,
+  "popularity_alpha": 0.25,
+  "query_half_life_days": null,
+  "min_cooccurrence": 2,
+  "shrinkage": 0.0,
+  "block_items": 256
+}

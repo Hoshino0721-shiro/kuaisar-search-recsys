@@ -1,0 +1,536 @@
+{
+  "split": "valid",
+  "test_used": false,
+  "scope": "fixed training cutoff; user-period observed-positive event coverage",
+  "config": {
+    "itemcf_index": "artifacts/itemcf_support2_300",
+    "itemcf_neighbor_limit": 300,
+    "budget": 2000,
+    "seed": 2026,
+    "selection_user_fraction": 0.6,
+    "stage": "follow-up attribution: keep recent2000/CF1000 and their RRF weights fixed at 1/1; vary only global-popularity route weight",
+    "variants": {
+      "legacy_rrf": {
+        "route_limits": {
+          "popular": 1000,
+          "recent": 1000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 1,
+          "recent": 2,
+          "itemcf": 1
+        }
+      },
+      "recent_only": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 0
+        },
+        "weights": {
+          "popular": 0,
+          "recent": 1,
+          "itemcf": 0
+        }
+      },
+      "current_two_route": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0,
+          "recent": 1,
+          "itemcf": 1
+        }
+      },
+      "add_popular_010": {
+        "route_limits": {
+          "popular": 1000,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0.1,
+          "recent": 1,
+          "itemcf": 1
+        }
+      },
+      "add_popular_025": {
+        "route_limits": {
+          "popular": 1000,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0.25,
+          "recent": 1,
+          "itemcf": 1
+        }
+      },
+      "add_popular_050": {
+        "route_limits": {
+          "popular": 1000,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0.5,
+          "recent": 1,
+          "itemcf": 1
+        }
+      },
+      "add_popular_100": {
+        "route_limits": {
+          "popular": 1000,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 1.0,
+          "recent": 1,
+          "itemcf": 1
+        }
+      }
+    }
+  },
+  "manifest_sha256": "84bc856e6f1ee096e9bbf285db8c7fef2ed3832c561a8baa3f16498eafdf5a8f",
+  "index_version": "c5e5d6daaddf007507a5",
+  "source_sha256": "c14293a920d68322355daef1ca0660a0fd395008afa0458090c900e5b8642477",
+  "fusion_source_sha256": "bf0bec0e25de0b5cdf75f077a744214233b364618a706f9752ebb4a996abb3d1",
+  "selected_on_selection_users": "current_two_route",
+  "selection_rule": "maximum Recall@budget on seeded selection users; prefer recent_only on exact ties",
+  "catalog_positive_events": 193639,
+  "metrics": {
+    "legacy_rrf": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 30739,
+        "event_recall": 0.08668005166005877,
+        "catalog_conditional_recall": 0.15874384808845327,
+        "mean_candidates": 1778.58952324897,
+        "gained_events_vs_recent": 4289,
+        "lost_events_vs_recent": 6966
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 18772,
+        "event_recall": 0.08811366719394677,
+        "catalog_conditional_recall": 0.16062841202745023,
+        "mean_candidates": 1780.1706886403767,
+        "gained_events_vs_recent": 2593,
+        "lost_events_vs_recent": 4176
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 11967,
+        "event_recall": 0.0845228593828355,
+        "catalog_conditional_recall": 0.1558751123441835,
+        "mean_candidates": 1776.21777516186,
+        "gained_events_vs_recent": 1696,
+        "lost_events_vs_recent": 2790
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 21927,
+        "event_recall": 0.07391987378300385,
+        "catalog_conditional_recall": 0.1417214433909216,
+        "mean_candidates": 1884.9659819227609,
+        "gained_events_vs_recent": 3869,
+        "lost_events_vs_recent": 4918
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 8812,
+        "event_recall": 0.15194675311239095,
+        "catalog_conditional_recall": 0.2264131551901336,
+        "mean_candidates": 1510.0,
+        "gained_events_vs_recent": 420,
+        "lost_events_vs_recent": 2048
+      },
+      "fusion_p95_ms": 1.6848300059791654
+    },
+    "recent_only": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33416,
+        "event_recall": 0.09422884954853845,
+        "catalog_conditional_recall": 0.17256854249402237,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20355,
+        "event_recall": 0.09554409203775764,
+        "catalog_conditional_recall": 0.17417384012458714,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13061,
+        "event_recall": 0.09224977574991348,
+        "catalog_conditional_recall": 0.17012491370664165,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 22976,
+        "event_recall": 0.07745624207772593,
+        "catalog_conditional_recall": 0.14850147687097254,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 0.9597299736924468
+    },
+    "current_two_route": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 34647,
+        "event_recall": 0.0977001122309137,
+        "catalog_conditional_recall": 0.17892573293603045,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3903,
+        "lost_events_vs_recent": 2672
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 21122,
+        "event_recall": 0.09914430420149922,
+        "catalog_conditional_recall": 0.1807369123611658,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2373,
+        "lost_events_vs_recent": 1606
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13525,
+        "event_recall": 0.09552700536081309,
+        "catalog_conditional_recall": 0.17616870514373542,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1530,
+        "lost_events_vs_recent": 1066
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 24207,
+        "event_recall": 0.08160616521481162,
+        "catalog_conditional_recall": 0.15645783646481687,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3903,
+        "lost_events_vs_recent": 2672
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.7299300176091492
+    },
+    "add_popular_010": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 34529,
+        "event_recall": 0.09736736731091347,
+        "catalog_conditional_recall": 0.17831635156141068,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3937,
+        "lost_events_vs_recent": 2824
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 21079,
+        "event_recall": 0.09894246701370146,
+        "catalog_conditional_recall": 0.18036896958910204,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2392,
+        "lost_events_vs_recent": 1668
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13450,
+        "event_recall": 0.09499728074698234,
+        "catalog_conditional_recall": 0.17519179920023967,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1545,
+        "lost_events_vs_recent": 1156
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 24109,
+        "event_recall": 0.08127578953046198,
+        "catalog_conditional_recall": 0.1558244300958512,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3895,
+        "lost_events_vs_recent": 2762
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10420,
+        "event_recall": 0.17967375935441599,
+        "catalog_conditional_recall": 0.26772867420349433,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 42,
+        "lost_events_vs_recent": 62
+      },
+      "fusion_p95_ms": 2.2123299830127507
+    },
+    "add_popular_025": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 34342,
+        "event_recall": 0.09684005120887922,
+        "catalog_conditional_recall": 0.17735063701010645,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 4050,
+        "lost_events_vs_recent": 3124
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20958,
+        "event_recall": 0.09837450655501472,
+        "catalog_conditional_recall": 0.179333595742132,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2453,
+        "lost_events_vs_recent": 1850
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13384,
+        "event_recall": 0.09453112308681128,
+        "catalog_conditional_recall": 0.1743321219699634,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1597,
+        "lost_events_vs_recent": 1274
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23959,
+        "event_recall": 0.0807701124625799,
+        "catalog_conditional_recall": 0.15485493055151597,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3907,
+        "lost_events_vs_recent": 2924
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10383,
+        "event_recall": 0.17903576232024002,
+        "catalog_conditional_recall": 0.2667780061664954,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 143,
+        "lost_events_vs_recent": 200
+      },
+      "fusion_p95_ms": 2.227989968378097
+    },
+    "add_popular_050": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33889,
+        "event_recall": 0.09556264910074276,
+        "catalog_conditional_recall": 0.17501123224143897,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 4304,
+        "lost_events_vs_recent": 3831
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20686,
+        "event_recall": 0.09709776899499162,
+        "catalog_conditional_recall": 0.1770061437886126,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2594,
+        "lost_events_vs_recent": 2263
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13203,
+        "event_recall": 0.09325272101876637,
+        "catalog_conditional_recall": 0.17197452229299362,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1710,
+        "lost_events_vs_recent": 1568
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23626,
+        "event_recall": 0.07964750937188166,
+        "catalog_conditional_recall": 0.1527026415630918,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3967,
+        "lost_events_vs_recent": 3317
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10263,
+        "event_recall": 0.17696658274993965,
+        "catalog_conditional_recall": 0.26369475847893115,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 337,
+        "lost_events_vs_recent": 514
+      },
+      "fusion_p95_ms": 2.2353200241923328
+    },
+    "add_popular_100": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33058,
+        "event_recall": 0.09321933529972422,
+        "catalog_conditional_recall": 0.1707197413744132,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 4403,
+        "lost_events_vs_recent": 4761
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20200,
+        "event_recall": 0.094816539384068,
+        "catalog_conditional_recall": 0.17284753478342718,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2659,
+        "lost_events_vs_recent": 2814
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 12858,
+        "event_recall": 0.0908159877951449,
+        "catalog_conditional_recall": 0.16748075495291315,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1744,
+        "lost_events_vs_recent": 1947
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 22894,
+        "event_recall": 0.07717980528061706,
+        "catalog_conditional_recall": 0.14797148378673594,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3983,
+        "lost_events_vs_recent": 4065
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10164,
+        "event_recall": 0.17525950960444184,
+        "catalog_conditional_recall": 0.26115107913669067,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 420,
+        "lost_events_vs_recent": 696
+      },
+      "fusion_p95_ms": 2.2075199871324
+    }
+  },
+  "selected_contrasts": {
+    "recent_only": {
+      "all": {
+        "event_recall_delta": 0.0034712626823752346,
+        "exploratory_user_bootstrap_95_interval": [
+          0.0028821583437963166,
+          0.004069429995561791
+        ]
+      },
+      "selection": {
+        "event_recall_delta": 0.003600212163741592,
+        "exploratory_user_bootstrap_95_interval": [
+          0.0027955838402653915,
+          0.004383594927644963
+        ]
+      },
+      "check": {
+        "event_recall_delta": 0.0032772296108996134,
+        "exploratory_user_bootstrap_95_interval": [
+          0.0023356233395906015,
+          0.004159328883284504
+        ]
+      }
+    },
+    "legacy_rrf": {
+      "all": {
+        "event_recall_delta": 0.01102006057085493,
+        "exploratory_user_bootstrap_95_interval": [
+          0.010408526826109876,
+          0.011706550164669519
+        ]
+      },
+      "selection": {
+        "event_recall_delta": 0.011030637007552467,
+        "exploratory_user_bootstrap_95_interval": [
+          0.010212738669754015,
+          0.011877358142175526
+        ]
+      },
+      "check": {
+        "event_recall_delta": 0.011004145977977582,
+        "exploratory_user_bootstrap_95_interval": [
+          0.010028626900792216,
+          0.012129766866181021
+        ]
+      }
+    }
+  },
+  "cf_query_p95_ms": 0.8369899704121051,
+  "elapsed_seconds": 142.8038036999642,
+  "notes": [
+    "All variants declared before this run; no test labels or neural training.",
+    "Check users are an internal consistency check on a previously inspected validation day, not independent temporal evidence.",
+    "Bootstrap after model selection is exploratory; no multiple-comparison correction.",
+    "Timing includes Python allocation overhead, single process CPU; no network/concurrency.",
+    "All variants share the same item catalog and cutoff; no new items introduced."
+  ]
+}

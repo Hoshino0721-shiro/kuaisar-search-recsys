@@ -1,0 +1,94 @@
+{
+  "itemcf_index": "artifacts/itemcf_support2_300",
+  "itemcf_neighbor_limit": 300,
+  "budget": 2000,
+  "seed": 2026,
+  "selection_user_fraction": 0.6,
+  "stage": "follow-up attribution: keep recent2000/CF1000 and their RRF weights fixed at 1/1; vary only global-popularity route weight",
+  "variants": {
+    "legacy_rrf": {
+      "route_limits": {
+        "popular": 1000,
+        "recent": 1000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 1,
+        "recent": 2,
+        "itemcf": 1
+      }
+    },
+    "recent_only": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 0
+      },
+      "weights": {
+        "popular": 0,
+        "recent": 1,
+        "itemcf": 0
+      }
+    },
+    "current_two_route": {
+      "route_limits": {
+        "popular": 0,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0,
+        "recent": 1,
+        "itemcf": 1
+      }
+    },
+    "add_popular_010": {
+      "route_limits": {
+        "popular": 1000,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0.1,
+        "recent": 1,
+        "itemcf": 1
+      }
+    },
+    "add_popular_025": {
+      "route_limits": {
+        "popular": 1000,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0.25,
+        "recent": 1,
+        "itemcf": 1
+      }
+    },
+    "add_popular_050": {
+      "route_limits": {
+        "popular": 1000,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 0.5,
+        "recent": 1,
+        "itemcf": 1
+      }
+    },
+    "add_popular_100": {
+      "route_limits": {
+        "popular": 1000,
+        "recent": 2000,
+        "itemcf": 1000
+      },
+      "weights": {
+        "popular": 1.0,
+        "recent": 1,
+        "itemcf": 1
+      }
+    }
+  }
+}

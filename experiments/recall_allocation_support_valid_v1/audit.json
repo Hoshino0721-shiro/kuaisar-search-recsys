@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "users": 8495,
+  "policies_replayed": [
+    "recent_only",
+    "legacy_rrf",
+    "expanded_rrf",
+    "recent_cf_rrf_100"
+  ],
+  "metrics_sha256": "8affc45f029e943901ecbbd4ec4e6b31759294ba782a11d34b7e7fdc5afff816",
+  "source_sha256": "71dc97e27bec71b99334a73cc3749da7439fcc842cca55b24e62fd73b1c2959f",
+  "checks": [
+    "all per-user hit-vector totals and partitions match report",
+    "gained minus lost equals net hit difference for every variant/group",
+    "independent policy replay matches every user for controls and selected variant",
+    "candidate uniqueness and budget respected",
+    "data/index versions match"
+  ],
+  "test_labels_used": false
+}

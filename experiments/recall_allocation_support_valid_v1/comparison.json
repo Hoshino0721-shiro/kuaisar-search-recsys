@@ -1,0 +1,12 @@
+{
+  "old": "balanced L300 min_common_users=1; original 1000/1000/1000 RRF 1/2/1",
+  "new": "support2 L300; recent2000/CF1000 RRF 1/1; output2000",
+  "net_hit_events": 5117,
+  "event_recall_delta": 0.014429286064755546,
+  "relative_recall_gain": 0.1732814087368777,
+  "exploratory_user_bootstrap_95_interval": [
+    0.01376073198427139,
+    0.015157397487823292
+  ],
+  "scope": "paired development validation users; both CF graph and allocation changed; not independent test"
+}

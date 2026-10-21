@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "index_version": "c5e5d6daaddf007507a5",
+  "sampled_rows": 512,
+  "checked_edges": 24602,
+  "seed": 2026,
+  "checks": [
+    "sampled edges have required independent binary common-user count",
+    "scores match count / (item degrees product)^alpha",
+    "no self-edge or duplicate neighbor; row budget respected"
+  ],
+  "scope": "sampled edge validity, not exhaustive graph or independent temporal quality",
+  "test_labels_used": false,
+  "source_sha256": "5737bf53adc123c40aec7bf4959c34e4b2675c6e86c24e35a71396b6367e0558"
+}

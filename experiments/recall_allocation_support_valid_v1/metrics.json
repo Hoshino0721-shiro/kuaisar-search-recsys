@@ -1,0 +1,1111 @@
+{
+  "split": "valid",
+  "test_used": false,
+  "scope": "fixed training cutoff; user-period observed-positive event coverage",
+  "config": {
+    "itemcf_index": "artifacts/itemcf_support2_300",
+    "itemcf_neighbor_limit": 300,
+    "budget": 2000,
+    "seed": 2026,
+    "selection_user_fraction": 0.6,
+    "variants": {
+      "legacy_rrf": {
+        "route_limits": {
+          "popular": 1000,
+          "recent": 1000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 1,
+          "recent": 2,
+          "itemcf": 1
+        }
+      },
+      "expanded_rrf": {
+        "route_limits": {
+          "popular": 1000,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 1,
+          "recent": 2,
+          "itemcf": 1
+        }
+      },
+      "recent_only": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 0
+        },
+        "weights": {
+          "popular": 0,
+          "recent": 1,
+          "itemcf": 0
+        }
+      },
+      "recent_cf_rrf_005": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0,
+          "recent": 1,
+          "itemcf": 0.05
+        }
+      },
+      "recent_cf_rrf_010": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0,
+          "recent": 1,
+          "itemcf": 0.1
+        }
+      },
+      "recent_cf_rrf_025": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0,
+          "recent": 1,
+          "itemcf": 0.25
+        }
+      },
+      "recent_cf_rrf_050": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0,
+          "recent": 1,
+          "itemcf": 0.5
+        }
+      },
+      "recent_cf_rrf_100": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0,
+          "recent": 1,
+          "itemcf": 1
+        }
+      },
+      "expanded_rrf_light": {
+        "route_limits": {
+          "popular": 1000,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0.1,
+          "recent": 1,
+          "itemcf": 0.1
+        }
+      },
+      "expanded_rrf_medium": {
+        "route_limits": {
+          "popular": 1000,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "weights": {
+          "popular": 0.25,
+          "recent": 1,
+          "itemcf": 0.25
+        }
+      },
+      "quota_cf_25": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "fusion": {
+          "method": "quota",
+          "allocations": [
+            [
+              "recent",
+              1975
+            ],
+            [
+              "itemcf",
+              25
+            ]
+          ],
+          "fill_order": [
+            "recent"
+          ]
+        }
+      },
+      "quota_cf_50": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "fusion": {
+          "method": "quota",
+          "allocations": [
+            [
+              "recent",
+              1950
+            ],
+            [
+              "itemcf",
+              50
+            ]
+          ],
+          "fill_order": [
+            "recent"
+          ]
+        }
+      },
+      "quota_cf_100": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "fusion": {
+          "method": "quota",
+          "allocations": [
+            [
+              "recent",
+              1900
+            ],
+            [
+              "itemcf",
+              100
+            ]
+          ],
+          "fill_order": [
+            "recent"
+          ]
+        }
+      },
+      "quota_cf_200": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "fusion": {
+          "method": "quota",
+          "allocations": [
+            [
+              "recent",
+              1800
+            ],
+            [
+              "itemcf",
+              200
+            ]
+          ],
+          "fill_order": [
+            "recent"
+          ]
+        }
+      },
+      "quota_cf_400": {
+        "route_limits": {
+          "popular": 0,
+          "recent": 2000,
+          "itemcf": 1000
+        },
+        "fusion": {
+          "method": "quota",
+          "allocations": [
+            [
+              "recent",
+              1600
+            ],
+            [
+              "itemcf",
+              400
+            ]
+          ],
+          "fill_order": [
+            "recent"
+          ]
+        }
+      }
+    },
+    "stage": "follow-up of first allocation run; same declared policy grid, stronger CF graph; same reused validation day"
+  },
+  "manifest_sha256": "84bc856e6f1ee096e9bbf285db8c7fef2ed3832c561a8baa3f16498eafdf5a8f",
+  "index_version": "c5e5d6daaddf007507a5",
+  "source_sha256": "c14293a920d68322355daef1ca0660a0fd395008afa0458090c900e5b8642477",
+  "fusion_source_sha256": "bf0bec0e25de0b5cdf75f077a744214233b364618a706f9752ebb4a996abb3d1",
+  "selected_on_selection_users": "recent_cf_rrf_100",
+  "selection_rule": "maximum Recall@budget on seeded selection users; prefer recent_only on exact ties",
+  "catalog_positive_events": 193639,
+  "metrics": {
+    "legacy_rrf": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 30739,
+        "event_recall": 0.08668005166005877,
+        "catalog_conditional_recall": 0.15874384808845327,
+        "mean_candidates": 1778.58952324897,
+        "gained_events_vs_recent": 4289,
+        "lost_events_vs_recent": 6966
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 18772,
+        "event_recall": 0.08811366719394677,
+        "catalog_conditional_recall": 0.16062841202745023,
+        "mean_candidates": 1780.1706886403767,
+        "gained_events_vs_recent": 2593,
+        "lost_events_vs_recent": 4176
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 11967,
+        "event_recall": 0.0845228593828355,
+        "catalog_conditional_recall": 0.1558751123441835,
+        "mean_candidates": 1776.21777516186,
+        "gained_events_vs_recent": 1696,
+        "lost_events_vs_recent": 2790
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 21927,
+        "event_recall": 0.07391987378300385,
+        "catalog_conditional_recall": 0.1417214433909216,
+        "mean_candidates": 1884.9659819227609,
+        "gained_events_vs_recent": 3869,
+        "lost_events_vs_recent": 4918
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 8812,
+        "event_recall": 0.15194675311239095,
+        "catalog_conditional_recall": 0.2264131551901336,
+        "mean_candidates": 1510.0,
+        "gained_events_vs_recent": 420,
+        "lost_events_vs_recent": 2048
+      },
+      "fusion_p95_ms": 1.776399981463328
+    },
+    "expanded_rrf": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33596,
+        "event_recall": 0.09473642654514898,
+        "catalog_conditional_recall": 0.1734981073027644,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3067,
+        "lost_events_vs_recent": 2887
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20480,
+        "event_recall": 0.09613082804879766,
+        "catalog_conditional_recall": 0.17524344120616775,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1837,
+        "lost_events_vs_recent": 1712
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13116,
+        "event_recall": 0.0926382404667227,
+        "catalog_conditional_recall": 0.17084131139853856,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1230,
+        "lost_events_vs_recent": 1175
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23333,
+        "event_recall": 0.0786597534992853,
+        "catalog_conditional_recall": 0.15080888578649035,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2730,
+        "lost_events_vs_recent": 2373
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10263,
+        "event_recall": 0.17696658274993965,
+        "catalog_conditional_recall": 0.26369475847893115,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 337,
+        "lost_events_vs_recent": 514
+      },
+      "fusion_p95_ms": 2.2612899891100824
+    },
+    "recent_only": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33416,
+        "event_recall": 0.09422884954853845,
+        "catalog_conditional_recall": 0.17256854249402237,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20355,
+        "event_recall": 0.09554409203775764,
+        "catalog_conditional_recall": 0.17417384012458714,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13061,
+        "event_recall": 0.09224977574991348,
+        "catalog_conditional_recall": 0.17012491370664165,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 22976,
+        "event_recall": 0.07745624207772593,
+        "catalog_conditional_recall": 0.14850147687097254,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.0029600118286905
+    },
+    "recent_cf_rrf_005": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33501,
+        "event_recall": 0.09446853868582676,
+        "catalog_conditional_recall": 0.17300750365370612,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 116,
+        "lost_events_vs_recent": 31
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20406,
+        "event_recall": 0.09578348033026196,
+        "catalog_conditional_recall": 0.17461023736587203,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 72,
+        "lost_events_vs_recent": 21
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13095,
+        "event_recall": 0.09248991757485009,
+        "catalog_conditional_recall": 0.17056777773435974,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 44,
+        "lost_events_vs_recent": 10
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23061,
+        "event_recall": 0.07774279241619246,
+        "catalog_conditional_recall": 0.14905085994609582,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 116,
+        "lost_events_vs_recent": 31
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.7575599951669572
+    },
+    "recent_cf_rrf_010": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33705,
+        "event_recall": 0.09504379261531867,
+        "catalog_conditional_recall": 0.1740610104369471,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 477,
+        "lost_events_vs_recent": 188
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20540,
+        "event_recall": 0.09641246133409687,
+        "catalog_conditional_recall": 0.17575684972532643,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 298,
+        "lost_events_vs_recent": 113
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13165,
+        "event_recall": 0.09298432721442546,
+        "catalog_conditional_recall": 0.17147955661495579,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 179,
+        "lost_events_vs_recent": 75
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23265,
+        "event_recall": 0.07843051322851209,
+        "catalog_conditional_recall": 0.15036937932639172,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 477,
+        "lost_events_vs_recent": 188
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.6992299992125481
+    },
+    "recent_cf_rrf_025": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 34051,
+        "event_recall": 0.09601946839769222,
+        "catalog_conditional_recall": 0.1758478405693068,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1374,
+        "lost_events_vs_recent": 739
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20716,
+        "event_recall": 0.09723858563764123,
+        "catalog_conditional_recall": 0.17726284804819195,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 813,
+        "lost_events_vs_recent": 452
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13335,
+        "event_recall": 0.0941850363391085,
+        "catalog_conditional_recall": 0.17369387675354617,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 561,
+        "lost_events_vs_recent": 287
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23611,
+        "event_recall": 0.07959694166509344,
+        "catalog_conditional_recall": 0.15260569160865828,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1374,
+        "lost_events_vs_recent": 739
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.741299987770617
+    },
+    "recent_cf_rrf_050": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 34401,
+        "event_recall": 0.09700642366887932,
+        "catalog_conditional_recall": 0.17765532769741632,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2793,
+        "lost_events_vs_recent": 1808
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20950,
+        "event_recall": 0.09833695545030816,
+        "catalog_conditional_recall": 0.17926514127291085,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1698,
+        "lost_events_vs_recent": 1103
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13451,
+        "event_recall": 0.09500434374183342,
+        "catalog_conditional_recall": 0.1752048246128196,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1095,
+        "lost_events_vs_recent": 705
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23961,
+        "event_recall": 0.080776854823485,
+        "catalog_conditional_recall": 0.1548678572121071,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2793,
+        "lost_events_vs_recent": 1808
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.7446999729145318
+    },
+    "recent_cf_rrf_100": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 34647,
+        "event_recall": 0.0977001122309137,
+        "catalog_conditional_recall": 0.17892573293603045,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3903,
+        "lost_events_vs_recent": 2672
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 21122,
+        "event_recall": 0.09914430420149922,
+        "catalog_conditional_recall": 0.1807369123611658,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2373,
+        "lost_events_vs_recent": 1606
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13525,
+        "event_recall": 0.09552700536081309,
+        "catalog_conditional_recall": 0.17616870514373542,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1530,
+        "lost_events_vs_recent": 1066
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 24207,
+        "event_recall": 0.08160616521481162,
+        "catalog_conditional_recall": 0.15645783646481687,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 3903,
+        "lost_events_vs_recent": 2672
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.7447600141167638
+    },
+    "expanded_rrf_light": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33577,
+        "event_recall": 0.09468284897328454,
+        "catalog_conditional_recall": 0.17339998657295277,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 617,
+        "lost_events_vs_recent": 456
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20469,
+        "event_recall": 0.09607919527982614,
+        "catalog_conditional_recall": 0.17514931631098865,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 382,
+        "lost_events_vs_recent": 268
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13108,
+        "event_recall": 0.09258173650791408,
+        "catalog_conditional_recall": 0.170737108097899,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 235,
+        "lost_events_vs_recent": 188
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23157,
+        "event_recall": 0.07806642573963699,
+        "catalog_conditional_recall": 0.14967133965447035,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 575,
+        "lost_events_vs_recent": 394
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10420,
+        "event_recall": 0.17967375935441599,
+        "catalog_conditional_recall": 0.26772867420349433,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 42,
+        "lost_events_vs_recent": 62
+      },
+      "fusion_p95_ms": 2.253849990665912
+    },
+    "expanded_rrf_medium": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33704,
+        "event_recall": 0.09504097274311528,
+        "catalog_conditional_recall": 0.17405584618800965,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1646,
+        "lost_events_vs_recent": 1358
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20527,
+        "event_recall": 0.09635144078894871,
+        "catalog_conditional_recall": 0.17564561121284206,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 980,
+        "lost_events_vs_recent": 808
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13177,
+        "event_recall": 0.09306908315263838,
+        "catalog_conditional_recall": 0.1716358615659151,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 666,
+        "lost_events_vs_recent": 550
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23321,
+        "event_recall": 0.07861929933385474,
+        "catalog_conditional_recall": 0.15073132582294352,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1503,
+        "lost_events_vs_recent": 1158
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10383,
+        "event_recall": 0.17903576232024002,
+        "catalog_conditional_recall": 0.2667780061664954,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 143,
+        "lost_events_vs_recent": 200
+      },
+      "fusion_p95_ms": 2.2642599942628294
+    },
+    "quota_cf_25": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33518,
+        "event_recall": 0.09451647651328442,
+        "catalog_conditional_recall": 0.17309529588564287,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 223,
+        "lost_events_vs_recent": 121
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20425,
+        "event_recall": 0.09587266420394006,
+        "catalog_conditional_recall": 0.17477281673027228,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 140,
+        "lost_events_vs_recent": 70
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13093,
+        "event_recall": 0.09247579158514793,
+        "catalog_conditional_recall": 0.17054172690919986,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 83,
+        "lost_events_vs_recent": 51
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23078,
+        "event_recall": 0.07780010248388576,
+        "catalog_conditional_recall": 0.14916073656112047,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 223,
+        "lost_events_vs_recent": 121
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.3116300164256245
+    },
+    "quota_cf_50": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33564,
+        "event_recall": 0.09464619063464044,
+        "catalog_conditional_recall": 0.17333285133676585,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 392,
+        "lost_events_vs_recent": 244
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20450,
+        "event_recall": 0.09599001140614806,
+        "catalog_conditional_recall": 0.1749867369465884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 249,
+        "lost_events_vs_recent": 154
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13114,
+        "event_recall": 0.09262411447702054,
+        "catalog_conditional_recall": 0.17081526057337867,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 143,
+        "lost_events_vs_recent": 90
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23124,
+        "event_recall": 0.07795517678470293,
+        "catalog_conditional_recall": 0.1494580497547166,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 392,
+        "lost_events_vs_recent": 244
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.2721600243821738
+    },
+    "quota_cf_100": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 33751,
+        "event_recall": 0.0951735067366747,
+        "catalog_conditional_recall": 0.17429856588807008,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 817,
+        "lost_events_vs_recent": 482
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20556,
+        "event_recall": 0.09648756354351,
+        "catalog_conditional_recall": 0.17589375866376877,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 503,
+        "lost_events_vs_recent": 302
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13195,
+        "event_recall": 0.09319621705995776,
+        "catalog_conditional_recall": 0.17187031899235408,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 314,
+        "lost_events_vs_recent": 180
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23311,
+        "event_recall": 0.07858558752932927,
+        "catalog_conditional_recall": 0.15066669251998785,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 817,
+        "lost_events_vs_recent": 482
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.2607299955561757
+    },
+    "quota_cf_200": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 34025,
+        "event_recall": 0.09594615172040404,
+        "catalog_conditional_recall": 0.17571357009693295,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1505,
+        "lost_events_vs_recent": 896
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20709,
+        "event_recall": 0.09720572842102299,
+        "catalog_conditional_recall": 0.17720295038762343,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 908,
+        "lost_events_vs_recent": 554
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13316,
+        "event_recall": 0.09405083943693805,
+        "catalog_conditional_recall": 0.17344639391452724,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 597,
+        "lost_events_vs_recent": 342
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23585,
+        "event_recall": 0.07950929097332722,
+        "catalog_conditional_recall": 0.1524376450209735,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1505,
+        "lost_events_vs_recent": 896
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.256600022315979
+    },
+    "quota_cf_400": {
+      "all": {
+        "users": 8495,
+        "positive_events": 354626,
+        "hit_events": 34297,
+        "event_recall": 0.09671315695972658,
+        "catalog_conditional_recall": 0.17711824580792093,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2643,
+        "lost_events_vs_recent": 1762
+      },
+      "selection": {
+        "users": 5097,
+        "positive_events": 213043,
+        "hit_events": 20875,
+        "event_recall": 0.09798491384368414,
+        "catalog_conditional_recall": 0.1786233806239625,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1605,
+        "lost_events_vs_recent": 1085
+      },
+      "check": {
+        "users": 3398,
+        "positive_events": 141583,
+        "hit_events": 13422,
+        "event_recall": 0.09479951689115218,
+        "catalog_conditional_recall": 0.17482708764800126,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 1038,
+        "lost_events_vs_recent": 677
+      },
+      "has_train_clicks": {
+        "users": 6085,
+        "positive_events": 296632,
+        "hit_events": 23857,
+        "event_recall": 0.08042625205642008,
+        "catalog_conditional_recall": 0.15419567086136804,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 2643,
+        "lost_events_vs_recent": 1762
+      },
+      "no_train_clicks": {
+        "users": 2410,
+        "positive_events": 57994,
+        "hit_events": 10440,
+        "event_recall": 0.1800186226161327,
+        "catalog_conditional_recall": 0.2682425488180884,
+        "mean_candidates": 2000.0,
+        "gained_events_vs_recent": 0,
+        "lost_events_vs_recent": 0
+      },
+      "fusion_p95_ms": 1.2746300431899726
+    }
+  },
+  "selected_contrasts": {
+    "recent_only": {
+      "all": {
+        "event_recall_delta": 0.0034712626823752346,
+        "exploratory_user_bootstrap_95_interval": [
+          0.0028821583437963166,
+          0.004069429995561791
+        ]
+      },
+      "selection": {
+        "event_recall_delta": 0.003600212163741592,
+        "exploratory_user_bootstrap_95_interval": [
+          0.0027955838402653915,
+          0.004383594927644963
+        ]
+      },
+      "check": {
+        "event_recall_delta": 0.0032772296108996134,
+        "exploratory_user_bootstrap_95_interval": [
+          0.0023356233395906015,
+          0.004159328883284504
+        ]
+      }
+    },
+    "legacy_rrf": {
+      "all": {
+        "event_recall_delta": 0.01102006057085493,
+        "exploratory_user_bootstrap_95_interval": [
+          0.010408526826109876,
+          0.011706550164669519
+        ]
+      },
+      "selection": {
+        "event_recall_delta": 0.011030637007552467,
+        "exploratory_user_bootstrap_95_interval": [
+          0.010212738669754015,
+          0.011877358142175526
+        ]
+      },
+      "check": {
+        "event_recall_delta": 0.011004145977977582,
+        "exploratory_user_bootstrap_95_interval": [
+          0.010028626900792216,
+          0.012129766866181021
+        ]
+      }
+    }
+  },
+  "cf_query_p95_ms": 0.866999983554706,
+  "elapsed_seconds": 232.3280665000202,
+  "notes": [
+    "All variants declared before this run; no test labels or neural training.",
+    "Check users are an internal consistency check on a previously inspected validation day, not independent temporal evidence.",
+    "Bootstrap after model selection is exploratory; no multiple-comparison correction.",
+    "Timing includes Python allocation overhead, single process CPU; no network/concurrency.",
+    "All variants share the same item catalog and cutoff; no new items introduced."
+  ]
+}

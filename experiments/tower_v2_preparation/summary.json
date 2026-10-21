@@ -1,0 +1,30 @@
+{
+  "samples": 2860013,
+  "contexts": 55990,
+  "cutoff_ms": 1685289600000,
+  "cardinalities": {
+    "user": 21570,
+    "item": 951627,
+    "author": 401373,
+    "category": 38,
+    "type": 4
+  },
+  "history_rule": "previous complete Beijing days; latest distinct recommendation clicks, previous day search clicks only",
+  "query_rule": "frozen training-end history; no validation/test updates",
+  "search_seed_rows": 313588,
+  "search_known_seed_rows": 18258,
+  "manifest_sha256": "84bc856e6f1ee096e9bbf285db8c7fef2ed3832c561a8baa3f16498eafdf5a8f",
+  "status": "prepared_only_not_trained",
+  "training_status": "real-data model training not run at user request",
+  "distinct_users": 21568,
+  "distinct_items": 951625,
+  "target_events_with_rec_history": 2124244,
+  "target_events_with_search_history": 150711,
+  "query_users": 22170,
+  "query_users_with_rec_history": 21568,
+  "query_users_with_search_history": 1876,
+  "known_search_seed_ratio": 0.05822289118206054,
+  "prepared_bytes": 95996888,
+  "data_metadata_sha256": "b9b294f4b307ee8ba5d63c1ea996c419daa93a7ecdd4e00cb0055ecad9f66709",
+  "test_labels_used": false
+}
