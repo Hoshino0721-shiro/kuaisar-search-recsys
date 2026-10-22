@@ -1,0 +1,55 @@
+{
+  "rows": 5752167,
+  "unique_sample_rows": 1000000,
+  "repeat_multiplicity_min": 5,
+  "repeat_multiplicity_max": 6,
+  "days": [
+    {
+      "cutoff_ms": 1684684800000,
+      "rows": 469998,
+      "index_version": null
+    },
+    {
+      "cutoff_ms": 1684771200000,
+      "rows": 768819,
+      "index_version": "81284aaa0073dd316d9e"
+    },
+    {
+      "cutoff_ms": 1684857600000,
+      "rows": 515743,
+      "index_version": "31d504601373706c7423"
+    },
+    {
+      "cutoff_ms": 1684944000000,
+      "rows": 709386,
+      "index_version": "5faa1ac7a712e1a9d16f"
+    },
+    {
+      "cutoff_ms": 1685030400000,
+      "rows": 897198,
+      "index_version": "515c4399abc8c6ecebdc"
+    },
+    {
+      "cutoff_ms": 1685116800000,
+      "rows": 1226428,
+      "index_version": "6509be75d547da48d6c1"
+    },
+    {
+      "cutoff_ms": 1685203200000,
+      "rows": 1164595,
+      "index_version": "2c55bbd12a7047a58b26"
+    }
+  ],
+  "active_columns_sample_replay_max_error": 0.0,
+  "inactive_T_columns": true,
+  "files": {
+    "full_mean.npy": "d63490f2b758a27b6d441a288be5f7bb655794d69c36f67de75c13f364105393",
+    "full_std.npy": "026ef98959f127621f7bb439762939b4fd85c79024e72df16266aa02174436fa",
+    "full_X.npy": "f8b1c8a3a7a260ff671937996597929741c89284de1d0226354bab75de46fc9e",
+    "repeat_indices.npy": "2f98b8d38a9c01462067a4d69982d9698d423c2361fcfd534261f46784b5f907",
+    "sample_repeat_X.npy": "1e66e94c25d0ce5927b07cf45d54fb0998b823f0cc88699b4892d943b0e884f8",
+    "sample_repeat_y.npy": "ff5814c85f7906d0f743f6da60fe0e6a5618cb1f1d80643c07a891603afe5f15"
+  },
+  "test_used": false,
+  "status": "ready"
+}

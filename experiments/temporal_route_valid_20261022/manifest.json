@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-22",
+  "scope": "local validation-development factorial; no default replacement or new final test",
+  "tests_passed": 105,
+  "real_model_runs": 12,
+  "real_training_exposures": 1000000,
+  "files": {
+    "audit.json": {
+      "sha256": "ad94bb9d13a7c376bd2b5814ca6c6c39019cffb789f65e848411d3dc3947778e",
+      "bytes": 1753
+    },
+    "metrics.json": {
+      "sha256": "fe5f0afd8cbb4c60ee1a4091532eb2e1f1f76541c4678c012d26cad77ee59c2a",
+      "bytes": 154519
+    },
+    "preparation.json": {
+      "sha256": "958b5bc6dfae32f8d222d9e2177d8b2d2499c57961d4ed6182057aea10879e07",
+      "bytes": 7378
+    },
+    "protocol.json": {
+      "sha256": "fa63ba920c904fa6549ceb288c4bd4bd1b55b595f897ec1c71d2901c8074407a",
+      "bytes": 1919
+    },
+    "training.json": {
+      "sha256": "64dce05ce85427617b6bc308707759269748e4b43c1054e720f83b038508405e",
+      "bytes": 125625
+    }
+  },
+  "local_checkpoints": {
+    "base_s2026": {
+      "path": "artifacts/temporal_route_20261022/models/base_s2026/model.pt",
+      "sha256": "b27f1fcb893ff8b81e73c0f7fdc9df6d67020f822c7083a98b6b78cb0447d319",
+      "bytes": 24293
+    },
+    "base_s2027": {
+      "path": "artifacts/temporal_route_20261022/models/base_s2027/model.pt",
+      "sha256": "bf3d64ce1774ad2160bef744011b63b2923f6924a31c9ceb47b310c68db8734c",
+      "bytes": 24293
+    },
+    "base_s2028": {
+      "path": "artifacts/temporal_route_20261022/models/base_s2028/model.pt",
+      "sha256": "9ac4a366c2384a6ba2651712f39eb85cbaabc98a464d9ad9ed9ec6b3701d6c2f",
+      "bytes": 24293
+    },
+    "T_s2026": {
+      "path": "artifacts/temporal_route_20261022/models/T_s2026/model.pt",
+      "sha256": "49ef71de29242fe3e0e2699d78b8b9cc8617c407698d5f194b8e080f9c248192",
+      "bytes": 24293
+    },
+    "T_s2027": {
+      "path": "artifacts/temporal_route_20261022/models/T_s2027/model.pt",
+      "sha256": "88fc24eb52c818c0640b7a5c1a0f30cd66b08c74a62485b9deea4d1e9f7e090c",
+      "bytes": 24293
+    },
+    "T_s2028": {
+      "path": "artifacts/temporal_route_20261022/models/T_s2028/model.pt",
+      "sha256": "d445e1824b0a5ca536ca2d98d589c309a2389a4bac613446fbcd16a174cc2285",
+      "bytes": 24293
+    },
+    "R_s2026": {
+      "path": "artifacts/temporal_route_20261022/models/R_s2026/model.pt",
+      "sha256": "8b9e1e6985f8e76f8e517be631423d21a66aa6ab84ee236c981291af61521013",
+      "bytes": 24293
+    },
+    "R_s2027": {
+      "path": "artifacts/temporal_route_20261022/models/R_s2027/model.pt",
+      "sha256": "3f166ca6b45d6f2dd67faec0340f7fd8e40309f3b9944724184cec6212adfc68",
+      "bytes": 24293
+    },
+    "R_s2028": {
+      "path": "artifacts/temporal_route_20261022/models/R_s2028/model.pt",
+      "sha256": "343c3bab24ca4eba9281af1e8119ff2ae00a8cfc9b9006ea5fa8541c10334f7d",
+      "bytes": 24293
+    },
+    "TR_s2026": {
+      "path": "artifacts/temporal_route_20261022/models/TR_s2026/model.pt",
+      "sha256": "21365c2b01af01ce9760879db52afeb73638ecfff394aeeea4ef9a0b4c2cc967",
+      "bytes": 24293
+    },
+    "TR_s2027": {
+      "path": "artifacts/temporal_route_20261022/models/TR_s2027/model.pt",
+      "sha256": "2e6ecc5135ef51f4d49e03aadeb9a133d60038cb5ad5f6a0f1cd79a632f3309c",
+      "bytes": 24293
+    },
+    "TR_s2028": {
+      "path": "artifacts/temporal_route_20261022/models/TR_s2028/model.pt",
+      "sha256": "d4577f9b5313831c5e93c08bcf53abc735539fb630e4df747aa1143f05e0ff6b",
+      "bytes": 24293
+    }
+  },
+  "large_arrays_indexes_predictions_and_checkpoints_not_in_git": true,
+  "test_used": false,
+  "default_changed": false
+}

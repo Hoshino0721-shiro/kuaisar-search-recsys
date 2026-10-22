@@ -1,0 +1,196 @@
+{
+  "date": "2026-10-22",
+  "scope": "publish completed development evidence and RRF direct-output entry; full-exposure experiment stopped by user",
+  "completed_new_model_runs": 45,
+  "full_exposure_completed_model_runs": 0,
+  "last_full_test_suite_passed": 111,
+  "additional_unit_test_passed_separately": 1,
+  "experiments_restarted_after_stop": false,
+  "files": {
+    "README.md": {
+      "sha256": "8d7ff1c39bfe90979c99225e60f5f8d34fe52dd6b91ad08d7983405062756806",
+      "bytes": 8315
+    },
+    "configs/full_exposure_control.json": {
+      "sha256": "72e29b1477304dd41e74a64107602d2bac5e4dda7b9183980cea9e115d3158dc",
+      "bytes": 507
+    },
+    "configs/recommend_rrf.json": {
+      "sha256": "cf76fda4adcf734c46337e99e6fb20b4a7dedb2e9515a03339c25fb4f17a3a9a",
+      "bytes": 428
+    },
+    "configs/route_attribution.json": {
+      "sha256": "a7d26dee89cbe0f18c7ed2c7fe074b342783cb54b9f3c47daba9f540dccea659",
+      "bytes": 793
+    },
+    "configs/temporal_route_factorial.json": {
+      "sha256": "b829a2ab1380cf194d7ec530f8851f5679cdab84b58f329270d0b8898e5019aa",
+      "bytes": 1143
+    },
+    "docs/CASCADE_V2.md": {
+      "sha256": "36b547ea7003873673987c0d787768ce47677f41ac0b452d49f25f1d7de75db5",
+      "bytes": 13698
+    },
+    "docs/CURRENT_PROGRESS.md": {
+      "sha256": "2954a4b8c7a987b9801e7abf084b7aea85ff3a19b875ce95bea4754678a7d65f",
+      "bytes": 11138
+    },
+    "docs/FULL_EXPOSURE_STATUS.md": {
+      "sha256": "4b4cd56f0400c172ffcf9dafdfa3d9f0cf1b024f81cd32a29437cccec7bea4bf",
+      "bytes": 3016
+    },
+    "docs/NEXT_RANKING_DIRECTIONS.md": {
+      "sha256": "adc150924a6ce76dd36c19cd43e26b062f2d9ec29f16a4cc0c7ae4a227f44dac",
+      "bytes": 4183
+    },
+    "docs/ROUTE_ATTRIBUTION.md": {
+      "sha256": "654e94640ce32c944c9e0907b325b42a7635c9f17f3850c4efa2e480f5296696",
+      "bytes": 6305
+    },
+    "docs/RRF_MAIN.md": {
+      "sha256": "fb843d73641b6a4a79a6e828c4320ab10a78cd030a11ade840fc4abacff0b9d6",
+      "bytes": 2600
+    },
+    "docs/TEMPORAL_ROUTE_FACTORIAL.md": {
+      "sha256": "071da7d8a6c51718dcd22bb6f5aa7788ac08742a62ca138f90687a9a98f4bee0",
+      "bytes": 10081
+    },
+    "experiments/full_exposure_control_20261022_pending/coverage.json": {
+      "sha256": "3204fafeb692d35c6b2039bbf23bb597f0092295bc7e6e2fa0e83b44f61a3c6a",
+      "bytes": 578
+    },
+    "experiments/full_exposure_control_20261022_pending/preparation.json": {
+      "sha256": "8283b1bf8e5b93880fbbcef6c39d2c82c39f6a4fa7a5d1b256f0e95d69c60e62",
+      "bytes": 1665
+    },
+    "experiments/full_exposure_control_20261022_pending/protocol.json": {
+      "sha256": "c535cda8dbbfd65a220721d580dd395fcdc2e6a419f8104cb45d4bb9da21b53a",
+      "bytes": 1303
+    },
+    "experiments/full_exposure_control_20261022_pending/status.json": {
+      "sha256": "a748317aafa302af30a07c94d7eb14a72263a2ee4b3f06a3c2097b461f4703f1",
+      "bytes": 451
+    },
+    "experiments/route_attribution_valid_20261022/ablation.json": {
+      "sha256": "9eb80fe50607fb0fba9afba05011478c5013f98e9acb2e5c68b0ebae6d1eff3c",
+      "bytes": 51803
+    },
+    "experiments/route_attribution_valid_20261022/audit.json": {
+      "sha256": "00a346a2780ff500dcc85fdcde3aee61e863a0d18fed7d1a884ae3acb5e923d0",
+      "bytes": 1678
+    },
+    "experiments/route_attribution_valid_20261022/diagnosis.json": {
+      "sha256": "25f989b80c1e071d66a9ae28b18c9898d9fbf531bb1922e31627bd3869d7d160",
+      "bytes": 8419
+    },
+    "experiments/route_attribution_valid_20261022/manifest.json": {
+      "sha256": "9b67a878fc1cdeccd2924a6c711e988cc2cb0bc18e73f482af55ad8b15db625c",
+      "bytes": 4949
+    },
+    "experiments/route_attribution_valid_20261022/protocol.json": {
+      "sha256": "3ab568a9e35f6c372113fed7c0874b4aa9ffc367eda28bbbbec924f04273417e",
+      "bytes": 1876
+    },
+    "experiments/route_attribution_valid_20261022/rolling.json": {
+      "sha256": "425ade822680cfeb3396136293cc1028fbec28349bc24b5ff5844b25d21e00bb",
+      "bytes": 26648
+    },
+    "experiments/rrf_default_valid_20261022/audit.json": {
+      "sha256": "fba104334750015903add573f7e8efadb79bc509b5d628b36166f6978bc3143e",
+      "bytes": 627
+    },
+    "experiments/rrf_default_valid_20261022/metrics.json": {
+      "sha256": "5874826e14bbef0f30c725c9097124623cf54dc3dcb694e1c9aeb81078e56ae6",
+      "bytes": 1603
+    },
+    "experiments/temporal_route_valid_20261022/audit.json": {
+      "sha256": "ad94bb9d13a7c376bd2b5814ca6c6c39019cffb789f65e848411d3dc3947778e",
+      "bytes": 1753
+    },
+    "experiments/temporal_route_valid_20261022/manifest.json": {
+      "sha256": "ec8fa836ac4b92cc57f7f114578ac10e591337dedae657c970bb176e1039d581",
+      "bytes": 3614
+    },
+    "experiments/temporal_route_valid_20261022/metrics.json": {
+      "sha256": "fe5f0afd8cbb4c60ee1a4091532eb2e1f1f76541c4678c012d26cad77ee59c2a",
+      "bytes": 154519
+    },
+    "experiments/temporal_route_valid_20261022/preparation.json": {
+      "sha256": "958b5bc6dfae32f8d222d9e2177d8b2d2499c57961d4ed6182057aea10879e07",
+      "bytes": 7378
+    },
+    "experiments/temporal_route_valid_20261022/protocol.json": {
+      "sha256": "fa63ba920c904fa6549ceb288c4bd4bd1b55b595f897ec1c71d2901c8074407a",
+      "bytes": 1919
+    },
+    "experiments/temporal_route_valid_20261022/training.json": {
+      "sha256": "64dce05ce85427617b6bc308707759269748e4b43c1054e720f83b038508405e",
+      "bytes": 125625
+    },
+    "scripts/audit_route_attribution.py": {
+      "sha256": "a94816f4bb95a363ac942e15b5efd20d03c2e4f53c0cc47150c77b108644e33d",
+      "bytes": 9003
+    },
+    "scripts/audit_rrf_output.py": {
+      "sha256": "2c61a91538bbcbf5c4db13c197691fca41dda4f2bca60b9260efa924bd2f4368",
+      "bytes": 3130
+    },
+    "scripts/audit_temporal_route.py": {
+      "sha256": "a4fc226714dbbc4af5895ba784d1b6f848e5978907ed3b613816fc0717c3959c",
+      "bytes": 10554
+    },
+    "scripts/export_route_attribution.py": {
+      "sha256": "2563e201a83d325a7e379cb1d755f1e00bb7655c61bd6d2d20bf46b43c90414d",
+      "bytes": 10052
+    },
+    "src/v2/full_exposure_control.py": {
+      "sha256": "f53c41f2cb8a9db9f3eff44a182cb15b8b2748f32ac1dd42531b57072981b002",
+      "bytes": 13889
+    },
+    "src/v2/recommend.py": {
+      "sha256": "110b720ce2d1a9e31d5368329887eb375811c45125ced6fa9e4823b824585e56",
+      "bytes": 22219
+    },
+    "src/v2/route_attribution.py": {
+      "sha256": "97e1cc2c6f1768aa6b9ff1f032a1220592c934142e656e0b97458c00102172fd",
+      "bytes": 25995
+    },
+    "src/v2/rrf_output.py": {
+      "sha256": "1328413375b5cbf7660c8d0046e0bf157543f2432f464703cb7fadf8eb02076b",
+      "bytes": 2033
+    },
+    "src/v2/temporal_route_data.py": {
+      "sha256": "366d064d17616341f51e2ff181636588777f2a9d61b8e7f256c419e988e02cea",
+      "bytes": 13054
+    },
+    "src/v2/temporal_route_evaluate.py": {
+      "sha256": "48d7b2cdf4d7fcdb97320aa542ab1f439a1c9c5b7adb1a2f85b2f6f0c583d8e3",
+      "bytes": 11041
+    },
+    "src/v2/temporal_route_features.py": {
+      "sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+      "bytes": 2848
+    },
+    "src/v2/temporal_route_train.py": {
+      "sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+      "bytes": 7837
+    },
+    "tests/test_full_exposure_control.py": {
+      "sha256": "5dada5f51151c005a0e20ea0ada2120c52d0f752bebf85b9776de32c41905552",
+      "bytes": 822
+    },
+    "tests/test_route_attribution.py": {
+      "sha256": "e096ade2c48e7cde042392fa5232c18f2e011e524ff304875c68d596653cd5d0",
+      "bytes": 1987
+    },
+    "tests/test_rrf_output.py": {
+      "sha256": "a8a20f18bcd437e871704b3c15b59b20748f7402300178f326e3d78e29639a9f",
+      "bytes": 3635
+    },
+    "tests/test_temporal_route.py": {
+      "sha256": "cd73acf9704b4d52bb5a91711ca1b5830233d70b92b58fdf24a4c0ade9869221",
+      "bytes": 5727
+    }
+  },
+  "large_artifacts": "remain local and ignored; no datasets, per-user arrays, indexes or new weights in this sync"
+}

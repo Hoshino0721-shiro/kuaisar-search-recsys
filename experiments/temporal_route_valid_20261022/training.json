@@ -1,0 +1,4000 @@
+{
+  "protocol": {
+    "config": {
+      "sample_seed": 2026,
+      "sample_rows": 1000000,
+      "seeds": [
+        2026,
+        2027,
+        2028
+      ],
+      "arms": {
+        "base": [
+          false,
+          false
+        ],
+        "T": [
+          true,
+          false
+        ],
+        "R": [
+          false,
+          true
+        ],
+        "TR": [
+          true,
+          true
+        ]
+      },
+      "epochs": 5,
+      "batch_size": 4096,
+      "learning_rate": 0.001,
+      "weight_decay": 1e-05,
+      "threads": 4,
+      "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+      "feature_rule": "prior complete Beijing days; frozen train-end validation; no test labels",
+      "recent_k": 2000,
+      "itemcf_k": 1000,
+      "budget": {
+        "recall": 2000,
+        "coarse": 400,
+        "fine": 80,
+        "output": 20,
+        "category_penalty": 0.01
+      },
+      "itemcf_config": "configs/itemcf_index_support2.json",
+      "final_index": "artifacts/itemcf_support2_300",
+      "coarse_model": "experiments/v2_coarse_lr/model.pt",
+      "candidate_reference_sha256": "99abfbdb6e69d33264ae2b5c2a00031cf4edd8f984ef7e4c98054e861a73346e",
+      "evaluation": "all validation users, fixed identical candidates; primary direct NDCG@20 and event Recall@20; exposure metrics and all-seed cascade also reported",
+      "scope": "development on previously used validation day; not independent test or online gains; no default replacement"
+    },
+    "cache": "artifacts\\temporal_route_20261022\\cache",
+    "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+    "source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+    "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+    "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+    "test_used": false,
+    "default_changed": false
+  },
+  "runs": {
+    "base_s2026": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "base",
+        "seed": 2026,
+        "enabled": [
+          false,
+          false
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+        "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6361769754676819,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7115818755621879,
+            "logloss": 0.6221533439929787
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6277718570709229,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7124306891443327,
+            "logloss": 0.6206424364498037
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6273850908966064,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7124116608556225,
+            "logloss": 0.6202305869716466
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.6271487093124389,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7128984179998078,
+            "logloss": 0.6197235410734849
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6269526530761719,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7126546853034428,
+            "logloss": 0.6195588088491306
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7126546853034428,
+          "gauc": 0.6052230105683597,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6195588088491306,
+          "brier": 0.21551359622828112,
+          "ece_10_bins": 0.004297091693173441,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9368,
+              "predicted": 0.07952679543472416,
+              "observed": 0.0713065755764304
+            },
+            {
+              "bin": 1,
+              "rows": 42429,
+              "predicted": 0.15584902473473808,
+              "observed": 0.1610926488958024
+            },
+            {
+              "bin": 2,
+              "rows": 77143,
+              "predicted": 0.2536926113942443,
+              "observed": 0.2595180379295594
+            },
+            {
+              "bin": 3,
+              "rows": 114642,
+              "predicted": 0.3516570513062645,
+              "observed": 0.3498019922890389
+            },
+            {
+              "bin": 4,
+              "rows": 130005,
+              "predicted": 0.4510078378328612,
+              "observed": 0.452944117533941
+            },
+            {
+              "bin": 5,
+              "rows": 139230,
+              "predicted": 0.5497544325657517,
+              "observed": 0.5565323565323566
+            },
+            {
+              "bin": 6,
+              "rows": 114317,
+              "predicted": 0.6487544333119213,
+              "observed": 0.6537435377065528
+            },
+            {
+              "bin": 7,
+              "rows": 75627,
+              "predicted": 0.7433226266904064,
+              "observed": 0.7448530286802333
+            },
+            {
+              "bin": 8,
+              "rows": 21941,
+              "predicted": 0.8353598602168741,
+              "observed": 0.8466341552344925
+            },
+            {
+              "bin": 9,
+              "rows": 1051,
+              "predicted": 0.9141626816267745,
+              "observed": 0.9410085632730733
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.685240082109478,
+          "gauc": 0.6255788787057128,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5961279417132235,
+          "brier": 0.20448095919084372,
+          "ece_10_bins": 0.009522218880476238,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 84,
+              "predicted": 0.0809335542532305,
+              "observed": 0.05952380952380952
+            },
+            {
+              "bin": 1,
+              "rows": 608,
+              "predicted": 0.1553503743152281,
+              "observed": 0.17434210526315788
+            },
+            {
+              "bin": 2,
+              "rows": 1542,
+              "predicted": 0.2551769562036611,
+              "observed": 0.23151750972762647
+            },
+            {
+              "bin": 3,
+              "rows": 3315,
+              "predicted": 0.3556379619047473,
+              "observed": 0.3559577677224736
+            },
+            {
+              "bin": 4,
+              "rows": 5191,
+              "predicted": 0.4532549605677753,
+              "observed": 0.4710075130032749
+            },
+            {
+              "bin": 5,
+              "rows": 8925,
+              "predicted": 0.5537695238636989,
+              "observed": 0.5803921568627451
+            },
+            {
+              "bin": 6,
+              "rows": 13961,
+              "predicted": 0.6558249911617459,
+              "observed": 0.6622734761120264
+            },
+            {
+              "bin": 7,
+              "rows": 17320,
+              "predicted": 0.7456974242080442,
+              "observed": 0.7486720554272517
+            },
+            {
+              "bin": 8,
+              "rows": 6344,
+              "predicted": 0.8398031680686177,
+              "observed": 0.8423707440100883
+            },
+            {
+              "bin": 9,
+              "rows": 521,
+              "predicted": 0.9155403649051908,
+              "observed": 0.9385796545105566
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.708398532998444,
+          "gauc": 0.6005913473286181,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6215867721453356,
+          "brier": 0.21646848120298148,
+          "ece_10_bins": 0.003957266106039322,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9284,
+              "predicted": 0.07951406732822325,
+              "observed": 0.07141318397242567
+            },
+            {
+              "bin": 1,
+              "rows": 41821,
+              "predicted": 0.15585627418967846,
+              "observed": 0.16090002630257527
+            },
+            {
+              "bin": 2,
+              "rows": 75601,
+              "predicted": 0.25366233587280784,
+              "observed": 0.26008915225989077
+            },
+            {
+              "bin": 3,
+              "rows": 111327,
+              "predicted": 0.351538511162059,
+              "observed": 0.34961869088361314
+            },
+            {
+              "bin": 4,
+              "rows": 124814,
+              "predicted": 0.4509143802550499,
+              "observed": 0.4521928629801144
+            },
+            {
+              "bin": 5,
+              "rows": 130305,
+              "predicted": 0.5494794263124676,
+              "observed": 0.5548981236330148
+            },
+            {
+              "bin": 6,
+              "rows": 100356,
+              "predicted": 0.6477708144137847,
+              "observed": 0.6525568974450955
+            },
+            {
+              "bin": 7,
+              "rows": 58307,
+              "predicted": 0.7426171969305921,
+              "observed": 0.7437185929648241
+            },
+            {
+              "bin": 8,
+              "rows": 15597,
+              "predicted": 0.8335525674675339,
+              "observed": 0.8483682759505033
+            },
+            {
+              "bin": 9,
+              "rows": 530,
+              "predicted": 0.9128083929700671,
+              "observed": 0.9433962264150944
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "b27f1fcb893ff8b81e73c0f7fdc9df6d67020f822c7083a98b6b78cb0447d319",
+      "valid_predictions_sha256": "88d29c3b37d64abacb794e9f3ad85752efc7932104c66563d99698ae87ea2b0b",
+      "elapsed_seconds": 9.14408540003933,
+      "test_used": false
+    },
+    "base_s2027": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "base",
+        "seed": 2027,
+        "enabled": [
+          false,
+          false
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+        "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6345083647041321,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7115502315352535,
+            "logloss": 0.6209211272341438
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.627544305885315,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.712573633282551,
+            "logloss": 0.6198628899388272
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6272145070610047,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7135113959782405,
+            "logloss": 0.6190686271575138
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.626990442905426,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7126925205548551,
+            "logloss": 0.619776788894171
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6268482315177918,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7130933900061374,
+            "logloss": 0.6194213351966368
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7130933900061373,
+          "gauc": 0.6056812535591805,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6194213351966368,
+          "brier": 0.21543475209456092,
+          "ece_10_bins": 0.007224215967730804,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 6141,
+              "predicted": 0.0839604784975226,
+              "observed": 0.06595017098192477
+            },
+            {
+              "bin": 1,
+              "rows": 42726,
+              "predicted": 0.15595168144062557,
+              "observed": 0.15016617516266442
+            },
+            {
+              "bin": 2,
+              "rows": 71708,
+              "predicted": 0.25439273287239444,
+              "observed": 0.2517292352317733
+            },
+            {
+              "bin": 3,
+              "rows": 111772,
+              "predicted": 0.3522170509303008,
+              "observed": 0.34272447482374835
+            },
+            {
+              "bin": 4,
+              "rows": 126405,
+              "predicted": 0.4512554812761883,
+              "observed": 0.4417230331078676
+            },
+            {
+              "bin": 5,
+              "rows": 135313,
+              "predicted": 0.550374729328791,
+              "observed": 0.5420321772483058
+            },
+            {
+              "bin": 6,
+              "rows": 120009,
+              "predicted": 0.6486570645505503,
+              "observed": 0.6443516736244782
+            },
+            {
+              "bin": 7,
+              "rows": 84145,
+              "predicted": 0.7444265622053917,
+              "observed": 0.735456652207499
+            },
+            {
+              "bin": 8,
+              "rows": 26588,
+              "predicted": 0.8344860093807375,
+              "observed": 0.8340228674590041
+            },
+            {
+              "bin": 9,
+              "rows": 946,
+              "predicted": 0.9126557590593495,
+              "observed": 0.9291754756871036
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6870068065192712,
+          "gauc": 0.6263808090710211,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5960860969834855,
+          "brier": 0.20432881774776537,
+          "ece_10_bins": 0.014669275579099333,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 148,
+              "predicted": 0.08025992344561461,
+              "observed": 0.10810810810810811
+            },
+            {
+              "bin": 1,
+              "rows": 708,
+              "predicted": 0.15935438701956622,
+              "observed": 0.1906779661016949
+            },
+            {
+              "bin": 2,
+              "rows": 1599,
+              "predicted": 0.25485959363923066,
+              "observed": 0.25328330206378985
+            },
+            {
+              "bin": 3,
+              "rows": 3057,
+              "predicted": 0.35723607789506934,
+              "observed": 0.35067059208374224
+            },
+            {
+              "bin": 4,
+              "rows": 4833,
+              "predicted": 0.4541058657876261,
+              "observed": 0.4651355265880406
+            },
+            {
+              "bin": 5,
+              "rows": 9113,
+              "predicted": 0.5542169811565241,
+              "observed": 0.5729178097223746
+            },
+            {
+              "bin": 6,
+              "rows": 16322,
+              "predicted": 0.6549143636800717,
+              "observed": 0.6689131233917412
+            },
+            {
+              "bin": 7,
+              "rows": 16219,
+              "predicted": 0.7450919478012664,
+              "observed": 0.7620075220420495
+            },
+            {
+              "bin": 8,
+              "rows": 5645,
+              "predicted": 0.8361604881244386,
+              "observed": 0.8480070859167405
+            },
+            {
+              "bin": 9,
+              "rows": 167,
+              "predicted": 0.9118971000174563,
+              "observed": 0.9461077844311377
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7089061982388997,
+          "gauc": 0.6009734776456911,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6214410217208265,
+          "brier": 0.21639598101941146,
+          "ece_10_bins": 0.009034367014544664,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 5993,
+              "predicted": 0.08405186547360843,
+              "observed": 0.06490906057066578
+            },
+            {
+              "bin": 1,
+              "rows": 42018,
+              "predicted": 0.15589434611886133,
+              "observed": 0.14948355466704746
+            },
+            {
+              "bin": 2,
+              "rows": 70109,
+              "predicted": 0.25438208501882115,
+              "observed": 0.2516937910967208
+            },
+            {
+              "bin": 3,
+              "rows": 108715,
+              "predicted": 0.352075918929829,
+              "observed": 0.3425010348158028
+            },
+            {
+              "bin": 4,
+              "rows": 121572,
+              "predicted": 0.45114216646402944,
+              "observed": 0.44079228769782514
+            },
+            {
+              "bin": 5,
+              "rows": 126200,
+              "predicted": 0.5500972773406283,
+              "observed": 0.5398019017432647
+            },
+            {
+              "bin": 6,
+              "rows": 103687,
+              "predicted": 0.6476720651157895,
+              "observed": 0.6404853067404785
+            },
+            {
+              "bin": 7,
+              "rows": 67926,
+              "predicted": 0.7442676850599763,
+              "observed": 0.7291169802432058
+            },
+            {
+              "bin": 8,
+              "rows": 20943,
+              "predicted": 0.8340346684788517,
+              "observed": 0.8302535453373442
+            },
+            {
+              "bin": 9,
+              "rows": 779,
+              "predicted": 0.9128183984174961,
+              "observed": 0.9255455712451861
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "bf3d64ce1774ad2160bef744011b63b2923f6924a31c9ceb47b310c68db8734c",
+      "valid_predictions_sha256": "0be00e03ef60cf5b8f4e7e2f1a134eaac93e998e35618df73831bd323ea54abb",
+      "elapsed_seconds": 9.520075999898836,
+      "test_used": false
+    },
+    "base_s2028": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "base",
+        "seed": 2028,
+        "enabled": [
+          false,
+          false
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+        "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6322848399887085,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7119516301318959,
+            "logloss": 0.6209468226624238
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6276897638053894,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.71238686759768,
+            "logloss": 0.62091488953912
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6272255838890076,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7128616103388603,
+            "logloss": 0.6205015184927545
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.62701119115448,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.713001730296734,
+            "logloss": 0.6198043513431233
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6268147413406372,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7123427274043362,
+            "logloss": 0.6199236107842799
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7123427274043362,
+          "gauc": 0.6052796632218165,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6199236107842799,
+          "brier": 0.21567095130455688,
+          "ece_10_bins": 0.008301310597639965,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9164,
+              "predicted": 0.08046450863995995,
+              "observed": 0.07278481012658228
+            },
+            {
+              "bin": 1,
+              "rows": 40771,
+              "predicted": 0.1545667087404817,
+              "observed": 0.15977042505702582
+            },
+            {
+              "bin": 2,
+              "rows": 71216,
+              "predicted": 0.2534934620123329,
+              "observed": 0.2509688833969894
+            },
+            {
+              "bin": 3,
+              "rows": 110797,
+              "predicted": 0.3524054688737133,
+              "observed": 0.34270783504968544
+            },
+            {
+              "bin": 4,
+              "rows": 123644,
+              "predicted": 0.4506084194480322,
+              "observed": 0.44344246384782116
+            },
+            {
+              "bin": 5,
+              "rows": 132884,
+              "predicted": 0.5505723513550455,
+              "observed": 0.5393952620330514
+            },
+            {
+              "bin": 6,
+              "rows": 126311,
+              "predicted": 0.6487935362258305,
+              "observed": 0.6392950732715282
+            },
+            {
+              "bin": 7,
+              "rows": 85971,
+              "predicted": 0.7434908944171255,
+              "observed": 0.7355154645171046
+            },
+            {
+              "bin": 8,
+              "rows": 24328,
+              "predicted": 0.8333374363655364,
+              "observed": 0.8417050312397237
+            },
+            {
+              "bin": 9,
+              "rows": 667,
+              "predicted": 0.9105879585782269,
+              "observed": 0.952023988005997
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6848351037951743,
+          "gauc": 0.6276925365376862,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5972300016971889,
+          "brier": 0.20486739744097593,
+          "ece_10_bins": 0.018429088649409675,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 110,
+              "predicted": 0.08296335354786027,
+              "observed": 0.1
+            },
+            {
+              "bin": 1,
+              "rows": 608,
+              "predicted": 0.15892582163704852,
+              "observed": 0.18092105263157895
+            },
+            {
+              "bin": 2,
+              "rows": 1556,
+              "predicted": 0.2557169715359156,
+              "observed": 0.2384318766066838
+            },
+            {
+              "bin": 3,
+              "rows": 3151,
+              "predicted": 0.35597129413454315,
+              "observed": 0.3557600761662964
+            },
+            {
+              "bin": 4,
+              "rows": 5424,
+              "predicted": 0.45244311031426654,
+              "observed": 0.47087020648967554
+            },
+            {
+              "bin": 5,
+              "rows": 9475,
+              "predicted": 0.5536209663111805,
+              "observed": 0.581952506596306
+            },
+            {
+              "bin": 6,
+              "rows": 15605,
+              "predicted": 0.6552408539992959,
+              "observed": 0.6731816725408523
+            },
+            {
+              "bin": 7,
+              "rows": 16916,
+              "predicted": 0.7451003420068232,
+              "observed": 0.7594585008276188
+            },
+            {
+              "bin": 8,
+              "rows": 4840,
+              "predicted": 0.8346682887432004,
+              "observed": 0.8605371900826446
+            },
+            {
+              "bin": 9,
+              "rows": 126,
+              "predicted": 0.9114978370212373,
+              "observed": 0.9603174603174603
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7082809035791232,
+          "gauc": 0.6006985086475153,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6218877637121296,
+          "brier": 0.21660600891795362,
+          "ece_10_bins": 0.010098965317495441,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9054,
+              "predicted": 0.08043414935788915,
+              "observed": 0.07245416390545616
+            },
+            {
+              "bin": 1,
+              "rows": 40163,
+              "predicted": 0.154500719132108,
+              "observed": 0.1594502402708961
+            },
+            {
+              "bin": 2,
+              "rows": 69660,
+              "predicted": 0.2534437953339135,
+              "observed": 0.2512489233419466
+            },
+            {
+              "bin": 3,
+              "rows": 107646,
+              "predicted": 0.35230109049089486,
+              "observed": 0.34232577151032084
+            },
+            {
+              "bin": 4,
+              "rows": 118220,
+              "predicted": 0.45052424280060827,
+              "observed": 0.4421840636102182
+            },
+            {
+              "bin": 5,
+              "rows": 123409,
+              "predicted": 0.5503382871724544,
+              "observed": 0.5361278350849614
+            },
+            {
+              "bin": 6,
+              "rows": 110706,
+              "predicted": 0.6478847291706128,
+              "observed": 0.6345184542843206
+            },
+            {
+              "bin": 7,
+              "rows": 69055,
+              "predicted": 0.7430966374418546,
+              "observed": 0.7296502787633046
+            },
+            {
+              "bin": 8,
+              "rows": 19488,
+              "predicted": 0.8330069085788012,
+              "observed": 0.8370279146141215
+            },
+            {
+              "bin": 9,
+              "rows": 541,
+              "predicted": 0.9103760460388197,
+              "observed": 0.9500924214417745
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "9ac4a366c2384a6ba2651712f39eb85cbaabc98a464d9ad9ed9ec6b3701d6c2f",
+      "valid_predictions_sha256": "843b49100ac432727bd7a6f440cb0cf312e0061ea0f82c72a791557632c78cc1",
+      "elapsed_seconds": 9.046117699937895,
+      "test_used": false
+    },
+    "T_s2026": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "T",
+        "seed": 2026,
+        "enabled": [
+          true,
+          false
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+        "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6365014535751343,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7119230196936431,
+            "logloss": 0.621321297768469
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6277574463653565,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7124354016012246,
+            "logloss": 0.6204899204715194
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6273524718513489,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7128698618084236,
+            "logloss": 0.6199612661678303
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.6271667250518799,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.712935960309012,
+            "logloss": 0.619477187906763
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6269608465957641,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7126081232052933,
+            "logloss": 0.6196132518392816
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7126081232052932,
+          "gauc": 0.6046508919743808,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196132518392816,
+          "brier": 0.21552992360189546,
+          "ece_10_bins": 0.0031070270021453543,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9923,
+              "predicted": 0.08004094950894573,
+              "observed": 0.07517887735563841
+            },
+            {
+              "bin": 1,
+              "rows": 45035,
+              "predicted": 0.1553657368348298,
+              "observed": 0.16411679804596424
+            },
+            {
+              "bin": 2,
+              "rows": 76552,
+              "predicted": 0.2536561657015804,
+              "observed": 0.26302382694116416
+            },
+            {
+              "bin": 3,
+              "rows": 111906,
+              "predicted": 0.3515916459277418,
+              "observed": 0.3510088824549175
+            },
+            {
+              "bin": 4,
+              "rows": 124782,
+              "predicted": 0.4508387302352497,
+              "observed": 0.4510025484444872
+            },
+            {
+              "bin": 5,
+              "rows": 132662,
+              "predicted": 0.5499077552117669,
+              "observed": 0.5500369359726222
+            },
+            {
+              "bin": 6,
+              "rows": 117846,
+              "predicted": 0.6488918873671106,
+              "observed": 0.645545881913684
+            },
+            {
+              "bin": 7,
+              "rows": 80797,
+              "predicted": 0.743776420277369,
+              "observed": 0.7378739309627833
+            },
+            {
+              "bin": 8,
+              "rows": 25152,
+              "predicted": 0.8353745639892934,
+              "observed": 0.8391777989821882
+            },
+            {
+              "bin": 9,
+              "rows": 1098,
+              "predicted": 0.9127494028900056,
+              "observed": 0.936247723132969
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6869213076321368,
+          "gauc": 0.6270224278669013,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5956175328540755,
+          "brier": 0.20421373257608796,
+          "ece_10_bins": 0.008032739301504737,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 160,
+              "predicted": 0.07629449288360775,
+              "observed": 0.13125
+            },
+            {
+              "bin": 1,
+              "rows": 617,
+              "predicted": 0.1619706453583422,
+              "observed": 0.17990275526742303
+            },
+            {
+              "bin": 2,
+              "rows": 1669,
+              "predicted": 0.2549399530694755,
+              "observed": 0.2504493708807669
+            },
+            {
+              "bin": 3,
+              "rows": 3372,
+              "predicted": 0.35704771866789914,
+              "observed": 0.36269276393831557
+            },
+            {
+              "bin": 4,
+              "rows": 4887,
+              "predicted": 0.4561430545143001,
+              "observed": 0.46838551258440764
+            },
+            {
+              "bin": 5,
+              "rows": 7934,
+              "predicted": 0.5533095020129394,
+              "observed": 0.5744895386942274
+            },
+            {
+              "bin": 6,
+              "rows": 13382,
+              "predicted": 0.6561123685280209,
+              "observed": 0.6546106710506651
+            },
+            {
+              "bin": 7,
+              "rows": 17416,
+              "predicted": 0.747457789927105,
+              "observed": 0.740927882406982
+            },
+            {
+              "bin": 8,
+              "rows": 7854,
+              "predicted": 0.8393853476386293,
+              "observed": 0.8337153043035396
+            },
+            {
+              "bin": 9,
+              "rows": 520,
+              "predicted": 0.9139049701965772,
+              "observed": 0.9365384615384615
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7082841092136563,
+          "gauc": 0.5999610211047941,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6216901035872683,
+          "brier": 0.2165093504374484,
+          "ece_10_bins": 0.00348959752678487,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9763,
+              "predicted": 0.08010234795819843,
+              "observed": 0.07425996107753764
+            },
+            {
+              "bin": 1,
+              "rows": 44418,
+              "predicted": 0.155273989602649,
+              "observed": 0.16389751902381916
+            },
+            {
+              "bin": 2,
+              "rows": 74883,
+              "predicted": 0.2536275525167852,
+              "observed": 0.26330408771016117
+            },
+            {
+              "bin": 3,
+              "rows": 108534,
+              "predicted": 0.3514221333576733,
+              "observed": 0.3506458805535593
+            },
+            {
+              "bin": 4,
+              "rows": 119895,
+              "predicted": 0.45062252244717077,
+              "observed": 0.4502940072563493
+            },
+            {
+              "bin": 5,
+              "rows": 124728,
+              "predicted": 0.5496913686817134,
+              "observed": 0.5484814957347187
+            },
+            {
+              "bin": 6,
+              "rows": 104464,
+              "predicted": 0.647966932560715,
+              "observed": 0.6443846684025119
+            },
+            {
+              "bin": 7,
+              "rows": 63381,
+              "predicted": 0.7427648437194131,
+              "observed": 0.7370347580505199
+            },
+            {
+              "bin": 8,
+              "rows": 17298,
+              "predicted": 0.8335535040527758,
+              "observed": 0.8416579951439472
+            },
+            {
+              "bin": 9,
+              "rows": 578,
+              "predicted": 0.9117097921643703,
+              "observed": 0.9359861591695502
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "49ef71de29242fe3e0e2699d78b8b9cc8617c407698d5f194b8e080f9c248192",
+      "valid_predictions_sha256": "9277266e7a50bcd686b6589e0b8226ec579a88c6d6581d0968e034cc460a5ca9",
+      "elapsed_seconds": 7.523074500029907,
+      "test_used": false
+    },
+    "T_s2027": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "T",
+        "seed": 2027,
+        "enabled": [
+          true,
+          false
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+        "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6343601587104797,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7104030707980992,
+            "logloss": 0.6214512718531204
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6276596082267761,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7124018024341751,
+            "logloss": 0.6201956240560395
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6273047126159668,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7131376236451165,
+            "logloss": 0.6193235040895569
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.627065916934967,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7127007854959078,
+            "logloss": 0.6196214818090457
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6269181717567444,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7128268869179013,
+            "logloss": 0.6195823022823427
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7128268869179012,
+          "gauc": 0.6052860093291434,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6195823022823427,
+          "brier": 0.21551465069857487,
+          "ece_10_bins": 0.007095546743634715,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 5530,
+              "predicted": 0.08554752155781385,
+              "observed": 0.0674502712477396
+            },
+            {
+              "bin": 1,
+              "rows": 40080,
+              "predicted": 0.15632478843969172,
+              "observed": 0.14515968063872256
+            },
+            {
+              "bin": 2,
+              "rows": 70711,
+              "predicted": 0.2539322543527086,
+              "observed": 0.24822163454059482
+            },
+            {
+              "bin": 3,
+              "rows": 111381,
+              "predicted": 0.35281133224797157,
+              "observed": 0.3379750585827026
+            },
+            {
+              "bin": 4,
+              "rows": 131714,
+              "predicted": 0.451373303109828,
+              "observed": 0.44137297477868714
+            },
+            {
+              "bin": 5,
+              "rows": 142535,
+              "predicted": 0.5501530641657554,
+              "observed": 0.545248535447434
+            },
+            {
+              "bin": 6,
+              "rows": 122711,
+              "predicted": 0.6480899214688223,
+              "observed": 0.6502351052472883
+            },
+            {
+              "bin": 7,
+              "rows": 77548,
+              "predicted": 0.7436695849361443,
+              "observed": 0.7436297518956001
+            },
+            {
+              "bin": 8,
+              "rows": 22994,
+              "predicted": 0.8335645126033536,
+              "observed": 0.844263720970688
+            },
+            {
+              "bin": 9,
+              "rows": 549,
+              "predicted": 0.908630376739363,
+              "observed": 0.9398907103825137
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6862861814482046,
+          "gauc": 0.6273067557552634,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5977737245098584,
+          "brier": 0.20508957494434424,
+          "ece_10_bins": 0.027262200711863718,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 164,
+              "predicted": 0.08267120739853964,
+              "observed": 0.14634146341463414
+            },
+            {
+              "bin": 1,
+              "rows": 784,
+              "predicted": 0.16134869335789462,
+              "observed": 0.19260204081632654
+            },
+            {
+              "bin": 2,
+              "rows": 1931,
+              "predicted": 0.2537653000628868,
+              "observed": 0.2687726566545831
+            },
+            {
+              "bin": 3,
+              "rows": 3478,
+              "predicted": 0.35176435890144286,
+              "observed": 0.37694077055779185
+            },
+            {
+              "bin": 4,
+              "rows": 5533,
+              "predicted": 0.4553761184915763,
+              "observed": 0.4878004699078258
+            },
+            {
+              "bin": 5,
+              "rows": 9616,
+              "predicted": 0.5543941928758697,
+              "observed": 0.5847545757071547
+            },
+            {
+              "bin": 6,
+              "rows": 16173,
+              "predicted": 0.6526920379649168,
+              "observed": 0.6850306065664997
+            },
+            {
+              "bin": 7,
+              "rows": 14916,
+              "predicted": 0.7456662428222415,
+              "observed": 0.7668946098149638
+            },
+            {
+              "bin": 8,
+              "rows": 5115,
+              "predicted": 0.8345373641593948,
+              "observed": 0.8563049853372434
+            },
+            {
+              "bin": 9,
+              "rows": 101,
+              "predicted": 0.9086829547834868,
+              "observed": 0.9306930693069307
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7088134045136935,
+          "gauc": 0.6008149230688057,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.621469854928538,
+          "brier": 0.2164169506803514,
+          "ece_10_bins": 0.008940993858935157,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 5366,
+              "predicted": 0.08563542978034851,
+              "observed": 0.0650391352963101
+            },
+            {
+              "bin": 1,
+              "rows": 39296,
+              "predicted": 0.15622455580899466,
+              "observed": 0.14421315146579805
+            },
+            {
+              "bin": 2,
+              "rows": 68780,
+              "predicted": 0.2539369415980364,
+              "observed": 0.24764466414655423
+            },
+            {
+              "bin": 3,
+              "rows": 107903,
+              "predicted": 0.352845078976971,
+              "observed": 0.3367190902940604
+            },
+            {
+              "bin": 4,
+              "rows": 126181,
+              "predicted": 0.45119778082432377,
+              "observed": 0.43933714267599716
+            },
+            {
+              "bin": 5,
+              "rows": 132919,
+              "predicted": 0.5498462405086675,
+              "observed": 0.5423904784116642
+            },
+            {
+              "bin": 6,
+              "rows": 106538,
+              "predicted": 0.6473912972212174,
+              "observed": 0.6449529745255214
+            },
+            {
+              "bin": 7,
+              "rows": 62632,
+              "predicted": 0.7431940748290261,
+              "observed": 0.7380891557031549
+            },
+            {
+              "bin": 8,
+              "rows": 17879,
+              "predicted": 0.8332861896709105,
+              "observed": 0.840818837742603
+            },
+            {
+              "bin": 9,
+              "rows": 448,
+              "predicted": 0.908618523207094,
+              "observed": 0.9419642857142857
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "88fc24eb52c818c0640b7a5c1a0f30cd66b08c74a62485b9deea4d1e9f7e090c",
+      "valid_predictions_sha256": "9b7c289ea60dc312b210c5036cdf204d8ea87d886c11db2a5b2f478e93e09244",
+      "elapsed_seconds": 7.475762600079179,
+      "test_used": false
+    },
+    "T_s2028": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "T",
+        "seed": 2028,
+        "enabled": [
+          true,
+          false
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+        "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6328939760246277,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7122721804971642,
+            "logloss": 0.6206837702467408
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6277158831558227,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7124845930863901,
+            "logloss": 0.6206791229845383
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6272834192047119,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7124629719728786,
+            "logloss": 0.6203006240019412
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.6270912540435791,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7131715549455427,
+            "logloss": 0.619597531427111
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6268687798233032,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.712625862185857,
+            "logloss": 0.6197493194383488
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.712625862185857,
+          "gauc": 0.6057162402239821,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6197493194383488,
+          "brier": 0.21559528747488735,
+          "ece_10_bins": 0.00912177972962886,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 7465,
+              "predicted": 0.08097550150815445,
+              "observed": 0.06604152712659075
+            },
+            {
+              "bin": 1,
+              "rows": 40005,
+              "predicted": 0.1544153573693387,
+              "observed": 0.15503062117235344
+            },
+            {
+              "bin": 2,
+              "rows": 71551,
+              "predicted": 0.25371744415473174,
+              "observed": 0.24704057245880562
+            },
+            {
+              "bin": 3,
+              "rows": 109927,
+              "predicted": 0.3520791060471646,
+              "observed": 0.34052598542669227
+            },
+            {
+              "bin": 4,
+              "rows": 125610,
+              "predicted": 0.45090210777603223,
+              "observed": 0.439861475997134
+            },
+            {
+              "bin": 5,
+              "rows": 135014,
+              "predicted": 0.5507672191759279,
+              "observed": 0.5412179477683796
+            },
+            {
+              "bin": 6,
+              "rows": 125225,
+              "predicted": 0.6490506291927323,
+              "observed": 0.6397205030944301
+            },
+            {
+              "bin": 7,
+              "rows": 85524,
+              "predicted": 0.7434915035202005,
+              "observed": 0.7356414573686918
+            },
+            {
+              "bin": 8,
+              "rows": 24753,
+              "predicted": 0.8337031420575668,
+              "observed": 0.8412717650385811
+            },
+            {
+              "bin": 9,
+              "rows": 679,
+              "predicted": 0.90994268067631,
+              "observed": 0.9587628865979382
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6864069439106326,
+          "gauc": 0.6270061838072332,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5965919539282778,
+          "brier": 0.20461232103471946,
+          "ece_10_bins": 0.0184756383125584,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 143,
+              "predicted": 0.08165681825859564,
+              "observed": 0.1048951048951049
+            },
+            {
+              "bin": 1,
+              "rows": 610,
+              "predicted": 0.16026006726945033,
+              "observed": 0.19344262295081968
+            },
+            {
+              "bin": 2,
+              "rows": 1690,
+              "predicted": 0.2561628137555348,
+              "observed": 0.24142011834319527
+            },
+            {
+              "bin": 3,
+              "rows": 3375,
+              "predicted": 0.3566160834453724,
+              "observed": 0.3674074074074074
+            },
+            {
+              "bin": 4,
+              "rows": 5455,
+              "predicted": 0.45524902934879474,
+              "observed": 0.47259395050412467
+            },
+            {
+              "bin": 5,
+              "rows": 9087,
+              "predicted": 0.5535095138912929,
+              "observed": 0.5866622647738527
+            },
+            {
+              "bin": 6,
+              "rows": 15509,
+              "predicted": 0.6548963274060431,
+              "observed": 0.6727706493004062
+            },
+            {
+              "bin": 7,
+              "rows": 16263,
+              "predicted": 0.7448903535415581,
+              "observed": 0.7576092971776425
+            },
+            {
+              "bin": 8,
+              "rows": 5451,
+              "predicted": 0.8370782961715932,
+              "observed": 0.8539717483030637
+            },
+            {
+              "bin": 9,
+              "rows": 228,
+              "predicted": 0.9115264010533952,
+              "observed": 0.9605263157894737
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.70854361616217,
+          "gauc": 0.6012101522480491,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6217536109150078,
+          "brier": 0.21654587341329595,
+          "ece_10_bins": 0.01106596789230616,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 7322,
+              "predicted": 0.08096219526733048,
+              "observed": 0.06528270964217427
+            },
+            {
+              "bin": 1,
+              "rows": 39395,
+              "predicted": 0.15432485672105672,
+              "observed": 0.15443584211194314
+            },
+            {
+              "bin": 2,
+              "rows": 69861,
+              "predicted": 0.25365828847952876,
+              "observed": 0.24717653626486882
+            },
+            {
+              "bin": 3,
+              "rows": 106552,
+              "predicted": 0.35193539876134217,
+              "observed": 0.3396745251144981
+            },
+            {
+              "bin": 4,
+              "rows": 120155,
+              "predicted": 0.4507047588752007,
+              "observed": 0.4383754317340102
+            },
+            {
+              "bin": 5,
+              "rows": 125927,
+              "predicted": 0.5505693328443347,
+              "observed": 0.5379386469938933
+            },
+            {
+              "bin": 6,
+              "rows": 109716,
+              "predicted": 0.6482243054697545,
+              "observed": 0.6350486711145138
+            },
+            {
+              "bin": 7,
+              "rows": 69261,
+              "predicted": 0.743163043089405,
+              "observed": 0.7304832445387737
+            },
+            {
+              "bin": 8,
+              "rows": 19302,
+              "predicted": 0.8327499783918556,
+              "observed": 0.8376852139674645
+            },
+            {
+              "bin": 9,
+              "rows": 451,
+              "predicted": 0.9091420415499787,
+              "observed": 0.9578713968957872
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "d445e1824b0a5ca536ca2d98d589c309a2389a4bac613446fbcd16a174cc2285",
+      "valid_predictions_sha256": "0e669845c2a8f3a7622b7741a8ffadebe85fb90053798c639ad6c6b3c5910d8f",
+      "elapsed_seconds": 7.787264800048433,
+      "test_used": false
+    },
+    "R_s2026": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "R",
+        "seed": 2026,
+        "enabled": [
+          false,
+          true
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+        "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6363908625946045,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.711794314383967,
+            "logloss": 0.6221525110778711
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6277860808219909,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7126462384023077,
+            "logloss": 0.620633460865874
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6273357009086609,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7126928793842712,
+            "logloss": 0.6203258394391813
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.6270946107215881,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7130400588873059,
+            "logloss": 0.6196703320197124
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6269075834503174,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7126866707448729,
+            "logloss": 0.6196161729727692
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7126866707448729,
+          "gauc": 0.6047832439393164,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196161729727692,
+          "brier": 0.21552747932546992,
+          "ece_10_bins": 0.005675308518929958,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 10439,
+              "predicted": 0.07866587701034747,
+              "observed": 0.07740205000478972
+            },
+            {
+              "bin": 1,
+              "rows": 44330,
+              "predicted": 0.155533053650326,
+              "observed": 0.16426799007444168
+            },
+            {
+              "bin": 2,
+              "rows": 77670,
+              "predicted": 0.2537564940358261,
+              "observed": 0.2641946697566628
+            },
+            {
+              "bin": 3,
+              "rows": 113654,
+              "predicted": 0.35114289923063047,
+              "observed": 0.3512854804934274
+            },
+            {
+              "bin": 4,
+              "rows": 127750,
+              "predicted": 0.45071022980693737,
+              "observed": 0.45522504892367904
+            },
+            {
+              "bin": 5,
+              "rows": 138395,
+              "predicted": 0.5495680344199948,
+              "observed": 0.5556920408974313
+            },
+            {
+              "bin": 6,
+              "rows": 117318,
+              "predicted": 0.6482290589550713,
+              "observed": 0.6555174823982679
+            },
+            {
+              "bin": 7,
+              "rows": 74779,
+              "predicted": 0.7430653343958991,
+              "observed": 0.7466400994931732
+            },
+            {
+              "bin": 8,
+              "rows": 20575,
+              "predicted": 0.834955714478962,
+              "observed": 0.850400972053463
+            },
+            {
+              "bin": 9,
+              "rows": 843,
+              "predicted": 0.913339847276785,
+              "observed": 0.9454329774614472
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6842986901232337,
+          "gauc": 0.6243815151599739,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5972349878529939,
+          "brier": 0.2049498323664817,
+          "ece_10_bins": 0.014936522617043018,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 53,
+              "predicted": 0.0815226416683422,
+              "observed": 0.03773584905660377
+            },
+            {
+              "bin": 1,
+              "rows": 609,
+              "predicted": 0.1576414550417554,
+              "observed": 0.15599343185550082
+            },
+            {
+              "bin": 2,
+              "rows": 2018,
+              "predicted": 0.25592956334588784,
+              "observed": 0.25520317145688803
+            },
+            {
+              "bin": 3,
+              "rows": 3727,
+              "predicted": 0.35543981383209544,
+              "observed": 0.37993023879796084
+            },
+            {
+              "bin": 4,
+              "rows": 5042,
+              "predicted": 0.4539423022996996,
+              "observed": 0.48809996033320113
+            },
+            {
+              "bin": 5,
+              "rows": 8724,
+              "predicted": 0.5533398350667429,
+              "observed": 0.5836772122879413
+            },
+            {
+              "bin": 6,
+              "rows": 13899,
+              "predicted": 0.6552432430923495,
+              "observed": 0.6706237858838765
+            },
+            {
+              "bin": 7,
+              "rows": 17551,
+              "predicted": 0.7456807675378477,
+              "observed": 0.7492450572616944
+            },
+            {
+              "bin": 8,
+              "rows": 5854,
+              "predicted": 0.8382947377511817,
+              "observed": 0.8457464981209429
+            },
+            {
+              "bin": 9,
+              "rows": 334,
+              "predicted": 0.9144027511516731,
+              "observed": 0.9461077844311377
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.708540749179075,
+          "gauc": 0.6004033420205429,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.621553285316295,
+          "brier": 0.21644298448661575,
+          "ece_10_bins": 0.00510591885289696,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 10386,
+              "predicted": 0.0786512988737334,
+              "observed": 0.07760446755247448
+            },
+            {
+              "bin": 1,
+              "rows": 43721,
+              "predicted": 0.155503685235894,
+              "observed": 0.16438324832460374
+            },
+            {
+              "bin": 2,
+              "rows": 75652,
+              "predicted": 0.25369852790316993,
+              "observed": 0.264434515941416
+            },
+            {
+              "bin": 3,
+              "rows": 109927,
+              "predicted": 0.3509972152701871,
+              "observed": 0.3503142994896613
+            },
+            {
+              "bin": 4,
+              "rows": 122708,
+              "predicted": 0.45057742583728166,
+              "observed": 0.4538742380284904
+            },
+            {
+              "bin": 5,
+              "rows": 129671,
+              "predicted": 0.5493142753771693,
+              "observed": 0.5538092557318136
+            },
+            {
+              "bin": 6,
+              "rows": 103419,
+              "predicted": 0.6472863874409005,
+              "observed": 0.6534872702308087
+            },
+            {
+              "bin": 7,
+              "rows": 57228,
+              "predicted": 0.7422632188742254,
+              "observed": 0.7458411966170406
+            },
+            {
+              "bin": 8,
+              "rows": 14721,
+              "predicted": 0.833627907792217,
+              "observed": 0.8522518850621561
+            },
+            {
+              "bin": 9,
+              "rows": 509,
+              "predicted": 0.9126423818657581,
+              "observed": 0.9449901768172888
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "8b9e1e6985f8e76f8e517be631423d21a66aa6ab84ee236c981291af61521013",
+      "valid_predictions_sha256": "f3e13b35d3c0544952743290f784e14a1a63f69c77f8b8f9a67a0994ba4dce84",
+      "elapsed_seconds": 7.557896999991499,
+      "test_used": false
+    },
+    "R_s2027": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "R",
+        "seed": 2027,
+        "enabled": [
+          false,
+          true
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+        "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6345886188201905,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7111759956476501,
+            "logloss": 0.6212117590554923
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6276124850006104,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7125159925066377,
+            "logloss": 0.6199578053285207
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6272503886489869,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7132328469357533,
+            "logloss": 0.6192807536840867
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.6270308926811218,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7124566690634476,
+            "logloss": 0.6198659316470574
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.626852519481659,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7128315795816575,
+            "logloss": 0.6195889563802318
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7128315795816574,
+          "gauc": 0.6051278611547479,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6195889563802318,
+          "brier": 0.21551595921805614,
+          "ece_10_bins": 0.006723813306224991,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 6348,
+              "predicted": 0.08377864039353393,
+              "observed": 0.06568998109640832
+            },
+            {
+              "bin": 1,
+              "rows": 42061,
+              "predicted": 0.15537689037801525,
+              "observed": 0.1512327334109983
+            },
+            {
+              "bin": 2,
+              "rows": 71288,
+              "predicted": 0.2538886771371918,
+              "observed": 0.25042082818987765
+            },
+            {
+              "bin": 3,
+              "rows": 109874,
+              "predicted": 0.35229178348355,
+              "observed": 0.3414547572674154
+            },
+            {
+              "bin": 4,
+              "rows": 126660,
+              "predicted": 0.4514533136413501,
+              "observed": 0.4406284541291647
+            },
+            {
+              "bin": 5,
+              "rows": 139759,
+              "predicted": 0.5509320685390766,
+              "observed": 0.5414749676228364
+            },
+            {
+              "bin": 6,
+              "rows": 126266,
+              "predicted": 0.6485274849324433,
+              "observed": 0.6480208448830247
+            },
+            {
+              "bin": 7,
+              "rows": 80457,
+              "predicted": 0.7431811987409176,
+              "observed": 0.7415265296990939
+            },
+            {
+              "bin": 8,
+              "rows": 22490,
+              "predicted": 0.8335321680049251,
+              "observed": 0.8441974210760338
+            },
+            {
+              "bin": 9,
+              "rows": 550,
+              "predicted": 0.9090623365749012,
+              "observed": 0.9509090909090909
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6863474322549288,
+          "gauc": 0.6226692742982584,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5976757455156356,
+          "brier": 0.20504511303263834,
+          "ece_10_bins": 0.026397264554701715,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 122,
+              "predicted": 0.08175233789704374,
+              "observed": 0.13114754098360656
+            },
+            {
+              "bin": 1,
+              "rows": 801,
+              "predicted": 0.15909811266501447,
+              "observed": 0.18476903870162298
+            },
+            {
+              "bin": 2,
+              "rows": 1885,
+              "predicted": 0.25262109574019437,
+              "observed": 0.2716180371352785
+            },
+            {
+              "bin": 3,
+              "rows": 3527,
+              "predicted": 0.35405840983058223,
+              "observed": 0.37056988942444
+            },
+            {
+              "bin": 4,
+              "rows": 5439,
+              "predicted": 0.45592763614492354,
+              "observed": 0.4861187718330576
+            },
+            {
+              "bin": 5,
+              "rows": 9480,
+              "predicted": 0.5544537180963951,
+              "observed": 0.5873417721518988
+            },
+            {
+              "bin": 6,
+              "rows": 16853,
+              "predicted": 0.6530654451751302,
+              "observed": 0.6852785854150596
+            },
+            {
+              "bin": 7,
+              "rows": 14089,
+              "predicted": 0.7442399912649105,
+              "observed": 0.7667684008801192
+            },
+            {
+              "bin": 8,
+              "rows": 5477,
+              "predicted": 0.8357496186614755,
+              "observed": 0.8473616943582253
+            },
+            {
+              "bin": 9,
+              "rows": 138,
+              "predicted": 0.9091310289458953,
+              "observed": 0.9492753623188406
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.708850563972538,
+          "gauc": 0.600912493653377,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6214855651176568,
+          "brier": 0.21642222067313052,
+          "ece_10_bins": 0.009383451596712607,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 6226,
+              "predicted": 0.08381834628890364,
+              "observed": 0.0644073241246386
+            },
+            {
+              "bin": 1,
+              "rows": 41260,
+              "predicted": 0.15530464852023806,
+              "observed": 0.15058167716917112
+            },
+            {
+              "bin": 2,
+              "rows": 69403,
+              "predicted": 0.2539231049131286,
+              "observed": 0.24984510756019193
+            },
+            {
+              "bin": 3,
+              "rows": 106347,
+              "predicted": 0.3522331932917629,
+              "observed": 0.3404891534316906
+            },
+            {
+              "bin": 4,
+              "rows": 121221,
+              "predicted": 0.4512525576659256,
+              "observed": 0.43858737347489296
+            },
+            {
+              "bin": 5,
+              "rows": 130279,
+              "predicted": 0.5506758089899291,
+              "observed": 0.5381373820799975
+            },
+            {
+              "bin": 6,
+              "rows": 109413,
+              "predicted": 0.6478284981212782,
+              "observed": 0.6422819957409083
+            },
+            {
+              "bin": 7,
+              "rows": 66368,
+              "predicted": 0.7429564318672656,
+              "observed": 0.7361680327868853
+            },
+            {
+              "bin": 8,
+              "rows": 17013,
+              "predicted": 0.8328183034750993,
+              "observed": 0.8431787456650797
+            },
+            {
+              "bin": 9,
+              "rows": 412,
+              "predicted": 0.9090393279651994,
+              "observed": 0.9514563106796117
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "3f166ca6b45d6f2dd67faec0340f7fd8e40309f3b9944724184cec6212adfc68",
+      "valid_predictions_sha256": "42e8797cbf3934775168399e691752651fe7c10872a1671026276c223a2ab25a",
+      "elapsed_seconds": 7.463231600006111,
+      "test_used": false
+    },
+    "R_s2028": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "R",
+        "seed": 2028,
+        "enabled": [
+          false,
+          true
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+        "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6323375074920654,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7118769847045542,
+            "logloss": 0.6210248741684286
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6276958516921997,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.712494868812483,
+            "logloss": 0.620750232804266
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.627191252128601,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7129678995310008,
+            "logloss": 0.6202602987588083
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.6269719652442932,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7129963401053984,
+            "logloss": 0.6198155846428862
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6267887481918335,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7125685495467026,
+            "logloss": 0.6197668568332229
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7125685495467025,
+          "gauc": 0.6053452664020353,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6197668568332229,
+          "brier": 0.21560510847010833,
+          "ece_10_bins": 0.008477208122497186,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 8379,
+              "predicted": 0.08206553330042757,
+              "observed": 0.06981740064446831
+            },
+            {
+              "bin": 1,
+              "rows": 40648,
+              "predicted": 0.15491310870753303,
+              "observed": 0.15789214721511513
+            },
+            {
+              "bin": 2,
+              "rows": 72299,
+              "predicted": 0.2535638945393942,
+              "observed": 0.2508333448595416
+            },
+            {
+              "bin": 3,
+              "rows": 111194,
+              "predicted": 0.3521038979661249,
+              "observed": 0.342626400705074
+            },
+            {
+              "bin": 4,
+              "rows": 122213,
+              "predicted": 0.4508863153176466,
+              "observed": 0.44235065009450714
+            },
+            {
+              "bin": 5,
+              "rows": 132317,
+              "predicted": 0.5507911053199157,
+              "observed": 0.539484722295699
+            },
+            {
+              "bin": 6,
+              "rows": 127875,
+              "predicted": 0.6494174159237367,
+              "observed": 0.6381544477028348
+            },
+            {
+              "bin": 7,
+              "rows": 85633,
+              "predicted": 0.7425658961835736,
+              "observed": 0.7365968727009448
+            },
+            {
+              "bin": 8,
+              "rows": 24436,
+              "predicted": 0.8343118739037374,
+              "observed": 0.8408495662137829
+            },
+            {
+              "bin": 9,
+              "rows": 759,
+              "predicted": 0.9103624650298057,
+              "observed": 0.9459815546772069
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6858377374347163,
+          "gauc": 0.623017791555247,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5966548904022753,
+          "brier": 0.20463509416805672,
+          "ece_10_bins": 0.014628660666188347,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 127,
+              "predicted": 0.07946631586633798,
+              "observed": 0.10236220472440945
+            },
+            {
+              "bin": 1,
+              "rows": 891,
+              "predicted": 0.1582274840502894,
+              "observed": 0.1840628507295174
+            },
+            {
+              "bin": 2,
+              "rows": 1827,
+              "predicted": 0.25470738156153716,
+              "observed": 0.2791461412151067
+            },
+            {
+              "bin": 3,
+              "rows": 3463,
+              "predicted": 0.3551750882767268,
+              "observed": 0.37077678313600926
+            },
+            {
+              "bin": 4,
+              "rows": 4759,
+              "predicted": 0.45508815323412233,
+              "observed": 0.48287455347762137
+            },
+            {
+              "bin": 5,
+              "rows": 8378,
+              "predicted": 0.554547252846265,
+              "observed": 0.5753163046073049
+            },
+            {
+              "bin": 6,
+              "rows": 15845,
+              "predicted": 0.6556283767759781,
+              "observed": 0.6691069738087725
+            },
+            {
+              "bin": 7,
+              "rows": 15677,
+              "predicted": 0.7438166539089758,
+              "observed": 0.7550551763730305
+            },
+            {
+              "bin": 8,
+              "rows": 6526,
+              "predicted": 0.8390987146185689,
+              "observed": 0.841556849524977
+            },
+            {
+              "bin": 9,
+              "rows": 318,
+              "predicted": 0.9117702530614985,
+              "observed": 0.940251572327044
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7084601577721783,
+          "gauc": 0.601035910039193,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6217672189774501,
+          "brier": 0.21655457338894238,
+          "ece_10_bins": 0.01033296365406877,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 8252,
+              "predicted": 0.08210553579850433,
+              "observed": 0.06931652932622395
+            },
+            {
+              "bin": 1,
+              "rows": 39757,
+              "predicted": 0.154838829752119,
+              "observed": 0.15730563171265438
+            },
+            {
+              "bin": 2,
+              "rows": 70472,
+              "predicted": 0.2535342494209152,
+              "observed": 0.2500993302304461
+            },
+            {
+              "bin": 3,
+              "rows": 107731,
+              "predicted": 0.3520051749240514,
+              "observed": 0.34172151005745793
+            },
+            {
+              "bin": 4,
+              "rows": 117454,
+              "predicted": 0.4507160652908744,
+              "observed": 0.4407087029815928
+            },
+            {
+              "bin": 5,
+              "rows": 123939,
+              "predicted": 0.5505371981238293,
+              "observed": 0.5370625872404974
+            },
+            {
+              "bin": 6,
+              "rows": 112030,
+              "predicted": 0.6485389666270861,
+              "observed": 0.633776666964206
+            },
+            {
+              "bin": 7,
+              "rows": 69956,
+              "predicted": 0.742285603873248,
+              "observed": 0.7324604036823146
+            },
+            {
+              "bin": 8,
+              "rows": 17910,
+              "predicted": 0.8325676571251226,
+              "observed": 0.8405918481295366
+            },
+            {
+              "bin": 9,
+              "rows": 441,
+              "predicted": 0.9093473253606938,
+              "observed": 0.9501133786848073
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "343c3bab24ca4eba9281af1e8119ff2ae00a8cfc9b9006ea5fa8541c10334f7d",
+      "valid_predictions_sha256": "7b576f29c340a72a863fda146e8933ff18c216b575ed2777612b0064ae7535c0",
+      "elapsed_seconds": 7.514735300093889,
+      "test_used": false
+    },
+    "TR_s2026": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "TR",
+        "seed": 2026,
+        "enabled": [
+          true,
+          true
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+        "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6367818945198059,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7118432508833964,
+            "logloss": 0.6213046706824262
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6277998397712707,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7124437857987694,
+            "logloss": 0.620515155713971
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6273807219200134,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7128063245358016,
+            "logloss": 0.6199611450724606
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.6271811526947021,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7129279554900332,
+            "logloss": 0.6195224077551243
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6269703550491333,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7126680441580426,
+            "logloss": 0.6196078493013265
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7126680441580426,
+          "gauc": 0.6047434237012418,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196078493013265,
+          "brier": 0.21551868572221755,
+          "ece_10_bins": 0.0031947841073021294,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 10002,
+              "predicted": 0.07958860023780001,
+              "observed": 0.07828434313137372
+            },
+            {
+              "bin": 1,
+              "rows": 45440,
+              "predicted": 0.1550391336770164,
+              "observed": 0.1639744718309859
+            },
+            {
+              "bin": 2,
+              "rows": 75831,
+              "predicted": 0.25367131537766446,
+              "observed": 0.26349382178792313
+            },
+            {
+              "bin": 3,
+              "rows": 111563,
+              "predicted": 0.3519645463082723,
+              "observed": 0.34964101001228004
+            },
+            {
+              "bin": 4,
+              "rows": 126574,
+              "predicted": 0.45078401721177264,
+              "observed": 0.45222557555264115
+            },
+            {
+              "bin": 5,
+              "rows": 134904,
+              "predicted": 0.5498514039181153,
+              "observed": 0.5510362924746487
+            },
+            {
+              "bin": 6,
+              "rows": 117179,
+              "predicted": 0.6486761614261024,
+              "observed": 0.6488449295522235
+            },
+            {
+              "bin": 7,
+              "rows": 80167,
+              "predicted": 0.7440338595070184,
+              "observed": 0.7404792495665299
+            },
+            {
+              "bin": 8,
+              "rows": 23135,
+              "predicted": 0.8347125591354749,
+              "observed": 0.8441754916792739
+            },
+            {
+              "bin": 9,
+              "rows": 958,
+              "predicted": 0.912826105921154,
+              "observed": 0.9436325678496869
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6857570892097699,
+          "gauc": 0.6255012810236596,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5962359680009477,
+          "brier": 0.20447038240779533,
+          "ece_10_bins": 0.008441536306463188,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 150,
+              "predicted": 0.07762801982462406,
+              "observed": 0.13333333333333333
+            },
+            {
+              "bin": 1,
+              "rows": 593,
+              "predicted": 0.16113216122125493,
+              "observed": 0.1821247892074199
+            },
+            {
+              "bin": 2,
+              "rows": 1856,
+              "predicted": 0.256365033276058,
+              "observed": 0.24622844827586207
+            },
+            {
+              "bin": 3,
+              "rows": 3383,
+              "predicted": 0.35638930288039117,
+              "observed": 0.3689033402305646
+            },
+            {
+              "bin": 4,
+              "rows": 4792,
+              "predicted": 0.4541624892558996,
+              "observed": 0.4741235392320534
+            },
+            {
+              "bin": 5,
+              "rows": 7904,
+              "predicted": 0.5538635003919664,
+              "observed": 0.5704706477732794
+            },
+            {
+              "bin": 6,
+              "rows": 12848,
+              "predicted": 0.6550897425307357,
+              "observed": 0.6562889165628891
+            },
+            {
+              "bin": 7,
+              "rows": 18587,
+              "predicted": 0.7494313229231553,
+              "observed": 0.7425082046591703
+            },
+            {
+              "bin": 8,
+              "rows": 7267,
+              "predicted": 0.837621004189063,
+              "observed": 0.8345947433603963
+            },
+            {
+              "bin": 9,
+              "rows": 431,
+              "predicted": 0.9140007635556905,
+              "observed": 0.9443155452436195
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7084074063707815,
+          "gauc": 0.6002074876562825,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6216307073187234,
+          "brier": 0.2164749266277304,
+          "ece_10_bins": 0.003014637115172186,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9852,
+              "predicted": 0.07961845073130147,
+              "observed": 0.07744620381648397
+            },
+            {
+              "bin": 1,
+              "rows": 44847,
+              "predicted": 0.15495856718798184,
+              "observed": 0.16373447499275315
+            },
+            {
+              "bin": 2,
+              "rows": 73975,
+              "predicted": 0.25360373118814883,
+              "observed": 0.2639270023656641
+            },
+            {
+              "bin": 3,
+              "rows": 108180,
+              "predicted": 0.3518261755236219,
+              "observed": 0.3490386393048623
+            },
+            {
+              "bin": 4,
+              "rows": 121782,
+              "predicted": 0.4506510777130335,
+              "observed": 0.4513639125650753
+            },
+            {
+              "bin": 5,
+              "rows": 127000,
+              "predicted": 0.549601706197412,
+              "observed": 0.5498267716535433
+            },
+            {
+              "bin": 6,
+              "rows": 104331,
+              "predicted": 0.6478863512063947,
+              "observed": 0.6479282284268338
+            },
+            {
+              "bin": 7,
+              "rows": 61580,
+              "predicted": 0.742404716075454,
+              "observed": 0.7398668398830789
+            },
+            {
+              "bin": 8,
+              "rows": 15868,
+              "predicted": 0.8333805910106687,
+              "observed": 0.8485631459541215
+            },
+            {
+              "bin": 9,
+              "rows": 527,
+              "predicted": 0.9118654276659638,
+              "observed": 0.9430740037950665
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "21365c2b01af01ce9760879db52afeb73638ecfff394aeeea4ef9a0b4c2cc967",
+      "valid_predictions_sha256": "ac288fb9a30c58fbe6050bed8d92dc019d1b5a94678b35fa7e65a98e9485513c",
+      "elapsed_seconds": 8.089316300000064,
+      "test_used": false
+    },
+    "TR_s2027": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "TR",
+        "seed": 2027,
+        "enabled": [
+          true,
+          true
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+        "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6344406829948426,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7102352996396356,
+            "logloss": 0.6216719236744592
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6277242437019348,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7123561112529937,
+            "logloss": 0.6201841714243972
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6273158867416382,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7129452680785847,
+            "logloss": 0.619476875687696
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.6270667142219544,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7127965072392475,
+            "logloss": 0.6195942418399472
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6268748019371033,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7127562226195787,
+            "logloss": 0.6196871945803961
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7127562226195787,
+          "gauc": 0.6050319635421229,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196871945803961,
+          "brier": 0.2155468712295204,
+          "ece_10_bins": 0.007263690772087822,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 4662,
+              "predicted": 0.08582952115261237,
+              "observed": 0.06392106392106392
+            },
+            {
+              "bin": 1,
+              "rows": 39787,
+              "predicted": 0.15644638995919538,
+              "observed": 0.14273506421695528
+            },
+            {
+              "bin": 2,
+              "rows": 72326,
+              "predicted": 0.2542028650128432,
+              "observed": 0.24584520089594336
+            },
+            {
+              "bin": 3,
+              "rows": 112644,
+              "predicted": 0.35244701362828557,
+              "observed": 0.33985831469052946
+            },
+            {
+              "bin": 4,
+              "rows": 129148,
+              "predicted": 0.4512230220923771,
+              "observed": 0.4418496608542138
+            },
+            {
+              "bin": 5,
+              "rows": 141502,
+              "predicted": 0.5501991549363277,
+              "observed": 0.544663679665305
+            },
+            {
+              "bin": 6,
+              "rows": 125569,
+              "predicted": 0.6483558690881451,
+              "observed": 0.6495711521155699
+            },
+            {
+              "bin": 7,
+              "rows": 77963,
+              "predicted": 0.7430416016598368,
+              "observed": 0.7450842066108282
+            },
+            {
+              "bin": 8,
+              "rows": 21662,
+              "predicted": 0.8334522384618108,
+              "observed": 0.8462745822177085
+            },
+            {
+              "bin": 9,
+              "rows": 490,
+              "predicted": 0.9081244240001757,
+              "observed": 0.9448979591836735
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6861244822475492,
+          "gauc": 0.623179985121251,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5982539192151581,
+          "brier": 0.20529707953714796,
+          "ece_10_bins": 0.028832575798514646,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 147,
+              "predicted": 0.08229234710741205,
+              "observed": 0.11564625850340136
+            },
+            {
+              "bin": 1,
+              "rows": 755,
+              "predicted": 0.1591977380068097,
+              "observed": 0.1986754966887417
+            },
+            {
+              "bin": 2,
+              "rows": 1948,
+              "predicted": 0.2549302464913294,
+              "observed": 0.26283367556468173
+            },
+            {
+              "bin": 3,
+              "rows": 3582,
+              "predicted": 0.3530579555523855,
+              "observed": 0.38274706867671693
+            },
+            {
+              "bin": 4,
+              "rows": 5545,
+              "predicted": 0.4559647690400656,
+              "observed": 0.4853020739404869
+            },
+            {
+              "bin": 5,
+              "rows": 9677,
+              "predicted": 0.5540278289847055,
+              "observed": 0.5884054975715615
+            },
+            {
+              "bin": 6,
+              "rows": 16657,
+              "predicted": 0.6526640383587626,
+              "observed": 0.6853575073542655
+            },
+            {
+              "bin": 7,
+              "rows": 14294,
+              "predicted": 0.744214480763401,
+              "observed": 0.7707429690779348
+            },
+            {
+              "bin": 8,
+              "rows": 5090,
+              "predicted": 0.8357948930418093,
+              "observed": 0.8532416502946955
+            },
+            {
+              "bin": 9,
+              "rows": 116,
+              "predicted": 0.9097961238745985,
+              "observed": 0.9310344827586207
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7088018353894447,
+          "gauc": 0.6007761435967748,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6215422644549362,
+          "brier": 0.21643400021306647,
+          "ece_10_bins": 0.009180813830808363,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 4515,
+              "predicted": 0.08594468495873518,
+              "observed": 0.06223698781838317
+            },
+            {
+              "bin": 1,
+              "rows": 39032,
+              "predicted": 0.15639317035026043,
+              "observed": 0.14165300266448042
+            },
+            {
+              "bin": 2,
+              "rows": 70378,
+              "predicted": 0.2541827317450594,
+              "observed": 0.24537497513427492
+            },
+            {
+              "bin": 3,
+              "rows": 109062,
+              "predicted": 0.3524269480328249,
+              "observed": 0.3384496891676294
+            },
+            {
+              "bin": 4,
+              "rows": 123603,
+              "predicted": 0.45101030082489224,
+              "observed": 0.43990032604386625
+            },
+            {
+              "bin": 5,
+              "rows": 131825,
+              "predicted": 0.5499180999106029,
+              "observed": 0.5414526834818889
+            },
+            {
+              "bin": 6,
+              "rows": 108912,
+              "predicted": 0.647696977730529,
+              "observed": 0.6440979873659468
+            },
+            {
+              "bin": 7,
+              "rows": 63669,
+              "predicted": 0.7427782845996295,
+              "observed": 0.739323689707707
+            },
+            {
+              "bin": 8,
+              "rows": 16572,
+              "predicted": 0.8327327048018909,
+              "observed": 0.8441346850108616
+            },
+            {
+              "bin": 9,
+              "rows": 374,
+              "predicted": 0.9076059288519589,
+              "observed": 0.9491978609625669
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "2e6ecc5135ef51f4d49e03aadeb9a133d60038cb5ad5f6a0f1cd79a632f3309c",
+      "valid_predictions_sha256": "24807fe4f6f606fc1b39be0f741ad292c5a20ca7eb78bf49f8b9f3c44ed0cba0",
+      "elapsed_seconds": 7.538822199916467,
+      "test_used": false
+    },
+    "TR_s2028": {
+      "metadata": {
+        "kind": "temporal_route_factorial_v1",
+        "arm": "TR",
+        "seed": 2028,
+        "enabled": [
+          true,
+          true
+        ],
+        "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+        "epochs": 5,
+        "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+        "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+        "model_source_sha256": "b53d5d855dcaa34e318811c3b64793b98ec63be8def1ab1f60068dcebb5e57ea",
+        "feature_source_sha256": "b4638c0f307f2bea7f71bb98780b38a37f942490b7c3d2d9b4a861024f91e27e",
+        "trainer_source_sha256": "794e9ba10cf134d4b02109ae148e19bb3b542c9103942f589d9a3cddee827f11",
+        "feature_names": [
+          "global_ctr",
+          "user_ctr",
+          "item_ctr",
+          "category_ctr",
+          "user_category_ctr",
+          "log_user_count",
+          "log_item_count",
+          "log_category_count",
+          "log_user_category_count",
+          "long_category_share",
+          "seen_item",
+          "seen_user",
+          "hour_sin",
+          "hour_cos",
+          "weekday_sin",
+          "weekday_cos",
+          "log_search_user_clicks",
+          "log_search_category_clicks",
+          "short_search_category_share",
+          "has_search_clicks",
+          "log_item_exposures_1d",
+          "log_item_clicks_1d",
+          "item_ctr_1d",
+          "log_item_exposures_3d",
+          "log_item_clicks_3d",
+          "item_ctr_3d",
+          "click_share_1d_in_history",
+          "log_click_growth_1d_vs_prior2d",
+          "recent_route_hit",
+          "itemcf_route_hit",
+          "recent_rrf60",
+          "itemcf_rrf60",
+          "log_itemcf_score",
+          "combined_rrf60"
+        ],
+        "test_used": false,
+        "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+        "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+        "sample_rows": 1000000
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_logloss": 0.6328017382202148,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7122166628826743,
+            "logloss": 0.6206997526223108
+          }
+        },
+        {
+          "epoch": 2,
+          "train_logloss": 0.6277387682800293,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7125237326712565,
+            "logloss": 0.6206593218117973
+          }
+        },
+        {
+          "epoch": 3,
+          "train_logloss": 0.6272541604804993,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7124579353188595,
+            "logloss": 0.6204225137677021
+          }
+        },
+        {
+          "epoch": 4,
+          "train_logloss": 0.6270340031013488,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7131443317401711,
+            "logloss": 0.6197284577992829
+          }
+        },
+        {
+          "epoch": 5,
+          "train_logloss": 0.6267893755645751,
+          "valid": {
+            "rows": 725753,
+            "auc": 0.7127426016977831,
+            "logloss": 0.6196238999282677
+          }
+        }
+      ],
+      "parameters": 4523,
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.712742601697783,
+          "gauc": 0.6056176775908446,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196238999282677,
+          "brier": 0.2155365279762881,
+          "ece_10_bins": 0.0074880936640091805,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 8152,
+              "predicted": 0.08090512764044253,
+              "observed": 0.07016683022571148
+            },
+            {
+              "bin": 1,
+              "rows": 40618,
+              "predicted": 0.15439668589660616,
+              "observed": 0.15665468511497366
+            },
+            {
+              "bin": 2,
+              "rows": 71232,
+              "predicted": 0.2538187319376428,
+              "observed": 0.24917172057502246
+            },
+            {
+              "bin": 3,
+              "rows": 111213,
+              "predicted": 0.3521856575193766,
+              "observed": 0.34228912087615654
+            },
+            {
+              "bin": 4,
+              "rows": 125578,
+              "predicted": 0.4507915050545543,
+              "observed": 0.44104859131376517
+            },
+            {
+              "bin": 5,
+              "rows": 134449,
+              "predicted": 0.5504651649311124,
+              "observed": 0.5418113931676696
+            },
+            {
+              "bin": 6,
+              "rows": 126725,
+              "predicted": 0.6487606775283249,
+              "observed": 0.6420753600315644
+            },
+            {
+              "bin": 7,
+              "rows": 82704,
+              "predicted": 0.7428569141202415,
+              "observed": 0.7384527955117044
+            },
+            {
+              "bin": 8,
+              "rows": 24379,
+              "predicted": 0.8342437557544519,
+              "observed": 0.8423643299561098
+            },
+            {
+              "bin": 9,
+              "rows": 703,
+              "predicted": 0.9100713515349507,
+              "observed": 0.9487908961593172
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.686599041640438,
+          "gauc": 0.6247460903049137,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5962696777186052,
+          "brier": 0.20446819596224813,
+          "ece_10_bins": 0.014816055537361482,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 174,
+              "predicted": 0.07930357615067356,
+              "observed": 0.12643678160919541
+            },
+            {
+              "bin": 1,
+              "rows": 773,
+              "predicted": 0.15824547568083117,
+              "observed": 0.18628719275549807
+            },
+            {
+              "bin": 2,
+              "rows": 1776,
+              "predicted": 0.2543981708754022,
+              "observed": 0.26463963963963966
+            },
+            {
+              "bin": 3,
+              "rows": 3419,
+              "predicted": 0.3560733084233751,
+              "observed": 0.3723310909622697
+            },
+            {
+              "bin": 4,
+              "rows": 5017,
+              "predicted": 0.45620410002059664,
+              "observed": 0.47937014151883595
+            },
+            {
+              "bin": 5,
+              "rows": 8551,
+              "predicted": 0.554463826484979,
+              "observed": 0.5767746462402058
+            },
+            {
+              "bin": 6,
+              "rows": 15598,
+              "predicted": 0.6548281860918643,
+              "observed": 0.6700217976663675
+            },
+            {
+              "bin": 7,
+              "rows": 15703,
+              "predicted": 0.7440186816021598,
+              "observed": 0.7557791504807998
+            },
+            {
+              "bin": 8,
+              "rows": 6487,
+              "predicted": 0.8392626239170329,
+              "observed": 0.842145830121782
+            },
+            {
+              "bin": 9,
+              "rows": 313,
+              "predicted": 0.9121164540513255,
+              "observed": 0.9297124600638977
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7085817530660635,
+          "gauc": 0.6012178135517406,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.621645229534974,
+          "brier": 0.21649450238434095,
+          "ece_10_bins": 0.009281139853376997,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 7978,
+              "predicted": 0.08094005744230011,
+              "observed": 0.0689395838556029
+            },
+            {
+              "bin": 1,
+              "rows": 39845,
+              "predicted": 0.15432201869863385,
+              "observed": 0.15607980926088594
+            },
+            {
+              "bin": 2,
+              "rows": 69456,
+              "predicted": 0.25380391559991156,
+              "observed": 0.24877620363971434
+            },
+            {
+              "bin": 3,
+              "rows": 107794,
+              "predicted": 0.35206234937197717,
+              "observed": 0.3413362524815852
+            },
+            {
+              "bin": 4,
+              "rows": 120561,
+              "predicted": 0.4505662664703966,
+              "observed": 0.43945388641434624
+            },
+            {
+              "bin": 5,
+              "rows": 125898,
+              "predicted": 0.5501935755893665,
+              "observed": 0.5394366868417291
+            },
+            {
+              "bin": 6,
+              "rows": 111127,
+              "predicted": 0.647909030326708,
+              "observed": 0.6381527441575855
+            },
+            {
+              "bin": 7,
+              "rows": 67001,
+              "predicted": 0.7425846310980692,
+              "observed": 0.7343920239996418
+            },
+            {
+              "bin": 8,
+              "rows": 17892,
+              "predicted": 0.8324240934600933,
+              "observed": 0.842443550190029
+            },
+            {
+              "bin": 9,
+              "rows": 390,
+              "predicted": 0.9084300256692446,
+              "observed": 0.9641025641025641
+            }
+          ]
+        }
+      },
+      "checkpoint_sha256": "d4577f9b5313831c5e93c08bcf53abc735539fb630e4df747aa1143f05e0ff6b",
+      "valid_predictions_sha256": "3085719d595fc06fabbb8acdeb92361fa17ca8df89cc2b46def038d28a6d516e",
+      "elapsed_seconds": 7.534401000011712,
+      "test_used": false
+    }
+  },
+  "test_used": false,
+  "default_changed": false
+}

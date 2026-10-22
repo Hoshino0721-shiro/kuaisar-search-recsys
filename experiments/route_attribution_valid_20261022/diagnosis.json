@@ -1,0 +1,238 @@
+{
+  "runs": {
+    "base_s2026": {
+      "rrf_positive_event_destination": {
+        "1_20": 5,
+        "21_80": 22,
+        "81_400": 254,
+        "401_2000": 1464
+      },
+      "rrf_hits_retained": 5,
+      "rrf_hits_lost": 1740,
+      "new_hits_outside_rrf_top20": 401,
+      "direct_hits": 406,
+      "top20_logged_pair_fraction": 0.0029193643319599762,
+      "top20_logged_exposure_rows": 496,
+      "top20_observed_ctr_on_logged_subset": 0.8185483870967742,
+      "top20_mean_predicted_ctr": 0.7345419526100159,
+      "top20_median_train_exposures": 99.00000762939453,
+      "top20_mean_smoothed_item_ctr": 0.8011249303817749,
+      "top20_recent_route_fraction": 0.906615674495697,
+      "top20_cf_route_fraction": 0.20166568458080292,
+      "limited_adjustment": {
+        "rrf_head40_dcn": {
+          "hit_events": 1564,
+          "ndcg_at20": 0.011249281312732335,
+          "event_recall_at20": 0.004410280126104685
+        },
+        "rrf_head100_dcn": {
+          "hit_events": 1484,
+          "ndcg_at20": 0.010353222112006025,
+          "event_recall_at20": 0.004184690349833346
+        },
+        "reserve_rrf10_then_dcn": {
+          "hit_events": 1225,
+          "ndcg_at20": 0.011884888794033476,
+          "event_recall_at20": 0.003454343449154884
+        }
+      }
+    },
+    "base_s2027": {
+      "rrf_positive_event_destination": {
+        "1_20": 0,
+        "21_80": 4,
+        "81_400": 118,
+        "401_2000": 1623
+      },
+      "rrf_hits_retained": 0,
+      "rrf_hits_lost": 1745,
+      "new_hits_outside_rrf_top20": 332,
+      "direct_hits": 332,
+      "top20_logged_pair_fraction": 0.0024896998234255445,
+      "top20_logged_exposure_rows": 423,
+      "top20_observed_ctr_on_logged_subset": 0.7848699763593381,
+      "top20_mean_predicted_ctr": 0.7505922913551331,
+      "top20_median_train_exposures": 71.0,
+      "top20_mean_smoothed_item_ctr": 0.7901327013969421,
+      "top20_recent_route_fraction": 0.8777457475662231,
+      "top20_cf_route_fraction": 0.1812477856874466,
+      "limited_adjustment": {
+        "rrf_head40_dcn": {
+          "hit_events": 1592,
+          "ndcg_at20": 0.01134715520061738,
+          "event_recall_at20": 0.0044892365477996535
+        },
+        "rrf_head100_dcn": {
+          "hit_events": 1495,
+          "ndcg_at20": 0.010443630329243479,
+          "event_recall_at20": 0.004215708944070654
+        },
+        "reserve_rrf10_then_dcn": {
+          "hit_events": 1180,
+          "ndcg_at20": 0.011669884734359287,
+          "event_recall_at20": 0.0033274492000022558
+        }
+      }
+    },
+    "base_s2028": {
+      "rrf_positive_event_destination": {
+        "1_20": 1,
+        "21_80": 5,
+        "81_400": 138,
+        "401_2000": 1601
+      },
+      "rrf_hits_retained": 1,
+      "rrf_hits_lost": 1744,
+      "new_hits_outside_rrf_top20": 328,
+      "direct_hits": 329,
+      "top20_logged_pair_fraction": 0.002419070041200706,
+      "top20_logged_exposure_rows": 411,
+      "top20_observed_ctr_on_logged_subset": 0.8004866180048662,
+      "top20_mean_predicted_ctr": 0.7247452139854431,
+      "top20_median_train_exposures": 71.0,
+      "top20_mean_smoothed_item_ctr": 0.7854050397872925,
+      "top20_recent_route_fraction": 0.8498764038085938,
+      "top20_cf_route_fraction": 0.2069275975227356,
+      "limited_adjustment": {
+        "rrf_head40_dcn": {
+          "hit_events": 1544,
+          "ndcg_at20": 0.011080061275016123,
+          "event_recall_at20": 0.0043538826820368505
+        },
+        "rrf_head100_dcn": {
+          "hit_events": 1461,
+          "ndcg_at20": 0.01015323810991239,
+          "event_recall_at20": 0.004119833289155336
+        },
+        "reserve_rrf10_then_dcn": {
+          "hit_events": 1183,
+          "ndcg_at20": 0.011690724782792893,
+          "event_recall_at20": 0.003335908816612431
+        }
+      }
+    },
+    "R_s2026": {
+      "rrf_positive_event_destination": {
+        "1_20": 36,
+        "21_80": 78,
+        "81_400": 247,
+        "401_2000": 1384
+      },
+      "rrf_hits_retained": 36,
+      "rrf_hits_lost": 1709,
+      "new_hits_outside_rrf_top20": 502,
+      "direct_hits": 538,
+      "top20_logged_pair_fraction": 0.003949381989405532,
+      "top20_logged_exposure_rows": 671,
+      "top20_observed_ctr_on_logged_subset": 0.8017883755588674,
+      "top20_mean_predicted_ctr": 0.7423306107521057,
+      "top20_median_train_exposures": 184.99998474121094,
+      "top20_mean_smoothed_item_ctr": 0.8034721612930298,
+      "top20_recent_route_fraction": 0.8245144486427307,
+      "top20_cf_route_fraction": 0.3045438528060913,
+      "limited_adjustment": {
+        "rrf_head40_dcn": {
+          "hit_events": 1600,
+          "ndcg_at20": 0.011160561444847313,
+          "event_recall_at20": 0.004511795525426788
+        },
+        "rrf_head100_dcn": {
+          "hit_events": 1440,
+          "ndcg_at20": 0.009907967659948405,
+          "event_recall_at20": 0.004060615972884109
+        },
+        "reserve_rrf10_then_dcn": {
+          "hit_events": 1287,
+          "ndcg_at20": 0.012204802607159912,
+          "event_recall_at20": 0.0036291755257651724
+        }
+      }
+    },
+    "R_s2027": {
+      "rrf_positive_event_destination": {
+        "1_20": 105,
+        "21_80": 133,
+        "81_400": 309,
+        "401_2000": 1198
+      },
+      "rrf_hits_retained": 105,
+      "rrf_hits_lost": 1640,
+      "new_hits_outside_rrf_top20": 440,
+      "direct_hits": 545,
+      "top20_logged_pair_fraction": 0.004226015303119482,
+      "top20_logged_exposure_rows": 718,
+      "top20_observed_ctr_on_logged_subset": 0.7590529247910863,
+      "top20_mean_predicted_ctr": 0.7312688231468201,
+      "top20_median_train_exposures": 75.99999237060547,
+      "top20_mean_smoothed_item_ctr": 0.7838407754898071,
+      "top20_recent_route_fraction": 0.8291289210319519,
+      "top20_cf_route_fraction": 0.40645086765289307,
+      "limited_adjustment": {
+        "rrf_head40_dcn": {
+          "hit_events": 1553,
+          "ndcg_at20": 0.010855472949927567,
+          "event_recall_at20": 0.004379261531867375
+        },
+        "rrf_head100_dcn": {
+          "hit_events": 1441,
+          "ndcg_at20": 0.00999964008123076,
+          "event_recall_at20": 0.004063435845087501
+        },
+        "reserve_rrf10_then_dcn": {
+          "hit_events": 1274,
+          "ndcg_at20": 0.012110632363374563,
+          "event_recall_at20": 0.00359251718712108
+        }
+      }
+    },
+    "R_s2028": {
+      "rrf_positive_event_destination": {
+        "1_20": 28,
+        "21_80": 79,
+        "81_400": 344,
+        "401_2000": 1294
+      },
+      "rrf_hits_retained": 28,
+      "rrf_hits_lost": 1717,
+      "new_hits_outside_rrf_top20": 427,
+      "direct_hits": 455,
+      "top20_logged_pair_fraction": 0.0033490288404944084,
+      "top20_logged_exposure_rows": 569,
+      "top20_observed_ctr_on_logged_subset": 0.7996485061511424,
+      "top20_mean_predicted_ctr": 0.7342300415039062,
+      "top20_median_train_exposures": 75.0,
+      "top20_mean_smoothed_item_ctr": 0.7736009955406189,
+      "top20_recent_route_fraction": 0.6720953583717346,
+      "top20_cf_route_fraction": 0.46917009353637695,
+      "limited_adjustment": {
+        "rrf_head40_dcn": {
+          "hit_events": 1584,
+          "ndcg_at20": 0.011392878297152334,
+          "event_recall_at20": 0.00446667757017252
+        },
+        "rrf_head100_dcn": {
+          "hit_events": 1476,
+          "ndcg_at20": 0.010245397092064196,
+          "event_recall_at20": 0.0041621313722062115
+        },
+        "reserve_rrf10_then_dcn": {
+          "hit_events": 1231,
+          "ndcg_at20": 0.011931433205184215,
+          "event_recall_at20": 0.0034712626823752346
+        }
+      }
+    }
+  },
+  "test_used": false,
+  "scope": "descriptive logged-feedback diagnosis, not counterfactual CTR",
+  "rrf_top20_positive_events": 1745,
+  "rrf_top20_positive_events_retained_by_lr400": 662,
+  "rrf_top20_lost_before_fine": 1083,
+  "rrf_selection": {
+    "top20_logged_pair_fraction": 0.016003531489111242,
+    "top20_logged_exposure_rows": 2719,
+    "top20_observed_ctr_on_logged_subset": 0.6417800662008091,
+    "top20_median_train_exposures": 725.9998779296875,
+    "top20_mean_smoothed_item_ctr": 0.6723809242248535
+  }
+}

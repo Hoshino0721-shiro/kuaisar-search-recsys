@@ -1,0 +1,13 @@
+{
+  "full_rows": 5752167,
+  "sample_rows": 1000000,
+  "full_unique_items": 1806625,
+  "sample_unique_items": 540758,
+  "candidate_unique_items": 225300,
+  "candidate_unique_items_absent_sample": 66114,
+  "candidate_occurrences_absent_sample_fraction": 0.019545497351383168,
+  "rrf_top20_occurrences_absent_sample_fraction": 0.016238964096527368,
+  "validation_users_absent_full": 2019,
+  "validation_users_seen_full_but_absent_sample": 494,
+  "caveat": "numeric DCN has no item/user ID embeddings; cumulative numeric state already uses all causal preceding logs"
+}

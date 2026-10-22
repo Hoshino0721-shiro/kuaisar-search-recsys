@@ -1,0 +1,48 @@
+{
+  "mode": "offline_v2_rrf",
+  "split": "valid",
+  "users": 8495,
+  "config": {
+    "output_mode": "rrf",
+    "itemcf_index": "artifacts/itemcf_support2_300",
+    "itemcf_neighbor_limit": 300,
+    "itemcf_query_half_life_days": null,
+    "route_k": 1000,
+    "route_limits": {
+      "popular": 0,
+      "recent": 2000,
+      "itemcf": 1000
+    },
+    "route_weights": {
+      "popular": 0.0,
+      "recent": 1.0,
+      "itemcf": 1.0
+    },
+    "fusion": {
+      "method": "rrf"
+    },
+    "budget": {
+      "recall": 2000,
+      "coarse": 400,
+      "fine": 80,
+      "output": 20,
+      "category_penalty": 0.0
+    }
+  },
+  "positive_events": 354626,
+  "hit_events_at20": 1745,
+  "pool_hit_events": 34647,
+  "event_recall_at20": 0.00492067699491859,
+  "ndcg_at20": 0.014511879361434473,
+  "candidate_sha256": "99abfbdb6e69d33264ae2b5c2a00031cf4edd8f984ef7e4c98054e861a73346e",
+  "model_weights_loaded": false,
+  "itemcf_index_version": "c5e5d6daaddf007507a5",
+  "manifest_sha256": "84bc856e6f1ee096e9bbf285db8c7fef2ed3832c561a8baa3f16498eafdf5a8f",
+  "source_sha256": "110b720ce2d1a9e31d5368329887eb375811c45125ced6fa9e4823b824585e56",
+  "rrf_source_sha256": "1328413375b5cbf7660c8d0046e0bf157543f2432f464703cb7fadf8eb02076b",
+  "request_p50_ms": 7.32049997895956,
+  "request_p95_ms": 63.382679969072335,
+  "timing_scope": "single process local CPU retrieval+fusion; no network or concurrency; includes first request",
+  "test_used": false,
+  "scope": "same development validation day; fixed train-cutoff lists and future logged clicks, not online CTR"
+}

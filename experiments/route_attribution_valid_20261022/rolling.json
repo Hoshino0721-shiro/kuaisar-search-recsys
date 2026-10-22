@@ -1,0 +1,796 @@
+{
+  "1685116800000": {
+    "cutoff_ms": 1685116800000,
+    "users": 10122,
+    "positive_events": 636465,
+    "pool_hits": 79536,
+    "train_rows": 585106,
+    "sampled_validation_exposures": 212967,
+    "numeric_feature_replay_max_error": 0.0,
+    "train_max_day_ms": 1685030400000,
+    "catalog_matches_strict_prefix": true,
+    "candidate_items_sha256": "4d8b4ab1a1578081e92a452a2613b11e68cd8213a06efcbf29425903390ea91b",
+    "runs": {
+      "base_s2026": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2026,
+            "columns": [],
+            "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+            "training_order_sha256": "4cb329505be8bb8455c68d0ee6627805b26256dc4e1c19ca969118f7076c265d",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 585106,
+            "context": {
+              "cutoff_ms": 1685116800000,
+              "train_max_day_ms": 1685030400000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6478380884694658
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6360126446727045
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6356332033419997
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6353299904671467
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6351157931625566
+            }
+          ],
+          "exposure": {
+            "rows": 212967,
+            "auc": 0.7173273694511193,
+            "logloss": 0.6157999088170615
+          },
+          "checkpoint_sha256": "b995354410ef91d471e18a58cd48ca2c7875ec4e997731339e23faebf5e3848a",
+          "elapsed_seconds": 2.574315599980764,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 1621,
+          "ndcg_at20": 0.009489536416393501,
+          "event_recall_at20": 0.0025468800326805085
+        }
+      },
+      "base_s2027": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2027,
+            "columns": [],
+            "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+            "training_order_sha256": "364b2e4137185e30834414e00d9e31fc655c802d0c82c527413361e96ea02d04",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 585106,
+            "context": {
+              "cutoff_ms": 1685116800000,
+              "train_max_day_ms": 1685030400000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6460332849991265
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6359418488992772
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6354651423304453
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6351865756014278
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6350570807207903
+            }
+          ],
+          "exposure": {
+            "rows": 212967,
+            "auc": 0.7173889878407589,
+            "logloss": 0.6159864428145456
+          },
+          "checkpoint_sha256": "2c7019bf4050267894fa65806c5c06d303888787120b71e6e4663b4c93d930f4",
+          "elapsed_seconds": 2.5122286999830976,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 1117,
+          "ndcg_at20": 0.006685611043795376,
+          "event_recall_at20": 0.0017550061668748479
+        }
+      },
+      "base_s2028": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2028,
+            "columns": [],
+            "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+            "training_order_sha256": "19706e7be9b779016de66b74e890fda2f344ad87ff37bd9a2dff87b1ed87d7b0",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 585106,
+            "context": {
+              "cutoff_ms": 1685116800000,
+              "train_max_day_ms": 1685030400000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.642130728554632
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6358874654219637
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6354769544100681
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6353086527758791
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6351037265897042
+            }
+          ],
+          "exposure": {
+            "rows": 212967,
+            "auc": 0.7172777917370594,
+            "logloss": 0.6160174682263778
+          },
+          "checkpoint_sha256": "dfdcb1a0552e2c198e96cab0077202bfbb1899853fe434e48f008ab71c35a905",
+          "elapsed_seconds": 2.6487592000048608,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 1137,
+          "ndcg_at20": 0.006681268339589894,
+          "event_recall_at20": 0.001786429732978247
+        }
+      },
+      "R_s2026": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2026,
+            "columns": [
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ],
+            "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+            "training_order_sha256": "4cb329505be8bb8455c68d0ee6627805b26256dc4e1c19ca969118f7076c265d",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 585106,
+            "context": {
+              "cutoff_ms": 1685116800000,
+              "train_max_day_ms": 1685030400000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6481863561047968
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6360266961537984
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6356110712680171
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.635255305277587
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6350325612022011
+            }
+          ],
+          "exposure": {
+            "rows": 212967,
+            "auc": 0.7173609638760295,
+            "logloss": 0.6157558556743781
+          },
+          "checkpoint_sha256": "5bc6d204181d9bbbff7b54357739e05e2bcd3cc5c90f93e58c7883863a76cb04",
+          "elapsed_seconds": 2.8261129000457004,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 1677,
+          "ndcg_at20": 0.010728105807624008,
+          "event_recall_at20": 0.002634866017770027
+        }
+      },
+      "R_s2027": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2027,
+            "columns": [
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ],
+            "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+            "training_order_sha256": "364b2e4137185e30834414e00d9e31fc655c802d0c82c527413361e96ea02d04",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 585106,
+            "context": {
+              "cutoff_ms": 1685116800000,
+              "train_max_day_ms": 1685030400000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6460711933466117
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6360166644143652
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6355262385059044
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6352233819464292
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6350465787135801
+            }
+          ],
+          "exposure": {
+            "rows": 212967,
+            "auc": 0.7175055991738932,
+            "logloss": 0.61621594119148
+          },
+          "checkpoint_sha256": "b5ef1417fb38c1133fd3e2b2d62088ce7410d8e50ec945965235074842627f93",
+          "elapsed_seconds": 2.528385499957949,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 1112,
+          "ndcg_at20": 0.006296578335166805,
+          "event_recall_at20": 0.001747150275348998
+        }
+      },
+      "R_s2028": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2028,
+            "columns": [
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ],
+            "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+            "training_order_sha256": "19706e7be9b779016de66b74e890fda2f344ad87ff37bd9a2dff87b1ed87d7b0",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 585106,
+            "context": {
+              "cutoff_ms": 1685116800000,
+              "train_max_day_ms": 1685030400000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6422194576105162
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6359611490755042
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6354666581686951
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6353179746947376
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.635142087708213
+            }
+          ],
+          "exposure": {
+            "rows": 212967,
+            "auc": 0.7169526424743481,
+            "logloss": 0.6162673514976323
+          },
+          "checkpoint_sha256": "8090924b3a6025f8fee24b8e16472697edaa6816ca621f0ea2eeb359f40e97b4",
+          "elapsed_seconds": 2.572011600015685,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 2466,
+          "ndcg_at20": 0.015512898153410256,
+          "event_recall_at20": 0.0038745257005491267
+        }
+      }
+    },
+    "aggregate": {
+      "base": {
+        "hit_events": 1291.6666666666665,
+        "ndcg_at20": 0.007618805266592925,
+        "event_recall_at20": 0.0020294386441778675
+      },
+      "R": {
+        "hit_events": 1751.6666666666665,
+        "ndcg_at20": 0.010845860765400355,
+        "event_recall_at20": 0.0027521806645560503
+      }
+    },
+    "rrf": {
+      "hit_events": 4063,
+      "ndcg_at20": 0.025026166376317084,
+      "event_recall_at20": 0.006383697453905556
+    },
+    "paired_R_minus_base": {
+      "ndcg_difference": 0.00322705549880743,
+      "ndcg_95_interval": [
+        0.0027891242672055537,
+        0.0036429893576140635
+      ],
+      "event_recall_difference": 0.0007227420203781826,
+      "event_recall_95_interval": [
+        0.0006304260775188896,
+        0.00081303001928567
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "test_used": false,
+    "scope": "earlier dates from original train, refitted strict prefix; retrospective temporal check, not untouched independent test"
+  },
+  "1685203200000": {
+    "cutoff_ms": 1685203200000,
+    "users": 12443,
+    "positive_events": 610986,
+    "pool_hits": 73283,
+    "train_rows": 798073,
+    "sampled_validation_exposures": 201927,
+    "numeric_feature_replay_max_error": 0.0,
+    "train_max_day_ms": 1685116800000,
+    "catalog_matches_strict_prefix": true,
+    "candidate_items_sha256": "fe15eb71df42d0491b0822083c74304fc6a4bda1a3bb26c7230eeb9185cd4336",
+    "runs": {
+      "base_s2026": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2026,
+            "columns": [],
+            "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+            "training_order_sha256": "ee638d44404542a21a400fe259f26424b8c04446302e55d5170fb95718dd456b",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 798073,
+            "context": {
+              "cutoff_ms": 1685203200000,
+              "train_max_day_ms": 1685116800000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6405747463072411
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6304601808202139
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6299934067033147
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6298662755707739
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6296424033934515
+            }
+          ],
+          "exposure": {
+            "rows": 201927,
+            "auc": 0.7147155144970468,
+            "logloss": 0.6207423563200267
+          },
+          "checkpoint_sha256": "4197c36195b8696a909e8dc7dc9a5759fed4cc241e1ed7239f52f36f38c39c78",
+          "elapsed_seconds": 3.4243986000074074,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 813,
+          "ndcg_at20": 0.0035868131363105318,
+          "event_recall_at20": 0.0013306360538539344
+        }
+      },
+      "base_s2027": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2027,
+            "columns": [],
+            "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+            "training_order_sha256": "f6442dc0d977a91c5ccfefa7ee68b9564f2bc1aee0eff0f0b9cab2facf6ac93a",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 798073,
+            "context": {
+              "cutoff_ms": 1685203200000,
+              "train_max_day_ms": 1685116800000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6385310802674448
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6303095746131282
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6299254423743371
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6296698780145482
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6295702232475382
+            }
+          ],
+          "exposure": {
+            "rows": 201927,
+            "auc": 0.7146713444240999,
+            "logloss": 0.617718943361056
+          },
+          "checkpoint_sha256": "996e75f24cb96392b2cc66cccd1f5c348de4e05adc7a2026bee53177286f8d26",
+          "elapsed_seconds": 3.25769539992325,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 635,
+          "ndcg_at20": 0.0026446882899068247,
+          "event_recall_at20": 0.0010393036828994446
+        }
+      },
+      "base_s2028": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2028,
+            "columns": [],
+            "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+            "training_order_sha256": "1a01cd959021e42b3aeb8dccf8c3cb1adb6baefacdca3f85af19dd4e11aa8b9b",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 798073,
+            "context": {
+              "cutoff_ms": 1685203200000,
+              "train_max_day_ms": 1685116800000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6353878357684997
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6303687508014729
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6299714431692306
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6297892200911004
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6295866813140369
+            }
+          ],
+          "exposure": {
+            "rows": 201927,
+            "auc": 0.7141326946260658,
+            "logloss": 0.6186330941999533
+          },
+          "checkpoint_sha256": "664764cdf7b346ff6aac2d67704f30342bae34bde004e31639222cecf30fe504",
+          "elapsed_seconds": 3.4563628000905737,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 571,
+          "ndcg_at20": 0.0023373568401974655,
+          "event_recall_at20": 0.0009345549652528863
+        }
+      },
+      "R_s2026": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2026,
+            "columns": [
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ],
+            "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+            "training_order_sha256": "ee638d44404542a21a400fe259f26424b8c04446302e55d5170fb95718dd456b",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 798073,
+            "context": {
+              "cutoff_ms": 1685203200000,
+              "train_max_day_ms": 1685116800000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6408834430475505
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6305066457767571
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.629932574760819
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6297633099697991
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6295586528960465
+            }
+          ],
+          "exposure": {
+            "rows": 201927,
+            "auc": 0.7145421097445038,
+            "logloss": 0.6205602909467756
+          },
+          "checkpoint_sha256": "436206bc6d6e6bd2b668e9502a74d8c2763b40750f8089db49e4bae3d710908c",
+          "elapsed_seconds": 3.2687730999896303,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 1344,
+          "ndcg_at20": 0.0067047039980545255,
+          "event_recall_at20": 0.002199723070577722
+        }
+      },
+      "R_s2027": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2027,
+            "columns": [
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ],
+            "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+            "training_order_sha256": "f6442dc0d977a91c5ccfefa7ee68b9564f2bc1aee0eff0f0b9cab2facf6ac93a",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 798073,
+            "context": {
+              "cutoff_ms": 1685203200000,
+              "train_max_day_ms": 1685116800000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6385058590203504
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6303561455130618
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6299463808271769
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6296595507547124
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6295431165037281
+            }
+          ],
+          "exposure": {
+            "rows": 201927,
+            "auc": 0.7146689830288493,
+            "logloss": 0.6176004159496896
+          },
+          "checkpoint_sha256": "4266fffc122aee6b3c3b1e2e099dd5f8d48004f70adf029f38165d21b21197d1",
+          "elapsed_seconds": 3.2529041999951005,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 1024,
+          "ndcg_at20": 0.004663566897994644,
+          "event_recall_at20": 0.0016759794823449309
+        }
+      },
+      "R_s2028": {
+        "training": {
+          "metadata": {
+            "kind": "route_attribution_v1",
+            "seed": 2028,
+            "columns": [
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ],
+            "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+            "training_order_sha256": "1a01cd959021e42b3aeb8dccf8c3cb1adb6baefacdca3f85af19dd4e11aa8b9b",
+            "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+            "train_rows": 798073,
+            "context": {
+              "cutoff_ms": 1685203200000,
+              "train_max_day_ms": 1685116800000,
+              "validation_rows_are_original_uniform_sample": true
+            },
+            "parameters": 4523,
+            "test_used": false
+          },
+          "history": [
+            {
+              "epoch": 1,
+              "train_logloss": 0.6354773637235177
+            },
+            {
+              "epoch": 2,
+              "train_logloss": 0.6303585959526166
+            },
+            {
+              "epoch": 3,
+              "train_logloss": 0.6299521059747727
+            },
+            {
+              "epoch": 4,
+              "train_logloss": 0.6297660056534596
+            },
+            {
+              "epoch": 5,
+              "train_logloss": 0.6295626336767692
+            }
+          ],
+          "exposure": {
+            "rows": 201927,
+            "auc": 0.7140524323113882,
+            "logloss": 0.6185576813121071
+          },
+          "checkpoint_sha256": "3b5f64faa37865dded132274b528a09a3c8639ea20fd720ae6ca7a6196e35202",
+          "elapsed_seconds": 3.2204629000043496,
+          "reload_check": true
+        },
+        "direct": {
+          "hit_events": 667,
+          "ndcg_at20": 0.002909397953772275,
+          "event_recall_at20": 0.0010916780417227236
+        }
+      }
+    },
+    "aggregate": {
+      "base": {
+        "hit_events": 672.9999999999999,
+        "ndcg_at20": 0.0028562860888049404,
+        "event_recall_at20": 0.0011014982340020883
+      },
+      "R": {
+        "hit_events": 1011.6666666666665,
+        "ndcg_at20": 0.004759222949940482,
+        "event_recall_at20": 0.0016557935315484585
+      }
+    },
+    "rrf": {
+      "hit_events": 2796,
+      "ndcg_at20": 0.013866217219185262,
+      "event_recall_at20": 0.0045762096021840105
+    },
+    "paired_R_minus_base": {
+      "ndcg_difference": 0.0019029368611355407,
+      "ndcg_95_interval": [
+        0.0016509714318332326,
+        0.0021427783369665433
+      ],
+      "event_recall_difference": 0.0005542952975463704,
+      "event_recall_95_interval": [
+        0.0004753295984706508,
+        0.0006275046981290627
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "test_used": false,
+    "scope": "earlier dates from original train, refitted strict prefix; retrospective temporal check, not untouched independent test"
+  }
+}

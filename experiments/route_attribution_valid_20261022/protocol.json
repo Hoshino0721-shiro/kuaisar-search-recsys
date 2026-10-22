@@ -1,0 +1,78 @@
+{
+  "config": {
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "epochs": 5,
+    "batch_size": 4096,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "threads": 4,
+    "route_columns": {
+      "recent_only": [
+        28,
+        30
+      ],
+      "cf_only": [
+        29,
+        31,
+        32
+      ],
+      "flags_only": [
+        28,
+        29
+      ],
+      "ranks_only": [
+        30,
+        31
+      ],
+      "cf_score_only": [
+        32
+      ],
+      "without_combined": [
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "combined_only": [
+        33
+      ]
+    },
+    "rolling_cutoffs_ms": [
+      1685116800000,
+      1685203200000
+    ],
+    "rolling_arms": {
+      "base": [],
+      "R": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    "limited_adjustment": {
+      "rerank_rrf_head": [
+        40,
+        100
+      ],
+      "reserve_rrf": 10
+    },
+    "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+    "scope": "exploratory feature attribution and retrospective daily holdouts; no test reads, no default changes, no tuning on these results"
+  },
+  "config_sha256": "a7d26dee89cbe0f18c7ed2c7fe074b342783cb54b9f3c47daba9f540dccea659",
+  "source_sha256": "97e1cc2c6f1768aa6b9ff1f032a1220592c934142e656e0b97458c00102172fd",
+  "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+  "candidate_sha256": "99abfbdb6e69d33264ae2b5c2a00031cf4edd8f984ef7e4c98054e861a73346e",
+  "previous_training_sha256": "64dce05ce85427617b6bc308707759269748e4b43c1054e720f83b038508405e",
+  "previous_evaluation_sha256": "fe5f0afd8cbb4c60ee1a4091532eb2e1f1f76541c4678c012d26cad77ee59c2a",
+  "test_used": false,
+  "default_changed": false
+}

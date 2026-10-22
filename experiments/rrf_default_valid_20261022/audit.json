@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "users": 8495,
+  "hit_events_at20": 1745,
+  "pool_hit_events": 34647,
+  "positive_events": 354626,
+  "ndcg_at20": 0.014511879361434473,
+  "candidate_sha256": "99abfbdb6e69d33264ae2b5c2a00031cf4edd8f984ef7e4c98054e861a73346e",
+  "same_ordered_pool_as_previous_experiments": true,
+  "source_sha256": "2c61a91538bbcbf5c4db13c197691fca41dda4f2bca60b9260efa924bd2f4368",
+  "report_sha256": "5874826e14bbef0f30c725c9097124623cf54dc3dcb694e1c9aeb81078e56ae6",
+  "test_used": false,
+  "scope": "full user metrics independently recomputed using frozen candidates and validation-only SQLite labels"
+}

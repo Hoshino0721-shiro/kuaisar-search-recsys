@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "test_used": false,
+  "source_sha256": "a4fc226714dbbc4af5895ba784d1b6f848e5978907ed3b613816fc0717c3959c",
+  "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+  "prefix_checks": [
+    {
+      "cutoff_ms": 1684684800000,
+      "sampled_rows": 32,
+      "catalog_and_seed_prefix_checked": true
+    },
+    {
+      "cutoff_ms": 1684771200000,
+      "sampled_rows": 32,
+      "catalog_and_seed_prefix_checked": true
+    },
+    {
+      "cutoff_ms": 1684857600000,
+      "sampled_rows": 32,
+      "catalog_and_seed_prefix_checked": true
+    },
+    {
+      "cutoff_ms": 1684944000000,
+      "sampled_rows": 32,
+      "catalog_and_seed_prefix_checked": true
+    },
+    {
+      "cutoff_ms": 1685030400000,
+      "sampled_rows": 32,
+      "catalog_and_seed_prefix_checked": true
+    },
+    {
+      "cutoff_ms": 1685116800000,
+      "sampled_rows": 32,
+      "catalog_and_seed_prefix_checked": true
+    },
+    {
+      "cutoff_ms": 1685203200000,
+      "sampled_rows": 32,
+      "catalog_and_seed_prefix_checked": true
+    },
+    {
+      "cutoff_ms": 1685289600000,
+      "sampled_rows": 32,
+      "catalog_and_seed_prefix_checked": true
+    }
+  ],
+  "temporal_route_max_abs_error": 0.0,
+  "original_numeric_columns_exact": true,
+  "scope": "SQL feature replay on 32 rows per cutoff; all prefix catalogs and seed times, not exhaustive graph rederivation",
+  "models_checked": 12,
+  "all_arms_matched_initialization_order_and_capacity": true,
+  "evaluation_models_checked": 12,
+  "actual_executor_user_model_replays": 192,
+  "pool_positive_hits": 34647,
+  "candidate_sha256": "99abfbdb6e69d33264ae2b5c2a00031cf4edd8f984ef7e4c98054e861a73346e"
+}

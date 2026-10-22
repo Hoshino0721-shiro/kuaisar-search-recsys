@@ -1,0 +1,22 @@
+{
+  "sample_seed": 2026,
+  "sample_rows": 1000000,
+  "seeds": [2026, 2027, 2028],
+  "arms": {"base": [false, false], "T": [true, false], "R": [false, true], "TR": [true, true]},
+  "epochs": 5,
+  "batch_size": 4096,
+  "learning_rate": 0.001,
+  "weight_decay": 0.00001,
+  "threads": 4,
+  "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+  "feature_rule": "prior complete Beijing days; frozen train-end validation; no test labels",
+  "recent_k": 2000,
+  "itemcf_k": 1000,
+  "budget": {"recall": 2000, "coarse": 400, "fine": 80, "output": 20, "category_penalty": 0.01},
+  "itemcf_config": "configs/itemcf_index_support2.json",
+  "final_index": "artifacts/itemcf_support2_300",
+  "coarse_model": "experiments/v2_coarse_lr/model.pt",
+  "candidate_reference_sha256": "99abfbdb6e69d33264ae2b5c2a00031cf4edd8f984ef7e4c98054e861a73346e",
+  "evaluation": "all validation users, fixed identical candidates; primary direct NDCG@20 and event Recall@20; exposure metrics and all-seed cascade also reported",
+  "scope": "development on previously used validation day; not independent test or online gains; no default replacement"
+}

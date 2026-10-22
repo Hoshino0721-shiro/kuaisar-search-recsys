@@ -1,0 +1,5017 @@
+{
+  "users": 8495,
+  "positive_events": 354626,
+  "pool_hits": 34647,
+  "candidate_sha256": "99abfbdb6e69d33264ae2b5c2a00031cf4edd8f984ef7e4c98054e861a73346e",
+  "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+  "training_report_sha256": "64dce05ce85427617b6bc308707759269748e4b43c1054e720f83b038508405e",
+  "runs": {
+    "base_s2026": {
+      "checkpoint_sha256": "b27f1fcb893ff8b81e73c0f7fdc9df6d67020f822c7083a98b6b78cb0447d319",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 406,
+            "event_recall": 0.0011448681145770473,
+            "ndcg_at20": 0.0026867074117004905
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 303,
+            "event_recall": 0.001021467677121821,
+            "ndcg_at20": 0.0027290507506674538
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 103,
+            "event_recall": 0.001776045797841156,
+            "ndcg_at20": 0.002572979498887544
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 1795,
+            "event_recall": 0.005061670605088177,
+            "ndcg_at20": 0.0027022000432041313
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1262,
+            "event_recall": 0.004254429731114647,
+            "ndcg_at20": 0.002735022416988988
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 533,
+            "event_recall": 0.009190605924750836,
+            "ndcg_at20": 0.0026140440272831734
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 406,
+            "event_recall": 0.0011448681145770473,
+            "ndcg_at20": 0.0027022000432041313
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 301,
+            "event_recall": 0.0010147253162167264,
+            "ndcg_at20": 0.002735022416988988
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 105,
+            "event_recall": 0.001810532124012829,
+            "ndcg_at20": 0.0026140440272831734
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 422,
+            "event_recall": 0.0011899860698313153,
+            "ndcg_at20": 0.002759028317615265
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 300,
+            "event_recall": 0.001011354135764179,
+            "ndcg_at20": 0.002716905604005412
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 122,
+            "event_recall": 0.0021036658964720487,
+            "ndcg_at20": 0.002872163663521825
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7126546853034428,
+          "gauc": 0.6052230105683597,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6195588088491306,
+          "brier": 0.21551359622828112,
+          "ece_10_bins": 0.004297091693173441,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9368,
+              "predicted": 0.07952679543472416,
+              "observed": 0.0713065755764304
+            },
+            {
+              "bin": 1,
+              "rows": 42429,
+              "predicted": 0.15584902473473808,
+              "observed": 0.1610926488958024
+            },
+            {
+              "bin": 2,
+              "rows": 77143,
+              "predicted": 0.2536926113942443,
+              "observed": 0.2595180379295594
+            },
+            {
+              "bin": 3,
+              "rows": 114642,
+              "predicted": 0.3516570513062645,
+              "observed": 0.3498019922890389
+            },
+            {
+              "bin": 4,
+              "rows": 130005,
+              "predicted": 0.4510078378328612,
+              "observed": 0.452944117533941
+            },
+            {
+              "bin": 5,
+              "rows": 139230,
+              "predicted": 0.5497544325657517,
+              "observed": 0.5565323565323566
+            },
+            {
+              "bin": 6,
+              "rows": 114317,
+              "predicted": 0.6487544333119213,
+              "observed": 0.6537435377065528
+            },
+            {
+              "bin": 7,
+              "rows": 75627,
+              "predicted": 0.7433226266904064,
+              "observed": 0.7448530286802333
+            },
+            {
+              "bin": 8,
+              "rows": 21941,
+              "predicted": 0.8353598602168741,
+              "observed": 0.8466341552344925
+            },
+            {
+              "bin": 9,
+              "rows": 1051,
+              "predicted": 0.9141626816267745,
+              "observed": 0.9410085632730733
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.685240082109478,
+          "gauc": 0.6255788787057128,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5961279417132235,
+          "brier": 0.20448095919084372,
+          "ece_10_bins": 0.009522218880476238,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 84,
+              "predicted": 0.0809335542532305,
+              "observed": 0.05952380952380952
+            },
+            {
+              "bin": 1,
+              "rows": 608,
+              "predicted": 0.1553503743152281,
+              "observed": 0.17434210526315788
+            },
+            {
+              "bin": 2,
+              "rows": 1542,
+              "predicted": 0.2551769562036611,
+              "observed": 0.23151750972762647
+            },
+            {
+              "bin": 3,
+              "rows": 3315,
+              "predicted": 0.3556379619047473,
+              "observed": 0.3559577677224736
+            },
+            {
+              "bin": 4,
+              "rows": 5191,
+              "predicted": 0.4532549605677753,
+              "observed": 0.4710075130032749
+            },
+            {
+              "bin": 5,
+              "rows": 8925,
+              "predicted": 0.5537695238636989,
+              "observed": 0.5803921568627451
+            },
+            {
+              "bin": 6,
+              "rows": 13961,
+              "predicted": 0.6558249911617459,
+              "observed": 0.6622734761120264
+            },
+            {
+              "bin": 7,
+              "rows": 17320,
+              "predicted": 0.7456974242080442,
+              "observed": 0.7486720554272517
+            },
+            {
+              "bin": 8,
+              "rows": 6344,
+              "predicted": 0.8398031680686177,
+              "observed": 0.8423707440100883
+            },
+            {
+              "bin": 9,
+              "rows": 521,
+              "predicted": 0.9155403649051908,
+              "observed": 0.9385796545105566
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.708398532998444,
+          "gauc": 0.6005913473286181,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6215867721453356,
+          "brier": 0.21646848120298148,
+          "ece_10_bins": 0.003957266106039322,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9284,
+              "predicted": 0.07951406732822325,
+              "observed": 0.07141318397242567
+            },
+            {
+              "bin": 1,
+              "rows": 41821,
+              "predicted": 0.15585627418967846,
+              "observed": 0.16090002630257527
+            },
+            {
+              "bin": 2,
+              "rows": 75601,
+              "predicted": 0.25366233587280784,
+              "observed": 0.26008915225989077
+            },
+            {
+              "bin": 3,
+              "rows": 111327,
+              "predicted": 0.351538511162059,
+              "observed": 0.34961869088361314
+            },
+            {
+              "bin": 4,
+              "rows": 124814,
+              "predicted": 0.4509143802550499,
+              "observed": 0.4521928629801144
+            },
+            {
+              "bin": 5,
+              "rows": 130305,
+              "predicted": 0.5494794263124676,
+              "observed": 0.5548981236330148
+            },
+            {
+              "bin": 6,
+              "rows": 100356,
+              "predicted": 0.6477708144137847,
+              "observed": 0.6525568974450955
+            },
+            {
+              "bin": 7,
+              "rows": 58307,
+              "predicted": 0.7426171969305921,
+              "observed": 0.7437185929648241
+            },
+            {
+              "bin": 8,
+              "rows": 15597,
+              "predicted": 0.8335525674675339,
+              "observed": 0.8483682759505033
+            },
+            {
+              "bin": 9,
+              "rows": 530,
+              "predicted": 0.9128083929700671,
+              "observed": 0.9433962264150944
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6816098713999043,
+        "logloss": 0.5975811871436989,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "base_s2027": {
+      "checkpoint_sha256": "bf3d64ce1774ad2160bef744011b63b2923f6924a31c9ceb47b310c68db8734c",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 332,
+            "event_recall": 0.0009361975715260584,
+            "ndcg_at20": 0.002059322908783896
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 260,
+            "event_recall": 0.0008765069176622886,
+            "ndcg_at20": 0.0022637106606224347
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 72,
+            "event_recall": 0.0012415077421802255,
+            "ndcg_at20": 0.0015103677959321844
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 1701,
+            "event_recall": 0.004796602617969353,
+            "ndcg_at20": 0.0021258618676965923
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1233,
+            "event_recall": 0.004156665497990777,
+            "ndcg_at20": 0.0023233622659473915
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 468,
+            "event_recall": 0.008069800324171466,
+            "ndcg_at20": 0.0015954051625625511
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 344,
+            "event_recall": 0.0009700360379667594,
+            "ndcg_at20": 0.0021258618676965923
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 268,
+            "event_recall": 0.0009034763612826667,
+            "ndcg_at20": 0.0023233622659473915
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 76,
+            "event_recall": 0.0013104803945235713,
+            "ndcg_at20": 0.0015954051625625511
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 373,
+            "event_recall": 0.0010518123318651199,
+            "ndcg_at20": 0.002242186429975281
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 276,
+            "event_recall": 0.0009304458049030448,
+            "ndcg_at20": 0.002322736907033202
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 97,
+            "event_recall": 0.001672586819326137,
+            "ndcg_at20": 0.0020258398249276277
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7130933900061373,
+          "gauc": 0.6056812535591805,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6194213351966368,
+          "brier": 0.21543475209456092,
+          "ece_10_bins": 0.007224215967730804,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 6141,
+              "predicted": 0.0839604784975226,
+              "observed": 0.06595017098192477
+            },
+            {
+              "bin": 1,
+              "rows": 42726,
+              "predicted": 0.15595168144062557,
+              "observed": 0.15016617516266442
+            },
+            {
+              "bin": 2,
+              "rows": 71708,
+              "predicted": 0.25439273287239444,
+              "observed": 0.2517292352317733
+            },
+            {
+              "bin": 3,
+              "rows": 111772,
+              "predicted": 0.3522170509303008,
+              "observed": 0.34272447482374835
+            },
+            {
+              "bin": 4,
+              "rows": 126405,
+              "predicted": 0.4512554812761883,
+              "observed": 0.4417230331078676
+            },
+            {
+              "bin": 5,
+              "rows": 135313,
+              "predicted": 0.550374729328791,
+              "observed": 0.5420321772483058
+            },
+            {
+              "bin": 6,
+              "rows": 120009,
+              "predicted": 0.6486570645505503,
+              "observed": 0.6443516736244782
+            },
+            {
+              "bin": 7,
+              "rows": 84145,
+              "predicted": 0.7444265622053917,
+              "observed": 0.735456652207499
+            },
+            {
+              "bin": 8,
+              "rows": 26588,
+              "predicted": 0.8344860093807375,
+              "observed": 0.8340228674590041
+            },
+            {
+              "bin": 9,
+              "rows": 946,
+              "predicted": 0.9126557590593495,
+              "observed": 0.9291754756871036
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6870068065192712,
+          "gauc": 0.6263808090710211,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5960860969834855,
+          "brier": 0.20432881774776537,
+          "ece_10_bins": 0.014669275579099333,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 148,
+              "predicted": 0.08025992344561461,
+              "observed": 0.10810810810810811
+            },
+            {
+              "bin": 1,
+              "rows": 708,
+              "predicted": 0.15935438701956622,
+              "observed": 0.1906779661016949
+            },
+            {
+              "bin": 2,
+              "rows": 1599,
+              "predicted": 0.25485959363923066,
+              "observed": 0.25328330206378985
+            },
+            {
+              "bin": 3,
+              "rows": 3057,
+              "predicted": 0.35723607789506934,
+              "observed": 0.35067059208374224
+            },
+            {
+              "bin": 4,
+              "rows": 4833,
+              "predicted": 0.4541058657876261,
+              "observed": 0.4651355265880406
+            },
+            {
+              "bin": 5,
+              "rows": 9113,
+              "predicted": 0.5542169811565241,
+              "observed": 0.5729178097223746
+            },
+            {
+              "bin": 6,
+              "rows": 16322,
+              "predicted": 0.6549143636800717,
+              "observed": 0.6689131233917412
+            },
+            {
+              "bin": 7,
+              "rows": 16219,
+              "predicted": 0.7450919478012664,
+              "observed": 0.7620075220420495
+            },
+            {
+              "bin": 8,
+              "rows": 5645,
+              "predicted": 0.8361604881244386,
+              "observed": 0.8480070859167405
+            },
+            {
+              "bin": 9,
+              "rows": 167,
+              "predicted": 0.9118971000174563,
+              "observed": 0.9461077844311377
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7089061982388997,
+          "gauc": 0.6009734776456911,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6214410217208265,
+          "brier": 0.21639598101941146,
+          "ece_10_bins": 0.009034367014544664,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 5993,
+              "predicted": 0.08405186547360843,
+              "observed": 0.06490906057066578
+            },
+            {
+              "bin": 1,
+              "rows": 42018,
+              "predicted": 0.15589434611886133,
+              "observed": 0.14948355466704746
+            },
+            {
+              "bin": 2,
+              "rows": 70109,
+              "predicted": 0.25438208501882115,
+              "observed": 0.2516937910967208
+            },
+            {
+              "bin": 3,
+              "rows": 108715,
+              "predicted": 0.352075918929829,
+              "observed": 0.3425010348158028
+            },
+            {
+              "bin": 4,
+              "rows": 121572,
+              "predicted": 0.45114216646402944,
+              "observed": 0.44079228769782514
+            },
+            {
+              "bin": 5,
+              "rows": 126200,
+              "predicted": 0.5500972773406283,
+              "observed": 0.5398019017432647
+            },
+            {
+              "bin": 6,
+              "rows": 103687,
+              "predicted": 0.6476720651157895,
+              "observed": 0.6404853067404785
+            },
+            {
+              "bin": 7,
+              "rows": 67926,
+              "predicted": 0.7442676850599763,
+              "observed": 0.7291169802432058
+            },
+            {
+              "bin": 8,
+              "rows": 20943,
+              "predicted": 0.8340346684788517,
+              "observed": 0.8302535453373442
+            },
+            {
+              "bin": 9,
+              "rows": 779,
+              "predicted": 0.9128183984174961,
+              "observed": 0.9255455712451861
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6839241863489784,
+        "logloss": 0.5972858100580839,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "base_s2028": {
+      "checkpoint_sha256": "9ac4a366c2384a6ba2651712f39eb85cbaabc98a464d9ad9ed9ec6b3701d6c2f",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 329,
+            "event_recall": 0.0009277379549158832,
+            "ndcg_at20": 0.0021513962171681674
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 273,
+            "event_recall": 0.0009203322635454031,
+            "ndcg_at20": 0.0023638678350128865
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 56,
+            "event_recall": 0.0009656171328068421,
+            "ndcg_at20": 0.0015807290421415833
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 1743,
+            "event_recall": 0.004915037250511807,
+            "ndcg_at20": 0.002251933051024454
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1208,
+            "event_recall": 0.004072385986677095,
+            "ndcg_at20": 0.0024497402699058166
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 535,
+            "event_recall": 0.00922509225092251,
+            "ndcg_at20": 0.0017206522712951337
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 349,
+            "event_recall": 0.0009841353989837182,
+            "ndcg_at20": 0.002251933051024454
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 285,
+            "event_recall": 0.0009607864289759702,
+            "ndcg_at20": 0.0024497402699058166
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 64,
+            "event_recall": 0.0011035624374935338,
+            "ndcg_at20": 0.0017206522712951337
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 422,
+            "event_recall": 0.0011899860698313153,
+            "ndcg_at20": 0.002587138231960228
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 306,
+            "event_recall": 0.0010315812184794628,
+            "ndcg_at20": 0.0025606632458126458
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 116,
+            "event_recall": 0.00200020691795703,
+            "ndcg_at20": 0.002658246108423757
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7123427274043362,
+          "gauc": 0.6052796632218165,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6199236107842799,
+          "brier": 0.21567095130455688,
+          "ece_10_bins": 0.008301310597639965,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9164,
+              "predicted": 0.08046450863995995,
+              "observed": 0.07278481012658228
+            },
+            {
+              "bin": 1,
+              "rows": 40771,
+              "predicted": 0.1545667087404817,
+              "observed": 0.15977042505702582
+            },
+            {
+              "bin": 2,
+              "rows": 71216,
+              "predicted": 0.2534934620123329,
+              "observed": 0.2509688833969894
+            },
+            {
+              "bin": 3,
+              "rows": 110797,
+              "predicted": 0.3524054688737133,
+              "observed": 0.34270783504968544
+            },
+            {
+              "bin": 4,
+              "rows": 123644,
+              "predicted": 0.4506084194480322,
+              "observed": 0.44344246384782116
+            },
+            {
+              "bin": 5,
+              "rows": 132884,
+              "predicted": 0.5505723513550455,
+              "observed": 0.5393952620330514
+            },
+            {
+              "bin": 6,
+              "rows": 126311,
+              "predicted": 0.6487935362258305,
+              "observed": 0.6392950732715282
+            },
+            {
+              "bin": 7,
+              "rows": 85971,
+              "predicted": 0.7434908944171255,
+              "observed": 0.7355154645171046
+            },
+            {
+              "bin": 8,
+              "rows": 24328,
+              "predicted": 0.8333374363655364,
+              "observed": 0.8417050312397237
+            },
+            {
+              "bin": 9,
+              "rows": 667,
+              "predicted": 0.9105879585782269,
+              "observed": 0.952023988005997
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6848351037951743,
+          "gauc": 0.6276925365376862,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5972300016971889,
+          "brier": 0.20486739744097593,
+          "ece_10_bins": 0.018429088649409675,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 110,
+              "predicted": 0.08296335354786027,
+              "observed": 0.1
+            },
+            {
+              "bin": 1,
+              "rows": 608,
+              "predicted": 0.15892582163704852,
+              "observed": 0.18092105263157895
+            },
+            {
+              "bin": 2,
+              "rows": 1556,
+              "predicted": 0.2557169715359156,
+              "observed": 0.2384318766066838
+            },
+            {
+              "bin": 3,
+              "rows": 3151,
+              "predicted": 0.35597129413454315,
+              "observed": 0.3557600761662964
+            },
+            {
+              "bin": 4,
+              "rows": 5424,
+              "predicted": 0.45244311031426654,
+              "observed": 0.47087020648967554
+            },
+            {
+              "bin": 5,
+              "rows": 9475,
+              "predicted": 0.5536209663111805,
+              "observed": 0.581952506596306
+            },
+            {
+              "bin": 6,
+              "rows": 15605,
+              "predicted": 0.6552408539992959,
+              "observed": 0.6731816725408523
+            },
+            {
+              "bin": 7,
+              "rows": 16916,
+              "predicted": 0.7451003420068232,
+              "observed": 0.7594585008276188
+            },
+            {
+              "bin": 8,
+              "rows": 4840,
+              "predicted": 0.8346682887432004,
+              "observed": 0.8605371900826446
+            },
+            {
+              "bin": 9,
+              "rows": 126,
+              "predicted": 0.9114978370212373,
+              "observed": 0.9603174603174603
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7082809035791232,
+          "gauc": 0.6006985086475153,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6218877637121296,
+          "brier": 0.21660600891795362,
+          "ece_10_bins": 0.010098965317495441,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9054,
+              "predicted": 0.08043414935788915,
+              "observed": 0.07245416390545616
+            },
+            {
+              "bin": 1,
+              "rows": 40163,
+              "predicted": 0.154500719132108,
+              "observed": 0.1594502402708961
+            },
+            {
+              "bin": 2,
+              "rows": 69660,
+              "predicted": 0.2534437953339135,
+              "observed": 0.2512489233419466
+            },
+            {
+              "bin": 3,
+              "rows": 107646,
+              "predicted": 0.35230109049089486,
+              "observed": 0.34232577151032084
+            },
+            {
+              "bin": 4,
+              "rows": 118220,
+              "predicted": 0.45052424280060827,
+              "observed": 0.4421840636102182
+            },
+            {
+              "bin": 5,
+              "rows": 123409,
+              "predicted": 0.5503382871724544,
+              "observed": 0.5361278350849614
+            },
+            {
+              "bin": 6,
+              "rows": 110706,
+              "predicted": 0.6478847291706128,
+              "observed": 0.6345184542843206
+            },
+            {
+              "bin": 7,
+              "rows": 69055,
+              "predicted": 0.7430966374418546,
+              "observed": 0.7296502787633046
+            },
+            {
+              "bin": 8,
+              "rows": 19488,
+              "predicted": 0.8330069085788012,
+              "observed": 0.8370279146141215
+            },
+            {
+              "bin": 9,
+              "rows": 541,
+              "predicted": 0.9103760460388197,
+              "observed": 0.9500924214417745
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6822046610412288,
+        "logloss": 0.5991826570593936,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "T_s2026": {
+      "checkpoint_sha256": "49ef71de29242fe3e0e2699d78b8b9cc8617c407698d5f194b8e080f9c248192",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 521,
+            "event_recall": 0.0014691534179670977,
+            "ndcg_at20": 0.0031220650663202646
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 324,
+            "event_recall": 0.0010922624666253136,
+            "ndcg_at20": 0.0027276189813275316
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 197,
+            "event_recall": 0.0033969031279097836,
+            "ndcg_at20": 0.004181488603950627
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 2012,
+            "event_recall": 0.005673582873224186,
+            "ndcg_at20": 0.0031875421253789314
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1390,
+            "event_recall": 0.004685940829040697,
+            "ndcg_at20": 0.002805041585305854
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 622,
+            "event_recall": 0.010725247439390281,
+            "ndcg_at20": 0.004214881705431319
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 533,
+            "event_recall": 0.0015029918844077987,
+            "ndcg_at20": 0.0031875421253789314
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 334,
+            "event_recall": 0.0011259742711507861,
+            "ndcg_at20": 0.002805041585305854
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 199,
+            "event_recall": 0.003431389454081457,
+            "ndcg_at20": 0.004214881705431319
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 540,
+            "event_recall": 0.0015227309898315409,
+            "ndcg_at20": 0.00321901491132765
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 343,
+            "event_recall": 0.0011563148952237114,
+            "ndcg_at20": 0.002847683936716252
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 197,
+            "event_recall": 0.0033969031279097836,
+            "ndcg_at20": 0.004216354699252748
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7126081232052932,
+          "gauc": 0.6046508919743808,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196132518392816,
+          "brier": 0.21552992360189546,
+          "ece_10_bins": 0.0031070270021453543,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9923,
+              "predicted": 0.08004094950894573,
+              "observed": 0.07517887735563841
+            },
+            {
+              "bin": 1,
+              "rows": 45035,
+              "predicted": 0.1553657368348298,
+              "observed": 0.16411679804596424
+            },
+            {
+              "bin": 2,
+              "rows": 76552,
+              "predicted": 0.2536561657015804,
+              "observed": 0.26302382694116416
+            },
+            {
+              "bin": 3,
+              "rows": 111906,
+              "predicted": 0.3515916459277418,
+              "observed": 0.3510088824549175
+            },
+            {
+              "bin": 4,
+              "rows": 124782,
+              "predicted": 0.4508387302352497,
+              "observed": 0.4510025484444872
+            },
+            {
+              "bin": 5,
+              "rows": 132662,
+              "predicted": 0.5499077552117669,
+              "observed": 0.5500369359726222
+            },
+            {
+              "bin": 6,
+              "rows": 117846,
+              "predicted": 0.6488918873671106,
+              "observed": 0.645545881913684
+            },
+            {
+              "bin": 7,
+              "rows": 80797,
+              "predicted": 0.743776420277369,
+              "observed": 0.7378739309627833
+            },
+            {
+              "bin": 8,
+              "rows": 25152,
+              "predicted": 0.8353745639892934,
+              "observed": 0.8391777989821882
+            },
+            {
+              "bin": 9,
+              "rows": 1098,
+              "predicted": 0.9127494028900056,
+              "observed": 0.936247723132969
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6869213076321368,
+          "gauc": 0.6270224278669013,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5956175328540755,
+          "brier": 0.20421373257608796,
+          "ece_10_bins": 0.008032739301504737,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 160,
+              "predicted": 0.07629449288360775,
+              "observed": 0.13125
+            },
+            {
+              "bin": 1,
+              "rows": 617,
+              "predicted": 0.1619706453583422,
+              "observed": 0.17990275526742303
+            },
+            {
+              "bin": 2,
+              "rows": 1669,
+              "predicted": 0.2549399530694755,
+              "observed": 0.2504493708807669
+            },
+            {
+              "bin": 3,
+              "rows": 3372,
+              "predicted": 0.35704771866789914,
+              "observed": 0.36269276393831557
+            },
+            {
+              "bin": 4,
+              "rows": 4887,
+              "predicted": 0.4561430545143001,
+              "observed": 0.46838551258440764
+            },
+            {
+              "bin": 5,
+              "rows": 7934,
+              "predicted": 0.5533095020129394,
+              "observed": 0.5744895386942274
+            },
+            {
+              "bin": 6,
+              "rows": 13382,
+              "predicted": 0.6561123685280209,
+              "observed": 0.6546106710506651
+            },
+            {
+              "bin": 7,
+              "rows": 17416,
+              "predicted": 0.747457789927105,
+              "observed": 0.740927882406982
+            },
+            {
+              "bin": 8,
+              "rows": 7854,
+              "predicted": 0.8393853476386293,
+              "observed": 0.8337153043035396
+            },
+            {
+              "bin": 9,
+              "rows": 520,
+              "predicted": 0.9139049701965772,
+              "observed": 0.9365384615384615
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7082841092136563,
+          "gauc": 0.5999610211047941,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6216901035872683,
+          "brier": 0.2165093504374484,
+          "ece_10_bins": 0.00348959752678487,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9763,
+              "predicted": 0.08010234795819843,
+              "observed": 0.07425996107753764
+            },
+            {
+              "bin": 1,
+              "rows": 44418,
+              "predicted": 0.155273989602649,
+              "observed": 0.16389751902381916
+            },
+            {
+              "bin": 2,
+              "rows": 74883,
+              "predicted": 0.2536275525167852,
+              "observed": 0.26330408771016117
+            },
+            {
+              "bin": 3,
+              "rows": 108534,
+              "predicted": 0.3514221333576733,
+              "observed": 0.3506458805535593
+            },
+            {
+              "bin": 4,
+              "rows": 119895,
+              "predicted": 0.45062252244717077,
+              "observed": 0.4502940072563493
+            },
+            {
+              "bin": 5,
+              "rows": 124728,
+              "predicted": 0.5496913686817134,
+              "observed": 0.5484814957347187
+            },
+            {
+              "bin": 6,
+              "rows": 104464,
+              "predicted": 0.647966932560715,
+              "observed": 0.6443846684025119
+            },
+            {
+              "bin": 7,
+              "rows": 63381,
+              "predicted": 0.7427648437194131,
+              "observed": 0.7370347580505199
+            },
+            {
+              "bin": 8,
+              "rows": 17298,
+              "predicted": 0.8335535040527758,
+              "observed": 0.8416579951439472
+            },
+            {
+              "bin": 9,
+              "rows": 578,
+              "predicted": 0.9117097921643703,
+              "observed": 0.9359861591695502
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6839348549450893,
+        "logloss": 0.5959093809245675,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "T_s2027": {
+      "checkpoint_sha256": "88fc24eb52c818c0640b7a5c1a0f30cd66b08c74a62485b9deea4d1e9f7e090c",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 370,
+            "event_recall": 0.0010433527152549447,
+            "ndcg_at20": 0.002331077053602903
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 310,
+            "event_recall": 0.0010450659402896519,
+            "ndcg_at20": 0.0026711494103170697
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 60,
+            "event_recall": 0.001034589785150188,
+            "ndcg_at20": 0.0014176932657854768
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 1995,
+            "event_recall": 0.005625645045766526,
+            "ndcg_at20": 0.002388773564562696
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1426,
+            "event_recall": 0.004807303325332399,
+            "ndcg_at20": 0.002738424426278953
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 569,
+            "event_recall": 0.009811359795840949,
+            "ndcg_at20": 0.0014496633364518836
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 382,
+            "event_recall": 0.0010771911816956456,
+            "ndcg_at20": 0.002388773564562696
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 320,
+            "event_recall": 0.0010787777448151245,
+            "ndcg_at20": 0.002738424426278953
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 62,
+            "event_recall": 0.001069076111321861,
+            "ndcg_at20": 0.0014496633364518836
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 410,
+            "event_recall": 0.0011561476033906143,
+            "ndcg_at20": 0.0025268918530103423
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 321,
+            "event_recall": 0.0010821489252676717,
+            "ndcg_at20": 0.0027202265547055047
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 89,
+            "event_recall": 0.0015346415146394454,
+            "ndcg_at20": 0.002007623589464584
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7128268869179012,
+          "gauc": 0.6052860093291434,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6195823022823427,
+          "brier": 0.21551465069857487,
+          "ece_10_bins": 0.007095546743634715,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 5530,
+              "predicted": 0.08554752155781385,
+              "observed": 0.0674502712477396
+            },
+            {
+              "bin": 1,
+              "rows": 40080,
+              "predicted": 0.15632478843969172,
+              "observed": 0.14515968063872256
+            },
+            {
+              "bin": 2,
+              "rows": 70711,
+              "predicted": 0.2539322543527086,
+              "observed": 0.24822163454059482
+            },
+            {
+              "bin": 3,
+              "rows": 111381,
+              "predicted": 0.35281133224797157,
+              "observed": 0.3379750585827026
+            },
+            {
+              "bin": 4,
+              "rows": 131714,
+              "predicted": 0.451373303109828,
+              "observed": 0.44137297477868714
+            },
+            {
+              "bin": 5,
+              "rows": 142535,
+              "predicted": 0.5501530641657554,
+              "observed": 0.545248535447434
+            },
+            {
+              "bin": 6,
+              "rows": 122711,
+              "predicted": 0.6480899214688223,
+              "observed": 0.6502351052472883
+            },
+            {
+              "bin": 7,
+              "rows": 77548,
+              "predicted": 0.7436695849361443,
+              "observed": 0.7436297518956001
+            },
+            {
+              "bin": 8,
+              "rows": 22994,
+              "predicted": 0.8335645126033536,
+              "observed": 0.844263720970688
+            },
+            {
+              "bin": 9,
+              "rows": 549,
+              "predicted": 0.908630376739363,
+              "observed": 0.9398907103825137
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6862861814482046,
+          "gauc": 0.6273067557552634,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5977737245098584,
+          "brier": 0.20508957494434424,
+          "ece_10_bins": 0.027262200711863718,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 164,
+              "predicted": 0.08267120739853964,
+              "observed": 0.14634146341463414
+            },
+            {
+              "bin": 1,
+              "rows": 784,
+              "predicted": 0.16134869335789462,
+              "observed": 0.19260204081632654
+            },
+            {
+              "bin": 2,
+              "rows": 1931,
+              "predicted": 0.2537653000628868,
+              "observed": 0.2687726566545831
+            },
+            {
+              "bin": 3,
+              "rows": 3478,
+              "predicted": 0.35176435890144286,
+              "observed": 0.37694077055779185
+            },
+            {
+              "bin": 4,
+              "rows": 5533,
+              "predicted": 0.4553761184915763,
+              "observed": 0.4878004699078258
+            },
+            {
+              "bin": 5,
+              "rows": 9616,
+              "predicted": 0.5543941928758697,
+              "observed": 0.5847545757071547
+            },
+            {
+              "bin": 6,
+              "rows": 16173,
+              "predicted": 0.6526920379649168,
+              "observed": 0.6850306065664997
+            },
+            {
+              "bin": 7,
+              "rows": 14916,
+              "predicted": 0.7456662428222415,
+              "observed": 0.7668946098149638
+            },
+            {
+              "bin": 8,
+              "rows": 5115,
+              "predicted": 0.8345373641593948,
+              "observed": 0.8563049853372434
+            },
+            {
+              "bin": 9,
+              "rows": 101,
+              "predicted": 0.9086829547834868,
+              "observed": 0.9306930693069307
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7088134045136935,
+          "gauc": 0.6008149230688057,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.621469854928538,
+          "brier": 0.2164169506803514,
+          "ece_10_bins": 0.008940993858935157,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 5366,
+              "predicted": 0.08563542978034851,
+              "observed": 0.0650391352963101
+            },
+            {
+              "bin": 1,
+              "rows": 39296,
+              "predicted": 0.15622455580899466,
+              "observed": 0.14421315146579805
+            },
+            {
+              "bin": 2,
+              "rows": 68780,
+              "predicted": 0.2539369415980364,
+              "observed": 0.24764466414655423
+            },
+            {
+              "bin": 3,
+              "rows": 107903,
+              "predicted": 0.352845078976971,
+              "observed": 0.3367190902940604
+            },
+            {
+              "bin": 4,
+              "rows": 126181,
+              "predicted": 0.45119778082432377,
+              "observed": 0.43933714267599716
+            },
+            {
+              "bin": 5,
+              "rows": 132919,
+              "predicted": 0.5498462405086675,
+              "observed": 0.5423904784116642
+            },
+            {
+              "bin": 6,
+              "rows": 106538,
+              "predicted": 0.6473912972212174,
+              "observed": 0.6449529745255214
+            },
+            {
+              "bin": 7,
+              "rows": 62632,
+              "predicted": 0.7431940748290261,
+              "observed": 0.7380891557031549
+            },
+            {
+              "bin": 8,
+              "rows": 17879,
+              "predicted": 0.8332861896709105,
+              "observed": 0.840818837742603
+            },
+            {
+              "bin": 9,
+              "rows": 448,
+              "predicted": 0.908618523207094,
+              "observed": 0.9419642857142857
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6837335067648915,
+        "logloss": 0.5993623397314569,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "T_s2028": {
+      "checkpoint_sha256": "d445e1824b0a5ca536ca2d98d589c309a2389a4bac613446fbcd16a174cc2285",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 444,
+            "event_recall": 0.0012520232583059336,
+            "ndcg_at20": 0.002741691597959213
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 323,
+            "event_recall": 0.0010888912861727663,
+            "ndcg_at20": 0.002769636492122419
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 121,
+            "event_recall": 0.0020864227333862125,
+            "ndcg_at20": 0.0026666357671131925
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 1947,
+            "event_recall": 0.0054902911800037224,
+            "ndcg_at20": 0.003051387026691381
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1312,
+            "event_recall": 0.00442298875374201,
+            "ndcg_at20": 0.0029468583480523167
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 635,
+            "event_recall": 0.010949408559506156,
+            "ndcg_at20": 0.003332135516081674
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 505,
+            "event_recall": 0.0014240354627128298,
+            "ndcg_at20": 0.003051387026691381
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 344,
+            "event_recall": 0.0011596860756762587,
+            "ndcg_at20": 0.0029468583480523167
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 161,
+            "event_recall": 0.002776149256819671,
+            "ndcg_at20": 0.003332135516081674
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 455,
+            "event_recall": 0.0012830418525432428,
+            "ndcg_at20": 0.0028265689090651593
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 329,
+            "event_recall": 0.0011091183688880497,
+            "ndcg_at20": 0.002819441119860744
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 126,
+            "event_recall": 0.0021726385488153948,
+            "ndcg_at20": 0.0028457130911010015
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.712625862185857,
+          "gauc": 0.6057162402239821,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6197493194383488,
+          "brier": 0.21559528747488735,
+          "ece_10_bins": 0.00912177972962886,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 7465,
+              "predicted": 0.08097550150815445,
+              "observed": 0.06604152712659075
+            },
+            {
+              "bin": 1,
+              "rows": 40005,
+              "predicted": 0.1544153573693387,
+              "observed": 0.15503062117235344
+            },
+            {
+              "bin": 2,
+              "rows": 71551,
+              "predicted": 0.25371744415473174,
+              "observed": 0.24704057245880562
+            },
+            {
+              "bin": 3,
+              "rows": 109927,
+              "predicted": 0.3520791060471646,
+              "observed": 0.34052598542669227
+            },
+            {
+              "bin": 4,
+              "rows": 125610,
+              "predicted": 0.45090210777603223,
+              "observed": 0.439861475997134
+            },
+            {
+              "bin": 5,
+              "rows": 135014,
+              "predicted": 0.5507672191759279,
+              "observed": 0.5412179477683796
+            },
+            {
+              "bin": 6,
+              "rows": 125225,
+              "predicted": 0.6490506291927323,
+              "observed": 0.6397205030944301
+            },
+            {
+              "bin": 7,
+              "rows": 85524,
+              "predicted": 0.7434915035202005,
+              "observed": 0.7356414573686918
+            },
+            {
+              "bin": 8,
+              "rows": 24753,
+              "predicted": 0.8337031420575668,
+              "observed": 0.8412717650385811
+            },
+            {
+              "bin": 9,
+              "rows": 679,
+              "predicted": 0.90994268067631,
+              "observed": 0.9587628865979382
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6864069439106326,
+          "gauc": 0.6270061838072332,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5965919539282778,
+          "brier": 0.20461232103471946,
+          "ece_10_bins": 0.0184756383125584,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 143,
+              "predicted": 0.08165681825859564,
+              "observed": 0.1048951048951049
+            },
+            {
+              "bin": 1,
+              "rows": 610,
+              "predicted": 0.16026006726945033,
+              "observed": 0.19344262295081968
+            },
+            {
+              "bin": 2,
+              "rows": 1690,
+              "predicted": 0.2561628137555348,
+              "observed": 0.24142011834319527
+            },
+            {
+              "bin": 3,
+              "rows": 3375,
+              "predicted": 0.3566160834453724,
+              "observed": 0.3674074074074074
+            },
+            {
+              "bin": 4,
+              "rows": 5455,
+              "predicted": 0.45524902934879474,
+              "observed": 0.47259395050412467
+            },
+            {
+              "bin": 5,
+              "rows": 9087,
+              "predicted": 0.5535095138912929,
+              "observed": 0.5866622647738527
+            },
+            {
+              "bin": 6,
+              "rows": 15509,
+              "predicted": 0.6548963274060431,
+              "observed": 0.6727706493004062
+            },
+            {
+              "bin": 7,
+              "rows": 16263,
+              "predicted": 0.7448903535415581,
+              "observed": 0.7576092971776425
+            },
+            {
+              "bin": 8,
+              "rows": 5451,
+              "predicted": 0.8370782961715932,
+              "observed": 0.8539717483030637
+            },
+            {
+              "bin": 9,
+              "rows": 228,
+              "predicted": 0.9115264010533952,
+              "observed": 0.9605263157894737
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.70854361616217,
+          "gauc": 0.6012101522480491,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6217536109150078,
+          "brier": 0.21654587341329595,
+          "ece_10_bins": 0.01106596789230616,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 7322,
+              "predicted": 0.08096219526733048,
+              "observed": 0.06528270964217427
+            },
+            {
+              "bin": 1,
+              "rows": 39395,
+              "predicted": 0.15432485672105672,
+              "observed": 0.15443584211194314
+            },
+            {
+              "bin": 2,
+              "rows": 69861,
+              "predicted": 0.25365828847952876,
+              "observed": 0.24717653626486882
+            },
+            {
+              "bin": 3,
+              "rows": 106552,
+              "predicted": 0.35193539876134217,
+              "observed": 0.3396745251144981
+            },
+            {
+              "bin": 4,
+              "rows": 120155,
+              "predicted": 0.4507047588752007,
+              "observed": 0.4383754317340102
+            },
+            {
+              "bin": 5,
+              "rows": 125927,
+              "predicted": 0.5505693328443347,
+              "observed": 0.5379386469938933
+            },
+            {
+              "bin": 6,
+              "rows": 109716,
+              "predicted": 0.6482243054697545,
+              "observed": 0.6350486711145138
+            },
+            {
+              "bin": 7,
+              "rows": 69261,
+              "predicted": 0.743163043089405,
+              "observed": 0.7304832445387737
+            },
+            {
+              "bin": 8,
+              "rows": 19302,
+              "predicted": 0.8327499783918556,
+              "observed": 0.8376852139674645
+            },
+            {
+              "bin": 9,
+              "rows": 451,
+              "predicted": 0.9091420415499787,
+              "observed": 0.9578713968957872
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6836290996676828,
+        "logloss": 0.5979723220514999,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "R_s2026": {
+      "checkpoint_sha256": "8b9e1e6985f8e76f8e517be631423d21a66aa6ab84ee236c981291af61521013",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 538,
+            "event_recall": 0.0015170912454247573,
+            "ndcg_at20": 0.0037189609207116596
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 320,
+            "event_recall": 0.0010787777448151245,
+            "ndcg_at20": 0.003018658677293776
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 218,
+            "event_recall": 0.0037590095527123496,
+            "ndcg_at20": 0.005599868624855616
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 1812,
+            "event_recall": 0.005109608432545837,
+            "ndcg_at20": 0.0035173195953889787
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1128,
+            "event_recall": 0.0038026915504733136,
+            "ndcg_at20": 0.0029060540956672956
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 684,
+            "event_recall": 0.011794323550712143,
+            "ndcg_at20": 0.005159087844041941
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 510,
+            "event_recall": 0.0014381348237297886,
+            "ndcg_at20": 0.0035173195953889787
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 311,
+            "event_recall": 0.0010484371207421992,
+            "ndcg_at20": 0.0029060540956672956
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 199,
+            "event_recall": 0.003431389454081457,
+            "ndcg_at20": 0.005159087844041941
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 480,
+            "event_recall": 0.0013535386576280363,
+            "ndcg_at20": 0.0033921676170625644
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 300,
+            "event_recall": 0.001011354135764179,
+            "ndcg_at20": 0.0027929327469707705
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 180,
+            "event_recall": 0.0031037693554505637,
+            "ndcg_at20": 0.0050016233832563504
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7126866707448729,
+          "gauc": 0.6047832439393164,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196161729727692,
+          "brier": 0.21552747932546992,
+          "ece_10_bins": 0.005675308518929958,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 10439,
+              "predicted": 0.07866587701034747,
+              "observed": 0.07740205000478972
+            },
+            {
+              "bin": 1,
+              "rows": 44330,
+              "predicted": 0.155533053650326,
+              "observed": 0.16426799007444168
+            },
+            {
+              "bin": 2,
+              "rows": 77670,
+              "predicted": 0.2537564940358261,
+              "observed": 0.2641946697566628
+            },
+            {
+              "bin": 3,
+              "rows": 113654,
+              "predicted": 0.35114289923063047,
+              "observed": 0.3512854804934274
+            },
+            {
+              "bin": 4,
+              "rows": 127750,
+              "predicted": 0.45071022980693737,
+              "observed": 0.45522504892367904
+            },
+            {
+              "bin": 5,
+              "rows": 138395,
+              "predicted": 0.5495680344199948,
+              "observed": 0.5556920408974313
+            },
+            {
+              "bin": 6,
+              "rows": 117318,
+              "predicted": 0.6482290589550713,
+              "observed": 0.6555174823982679
+            },
+            {
+              "bin": 7,
+              "rows": 74779,
+              "predicted": 0.7430653343958991,
+              "observed": 0.7466400994931732
+            },
+            {
+              "bin": 8,
+              "rows": 20575,
+              "predicted": 0.834955714478962,
+              "observed": 0.850400972053463
+            },
+            {
+              "bin": 9,
+              "rows": 843,
+              "predicted": 0.913339847276785,
+              "observed": 0.9454329774614472
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6842986901232337,
+          "gauc": 0.6243815151599739,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5972349878529939,
+          "brier": 0.2049498323664817,
+          "ece_10_bins": 0.014936522617043018,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 53,
+              "predicted": 0.0815226416683422,
+              "observed": 0.03773584905660377
+            },
+            {
+              "bin": 1,
+              "rows": 609,
+              "predicted": 0.1576414550417554,
+              "observed": 0.15599343185550082
+            },
+            {
+              "bin": 2,
+              "rows": 2018,
+              "predicted": 0.25592956334588784,
+              "observed": 0.25520317145688803
+            },
+            {
+              "bin": 3,
+              "rows": 3727,
+              "predicted": 0.35543981383209544,
+              "observed": 0.37993023879796084
+            },
+            {
+              "bin": 4,
+              "rows": 5042,
+              "predicted": 0.4539423022996996,
+              "observed": 0.48809996033320113
+            },
+            {
+              "bin": 5,
+              "rows": 8724,
+              "predicted": 0.5533398350667429,
+              "observed": 0.5836772122879413
+            },
+            {
+              "bin": 6,
+              "rows": 13899,
+              "predicted": 0.6552432430923495,
+              "observed": 0.6706237858838765
+            },
+            {
+              "bin": 7,
+              "rows": 17551,
+              "predicted": 0.7456807675378477,
+              "observed": 0.7492450572616944
+            },
+            {
+              "bin": 8,
+              "rows": 5854,
+              "predicted": 0.8382947377511817,
+              "observed": 0.8457464981209429
+            },
+            {
+              "bin": 9,
+              "rows": 334,
+              "predicted": 0.9144027511516731,
+              "observed": 0.9461077844311377
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.708540749179075,
+          "gauc": 0.6004033420205429,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.621553285316295,
+          "brier": 0.21644298448661575,
+          "ece_10_bins": 0.00510591885289696,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 10386,
+              "predicted": 0.0786512988737334,
+              "observed": 0.07760446755247448
+            },
+            {
+              "bin": 1,
+              "rows": 43721,
+              "predicted": 0.155503685235894,
+              "observed": 0.16438324832460374
+            },
+            {
+              "bin": 2,
+              "rows": 75652,
+              "predicted": 0.25369852790316993,
+              "observed": 0.264434515941416
+            },
+            {
+              "bin": 3,
+              "rows": 109927,
+              "predicted": 0.3509972152701871,
+              "observed": 0.3503142994896613
+            },
+            {
+              "bin": 4,
+              "rows": 122708,
+              "predicted": 0.45057742583728166,
+              "observed": 0.4538742380284904
+            },
+            {
+              "bin": 5,
+              "rows": 129671,
+              "predicted": 0.5493142753771693,
+              "observed": 0.5538092557318136
+            },
+            {
+              "bin": 6,
+              "rows": 103419,
+              "predicted": 0.6472863874409005,
+              "observed": 0.6534872702308087
+            },
+            {
+              "bin": 7,
+              "rows": 57228,
+              "predicted": 0.7422632188742254,
+              "observed": 0.7458411966170406
+            },
+            {
+              "bin": 8,
+              "rows": 14721,
+              "predicted": 0.833627907792217,
+              "observed": 0.8522518850621561
+            },
+            {
+              "bin": 9,
+              "rows": 509,
+              "predicted": 0.9126423818657581,
+              "observed": 0.9449901768172888
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6814249952917346,
+        "logloss": 0.5982280020885751,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "R_s2027": {
+      "checkpoint_sha256": "3f166ca6b45d6f2dd67faec0340f7fd8e40309f3b9944724184cec6212adfc68",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 545,
+            "event_recall": 0.0015368303508484994,
+            "ndcg_at20": 0.0037474731110221887
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 490,
+            "event_recall": 0.0016518784217481593,
+            "ndcg_at20": 0.004707450128051622
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 55,
+            "event_recall": 0.0009483739697210056,
+            "ndcg_at20": 0.0011691175736769453
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 2085,
+            "event_recall": 0.005879433544071782,
+            "ndcg_at20": 0.0035660847880794842
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1640,
+            "event_recall": 0.005528735942177513,
+            "ndcg_at20": 0.004394376827422123
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 445,
+            "event_recall": 0.007673207573197227,
+            "ndcg_at20": 0.0013414155217395414
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 527,
+            "event_recall": 0.001486072651187448,
+            "ndcg_at20": 0.0035660847880794842
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 462,
+            "event_recall": 0.0015574853690768359,
+            "ndcg_at20": 0.004394376827422123
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 65,
+            "event_recall": 0.0011208056005793702,
+            "ndcg_at20": 0.0013414155217395414
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 554,
+            "event_recall": 0.0015622092006790252,
+            "ndcg_at20": 0.003711385607928718
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 459,
+            "event_recall": 0.0015473718277191943,
+            "ndcg_at20": 0.004381798633526049
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 95,
+            "event_recall": 0.0016381004931544643,
+            "ndcg_at20": 0.0019107558988903238
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7128315795816574,
+          "gauc": 0.6051278611547479,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6195889563802318,
+          "brier": 0.21551595921805614,
+          "ece_10_bins": 0.006723813306224991,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 6348,
+              "predicted": 0.08377864039353393,
+              "observed": 0.06568998109640832
+            },
+            {
+              "bin": 1,
+              "rows": 42061,
+              "predicted": 0.15537689037801525,
+              "observed": 0.1512327334109983
+            },
+            {
+              "bin": 2,
+              "rows": 71288,
+              "predicted": 0.2538886771371918,
+              "observed": 0.25042082818987765
+            },
+            {
+              "bin": 3,
+              "rows": 109874,
+              "predicted": 0.35229178348355,
+              "observed": 0.3414547572674154
+            },
+            {
+              "bin": 4,
+              "rows": 126660,
+              "predicted": 0.4514533136413501,
+              "observed": 0.4406284541291647
+            },
+            {
+              "bin": 5,
+              "rows": 139759,
+              "predicted": 0.5509320685390766,
+              "observed": 0.5414749676228364
+            },
+            {
+              "bin": 6,
+              "rows": 126266,
+              "predicted": 0.6485274849324433,
+              "observed": 0.6480208448830247
+            },
+            {
+              "bin": 7,
+              "rows": 80457,
+              "predicted": 0.7431811987409176,
+              "observed": 0.7415265296990939
+            },
+            {
+              "bin": 8,
+              "rows": 22490,
+              "predicted": 0.8335321680049251,
+              "observed": 0.8441974210760338
+            },
+            {
+              "bin": 9,
+              "rows": 550,
+              "predicted": 0.9090623365749012,
+              "observed": 0.9509090909090909
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6863474322549288,
+          "gauc": 0.6226692742982584,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5976757455156356,
+          "brier": 0.20504511303263834,
+          "ece_10_bins": 0.026397264554701715,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 122,
+              "predicted": 0.08175233789704374,
+              "observed": 0.13114754098360656
+            },
+            {
+              "bin": 1,
+              "rows": 801,
+              "predicted": 0.15909811266501447,
+              "observed": 0.18476903870162298
+            },
+            {
+              "bin": 2,
+              "rows": 1885,
+              "predicted": 0.25262109574019437,
+              "observed": 0.2716180371352785
+            },
+            {
+              "bin": 3,
+              "rows": 3527,
+              "predicted": 0.35405840983058223,
+              "observed": 0.37056988942444
+            },
+            {
+              "bin": 4,
+              "rows": 5439,
+              "predicted": 0.45592763614492354,
+              "observed": 0.4861187718330576
+            },
+            {
+              "bin": 5,
+              "rows": 9480,
+              "predicted": 0.5544537180963951,
+              "observed": 0.5873417721518988
+            },
+            {
+              "bin": 6,
+              "rows": 16853,
+              "predicted": 0.6530654451751302,
+              "observed": 0.6852785854150596
+            },
+            {
+              "bin": 7,
+              "rows": 14089,
+              "predicted": 0.7442399912649105,
+              "observed": 0.7667684008801192
+            },
+            {
+              "bin": 8,
+              "rows": 5477,
+              "predicted": 0.8357496186614755,
+              "observed": 0.8473616943582253
+            },
+            {
+              "bin": 9,
+              "rows": 138,
+              "predicted": 0.9091310289458953,
+              "observed": 0.9492753623188406
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.708850563972538,
+          "gauc": 0.600912493653377,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6214855651176568,
+          "brier": 0.21642222067313052,
+          "ece_10_bins": 0.009383451596712607,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 6226,
+              "predicted": 0.08381834628890364,
+              "observed": 0.0644073241246386
+            },
+            {
+              "bin": 1,
+              "rows": 41260,
+              "predicted": 0.15530464852023806,
+              "observed": 0.15058167716917112
+            },
+            {
+              "bin": 2,
+              "rows": 69403,
+              "predicted": 0.2539231049131286,
+              "observed": 0.24984510756019193
+            },
+            {
+              "bin": 3,
+              "rows": 106347,
+              "predicted": 0.3522331932917629,
+              "observed": 0.3404891534316906
+            },
+            {
+              "bin": 4,
+              "rows": 121221,
+              "predicted": 0.4512525576659256,
+              "observed": 0.43858737347489296
+            },
+            {
+              "bin": 5,
+              "rows": 130279,
+              "predicted": 0.5506758089899291,
+              "observed": 0.5381373820799975
+            },
+            {
+              "bin": 6,
+              "rows": 109413,
+              "predicted": 0.6478284981212782,
+              "observed": 0.6422819957409083
+            },
+            {
+              "bin": 7,
+              "rows": 66368,
+              "predicted": 0.7429564318672656,
+              "observed": 0.7361680327868853
+            },
+            {
+              "bin": 8,
+              "rows": 17013,
+              "predicted": 0.8328183034750993,
+              "observed": 0.8431787456650797
+            },
+            {
+              "bin": 9,
+              "rows": 412,
+              "predicted": 0.9090393279651994,
+              "observed": 0.9514563106796117
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.68330892237127,
+        "logloss": 0.5995214474022742,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "R_s2028": {
+      "checkpoint_sha256": "343c3bab24ca4eba9281af1e8119ff2ae00a8cfc9b9006ea5fa8541c10334f7d",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 455,
+            "event_recall": 0.0012830418525432428,
+            "ndcg_at20": 0.003055133235357578
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 399,
+            "event_recall": 0.0013451010005663584,
+            "ndcg_at20": 0.0037251708554741888
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 56,
+            "event_recall": 0.0009656171328068421,
+            "ndcg_at20": 0.001255511809624715
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 2003,
+            "event_recall": 0.00564820402339366,
+            "ndcg_at20": 0.003037520829897881
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1539,
+            "event_recall": 0.0051882467164702396,
+            "ndcg_at20": 0.0037012149029260876
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 464,
+            "event_recall": 0.00800082767182812,
+            "ndcg_at20": 0.001254937228479197
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 445,
+            "event_recall": 0.0012548431305093254,
+            "ndcg_at20": 0.003037520829897881
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 389,
+            "event_recall": 0.0013113891960408856,
+            "ndcg_at20": 0.0037012149029260876
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 56,
+            "event_recall": 0.0009656171328068421,
+            "ndcg_at20": 0.001254937228479197
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 485,
+            "event_recall": 0.001367638018644995,
+            "ndcg_at20": 0.0032564603582251467
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 380,
+            "event_recall": 0.0012810485719679603,
+            "ndcg_at20": 0.0036646050650802364
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 105,
+            "event_recall": 0.001810532124012829,
+            "ndcg_at20": 0.0021602443589980465
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7125685495467025,
+          "gauc": 0.6053452664020353,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6197668568332229,
+          "brier": 0.21560510847010833,
+          "ece_10_bins": 0.008477208122497186,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 8379,
+              "predicted": 0.08206553330042757,
+              "observed": 0.06981740064446831
+            },
+            {
+              "bin": 1,
+              "rows": 40648,
+              "predicted": 0.15491310870753303,
+              "observed": 0.15789214721511513
+            },
+            {
+              "bin": 2,
+              "rows": 72299,
+              "predicted": 0.2535638945393942,
+              "observed": 0.2508333448595416
+            },
+            {
+              "bin": 3,
+              "rows": 111194,
+              "predicted": 0.3521038979661249,
+              "observed": 0.342626400705074
+            },
+            {
+              "bin": 4,
+              "rows": 122213,
+              "predicted": 0.4508863153176466,
+              "observed": 0.44235065009450714
+            },
+            {
+              "bin": 5,
+              "rows": 132317,
+              "predicted": 0.5507911053199157,
+              "observed": 0.539484722295699
+            },
+            {
+              "bin": 6,
+              "rows": 127875,
+              "predicted": 0.6494174159237367,
+              "observed": 0.6381544477028348
+            },
+            {
+              "bin": 7,
+              "rows": 85633,
+              "predicted": 0.7425658961835736,
+              "observed": 0.7365968727009448
+            },
+            {
+              "bin": 8,
+              "rows": 24436,
+              "predicted": 0.8343118739037374,
+              "observed": 0.8408495662137829
+            },
+            {
+              "bin": 9,
+              "rows": 759,
+              "predicted": 0.9103624650298057,
+              "observed": 0.9459815546772069
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6858377374347163,
+          "gauc": 0.623017791555247,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5966548904022753,
+          "brier": 0.20463509416805672,
+          "ece_10_bins": 0.014628660666188347,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 127,
+              "predicted": 0.07946631586633798,
+              "observed": 0.10236220472440945
+            },
+            {
+              "bin": 1,
+              "rows": 891,
+              "predicted": 0.1582274840502894,
+              "observed": 0.1840628507295174
+            },
+            {
+              "bin": 2,
+              "rows": 1827,
+              "predicted": 0.25470738156153716,
+              "observed": 0.2791461412151067
+            },
+            {
+              "bin": 3,
+              "rows": 3463,
+              "predicted": 0.3551750882767268,
+              "observed": 0.37077678313600926
+            },
+            {
+              "bin": 4,
+              "rows": 4759,
+              "predicted": 0.45508815323412233,
+              "observed": 0.48287455347762137
+            },
+            {
+              "bin": 5,
+              "rows": 8378,
+              "predicted": 0.554547252846265,
+              "observed": 0.5753163046073049
+            },
+            {
+              "bin": 6,
+              "rows": 15845,
+              "predicted": 0.6556283767759781,
+              "observed": 0.6691069738087725
+            },
+            {
+              "bin": 7,
+              "rows": 15677,
+              "predicted": 0.7438166539089758,
+              "observed": 0.7550551763730305
+            },
+            {
+              "bin": 8,
+              "rows": 6526,
+              "predicted": 0.8390987146185689,
+              "observed": 0.841556849524977
+            },
+            {
+              "bin": 9,
+              "rows": 318,
+              "predicted": 0.9117702530614985,
+              "observed": 0.940251572327044
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7084601577721783,
+          "gauc": 0.601035910039193,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6217672189774501,
+          "brier": 0.21655457338894238,
+          "ece_10_bins": 0.01033296365406877,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 8252,
+              "predicted": 0.08210553579850433,
+              "observed": 0.06931652932622395
+            },
+            {
+              "bin": 1,
+              "rows": 39757,
+              "predicted": 0.154838829752119,
+              "observed": 0.15730563171265438
+            },
+            {
+              "bin": 2,
+              "rows": 70472,
+              "predicted": 0.2535342494209152,
+              "observed": 0.2500993302304461
+            },
+            {
+              "bin": 3,
+              "rows": 107731,
+              "predicted": 0.3520051749240514,
+              "observed": 0.34172151005745793
+            },
+            {
+              "bin": 4,
+              "rows": 117454,
+              "predicted": 0.4507160652908744,
+              "observed": 0.4407087029815928
+            },
+            {
+              "bin": 5,
+              "rows": 123939,
+              "predicted": 0.5505371981238293,
+              "observed": 0.5370625872404974
+            },
+            {
+              "bin": 6,
+              "rows": 112030,
+              "predicted": 0.6485389666270861,
+              "observed": 0.633776666964206
+            },
+            {
+              "bin": 7,
+              "rows": 69956,
+              "predicted": 0.742285603873248,
+              "observed": 0.7324604036823146
+            },
+            {
+              "bin": 8,
+              "rows": 17910,
+              "predicted": 0.8325676571251226,
+              "observed": 0.8405918481295366
+            },
+            {
+              "bin": 9,
+              "rows": 441,
+              "predicted": 0.9093473253606938,
+              "observed": 0.9501133786848073
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6828224342345302,
+        "logloss": 0.5979861015090291,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "TR_s2026": {
+      "checkpoint_sha256": "21365c2b01af01ce9760879db52afeb73638ecfff394aeeea4ef9a0b4c2cc967",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 505,
+            "event_recall": 0.0014240354627128298,
+            "ndcg_at20": 0.00339065519211851
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 250,
+            "event_recall": 0.000842795113136816,
+            "ndcg_at20": 0.0022590093198757055
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 255,
+            "event_recall": 0.0043970065868882986,
+            "ndcg_at20": 0.006430087750660335
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 1916,
+            "event_recall": 0.005402875141698578,
+            "ndcg_at20": 0.0033944463460524694
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1135,
+            "event_recall": 0.0038262898136411446,
+            "ndcg_at20": 0.002323409620159458
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 781,
+            "event_recall": 0.01346691037003828,
+            "ndcg_at20": 0.00627109174893058
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 509,
+            "event_recall": 0.0014353149515263968,
+            "ndcg_at20": 0.0033944463460524694
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 263,
+            "event_recall": 0.0008866204590199304,
+            "ndcg_at20": 0.002323409620159458
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 246,
+            "event_recall": 0.004241818119115771,
+            "ndcg_at20": 0.00627109174893058
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 518,
+            "event_recall": 0.0014606938013569225,
+            "ndcg_at20": 0.003383758131386659
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 267,
+            "event_recall": 0.0009001051808301194,
+            "ndcg_at20": 0.0023180199653818033
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 251,
+            "event_recall": 0.004328033934544953,
+            "ndcg_at20": 0.006246172390200661
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7126680441580426,
+          "gauc": 0.6047434237012418,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196078493013265,
+          "brier": 0.21551868572221755,
+          "ece_10_bins": 0.0031947841073021294,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 10002,
+              "predicted": 0.07958860023780001,
+              "observed": 0.07828434313137372
+            },
+            {
+              "bin": 1,
+              "rows": 45440,
+              "predicted": 0.1550391336770164,
+              "observed": 0.1639744718309859
+            },
+            {
+              "bin": 2,
+              "rows": 75831,
+              "predicted": 0.25367131537766446,
+              "observed": 0.26349382178792313
+            },
+            {
+              "bin": 3,
+              "rows": 111563,
+              "predicted": 0.3519645463082723,
+              "observed": 0.34964101001228004
+            },
+            {
+              "bin": 4,
+              "rows": 126574,
+              "predicted": 0.45078401721177264,
+              "observed": 0.45222557555264115
+            },
+            {
+              "bin": 5,
+              "rows": 134904,
+              "predicted": 0.5498514039181153,
+              "observed": 0.5510362924746487
+            },
+            {
+              "bin": 6,
+              "rows": 117179,
+              "predicted": 0.6486761614261024,
+              "observed": 0.6488449295522235
+            },
+            {
+              "bin": 7,
+              "rows": 80167,
+              "predicted": 0.7440338595070184,
+              "observed": 0.7404792495665299
+            },
+            {
+              "bin": 8,
+              "rows": 23135,
+              "predicted": 0.8347125591354749,
+              "observed": 0.8441754916792739
+            },
+            {
+              "bin": 9,
+              "rows": 958,
+              "predicted": 0.912826105921154,
+              "observed": 0.9436325678496869
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6857570892097699,
+          "gauc": 0.6255012810236596,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5962359680009477,
+          "brier": 0.20447038240779533,
+          "ece_10_bins": 0.008441536306463188,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 150,
+              "predicted": 0.07762801982462406,
+              "observed": 0.13333333333333333
+            },
+            {
+              "bin": 1,
+              "rows": 593,
+              "predicted": 0.16113216122125493,
+              "observed": 0.1821247892074199
+            },
+            {
+              "bin": 2,
+              "rows": 1856,
+              "predicted": 0.256365033276058,
+              "observed": 0.24622844827586207
+            },
+            {
+              "bin": 3,
+              "rows": 3383,
+              "predicted": 0.35638930288039117,
+              "observed": 0.3689033402305646
+            },
+            {
+              "bin": 4,
+              "rows": 4792,
+              "predicted": 0.4541624892558996,
+              "observed": 0.4741235392320534
+            },
+            {
+              "bin": 5,
+              "rows": 7904,
+              "predicted": 0.5538635003919664,
+              "observed": 0.5704706477732794
+            },
+            {
+              "bin": 6,
+              "rows": 12848,
+              "predicted": 0.6550897425307357,
+              "observed": 0.6562889165628891
+            },
+            {
+              "bin": 7,
+              "rows": 18587,
+              "predicted": 0.7494313229231553,
+              "observed": 0.7425082046591703
+            },
+            {
+              "bin": 8,
+              "rows": 7267,
+              "predicted": 0.837621004189063,
+              "observed": 0.8345947433603963
+            },
+            {
+              "bin": 9,
+              "rows": 431,
+              "predicted": 0.9140007635556905,
+              "observed": 0.9443155452436195
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7084074063707815,
+          "gauc": 0.6002074876562825,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6216307073187234,
+          "brier": 0.2164749266277304,
+          "ece_10_bins": 0.003014637115172186,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 9852,
+              "predicted": 0.07961845073130147,
+              "observed": 0.07744620381648397
+            },
+            {
+              "bin": 1,
+              "rows": 44847,
+              "predicted": 0.15495856718798184,
+              "observed": 0.16373447499275315
+            },
+            {
+              "bin": 2,
+              "rows": 73975,
+              "predicted": 0.25360373118814883,
+              "observed": 0.2639270023656641
+            },
+            {
+              "bin": 3,
+              "rows": 108180,
+              "predicted": 0.3518261755236219,
+              "observed": 0.3490386393048623
+            },
+            {
+              "bin": 4,
+              "rows": 121782,
+              "predicted": 0.4506510777130335,
+              "observed": 0.4513639125650753
+            },
+            {
+              "bin": 5,
+              "rows": 127000,
+              "predicted": 0.549601706197412,
+              "observed": 0.5498267716535433
+            },
+            {
+              "bin": 6,
+              "rows": 104331,
+              "predicted": 0.6478863512063947,
+              "observed": 0.6479282284268338
+            },
+            {
+              "bin": 7,
+              "rows": 61580,
+              "predicted": 0.742404716075454,
+              "observed": 0.7398668398830789
+            },
+            {
+              "bin": 8,
+              "rows": 15868,
+              "predicted": 0.8333805910106687,
+              "observed": 0.8485631459541215
+            },
+            {
+              "bin": 9,
+              "rows": 527,
+              "predicted": 0.9118654276659638,
+              "observed": 0.9430740037950665
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6828453160927834,
+        "logloss": 0.5965740138833373,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "TR_s2027": {
+      "checkpoint_sha256": "2e6ecc5135ef51f4d49e03aadeb9a133d60038cb5ad5f6a0f1cd79a632f3309c",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 398,
+            "event_recall": 0.0011223091369499134,
+            "ndcg_at20": 0.0024814039685561342
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 334,
+            "event_recall": 0.0011259742711507861,
+            "ndcg_at20": 0.002930596085222277
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 64,
+            "event_recall": 0.0011035624374935338,
+            "ndcg_at20": 0.0012749407295487502
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 1921,
+            "event_recall": 0.005416974502715537,
+            "ndcg_at20": 0.0026578620630762135
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1412,
+            "event_recall": 0.004760106798996737,
+            "ndcg_at20": 0.002891832111466461
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 509,
+            "event_recall": 0.00877677001069076,
+            "ndcg_at20": 0.0020294533000136776
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 441,
+            "event_recall": 0.0012435636416957584,
+            "ndcg_at20": 0.0026578620630762135
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 335,
+            "event_recall": 0.0011293454516033334,
+            "ndcg_at20": 0.002891832111466461
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 106,
+            "event_recall": 0.0018277752870986654,
+            "ndcg_at20": 0.0020294533000136776
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 391,
+            "event_recall": 0.0011025700315261712,
+            "ndcg_at20": 0.0024516801138394235
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 320,
+            "event_recall": 0.0010787777448151245,
+            "ndcg_at20": 0.0027885617586089137
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 71,
+            "event_recall": 0.001224264579094389,
+            "ndcg_at20": 0.0015468661039069783
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.7127562226195787,
+          "gauc": 0.6050319635421229,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196871945803961,
+          "brier": 0.2155468712295204,
+          "ece_10_bins": 0.007263690772087822,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 4662,
+              "predicted": 0.08582952115261237,
+              "observed": 0.06392106392106392
+            },
+            {
+              "bin": 1,
+              "rows": 39787,
+              "predicted": 0.15644638995919538,
+              "observed": 0.14273506421695528
+            },
+            {
+              "bin": 2,
+              "rows": 72326,
+              "predicted": 0.2542028650128432,
+              "observed": 0.24584520089594336
+            },
+            {
+              "bin": 3,
+              "rows": 112644,
+              "predicted": 0.35244701362828557,
+              "observed": 0.33985831469052946
+            },
+            {
+              "bin": 4,
+              "rows": 129148,
+              "predicted": 0.4512230220923771,
+              "observed": 0.4418496608542138
+            },
+            {
+              "bin": 5,
+              "rows": 141502,
+              "predicted": 0.5501991549363277,
+              "observed": 0.544663679665305
+            },
+            {
+              "bin": 6,
+              "rows": 125569,
+              "predicted": 0.6483558690881451,
+              "observed": 0.6495711521155699
+            },
+            {
+              "bin": 7,
+              "rows": 77963,
+              "predicted": 0.7430416016598368,
+              "observed": 0.7450842066108282
+            },
+            {
+              "bin": 8,
+              "rows": 21662,
+              "predicted": 0.8334522384618108,
+              "observed": 0.8462745822177085
+            },
+            {
+              "bin": 9,
+              "rows": 490,
+              "predicted": 0.9081244240001757,
+              "observed": 0.9448979591836735
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.6861244822475492,
+          "gauc": 0.623179985121251,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5982539192151581,
+          "brier": 0.20529707953714796,
+          "ece_10_bins": 0.028832575798514646,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 147,
+              "predicted": 0.08229234710741205,
+              "observed": 0.11564625850340136
+            },
+            {
+              "bin": 1,
+              "rows": 755,
+              "predicted": 0.1591977380068097,
+              "observed": 0.1986754966887417
+            },
+            {
+              "bin": 2,
+              "rows": 1948,
+              "predicted": 0.2549302464913294,
+              "observed": 0.26283367556468173
+            },
+            {
+              "bin": 3,
+              "rows": 3582,
+              "predicted": 0.3530579555523855,
+              "observed": 0.38274706867671693
+            },
+            {
+              "bin": 4,
+              "rows": 5545,
+              "predicted": 0.4559647690400656,
+              "observed": 0.4853020739404869
+            },
+            {
+              "bin": 5,
+              "rows": 9677,
+              "predicted": 0.5540278289847055,
+              "observed": 0.5884054975715615
+            },
+            {
+              "bin": 6,
+              "rows": 16657,
+              "predicted": 0.6526640383587626,
+              "observed": 0.6853575073542655
+            },
+            {
+              "bin": 7,
+              "rows": 14294,
+              "predicted": 0.744214480763401,
+              "observed": 0.7707429690779348
+            },
+            {
+              "bin": 8,
+              "rows": 5090,
+              "predicted": 0.8357948930418093,
+              "observed": 0.8532416502946955
+            },
+            {
+              "bin": 9,
+              "rows": 116,
+              "predicted": 0.9097961238745985,
+              "observed": 0.9310344827586207
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7088018353894447,
+          "gauc": 0.6007761435967748,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.6215422644549362,
+          "brier": 0.21643400021306647,
+          "ece_10_bins": 0.009180813830808363,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 4515,
+              "predicted": 0.08594468495873518,
+              "observed": 0.06223698781838317
+            },
+            {
+              "bin": 1,
+              "rows": 39032,
+              "predicted": 0.15639317035026043,
+              "observed": 0.14165300266448042
+            },
+            {
+              "bin": 2,
+              "rows": 70378,
+              "predicted": 0.2541827317450594,
+              "observed": 0.24537497513427492
+            },
+            {
+              "bin": 3,
+              "rows": 109062,
+              "predicted": 0.3524269480328249,
+              "observed": 0.3384496891676294
+            },
+            {
+              "bin": 4,
+              "rows": 123603,
+              "predicted": 0.45101030082489224,
+              "observed": 0.43990032604386625
+            },
+            {
+              "bin": 5,
+              "rows": 131825,
+              "predicted": 0.5499180999106029,
+              "observed": 0.5414526834818889
+            },
+            {
+              "bin": 6,
+              "rows": 108912,
+              "predicted": 0.647696977730529,
+              "observed": 0.6440979873659468
+            },
+            {
+              "bin": 7,
+              "rows": 63669,
+              "predicted": 0.7427782845996295,
+              "observed": 0.739323689707707
+            },
+            {
+              "bin": 8,
+              "rows": 16572,
+              "predicted": 0.8327327048018909,
+              "observed": 0.8441346850108616
+            },
+            {
+              "bin": 9,
+              "rows": 374,
+              "predicted": 0.9076059288519589,
+              "observed": 0.9491978609625669
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6840008472381474,
+        "logloss": 0.5997063144426689,
+        "observed_ctr": 0.6490754791210026
+      }
+    },
+    "TR_s2028": {
+      "checkpoint_sha256": "d4577f9b5313831c5e93c08bcf53abc735539fb630e4df747aa1143f05e0ff6b",
+      "stages": {
+        "direct": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 634,
+            "event_recall": 0.0017877989769503645,
+            "ndcg_at20": 0.004195688448888968
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 465,
+            "event_recall": 0.0015675989104344777,
+            "ndcg_at20": 0.004349341646398817
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 169,
+            "event_recall": 0.0029140945615063626,
+            "ndcg_at20": 0.00378299880569705
+          }
+        },
+        "coarse": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 9753,
+            "event_recall": 0.02750221359967966,
+            "ndcg_at20": 0.004250288020632679
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 6565,
+            "event_recall": 0.02213179967097279,
+            "ndcg_at20": 0.00400617457553668
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 3188,
+            "event_recall": 0.054971203917646656,
+            "ndcg_at20": 0.004905940439115936
+          }
+        },
+        "fine": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 2220,
+            "event_recall": 0.006260116291529668,
+            "ndcg_at20": 0.004238602570102025
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 1617,
+            "event_recall": 0.005451198791768926,
+            "ndcg_at20": 0.004305914850634559
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 603,
+            "event_recall": 0.010397627340759389,
+            "ndcg_at20": 0.004057811792652531
+          }
+        },
+        "without_rerank": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 647,
+            "event_recall": 0.0018244573155944573,
+            "ndcg_at20": 0.004238602570102025
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 463,
+            "event_recall": 0.0015608565495293832,
+            "ndcg_at20": 0.004305914850634559
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 184,
+            "event_recall": 0.0031727420077939097,
+            "ndcg_at20": 0.004057811792652531
+          }
+        },
+        "cascade": {
+          "all": {
+            "users": 8495,
+            "positive_events": 354626,
+            "hit_events": 615,
+            "event_recall": 0.0017342214050859216,
+            "ndcg_at20": 0.0041043374709955425
+          },
+          "warm": {
+            "users": 6085,
+            "positive_events": 296632,
+            "hit_events": 468,
+            "event_recall": 0.0015777124517921196,
+            "ndcg_at20": 0.004325661726722793
+          },
+          "cold": {
+            "users": 2410,
+            "positive_events": 57994,
+            "hit_events": 147,
+            "event_recall": 0.0025347449736179604,
+            "ndcg_at20": 0.0035098934268360206
+          }
+        }
+      },
+      "exposure": {
+        "all": {
+          "rows": 725753,
+          "auc": 0.712742601697783,
+          "gauc": 0.6056176775908446,
+          "gauc_effective_rows": 721659,
+          "gauc_groups": 7345,
+          "logloss": 0.6196238999282677,
+          "brier": 0.2155365279762881,
+          "ece_10_bins": 0.0074880936640091805,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 8152,
+              "predicted": 0.08090512764044253,
+              "observed": 0.07016683022571148
+            },
+            {
+              "bin": 1,
+              "rows": 40618,
+              "predicted": 0.15439668589660616,
+              "observed": 0.15665468511497366
+            },
+            {
+              "bin": 2,
+              "rows": 71232,
+              "predicted": 0.2538187319376428,
+              "observed": 0.24917172057502246
+            },
+            {
+              "bin": 3,
+              "rows": 111213,
+              "predicted": 0.3521856575193766,
+              "observed": 0.34228912087615654
+            },
+            {
+              "bin": 4,
+              "rows": 125578,
+              "predicted": 0.4507915050545543,
+              "observed": 0.44104859131376517
+            },
+            {
+              "bin": 5,
+              "rows": 134449,
+              "predicted": 0.5504651649311124,
+              "observed": 0.5418113931676696
+            },
+            {
+              "bin": 6,
+              "rows": 126725,
+              "predicted": 0.6487606775283249,
+              "observed": 0.6420753600315644
+            },
+            {
+              "bin": 7,
+              "rows": 82704,
+              "predicted": 0.7428569141202415,
+              "observed": 0.7384527955117044
+            },
+            {
+              "bin": 8,
+              "rows": 24379,
+              "predicted": 0.8342437557544519,
+              "observed": 0.8423643299561098
+            },
+            {
+              "bin": 9,
+              "rows": 703,
+              "predicted": 0.9100713515349507,
+              "observed": 0.9487908961593172
+            }
+          ]
+        },
+        "route_hit": {
+          "rows": 57811,
+          "auc": 0.686599041640438,
+          "gauc": 0.6247460903049137,
+          "gauc_effective_rows": 52404,
+          "gauc_groups": 3622,
+          "logloss": 0.5962696777186052,
+          "brier": 0.20446819596224813,
+          "ece_10_bins": 0.014816055537361482,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 174,
+              "predicted": 0.07930357615067356,
+              "observed": 0.12643678160919541
+            },
+            {
+              "bin": 1,
+              "rows": 773,
+              "predicted": 0.15824547568083117,
+              "observed": 0.18628719275549807
+            },
+            {
+              "bin": 2,
+              "rows": 1776,
+              "predicted": 0.2543981708754022,
+              "observed": 0.26463963963963966
+            },
+            {
+              "bin": 3,
+              "rows": 3419,
+              "predicted": 0.3560733084233751,
+              "observed": 0.3723310909622697
+            },
+            {
+              "bin": 4,
+              "rows": 5017,
+              "predicted": 0.45620410002059664,
+              "observed": 0.47937014151883595
+            },
+            {
+              "bin": 5,
+              "rows": 8551,
+              "predicted": 0.554463826484979,
+              "observed": 0.5767746462402058
+            },
+            {
+              "bin": 6,
+              "rows": 15598,
+              "predicted": 0.6548281860918643,
+              "observed": 0.6700217976663675
+            },
+            {
+              "bin": 7,
+              "rows": 15703,
+              "predicted": 0.7440186816021598,
+              "observed": 0.7557791504807998
+            },
+            {
+              "bin": 8,
+              "rows": 6487,
+              "predicted": 0.8392626239170329,
+              "observed": 0.842145830121782
+            },
+            {
+              "bin": 9,
+              "rows": 313,
+              "predicted": 0.9121164540513255,
+              "observed": 0.9297124600638977
+            }
+          ]
+        },
+        "route_missing": {
+          "rows": 667942,
+          "auc": 0.7085817530660635,
+          "gauc": 0.6012178135517406,
+          "gauc_effective_rows": 663870,
+          "gauc_groups": 7272,
+          "logloss": 0.621645229534974,
+          "brier": 0.21649450238434095,
+          "ece_10_bins": 0.009281139853376997,
+          "reliability": [
+            {
+              "bin": 0,
+              "rows": 7978,
+              "predicted": 0.08094005744230011,
+              "observed": 0.0689395838556029
+            },
+            {
+              "bin": 1,
+              "rows": 39845,
+              "predicted": 0.15432201869863385,
+              "observed": 0.15607980926088594
+            },
+            {
+              "bin": 2,
+              "rows": 69456,
+              "predicted": 0.25380391559991156,
+              "observed": 0.24877620363971434
+            },
+            {
+              "bin": 3,
+              "rows": 107794,
+              "predicted": 0.35206234937197717,
+              "observed": 0.3413362524815852
+            },
+            {
+              "bin": 4,
+              "rows": 120561,
+              "predicted": 0.4505662664703966,
+              "observed": 0.43945388641434624
+            },
+            {
+              "bin": 5,
+              "rows": 125898,
+              "predicted": 0.5501935755893665,
+              "observed": 0.5394366868417291
+            },
+            {
+              "bin": 6,
+              "rows": 111127,
+              "predicted": 0.647909030326708,
+              "observed": 0.6381527441575855
+            },
+            {
+              "bin": 7,
+              "rows": 67001,
+              "predicted": 0.7425846310980692,
+              "observed": 0.7343920239996418
+            },
+            {
+              "bin": 8,
+              "rows": 17892,
+              "predicted": 0.8324240934600933,
+              "observed": 0.842443550190029
+            },
+            {
+              "bin": 9,
+              "rows": 390,
+              "predicted": 0.9084300256692446,
+              "observed": 0.9641025641025641
+            }
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "rows": 53379,
+        "clicks": 34647,
+        "auc": 0.6840675444536086,
+        "logloss": 0.5973169622179353,
+        "observed_ctr": 0.6490754791210026
+      }
+    }
+  },
+  "aggregate": {
+    "base": {
+      "exposure": {
+        "auc": {
+          "mean": 0.7126969342379721,
+          "std_across_training_seeds": 0.0003079094182681136,
+          "values": [
+            0.7126546853034428,
+            0.7130933900061373,
+            0.7123427274043362
+          ]
+        },
+        "gauc": {
+          "mean": 0.6053946424497855,
+          "std_across_training_seeds": 0.0002039801081925389,
+          "values": [
+            0.6052230105683597,
+            0.6056812535591805,
+            0.6052796632218165
+          ]
+        },
+        "logloss": {
+          "mean": 0.6196345849433492,
+          "std_across_training_seeds": 0.00021193820455787916,
+          "values": [
+            0.6195588088491306,
+            0.6194213351966368,
+            0.6199236107842799
+          ]
+        },
+        "brier": {
+          "mean": 0.21553976654246632,
+          "std_across_training_seeds": 9.818751009876364e-05,
+          "values": [
+            0.21551359622828112,
+            0.21543475209456092,
+            0.21567095130455688
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "auc": {
+          "mean": 0.6825795729300372,
+          "std_across_training_seeds": 0.0009813027443673938,
+          "values": [
+            0.6816098713999043,
+            0.6839241863489784,
+            0.6822046610412288
+          ]
+        },
+        "logloss": {
+          "mean": 0.598016551420392,
+          "std_across_training_seeds": 0.0008333321373297336,
+          "values": [
+            0.5975811871436989,
+            0.5972858100580839,
+            0.5991826570593936
+          ]
+        }
+      },
+      "stages": {
+        "direct": {
+          "hit_events": {
+            "mean": 355.6666666666667,
+            "std_across_training_seeds": 35.6121078036982,
+            "values": [
+              406.0,
+              332.0,
+              329.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0010029345470063296,
+            "std_across_training_seeds": 0.0001004215928998387,
+            "values": [
+              0.0011448681145770473,
+              0.0009361975715260584,
+              0.0009277379549158832
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.002299142179217518,
+            "std_across_training_seeds": 0.00027661583541245034,
+            "values": [
+              0.0026867074117004905,
+              0.002059322908783896,
+              0.0021513962171681674
+            ]
+          }
+        },
+        "fine": {
+          "hit_events": {
+            "mean": 1746.3333333333333,
+            "std_across_training_seeds": 38.447655614123235,
+            "values": [
+              1795.0,
+              1701.0,
+              1743.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.004924436824523113,
+            "std_across_training_seeds": 0.0001084174753518447,
+            "values": [
+              0.005061670605088177,
+              0.004796602617969353,
+              0.004915037250511807
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.0023599983206417257,
+            "std_across_training_seeds": 0.0002473863375504395,
+            "values": [
+              0.0027022000432041313,
+              0.0021258618676965923,
+              0.002251933051024454
+            ]
+          }
+        },
+        "without_rerank": {
+          "hit_events": {
+            "mean": 366.3333333333333,
+            "std_across_training_seeds": 28.122746823325933,
+            "values": [
+              406.0,
+              344.0,
+              349.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0010330131838425082,
+            "std_across_training_seeds": 7.930255205012018e-05,
+            "values": [
+              0.0011448681145770473,
+              0.0009700360379667594,
+              0.0009841353989837182
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.0023599983206417257,
+            "std_across_training_seeds": 0.0002473863375504395,
+            "values": [
+              0.0027022000432041313,
+              0.0021258618676965923,
+              0.002251933051024454
+            ]
+          }
+        },
+        "cascade": {
+          "hit_events": {
+            "mean": 405.6666666666667,
+            "std_across_training_seeds": 23.098821518760552,
+            "values": [
+              422.0,
+              373.0,
+              422.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0011439281571759168,
+            "std_across_training_seeds": 6.513572473185994e-05,
+            "values": [
+              0.0011899860698313153,
+              0.0010518123318651199,
+              0.0011899860698313153
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.0025294509931835913,
+            "std_across_training_seeds": 0.00021490656472533985,
+            "values": [
+              0.002759028317615265,
+              0.002242186429975281,
+              0.002587138231960228
+            ]
+          }
+        }
+      }
+    },
+    "T": {
+      "exposure": {
+        "auc": {
+          "mean": 0.7126869574363505,
+          "std_across_training_seeds": 9.920975326096386e-05,
+          "values": [
+            0.7126081232052932,
+            0.7128268869179012,
+            0.712625862185857
+          ]
+        },
+        "gauc": {
+          "mean": 0.6052177138425021,
+          "std_across_training_seeds": 0.00043759945791693603,
+          "values": [
+            0.6046508919743808,
+            0.6052860093291434,
+            0.6057162402239821
+          ]
+        },
+        "logloss": {
+          "mean": 0.6196482911866577,
+          "std_across_training_seeds": 7.254653448417833e-05,
+          "values": [
+            0.6196132518392816,
+            0.6195823022823427,
+            0.6197493194383488
+          ]
+        },
+        "brier": {
+          "mean": 0.2155466205917859,
+          "std_across_training_seeds": 3.497298507008079e-05,
+          "values": [
+            0.21552992360189546,
+            0.21551465069857487,
+            0.21559528747488735
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "auc": {
+          "mean": 0.6837658204592212,
+          "std_across_training_seeds": 0.00012689813118247473,
+          "values": [
+            0.6839348549450893,
+            0.6837335067648915,
+            0.6836290996676828
+          ]
+        },
+        "logloss": {
+          "mean": 0.5977480142358415,
+          "std_across_training_seeds": 0.0014185595105935106,
+          "values": [
+            0.5959093809245675,
+            0.5993623397314569,
+            0.5979723220514999
+          ]
+        }
+      },
+      "stages": {
+        "direct": {
+          "hit_events": {
+            "mean": 445.0,
+            "std_across_training_seeds": 61.649547173249104,
+            "values": [
+              521.0,
+              370.0,
+              444.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0012548431305093252,
+            "std_across_training_seeds": 0.0001738438444255331,
+            "values": [
+              0.0014691534179670977,
+              0.0010433527152549447,
+              0.0012520232583059336
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.0027316112392941267,
+            "std_across_training_seeds": 0.00032299816231546674,
+            "values": [
+              0.0031220650663202646,
+              0.002331077053602903,
+              0.002741691597959213
+            ]
+          }
+        },
+        "fine": {
+          "hit_events": {
+            "mean": 1984.6666666666667,
+            "std_across_training_seeds": 27.52372713779069,
+            "values": [
+              2012.0,
+              1995.0,
+              1947.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0055965063663314775,
+            "std_across_training_seeds": 7.761339308959491e-05,
+            "values": [
+              0.005673582873224186,
+              0.005625645045766526,
+              0.0054902911800037224
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.002875900905544336,
+            "std_across_training_seeds": 0.0003489071867737288,
+            "values": [
+              0.0031875421253789314,
+              0.002388773564562696,
+              0.003051387026691381
+            ]
+          }
+        },
+        "without_rerank": {
+          "hit_events": {
+            "mean": 473.3333333333333,
+            "std_across_training_seeds": 65.5862451704285,
+            "values": [
+              533.0,
+              382.0,
+              505.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0013347395096054246,
+            "std_across_training_seeds": 0.0001849448296809272,
+            "values": [
+              0.0015029918844077987,
+              0.0010771911816956456,
+              0.0014240354627128298
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.002875900905544336,
+            "std_across_training_seeds": 0.0003489071867737288,
+            "values": [
+              0.0031875421253789314,
+              0.002388773564562696,
+              0.003051387026691381
+            ]
+          }
+        },
+        "cascade": {
+          "hit_events": {
+            "mean": 468.3333333333333,
+            "std_across_training_seeds": 53.90320542932077,
+            "values": [
+              540.0,
+              410.0,
+              455.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.001320640148588466,
+            "std_across_training_seeds": 0.00015200015066385648,
+            "values": [
+              0.0015227309898315409,
+              0.0011561476033906143,
+              0.0012830418525432428
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.002857491891134384,
+            "std_across_training_seeds": 0.0002834028405864063,
+            "values": [
+              0.00321901491132765,
+              0.0025268918530103423,
+              0.0028265689090651593
+            ]
+          }
+        }
+      }
+    },
+    "R": {
+      "exposure": {
+        "auc": {
+          "mean": 0.7126955999577443,
+          "std_across_training_seeds": 0.00010756702702340571,
+          "values": [
+            0.7126866707448729,
+            0.7128315795816574,
+            0.7125685495467025
+          ]
+        },
+        "gauc": {
+          "mean": 0.6050854571653665,
+          "std_across_training_seeds": 0.0002313956004865059,
+          "values": [
+            0.6047832439393164,
+            0.6051278611547479,
+            0.6053452664020353
+          ]
+        },
+        "logloss": {
+          "mean": 0.6196573287287412,
+          "std_across_training_seeds": 7.824103774376415e-05,
+          "values": [
+            0.6196161729727692,
+            0.6195889563802318,
+            0.6197668568332229
+          ]
+        },
+        "brier": {
+          "mean": 0.21554951567121147,
+          "std_across_training_seeds": 3.959038339123098e-05,
+          "values": [
+            0.21552747932546992,
+            0.21551595921805614,
+            0.21560510847010833
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "auc": {
+          "mean": 0.682518783965845,
+          "std_across_training_seeds": 0.0007985185969473659,
+          "values": [
+            0.6814249952917346,
+            0.68330892237127,
+            0.6828224342345302
+          ]
+        },
+        "logloss": {
+          "mean": 0.5985785169999595,
+          "std_across_training_seeds": 0.0006740263497832789,
+          "values": [
+            0.5982280020885751,
+            0.5995214474022742,
+            0.5979861015090291
+          ]
+        }
+      },
+      "stages": {
+        "direct": {
+          "hit_events": {
+            "mean": 512.6666666666666,
+            "std_across_training_seeds": 40.876507787345155,
+            "values": [
+              538.0,
+              545.0,
+              455.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0014456544829388332,
+            "std_across_training_seeds": 0.00011526652808126062,
+            "values": [
+              0.0015170912454247573,
+              0.0015368303508484994,
+              0.0012830418525432428
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.0035071890890304752,
+            "std_across_training_seeds": 0.0003198636244599929,
+            "values": [
+              0.0037189609207116596,
+              0.0037474731110221887,
+              0.003055133235357578
+            ]
+          }
+        },
+        "fine": {
+          "hit_events": {
+            "mean": 1966.6666666666667,
+            "std_across_training_seeds": 114.37462811111368,
+            "values": [
+              1812.0,
+              2085.0,
+              2003.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.005545748666670426,
+            "std_across_training_seeds": 0.0003225218345837973,
+            "values": [
+              0.005109608432545837,
+              0.005879433544071782,
+              0.00564820402339366
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.0033736417377887816,
+            "std_across_training_seeds": 0.0002385057085907838,
+            "values": [
+              0.0035173195953889787,
+              0.0035660847880794842,
+              0.003037520829897881
+            ]
+          }
+        },
+        "without_rerank": {
+          "hit_events": {
+            "mean": 494.0,
+            "std_across_training_seeds": 35.33647784749729,
+            "values": [
+              510.0,
+              527.0,
+              445.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0013930168684755204,
+            "std_across_training_seeds": 9.96443516479256e-05,
+            "values": [
+              0.0014381348237297886,
+              0.001486072651187448,
+              0.0012548431305093254
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.0033736417377887816,
+            "std_across_training_seeds": 0.0002385057085907838,
+            "values": [
+              0.0035173195953889787,
+              0.0035660847880794842,
+              0.003037520829897881
+            ]
+          }
+        },
+        "cascade": {
+          "hit_events": {
+            "mean": 506.3333333333333,
+            "std_across_training_seeds": 33.76717669901087,
+            "values": [
+              480.0,
+              554.0,
+              485.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0014277952923173523,
+            "std_across_training_seeds": 9.521912296055805e-05,
+            "values": [
+              0.0013535386576280363,
+              0.0015622092006790252,
+              0.001367638018644995
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.003453337861072143,
+            "std_across_training_seeds": 0.00019069276296110053,
+            "values": [
+              0.0033921676170625644,
+              0.003711385607928718,
+              0.0032564603582251467
+            ]
+          }
+        }
+      }
+    },
+    "TR": {
+      "exposure": {
+        "auc": {
+          "mean": 0.7127222894918015,
+          "std_across_training_seeds": 3.875822109433311e-05,
+          "values": [
+            0.7126680441580426,
+            0.7127562226195787,
+            0.712742601697783
+          ]
+        },
+        "gauc": {
+          "mean": 0.6051310216114031,
+          "std_across_training_seeds": 0.0003637209018726344,
+          "values": [
+            0.6047434237012418,
+            0.6050319635421229,
+            0.6056176775908446
+          ]
+        },
+        "logloss": {
+          "mean": 0.6196396479366634,
+          "std_across_training_seeds": 3.425315707086972e-05,
+          "values": [
+            0.6196078493013265,
+            0.6196871945803961,
+            0.6196238999282677
+          ]
+        },
+        "brier": {
+          "mean": 0.215534028309342,
+          "std_across_training_seeds": 1.1641648125324779e-05,
+          "values": [
+            0.21551868572221755,
+            0.2155468712295204,
+            0.2155365279762881
+          ]
+        }
+      },
+      "pool_logged_exposures": {
+        "auc": {
+          "mean": 0.6836379025948465,
+          "std_across_training_seeds": 0.0005611043587289669,
+          "values": [
+            0.6828453160927834,
+            0.6840008472381474,
+            0.6840675444536086
+          ]
+        },
+        "logloss": {
+          "mean": 0.5978657635146472,
+          "std_across_training_seeds": 0.0013363417342261087,
+          "values": [
+            0.5965740138833373,
+            0.5997063144426689,
+            0.5973169622179353
+          ]
+        }
+      },
+      "stages": {
+        "direct": {
+          "hit_events": {
+            "mean": 512.3333333333334,
+            "std_across_training_seeds": 96.48603813793764,
+            "values": [
+              505.0,
+              398.0,
+              634.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0014447145255377025,
+            "std_across_training_seeds": 0.00027207829696056587,
+            "values": [
+              0.0014240354627128298,
+              0.0011223091369499134,
+              0.0017877989769503645
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.003355915869854538,
+            "std_across_training_seeds": 0.0007002846731918021,
+            "values": [
+              0.00339065519211851,
+              0.0024814039685561342,
+              0.004195688448888968
+            ]
+          }
+        },
+        "fine": {
+          "hit_events": {
+            "mean": 2019.0,
+            "std_across_training_seeds": 142.14312036347965,
+            "values": [
+              1916.0,
+              1921.0,
+              2220.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.005693321978647928,
+            "std_across_training_seeds": 0.0004008254340163431,
+            "values": [
+              0.005402875141698578,
+              0.005416974502715537,
+              0.006260116291529668
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.0034303036597435692,
+            "std_across_training_seeds": 0.0006458325107161615,
+            "values": [
+              0.0033944463460524694,
+              0.0026578620630762135,
+              0.004238602570102025
+            ]
+          }
+        },
+        "without_rerank": {
+          "hit_events": {
+            "mean": 532.3333333333334,
+            "std_across_training_seeds": 85.70232720812713,
+            "values": [
+              509.0,
+              441.0,
+              647.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0015011119696055376,
+            "std_across_training_seeds": 0.00024166961026018152,
+            "values": [
+              0.0014353149515263968,
+              0.0012435636416957584,
+              0.0018244573155944573
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.0034303036597435692,
+            "std_across_training_seeds": 0.0006458325107161615,
+            "values": [
+              0.0033944463460524694,
+              0.0026578620630762135,
+              0.004238602570102025
+            ]
+          }
+        },
+        "cascade": {
+          "hit_events": {
+            "mean": 508.0,
+            "std_across_training_seeds": 91.72059020016533,
+            "values": [
+              518.0,
+              391.0,
+              615.0
+            ]
+          },
+          "event_recall": {
+            "mean": 0.0014324950793230052,
+            "std_across_training_seeds": 0.00025864034278413135,
+            "values": [
+              0.0014606938013569225,
+              0.0011025700315261712,
+              0.0017342214050859216
+            ]
+          },
+          "ndcg_at20": {
+            "mean": 0.003313258572073875,
+            "std_across_training_seeds": 0.0006765336778697886,
+            "values": [
+              0.003383758131386659,
+              0.0024516801138394235,
+              0.0041043374709955425
+            ]
+          }
+        }
+      }
+    }
+  },
+  "baselines": {
+    "rrf": {
+      "hit_events": 1745,
+      "event_recall_at20": 0.00492067699491859,
+      "ndcg_at20": 0.01451187936143447
+    },
+    "recent": {
+      "hit_events": 1701,
+      "event_recall_at20": 0.004796602617969353,
+      "ndcg_at20": 0.014683536210919532
+    }
+  },
+  "paired": {
+    "direct": {
+      "T-base": {
+        "ndcg_difference": 0.0004324690600766089,
+        "ndcg_95_interval": [
+          0.00027876983909765995,
+          0.0005818181154643666
+        ],
+        "event_recall_difference": 0.0002519085835029956,
+        "event_recall_95_interval": [
+          0.0001855663746748516,
+          0.0003213884067532609
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      },
+      "R-base": {
+        "ndcg_difference": 0.0012080469098129576,
+        "ndcg_95_interval": [
+          0.0009596495747840009,
+          0.0014456544671811926
+        ],
+        "event_recall_difference": 0.0004427199359325035,
+        "event_recall_95_interval": [
+          0.0003540902670846859,
+          0.0005257979087324467
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      },
+      "TR-base": {
+        "ndcg_difference": 0.0010567736906370196,
+        "ndcg_95_interval": [
+          0.0008178724063579281,
+          0.0012904836409091546
+        ],
+        "event_recall_difference": 0.00044177997853137296,
+        "event_recall_95_interval": [
+          0.0003507541780693276,
+          0.000534450524652029
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      },
+      "TR-T": {
+        "ndcg_difference": 0.0006243046305604107,
+        "ndcg_95_interval": [
+          0.00042602291914497017,
+          0.0008242737879631803
+        ],
+        "event_recall_difference": 0.0001898713950283773,
+        "event_recall_95_interval": [
+          0.00011285297024773176,
+          0.0002672292120657771
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      },
+      "interaction_TR-T-R+base": {
+        "ndcg_difference": -0.0005837422792525466,
+        "ndcg_95_interval": [
+          -0.0007835276802623887,
+          -0.00039145006164785045
+        ],
+        "event_recall_difference": -0.0002528485409041262,
+        "event_recall_95_interval": [
+          -0.0003351272664279571,
+          -0.00017072737323644614
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      }
+    },
+    "cascade": {
+      "T-base": {
+        "ndcg_difference": 0.00032804089795079264,
+        "ndcg_95_interval": [
+          0.00018091518074389777,
+          0.0004798024184752757
+        ],
+        "event_recall_difference": 0.00017671199141254917,
+        "event_recall_95_interval": [
+          0.00011740106855988423,
+          0.00023597492337643853
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      },
+      "R-base": {
+        "ndcg_difference": 0.0009238868678885516,
+        "ndcg_95_interval": [
+          0.0006881891994813453,
+          0.0011437876613028663
+        ],
+        "event_recall_difference": 0.00028386713514143535,
+        "event_recall_95_interval": [
+          0.00019480252296577496,
+          0.0003658821348991855
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      },
+      "TR-base": {
+        "ndcg_difference": 0.0007838075788902834,
+        "ndcg_95_interval": [
+          0.0005682375569184002,
+          0.0009955268647970016
+        ],
+        "event_recall_difference": 0.00028856692214708826,
+        "event_recall_95_interval": [
+          0.0002100184854349047,
+          0.0003742376354984119
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      },
+      "TR-T": {
+        "ndcg_difference": 0.00045576668093949086,
+        "ndcg_95_interval": [
+          0.00027176664057241217,
+          0.0006357000696798891
+        ],
+        "event_recall_difference": 0.00011185493073453909,
+        "event_recall_95_interval": [
+          3.587022995175389e-05,
+          0.00018767601133542423
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      },
+      "interaction_TR-T-R+base": {
+        "ndcg_difference": -0.0004681201869490608,
+        "ndcg_95_interval": [
+          -0.0006741464195291449,
+          -0.00027606941336502297
+        ],
+        "event_recall_difference": -0.00017201220440689625,
+        "event_recall_95_interval": [
+          -0.0002535120658200955,
+          -8.580702863610903e-05
+        ],
+        "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+      }
+    }
+  },
+  "test_used": false,
+  "default_changed": false,
+  "elapsed_seconds": 111.69424880004954,
+  "source_sha256": "48d7b2cdf4d7fcdb97320aa542ab1f439a1c9c5b7adb1a2f85b2f6f0c583d8e3",
+  "scope": "same previously used validation day; fixed last epoch, matched capacity, no final or online acceptance"
+}

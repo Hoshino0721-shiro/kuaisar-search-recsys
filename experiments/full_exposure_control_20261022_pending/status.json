@@ -1,0 +1,12 @@
+{
+  "status": "stopped_by_user",
+  "date": "2026-10-22",
+  "completed_model_checkpoints": 0,
+  "training_metrics_available": false,
+  "prepared_cache_only": true,
+  "no_automatic_resume": true,
+  "test_labels_used": false,
+  "scope": "Preparation completed; no full-data model training/evaluation results; end-to-end training not accepted",
+  "last_complete_test_suite_passed": 111,
+  "additional_repeat_index_test_passed_separately": 1
+}

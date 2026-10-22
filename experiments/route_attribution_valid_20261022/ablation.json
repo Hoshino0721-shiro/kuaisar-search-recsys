@@ -1,0 +1,1627 @@
+{
+  "runs": {
+    "recent_only_s2026": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2026,
+          "columns": [
+            28,
+            30
+          ],
+          "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+          "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6366075955581665
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6278354671707154
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6273932168960571
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6271350752067566
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6269513943939209
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7126098137746281,
+          "logloss": 0.6196258731550225
+        },
+        "checkpoint_sha256": "cfcd604f17fba8b19e26b9b003fb56f7012dc87c1213658db4b57da37e1f8fd9",
+        "elapsed_seconds": 4.191270399955101,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 639,
+        "ndcg_at20": 0.004635805801069955,
+        "event_recall_at20": 0.0018018983379673233
+      },
+      "cascade": {
+        "hit_events": 586,
+        "ndcg_at20": 0.004285042656067116,
+        "event_recall_at20": 0.001652445111187561
+      }
+    },
+    "recent_only_s2027": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2027,
+          "columns": [
+            28,
+            30
+          ],
+          "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+          "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6345539834098816
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6275619847106934
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272091630897522
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6269812566490174
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6268286587905884
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7129730038197982,
+          "logloss": 0.6194823216546012
+        },
+        "checkpoint_sha256": "93189ad5deaae77a75a6d95bd5d057b93bc10784a4021935a1582b16fb352859",
+        "elapsed_seconds": 4.491356799961068,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 453,
+        "ndcg_at20": 0.0028595336415321673,
+        "event_recall_at20": 0.0012774021081364592
+      },
+      "cascade": {
+        "hit_events": 518,
+        "ndcg_at20": 0.003185790450197642,
+        "event_recall_at20": 0.0014606938013569225
+      }
+    },
+    "recent_only_s2028": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2028,
+          "columns": [
+            28,
+            30
+          ],
+          "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+          "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6323120793838501
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6277024940338135
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272284063758851
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6270142242202759
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6268221418266297
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7122410016849012,
+          "logloss": 0.6200001798258551
+        },
+        "checkpoint_sha256": "9950f3fc6d39deeef6339275c5129ead4061f0de5c793525f7c39af8e36abe17",
+        "elapsed_seconds": 4.385448399931192,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 352,
+        "ndcg_at20": 0.0022257446770538735,
+        "event_recall_at20": 0.0009925950155938933
+      },
+      "cascade": {
+        "hit_events": 380,
+        "ndcg_at20": 0.0022784036371332043,
+        "event_recall_at20": 0.001071551437288862
+      }
+    },
+    "cf_only_s2026": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2026,
+          "columns": [
+            29,
+            31,
+            32
+          ],
+          "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+          "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6361592407226563
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6278104616508484
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6273794064102173
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6271363613204956
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6269386906814575
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7126096305342602,
+          "logloss": 0.6195926297311868
+        },
+        "checkpoint_sha256": "cd449b9d57c4a8183709c9c620ac64c72da20a35b01c926cc6118f0f3b4b28c7",
+        "elapsed_seconds": 4.385830400045961,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 456,
+        "ndcg_at20": 0.003259544400599313,
+        "event_recall_at20": 0.0012858617247466346
+      },
+      "cascade": {
+        "hit_events": 493,
+        "ndcg_at20": 0.0033927505658568765,
+        "event_recall_at20": 0.001390196996272129
+      }
+    },
+    "cf_only_s2027": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2027,
+          "columns": [
+            29,
+            31,
+            32
+          ],
+          "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+          "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6345284077987671
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6275712688179016
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272035760345459
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6269743043174744
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6268206675376892
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7130736912923872,
+          "logloss": 0.6194047345373449
+        },
+        "checkpoint_sha256": "702ddc104f223d5ffee787d3ac0b3beda17cbe772416cca28e625f7b45d9c61c",
+        "elapsed_seconds": 4.294944099965505,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 523,
+        "ndcg_at20": 0.0035742584591060013,
+        "event_recall_at20": 0.0014747931623738811
+      },
+      "cascade": {
+        "hit_events": 562,
+        "ndcg_at20": 0.0036577206769347857,
+        "event_recall_at20": 0.0015847681783061592
+      }
+    },
+    "cf_only_s2028": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2028,
+          "columns": [
+            29,
+            31,
+            32
+          ],
+          "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+          "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6322861175079346
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6276733821792603
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6271992020835876
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6269811065750122
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6267912230911254
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.712497019665301,
+          "logloss": 0.6198168898051304
+        },
+        "checkpoint_sha256": "882eecd504f22281d1e9c8162b00a5976eed872b17d8d636347d80b2a6406ff8",
+        "elapsed_seconds": 4.622211399953812,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 509,
+        "ndcg_at20": 0.003473855140540502,
+        "event_recall_at20": 0.0014353149515263968
+      },
+      "cascade": {
+        "hit_events": 551,
+        "ndcg_at20": 0.0036585451443495367,
+        "event_recall_at20": 0.00155374958406885
+      }
+    },
+    "flags_only_s2026": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2026,
+          "columns": [
+            28,
+            29
+          ],
+          "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+          "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.636736499660492
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.627786399433136
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6273490942153931
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6270885709571838
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6269144240493775
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7125412168788318,
+          "logloss": 0.6196581435591512
+        },
+        "checkpoint_sha256": "ff69f6618cbb099a32c7adfc3ab7e86b1fe82927b0d51afaf1963e13a2ff99ac",
+        "elapsed_seconds": 4.479091000044718,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 399,
+        "ndcg_at20": 0.002633207778664958,
+        "event_recall_at20": 0.0011251290091533052
+      },
+      "cascade": {
+        "hit_events": 432,
+        "ndcg_at20": 0.002786931076542223,
+        "event_recall_at20": 0.0012181847918652327
+      }
+    },
+    "flags_only_s2027": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2027,
+          "columns": [
+            28,
+            29
+          ],
+          "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+          "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.634481071510315
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6275590469398499
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272192730712891
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6269834611053466
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6268412331390381
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.713093242169269,
+          "logloss": 0.6193898961974098
+        },
+        "checkpoint_sha256": "d4ffdbb600c63b8546bdab93cfe8cff023f91432e2f4481fa9c37160c9e0b1f2",
+        "elapsed_seconds": 4.406261599971913,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 445,
+        "ndcg_at20": 0.002905518955364477,
+        "event_recall_at20": 0.0012548431305093254
+      },
+      "cascade": {
+        "hit_events": 478,
+        "ndcg_at20": 0.0030615407562521566,
+        "event_recall_at20": 0.001347898913221253
+      }
+    },
+    "flags_only_s2028": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2028,
+          "columns": [
+            28,
+            29
+          ],
+          "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+          "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.632314452079773
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6276546914863587
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6271878082122803
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6269683933868408
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6267915946235657
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7124577657665278,
+          "logloss": 0.6199046928163618
+        },
+        "checkpoint_sha256": "f85a8cc4216e27bd66ca2d6c13ebb9f18fde44e790cc8663e95fc2a3dc8ff56e",
+        "elapsed_seconds": 5.147270799963735,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 349,
+        "ndcg_at20": 0.0023121756565821386,
+        "event_recall_at20": 0.0009841353989837182
+      },
+      "cascade": {
+        "hit_events": 415,
+        "ndcg_at20": 0.00261847848195577,
+        "event_recall_at20": 0.0011702469644075731
+      }
+    },
+    "ranks_only_s2026": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2026,
+          "columns": [
+            30,
+            31
+          ],
+          "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+          "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6360967977142334
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6277929452514649
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6273693986968994
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6271344127388
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6269493599700928
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7125810666193741,
+          "logloss": 0.6195981018614353
+        },
+        "checkpoint_sha256": "d55b75185accddb05f3195434f2772115756bb0e9449c65a9f074b247e66adba",
+        "elapsed_seconds": 4.328052600030787,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 525,
+        "ndcg_at20": 0.004026025174174614,
+        "event_recall_at20": 0.0014804329067806647
+      },
+      "cascade": {
+        "hit_events": 499,
+        "ndcg_at20": 0.0037165836951963418,
+        "event_recall_at20": 0.0014071162294924794
+      }
+    },
+    "ranks_only_s2027": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2027,
+          "columns": [
+            30,
+            31
+          ],
+          "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+          "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.634531015083313
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6275462244529724
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272046998291015
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6269721840286255
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.626822080947876
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7129780392771115,
+          "logloss": 0.6194609963879144
+        },
+        "checkpoint_sha256": "b0aff42b4b2aaa10fe5ecce0fa620fbd5d479b0515ea2530d56c4c7a2b629ffb",
+        "elapsed_seconds": 4.3745777000440285,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 660,
+        "ndcg_at20": 0.004672344026723947,
+        "event_recall_at20": 0.0018611156542385498
+      },
+      "cascade": {
+        "hit_events": 651,
+        "ndcg_at20": 0.0046393195389990835,
+        "event_recall_at20": 0.0018357368044080243
+      }
+    },
+    "ranks_only_s2028": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2028,
+          "columns": [
+            30,
+            31
+          ],
+          "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+          "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6324458061714172
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6277206745948791
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272294702301026
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6270183881912231
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6268065460662842
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7124856270478893,
+          "logloss": 0.6197461023763008
+        },
+        "checkpoint_sha256": "3bf5db7ceae700b431bbe4fb6b5818770e98d89f7159ed7a06f391ae1c860f51",
+        "elapsed_seconds": 4.2912346998928115,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 418,
+        "ndcg_at20": 0.002842145608002497,
+        "event_recall_at20": 0.0011787065810177483
+      },
+      "cascade": {
+        "hit_events": 465,
+        "ndcg_at20": 0.0030457582829248996,
+        "event_recall_at20": 0.0013112405745771601
+      }
+    },
+    "cf_score_only_s2026": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2026,
+          "columns": [
+            32
+          ],
+          "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+          "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6360603013191223
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6277469334259034
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6273571403961181
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6271242597465515
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6269339647445679
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7125758674223008,
+          "logloss": 0.6196242724528924
+        },
+        "checkpoint_sha256": "295934439f46d7b87815254dd44a9df68f833989bfc6a97b3c385124545791c4",
+        "elapsed_seconds": 4.245404300047085,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 468,
+        "ndcg_at20": 0.0032073684498276633,
+        "event_recall_at20": 0.0013197001911873353
+      },
+      "cascade": {
+        "hit_events": 483,
+        "ndcg_at20": 0.0031407982882538316,
+        "event_recall_at20": 0.0013619982742382115
+      }
+    },
+    "cf_score_only_s2027": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2027,
+          "columns": [
+            32
+          ],
+          "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+          "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6346412931518555
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.627539490650177
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6271796427307129
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6269470930404664
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6268069148292541
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7130385103422681,
+          "logloss": 0.6195080775147687
+        },
+        "checkpoint_sha256": "74fa648f2ba2327c9a2c15d47d1ea4ee2ab39053c418c24eb2c71352c732074a",
+        "elapsed_seconds": 4.389967199997045,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 483,
+        "ndcg_at20": 0.0032312665461317783,
+        "event_recall_at20": 0.0013619982742382115
+      },
+      "cascade": {
+        "hit_events": 506,
+        "ndcg_at20": 0.003259878560588633,
+        "event_recall_at20": 0.0014268553349162216
+      }
+    },
+    "cf_score_only_s2028": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2028,
+          "columns": [
+            32
+          ],
+          "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+          "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6322483348312378
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6276559301605225
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6271887305145264
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6269819449043273
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6267818877944946
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7123213855905854,
+          "logloss": 0.6198755480663418
+        },
+        "checkpoint_sha256": "c41ad08b46392100490e0fdd5007b73d3e9e838f324811d5e1fffe1804f926d2",
+        "elapsed_seconds": 4.239241600036621,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 422,
+        "ndcg_at20": 0.002801544521174187,
+        "event_recall_at20": 0.0011899860698313153
+      },
+      "cascade": {
+        "hit_events": 445,
+        "ndcg_at20": 0.0029328402902196603,
+        "event_recall_at20": 0.0012548431305093254
+      }
+    },
+    "without_combined_s2026": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2026,
+          "columns": [
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+          "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6365147832565308
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6278226684074402
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6273753061256409
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6271100197792053
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6269146921844483
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7125950453448379,
+          "logloss": 0.6196142473534102
+        },
+        "checkpoint_sha256": "4722cfc293d50ca73fb5c918c852b31525dc3536004e52078228a38fd203b842",
+        "elapsed_seconds": 6.118506200029515,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 449,
+        "ndcg_at20": 0.003319383141202557,
+        "event_recall_at20": 0.0012661226193228922
+      },
+      "cascade": {
+        "hit_events": 430,
+        "ndcg_at20": 0.0031180252490231835,
+        "event_recall_at20": 0.0012125450474584493
+      }
+    },
+    "without_combined_s2027": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2027,
+          "columns": [
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+          "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.63457517420578
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.627593256187439
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272287389984131
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6270137146339416
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6268460191192627
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7127810274532763,
+          "logloss": 0.6196223674430492
+        },
+        "checkpoint_sha256": "648bc439e1eaf1a63b80948256d4d5345450061a016dbbfb20285d34904e3d6e",
+        "elapsed_seconds": 4.507900999975391,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 507,
+        "ndcg_at20": 0.00352493220527468,
+        "event_recall_at20": 0.0014296752071196134
+      },
+      "cascade": {
+        "hit_events": 480,
+        "ndcg_at20": 0.0032828448405096133,
+        "event_recall_at20": 0.0013535386576280363
+      }
+    },
+    "without_combined_s2028": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2028,
+          "columns": [
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+          "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6323659348831177
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6276974320220947
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272052545242309
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6269780288391114
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6267887777252197
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7125151666010078,
+          "logloss": 0.6197733781550703
+        },
+        "checkpoint_sha256": "598dc77f988f00f91a7cc618aeffd256298c22f98c28ed76fc0d1ca4ac44519f",
+        "elapsed_seconds": 4.916244999971241,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 439,
+        "ndcg_at20": 0.0030042005373626182,
+        "event_recall_at20": 0.0012379238972889748
+      },
+      "cascade": {
+        "hit_events": 499,
+        "ndcg_at20": 0.003323426483277614,
+        "event_recall_at20": 0.0014071162294924794
+      }
+    },
+    "combined_only_s2026": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2026,
+          "columns": [
+            33
+          ],
+          "initial_parameters_sha256": "ba82e89147f807d988aa8539d3d597c59cec78937bc147a29865ea60c96a7e6e",
+          "training_order_sha256": "c1c279c2d2a36f5adda19cce032fc813eb8ec20be2f40deb3f70aff5a65a4837",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6360841387252808
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6278065294113159
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6273993870964051
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6271599145927429
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6269618967247009
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7126162884816389,
+          "logloss": 0.6195525625441162
+        },
+        "checkpoint_sha256": "8614c9e0b1979d201f8032a12d9dbc8a30fd1fdf66b92cf1dc4bf5f48b5631b2",
+        "elapsed_seconds": 4.302921999944374,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 479,
+        "ndcg_at20": 0.003402581316572446,
+        "event_recall_at20": 0.0013507187854246445
+      },
+      "cascade": {
+        "hit_events": 528,
+        "ndcg_at20": 0.0035712191804491825,
+        "event_recall_at20": 0.00148889252339084
+      }
+    },
+    "combined_only_s2027": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2027,
+          "columns": [
+            33
+          ],
+          "initial_parameters_sha256": "3ec0c2e50e6cb3b3e7b983b4d30341d368f39365d756bf2671a809086447906b",
+          "training_order_sha256": "5aebce923777666aeb514b086299653d818856c86a73c41ff9cbba0492c0a60d",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6345422007331848
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.6275962472648621
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272242068595886
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.62698603963089
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6268422353477479
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7130937166194706,
+          "logloss": 0.619371233662375
+        },
+        "checkpoint_sha256": "d8b37a8f34eb16c4b309d1fe258cf38f340b9187c23a34f9a79ff7ada8ef2ff9",
+        "elapsed_seconds": 4.367457599961199,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 418,
+        "ndcg_at20": 0.0027980719680527405,
+        "event_recall_at20": 0.0011787065810177483
+      },
+      "cascade": {
+        "hit_events": 461,
+        "ndcg_at20": 0.0029511020670400243,
+        "event_recall_at20": 0.0012999610857635931
+      }
+    },
+    "combined_only_s2028": {
+      "training": {
+        "metadata": {
+          "kind": "route_attribution_v1",
+          "seed": 2028,
+          "columns": [
+            33
+          ],
+          "initial_parameters_sha256": "052c7b524d17d152614042c57f1e902b86826ca1f391e38b9ec02e92f832b73d",
+          "training_order_sha256": "a4f1b751211a04d478ad02e2e52ee464e754970b739e65a2914ad0a7c3101da0",
+          "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+          "train_rows": 1000000,
+          "context": {
+            "cache_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e"
+          },
+          "parameters": 4523,
+          "test_used": false
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_logloss": 0.6324089445381165
+          },
+          {
+            "epoch": 2,
+            "train_logloss": 0.627724942073822
+          },
+          {
+            "epoch": 3,
+            "train_logloss": 0.6272429376983643
+          },
+          {
+            "epoch": 4,
+            "train_logloss": 0.6270292679481506
+          },
+          {
+            "epoch": 5,
+            "train_logloss": 0.6268399520225525
+          }
+        ],
+        "exposure": {
+          "rows": 725753,
+          "auc": 0.7122663758694783,
+          "logloss": 0.6199401577454213
+        },
+        "checkpoint_sha256": "3d05b7521e12e50d5d09bc60ec2e81bb6373767313afbceecac4104b08552bb6",
+        "elapsed_seconds": 4.346202400047332,
+        "reload_check": true
+      },
+      "direct": {
+        "hit_events": 359,
+        "ndcg_at20": 0.0023818605290653622,
+        "event_recall_at20": 0.0010123341210176355
+      },
+      "cascade": {
+        "hit_events": 432,
+        "ndcg_at20": 0.0027266666649629354,
+        "event_recall_at20": 0.0012181847918652327
+      }
+    },
+    "base_s2026": {
+      "reused": true,
+      "direct": {
+        "hit_events": 406,
+        "ndcg_at20": 0.0026867074117004905,
+        "event_recall_at20": 0.0011448681145770473
+      },
+      "cascade": {
+        "hit_events": 422,
+        "ndcg_at20": 0.002759028317615265,
+        "event_recall_at20": 0.0011899860698313153
+      }
+    },
+    "base_s2027": {
+      "reused": true,
+      "direct": {
+        "hit_events": 332,
+        "ndcg_at20": 0.002059322908783896,
+        "event_recall_at20": 0.0009361975715260584
+      },
+      "cascade": {
+        "hit_events": 373,
+        "ndcg_at20": 0.002242186429975281,
+        "event_recall_at20": 0.0010518123318651199
+      }
+    },
+    "base_s2028": {
+      "reused": true,
+      "direct": {
+        "hit_events": 329,
+        "ndcg_at20": 0.0021513962171681674,
+        "event_recall_at20": 0.0009277379549158832
+      },
+      "cascade": {
+        "hit_events": 422,
+        "ndcg_at20": 0.002587138231960228,
+        "event_recall_at20": 0.0011899860698313153
+      }
+    },
+    "R_s2026": {
+      "reused": true,
+      "direct": {
+        "hit_events": 538,
+        "ndcg_at20": 0.0037189609207116596,
+        "event_recall_at20": 0.0015170912454247573
+      },
+      "cascade": {
+        "hit_events": 480,
+        "ndcg_at20": 0.0033921676170625644,
+        "event_recall_at20": 0.0013535386576280363
+      }
+    },
+    "R_s2027": {
+      "reused": true,
+      "direct": {
+        "hit_events": 545,
+        "ndcg_at20": 0.0037474731110221887,
+        "event_recall_at20": 0.0015368303508484994
+      },
+      "cascade": {
+        "hit_events": 554,
+        "ndcg_at20": 0.003711385607928718,
+        "event_recall_at20": 0.0015622092006790252
+      }
+    },
+    "R_s2028": {
+      "reused": true,
+      "direct": {
+        "hit_events": 455,
+        "ndcg_at20": 0.003055133235357578,
+        "event_recall_at20": 0.0012830418525432428
+      },
+      "cascade": {
+        "hit_events": 485,
+        "ndcg_at20": 0.0032564603582251467,
+        "event_recall_at20": 0.001367638018644995
+      }
+    }
+  },
+  "aggregate": {
+    "recent_only": {
+      "direct": {
+        "hit_events": 481.3333333333333,
+        "ndcg_at20": 0.0032403613732186654,
+        "event_recall_at20": 0.0013572984872325586
+      },
+      "cascade": {
+        "hit_events": 494.66666666666663,
+        "ndcg_at20": 0.003249745581132654,
+        "event_recall_at20": 0.0013948967832777817
+      }
+    },
+    "cf_only": {
+      "direct": {
+        "hit_events": 496.0,
+        "ndcg_at20": 0.003435886000081939,
+        "event_recall_at20": 0.0013986566128823042
+      },
+      "cascade": {
+        "hit_events": 535.3333333333334,
+        "ndcg_at20": 0.0035696721290470667,
+        "event_recall_at20": 0.0015095715862157128
+      }
+    },
+    "flags_only": {
+      "direct": {
+        "hit_events": 397.6666666666666,
+        "ndcg_at20": 0.0026169674635371913,
+        "event_recall_at20": 0.0011213691795487826
+      },
+      "cascade": {
+        "hit_events": 441.6666666666667,
+        "ndcg_at20": 0.002822316771583383,
+        "event_recall_at20": 0.0012454435564980195
+      }
+    },
+    "ranks_only": {
+      "direct": {
+        "hit_events": 534.3333333333334,
+        "ndcg_at20": 0.003846838269633686,
+        "event_recall_at20": 0.001506751714012321
+      },
+      "cascade": {
+        "hit_events": 538.3333333333334,
+        "ndcg_at20": 0.0038005538390401086,
+        "event_recall_at20": 0.001518031202825888
+      }
+    },
+    "cf_score_only": {
+      "direct": {
+        "hit_events": 457.6666666666667,
+        "ndcg_at20": 0.0030800598390445426,
+        "event_recall_at20": 0.0012905615117522874
+      },
+      "cascade": {
+        "hit_events": 478.0,
+        "ndcg_at20": 0.003111172379687375,
+        "event_recall_at20": 0.001347898913221253
+      }
+    },
+    "without_combined": {
+      "direct": {
+        "hit_events": 465.0,
+        "ndcg_at20": 0.0032828386279466185,
+        "event_recall_at20": 0.0013112405745771601
+      },
+      "cascade": {
+        "hit_events": 469.66666666666663,
+        "ndcg_at20": 0.0032414321909368035,
+        "event_recall_at20": 0.0013243999781929882
+      }
+    },
+    "combined_only": {
+      "direct": {
+        "hit_events": 418.66666666666663,
+        "ndcg_at20": 0.0028608379378968493,
+        "event_recall_at20": 0.0011805864958200094
+      },
+      "cascade": {
+        "hit_events": 473.66666666666663,
+        "ndcg_at20": 0.0030829959708173803,
+        "event_recall_at20": 0.0013356794670065552
+      }
+    },
+    "base": {
+      "direct": {
+        "hit_events": 355.66666666666663,
+        "ndcg_at20": 0.002299142179217518,
+        "event_recall_at20": 0.0010029345470063296
+      },
+      "cascade": {
+        "hit_events": 405.6666666666667,
+        "ndcg_at20": 0.0025294509931835913,
+        "event_recall_at20": 0.0011439281571759168
+      }
+    },
+    "R": {
+      "direct": {
+        "hit_events": 512.6666666666666,
+        "ndcg_at20": 0.0035071890890304757,
+        "event_recall_at20": 0.001445654482938833
+      },
+      "cascade": {
+        "hit_events": 506.3333333333333,
+        "ndcg_at20": 0.003453337861072143,
+        "event_recall_at20": 0.0014277952923173521
+      }
+    }
+  },
+  "paired_direct": {
+    "recent_only-base": {
+      "ndcg_difference": 0.0009412191940011474,
+      "ndcg_95_interval": [
+        0.0007759564847640141,
+        0.0011034147084634759
+      ],
+      "event_recall_difference": 0.00035436394022622886,
+      "event_recall_95_interval": [
+        0.0002908164174868217,
+        0.0004176743220578588
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "cf_only-base": {
+      "ndcg_difference": 0.0011367438208644207,
+      "ndcg_95_interval": [
+        0.00087566978013906,
+        0.0013725390594948798
+      ],
+      "event_recall_difference": 0.0003957220658759744,
+      "event_recall_95_interval": [
+        0.00030139772735542,
+        0.000477103164607777
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "flags_only-base": {
+      "ndcg_difference": 0.0003178252843196734,
+      "ndcg_95_interval": [
+        0.00018431898050640536,
+        0.0004564264629507153
+      ],
+      "event_recall_difference": 0.00011843463254245317,
+      "event_recall_95_interval": [
+        5.9132203645408576e-05,
+        0.0001718306040551779
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "ranks_only-base": {
+      "ndcg_difference": 0.001547696090416168,
+      "ndcg_95_interval": [
+        0.0013158319943607686,
+        0.0017873234683209347
+      ],
+      "event_recall_difference": 0.0005038171670059912,
+      "event_recall_95_interval": [
+        0.0004265747966147319,
+        0.000580901281045216
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "cf_score_only-base": {
+      "ndcg_difference": 0.000780917659827025,
+      "ndcg_95_interval": [
+        0.0005694043781859817,
+        0.0009840087354498542
+      ],
+      "event_recall_difference": 0.00028762696474595774,
+      "event_recall_95_interval": [
+        0.00020771619123622807,
+        0.00036374541093448355
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "without_combined-base": {
+      "ndcg_difference": 0.0009836964487291002,
+      "ndcg_95_interval": [
+        0.0007414771694015649,
+        0.0011970799223194294
+      ],
+      "event_recall_difference": 0.0003083060275708305,
+      "event_recall_95_interval": [
+        0.00021858433775487384,
+        0.0003846701880628984
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "combined_only-base": {
+      "ndcg_difference": 0.0005616957586793313,
+      "ndcg_95_interval": [
+        0.000429074783959881,
+        0.0006990181315019365
+      ],
+      "event_recall_difference": 0.00017765194881367975,
+      "event_recall_95_interval": [
+        0.00013029945794007893,
+        0.00022105725218940408
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "R-recent_only": {
+      "ndcg_difference": 0.00026682771581181013,
+      "ndcg_95_interval": [
+        3.7071848038187374e-05,
+        0.0004694528790935542
+      ],
+      "event_recall_difference": 8.835599570627458e-05,
+      "event_recall_95_interval": [
+        8.500370100717976e-06,
+        0.00016566582856421223
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "R-cf_only": {
+      "ndcg_difference": 7.130308894853665e-05,
+      "ndcg_95_interval": [
+        -8.602005794688914e-05,
+        0.00021787106706088504
+      ],
+      "event_recall_difference": 4.6997870056529025e-05,
+      "event_recall_95_interval": [
+        -1.1104711517980533e-05,
+        0.00010853919417080094
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "R-without_combined": {
+      "ndcg_difference": 0.00022435046108385724,
+      "ndcg_95_interval": [
+        9.770368544754098e-05,
+        0.00034317674644464714
+      ],
+      "event_recall_difference": 0.00013441390836167305,
+      "event_recall_95_interval": [
+        8.474343584013395e-05,
+        0.00018510336117526363
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    },
+    "ranks_only-flags_only": {
+      "ndcg_difference": 0.0012298708060964943,
+      "ndcg_95_interval": [
+        0.0009828611396339307,
+        0.0014587354557650343
+      ],
+      "event_recall_difference": 0.0003853825344635381,
+      "event_recall_95_interval": [
+        0.00030591619188191784,
+        0.0004652281225574302
+      ],
+      "scope": "exploratory paired user bootstrap after averaging seeds; repeated development day, no multiple-testing adjustment"
+    }
+  },
+  "test_used": false,
+  "scope": "exploratory feature attribution and retrospective daily holdouts; no test reads, no default changes, no tuning on these results",
+  "new_model_runs": 21
+}

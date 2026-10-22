@@ -1,0 +1,13 @@
+{
+  "seeds": [2026, 2027, 2028],
+  "epochs": 5,
+  "batch_size": 4096,
+  "learning_rate": 0.001,
+  "weight_decay": 0.00001,
+  "threads": 4,
+  "arms": {"base": [], "R": [28, 29, 30, 31, 32, 33]},
+  "families": ["full", "sample_repeat"],
+  "repeat_seed": 2026,
+  "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+  "scope": "full observed exposures vs fixed sampled exposures repeated to identical row/update budget; same development day, no new final test, no default replacement"
+}

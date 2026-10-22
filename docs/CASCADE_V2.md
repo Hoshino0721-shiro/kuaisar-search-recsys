@@ -1,5 +1,7 @@
 # 多阶段推荐算法改造
 
+2026-10-22入口更新：用户选择 [RRF直出作为当前主方案](RRF_MAIN.md)。本文四阶段链路作为显式配置下的实验对照保留；下方历史结果不改写。复现本页级联时必须传入原配置，默认入口现为RRF直出。
+
 目标是搜推算法面试：能解释候选分布、各阶段模型、训练标签、逐阶段损失和效果成本取舍。当前 v2 已完成真实数据清洗、独立粗排/精排训练及 256 名验证用户的开发评测，四阶段级联可执行，效果尚未达到验收要求。它还不具备完整工业生产能力。v1 已冻结结果独立保留，v2 新模型没有沿用 v1 的指标。
 
 ## 首轮真实开发验证
@@ -107,8 +109,8 @@
 ./.venv/Scripts/python.exe -m src.ctr_features
 ./.venv/Scripts/python.exe -m src.v2.train_rankers --kind coarse_lr --out experiments/v2_coarse_lr
 ./.venv/Scripts/python.exe -m src.v2.train_rankers --kind fine_dcn --out experiments/v2_fine_dcn
-./.venv/Scripts/python.exe -m src.v2.recommend --evaluate-valid --max-users 256 --compare-without-coarse --out experiments/v2_cascade_valid_256/metrics.json
-./.venv/Scripts/python.exe -m src.v2.recommend --user-id 20235
+./.venv/Scripts/python.exe -m src.v2.recommend --config configs/cascade_v2.json --evaluate-valid --max-users 256 --compare-without-coarse --out experiments/v2_cascade_valid_256/metrics.json
+./.venv/Scripts/python.exe -m src.v2.recommend --config configs/cascade_v2.json --user-id 20235
 ```
 
 `configs/cascade_v2.json` 是真实被 v2 CLI 加载的配置。新训练拒绝覆盖已有实验目录；开发中断时保留产物并使用新目录或人工核查，不自动删除。不得调用 v1 最终测试命令给 v2 调参；旧 freeze 和旧最终指标不属于新模型。当前没有 v2 最终测试冻结/验收报告，后续须在方案稳定后单独实现并选择未参与调参的保留窗口。

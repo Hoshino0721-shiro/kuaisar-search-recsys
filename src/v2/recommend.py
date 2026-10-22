@@ -3,6 +3,7 @@
 No online update or deployment is implied. Run from the repository root.
 """
 import argparse
+import hashlib
 from collections import Counter, defaultdict
 from dataclasses import replace
 import json
@@ -19,6 +20,9 @@ from src.v2.features import coarse_features
 from src.itemcf_index import ItemCFIndex
 from src.v2.recall_fusion import route_limits, validate_policy
 from src.v2.tower_retrieval import TowerIndex
+from src.v2.rrf_output import recommend_rrf
+
+DEFAULT_CONFIG = Path('configs/recommend_rrf.json')
 
 
 class Backend:
@@ -26,20 +30,28 @@ class Backend:
         tick = perf_counter()
         torch.set_num_threads(4)
         self.config = config
+        self.output_mode = config.get('output_mode', 'cascade')
+        if self.output_mode not in ('rrf', 'cascade'):
+            raise ValueError('output_mode must be rrf or cascade')
         self.budget = Budget(**config['budget'])
+        if self.output_mode == 'rrf' and (config.get('fusion', {}).get('method', 'rrf') != 'rrf'
+                or self.budget.category_penalty or self.budget.max_per_author is not None):
+            raise ValueError('Direct RRF requires RRF fusion without category/author reranking')
         self.route_limits = route_limits(config)
         if self.route_limits.get('tower',0)>0 and not config.get('tower_index'):
             raise ValueError('Enabled tower route requires a trained exported tower_index')
         self.state = FeatureState.load(CACHE / 'state.npz')
         self.snapshot = json.loads((DATA / 'manifest.json').read_text(encoding='utf-8'))['cutoffs_ms'][0]
-        state_hash = sha(CACHE / 'state.npz')
-        self.coarse = Ranker(config['coarse_model'])
-        self.fine = Ranker(config['fine_model'])
-        if self.coarse.metadata['kind'] != 'coarse_lr' or self.fine.metadata['kind'] != 'fine_dcn':
-            raise ValueError('Expected independent coarse LR and fine DCN artifacts')
-        for model in (self.coarse, self.fine):
-            if model.metadata['feature_state_sha256'] != state_hash:
-                raise ValueError('Ranker and inference feature snapshots differ')
+        self.coarse = self.fine = None
+        if self.output_mode == 'cascade':
+            state_hash = sha(CACHE / 'state.npz')
+            self.coarse = Ranker(config['coarse_model'])
+            self.fine = Ranker(config['fine_model'])
+            if self.coarse.metadata['kind'] != 'coarse_lr' or self.fine.metadata['kind'] != 'fine_dcn':
+                raise ValueError('Expected independent coarse LR and fine DCN artifacts')
+            for model in (self.coarse, self.fine):
+                if model.metadata['feature_state_sha256'] != state_hash:
+                    raise ValueError('Ranker and inference feature snapshots differ')
         self.route_k = config['route_k']
         if not isinstance(self.route_k, int) or self.route_k < 1:
             raise ValueError('route_k must be positive')
@@ -145,6 +157,19 @@ class Backend:
             raise ValueError('Request predates this training feature snapshot')
         tick = perf_counter()
         routes = self.retrieve(uid, timestamp_ms)
+        if self.output_mode == 'rrf':
+            retrieval_ms = (perf_counter()-tick)*1000
+            result = recommend_rrf(uid, timestamp_ms, routes, budget or self.budget,
+                                   self.config.get('route_weights'), positives)
+            result.update({'retrieval_elapsed_ms': retrieval_ms,
+                           'request_elapsed_ms': retrieval_ms+result['total_elapsed_ms'],
+                           'feature_snapshot_ms': self.snapshot, 'mode': 'offline_v2_rrf',
+                           'historical_catalog_only': True, 'model_weights_loaded': False})
+            if self.itemcf_index is not None:
+                result['itemcf_index_version'] = self.itemcf_index.metadata['version']
+            if self.tower_index is not None:
+                result['tower_index_version'] = self.tower_index.metadata['version']
+            return result
         authors = {}
         active_budget = budget or self.budget
         if active_budget.max_per_author is not None:
@@ -196,6 +221,10 @@ def evaluate_valid(backend, output, max_users, compare_without_coarse=False):
         raise ValueError('max-users must be nonnegative; 0 means all users')
     if backend.budget.output != 20:
         raise ValueError('Validation report compares Top20; set output budget to 20')
+    if backend.output_mode == 'rrf':
+        if compare_without_coarse:
+            raise ValueError('Direct RRF has no coarse stage to compare')
+        return evaluate_rrf_valid(backend, output, max_users)
     db = connection()
     positives = defaultdict(Counter)
     users = set()
@@ -296,9 +325,57 @@ def evaluate_valid(backend, output, max_users, compare_without_coarse=False):
     return report
 
 
+def evaluate_rrf_valid(backend, output, max_users):
+    positives = defaultdict(Counter)
+    users = set()
+    db = connection()
+    try:
+        for u, i, label in db.execute("SELECT user_id,item_id,label FROM clean_events WHERE scene='rec' AND split='valid'"):
+            users.add(u)
+            if label:
+                positives[u][i] += 1
+    finally:
+        db.close()
+    users = sorted(users)
+    if max_users and len(users)>max_users:
+        users = sorted(np.random.default_rng(2026).choice(users,max_users,replace=False).tolist())
+    if not users:
+        raise ValueError('No validation users')
+    digest = hashlib.sha256()
+    hits = total = pool_hits = 0
+    ndcg = []; times = []
+    for j, uid in enumerate(users):
+        result = backend.run(uid, positives=positives[uid])
+        recalled = result['stages'][0]
+        final = result['stages'][1]
+        hits += final['hit_events']; total += final['positive_events']; pool_hits += recalled['hit_events']
+        if final['user_period_ndcg_at_20'] is not None:
+            ndcg.append(final['user_period_ndcg_at_20'])
+        serialized = json.dumps({'user_id':uid,'timestamp_ms':backend.snapshot,'items':recalled['items']},separators=(',',':'))+'\n'
+        digest.update(serialized.encode('utf-8'))
+        times.append(result['request_elapsed_ms'])
+        if (j+1)%1000==0:
+            print(f'Evaluated direct RRF {j+1}/{len(users)} users',flush=True)
+    report = {'mode':'offline_v2_rrf','split':'valid','users':len(users),'config':backend.config,
+              'positive_events':total,'hit_events_at20':hits,'pool_hit_events':pool_hits,
+              'event_recall_at20':hits/total if total else None,
+              'ndcg_at20':float(np.mean(ndcg)) if ndcg else None,
+              'candidate_sha256':digest.hexdigest(),'model_weights_loaded':False,
+              'itemcf_index_version':backend.itemcf_index.metadata['version'] if backend.itemcf_index else None,
+              'manifest_sha256':sha(DATA/'manifest.json'),'source_sha256':sha(__file__),
+              'rrf_source_sha256':sha(Path(__file__).with_name('rrf_output.py')),
+              'request_p50_ms':float(np.percentile(times,50)), 'request_p95_ms':float(np.percentile(times,95)),
+              'timing_scope':'single process local CPU retrieval+fusion; no network or concurrency; includes first request',
+              'test_used':False,'scope':'same development validation day; fixed train-cutoff lists and future logged clicks, not online CTR'}
+    output.parent.mkdir(parents=True,exist_ok=True)
+    with output.open('x',encoding='utf-8') as stream:
+        json.dump(report,stream,ensure_ascii=False,indent=2)
+    return report
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=Path, default=Path('configs/cascade_v2.json'))
+    parser.add_argument('--config', type=Path, default=DEFAULT_CONFIG)
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--user-id', type=int)
     group.add_argument('--evaluate-valid', action='store_true')
@@ -308,12 +385,15 @@ def main():
     args = parser.parse_args()
     config = json.loads(args.config.read_text(encoding='utf-8'))
     backend = Backend(config)
-    if args.evaluate_valid:
-        if args.out is None:
-            parser.error('--evaluate-valid requires --out')
-        report = evaluate_valid(backend, args.out, args.max_users, args.compare_without_coarse)
-    else:
-        report = backend.run(args.user_id)
+    try:
+        if args.evaluate_valid:
+            if args.out is None:
+                parser.error('--evaluate-valid requires --out')
+            report = evaluate_valid(backend, args.out, args.max_users, args.compare_without_coarse)
+        else:
+            report = backend.run(args.user_id)
+    finally:
+        backend.close()
     print(json.dumps(report, indent=2))
 
 

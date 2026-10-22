@@ -1,0 +1,40 @@
+{
+  "config": {
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "epochs": 5,
+    "batch_size": 4096,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "threads": 4,
+    "arms": {
+      "base": [],
+      "R": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    "families": [
+      "full",
+      "sample_repeat"
+    ],
+    "repeat_seed": 2026,
+    "checkpoint_rule": "fixed final epoch; no validation checkpoint selection",
+    "scope": "full observed exposures vs fixed sampled exposures repeated to identical row/update budget; same development day, no new final test, no default replacement"
+  },
+  "config_sha256": "72e29b1477304dd41e74a64107602d2bac5e4dda7b9183980cea9e115d3158dc",
+  "source_sha256": "f53c41f2cb8a9db9f3eff44a182cb15b8b2748f32ac1dd42531b57072981b002",
+  "reference_metadata_sha256": "80057e5198aa297862602deca9d6dacec2c59b6b4d5bac7966ddc82f895a5c2e",
+  "candidate_sha256": "99abfbdb6e69d33264ae2b5c2a00031cf4edd8f984ef7e4c98054e861a73346e",
+  "feature_state_sha256": "28ebdb790de2a23ffb966c5577a3d4bb425b5e96a059099e43284fa942788755",
+  "trainer_source_sha256": "97e1cc2c6f1768aa6b9ff1f032a1220592c934142e656e0b97458c00102172fd",
+  "test_used": false,
+  "default_changed": false
+}

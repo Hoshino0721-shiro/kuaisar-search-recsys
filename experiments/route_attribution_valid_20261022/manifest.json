@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-22",
+  "new_model_runs": 33,
+  "tests_passed": 109,
+  "test_used": false,
+  "default_changed": false,
+  "scope": "exploratory feature attribution and retrospective daily holdouts; no test reads, no default changes, no tuning on these results",
+  "files": {
+    "ablation.json": {
+      "sha256": "9eb80fe50607fb0fba9afba05011478c5013f98e9acb2e5c68b0ebae6d1eff3c",
+      "bytes": 51803
+    },
+    "audit.json": {
+      "sha256": "00a346a2780ff500dcc85fdcde3aee61e863a0d18fed7d1a884ae3acb5e923d0",
+      "bytes": 1678
+    },
+    "diagnosis.json": {
+      "sha256": "25f989b80c1e071d66a9ae28b18c9898d9fbf531bb1922e31627bd3869d7d160",
+      "bytes": 8419
+    },
+    "protocol.json": {
+      "sha256": "3ab568a9e35f6c372113fed7c0874b4aa9ffc367eda28bbbbec924f04273417e",
+      "bytes": 1876
+    },
+    "rolling.json": {
+      "sha256": "425ade822680cfeb3396136293cc1028fbec28349bc24b5ff5844b25d21e00bb",
+      "bytes": 26648
+    }
+  },
+  "local_root": "artifacts\\route_attribution_20261022",
+  "local_checkpoints": {
+    "1685116800000\\models\\base_s2026\\model.pt": "b995354410ef91d471e18a58cd48ca2c7875ec4e997731339e23faebf5e3848a",
+    "1685116800000\\models\\base_s2027\\model.pt": "2c7019bf4050267894fa65806c5c06d303888787120b71e6e4663b4c93d930f4",
+    "1685116800000\\models\\base_s2028\\model.pt": "dfdcb1a0552e2c198e96cab0077202bfbb1899853fe434e48f008ab71c35a905",
+    "1685116800000\\models\\R_s2026\\model.pt": "5bc6d204181d9bbbff7b54357739e05e2bcd3cc5c90f93e58c7883863a76cb04",
+    "1685116800000\\models\\R_s2027\\model.pt": "b5ef1417fb38c1133fd3e2b2d62088ce7410d8e50ec945965235074842627f93",
+    "1685116800000\\models\\R_s2028\\model.pt": "8090924b3a6025f8fee24b8e16472697edaa6816ca621f0ea2eeb359f40e97b4",
+    "1685203200000\\models\\base_s2026\\model.pt": "4197c36195b8696a909e8dc7dc9a5759fed4cc241e1ed7239f52f36f38c39c78",
+    "1685203200000\\models\\base_s2027\\model.pt": "996e75f24cb96392b2cc66cccd1f5c348de4e05adc7a2026bee53177286f8d26",
+    "1685203200000\\models\\base_s2028\\model.pt": "664764cdf7b346ff6aac2d67704f30342bae34bde004e31639222cecf30fe504",
+    "1685203200000\\models\\R_s2026\\model.pt": "436206bc6d6e6bd2b668e9502a74d8c2763b40750f8089db49e4bae3d710908c",
+    "1685203200000\\models\\R_s2027\\model.pt": "4266fffc122aee6b3c3b1e2e099dd5f8d48004f70adf029f38165d21b21197d1",
+    "1685203200000\\models\\R_s2028\\model.pt": "3b5f64faa37865dded132274b528a09a3c8639ea20fd720ae6ca7a6196e35202",
+    "models\\cf_only_s2026\\model.pt": "cd449b9d57c4a8183709c9c620ac64c72da20a35b01c926cc6118f0f3b4b28c7",
+    "models\\cf_only_s2027\\model.pt": "702ddc104f223d5ffee787d3ac0b3beda17cbe772416cca28e625f7b45d9c61c",
+    "models\\cf_only_s2028\\model.pt": "882eecd504f22281d1e9c8162b00a5976eed872b17d8d636347d80b2a6406ff8",
+    "models\\cf_score_only_s2026\\model.pt": "295934439f46d7b87815254dd44a9df68f833989bfc6a97b3c385124545791c4",
+    "models\\cf_score_only_s2027\\model.pt": "74fa648f2ba2327c9a2c15d47d1ea4ee2ab39053c418c24eb2c71352c732074a",
+    "models\\cf_score_only_s2028\\model.pt": "c41ad08b46392100490e0fdd5007b73d3e9e838f324811d5e1fffe1804f926d2",
+    "models\\combined_only_s2026\\model.pt": "8614c9e0b1979d201f8032a12d9dbc8a30fd1fdf66b92cf1dc4bf5f48b5631b2",
+    "models\\combined_only_s2027\\model.pt": "d8b37a8f34eb16c4b309d1fe258cf38f340b9187c23a34f9a79ff7ada8ef2ff9",
+    "models\\combined_only_s2028\\model.pt": "3d05b7521e12e50d5d09bc60ec2e81bb6373767313afbceecac4104b08552bb6",
+    "models\\flags_only_s2026\\model.pt": "ff69f6618cbb099a32c7adfc3ab7e86b1fe82927b0d51afaf1963e13a2ff99ac",
+    "models\\flags_only_s2027\\model.pt": "d4ffdbb600c63b8546bdab93cfe8cff023f91432e2f4481fa9c37160c9e0b1f2",
+    "models\\flags_only_s2028\\model.pt": "f85a8cc4216e27bd66ca2d6c13ebb9f18fde44e790cc8663e95fc2a3dc8ff56e",
+    "models\\ranks_only_s2026\\model.pt": "d55b75185accddb05f3195434f2772115756bb0e9449c65a9f074b247e66adba",
+    "models\\ranks_only_s2027\\model.pt": "b0aff42b4b2aaa10fe5ecce0fa620fbd5d479b0515ea2530d56c4c7a2b629ffb",
+    "models\\ranks_only_s2028\\model.pt": "3bf5db7ceae700b431bbe4fb6b5818770e98d89f7159ed7a06f391ae1c860f51",
+    "models\\recent_only_s2026\\model.pt": "cfcd604f17fba8b19e26b9b003fb56f7012dc87c1213658db4b57da37e1f8fd9",
+    "models\\recent_only_s2027\\model.pt": "93189ad5deaae77a75a6d95bd5d057b93bc10784a4021935a1582b16fb352859",
+    "models\\recent_only_s2028\\model.pt": "9950f3fc6d39deeef6339275c5129ead4061f0de5c793525f7c39af8e36abe17",
+    "models\\without_combined_s2026\\model.pt": "4722cfc293d50ca73fb5c918c852b31525dc3536004e52078228a38fd203b842",
+    "models\\without_combined_s2027\\model.pt": "648bc439e1eaf1a63b80948256d4d5345450061a016dbbfb20285d34904e3d6e",
+    "models\\without_combined_s2028\\model.pt": "598dc77f988f00f91a7cc618aeffd256298c22f98c28ed76fc0d1ca4ac44519f"
+  },
+  "export_source_sha256": "2563e201a83d325a7e379cb1d755f1e00bb7655c61bd6d2d20bf46b43c90414d"
+}
