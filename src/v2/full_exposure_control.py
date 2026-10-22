@@ -112,6 +112,8 @@ def prepare(reference, destination, cfg, meta):
     report={'rows':len(tx),'unique_sample_rows':len(sample),'repeat_multiplicity_min':int(np.bincount(repeat).min()),
             'repeat_multiplicity_max':int(np.bincount(repeat).max()),'days':days,
             'active_columns_sample_replay_max_error':max_error,'inactive_T_columns':True,
+            'feature_state_sha256':sha(CACHE/'state.npz'),
+            'reference_metadata_sha256':sha(reference/'metadata.json'),'repeat_seed':cfg['repeat_seed'],
             'files':{p.name:sha(p) for p in destination.glob('*.npy')},'test_used':False,'status':'ready'}
     write_json(destination/'metadata.json',report)
     return report
@@ -144,7 +146,20 @@ def evaluate_one(name,scorer,train,reference,output,labels,positive,old_protocol
     return record,(h,d,ch,cd)
 
 
-def run(reference,previous_models,previous_evaluation,output,config):
+def verify_prepared(path,reference,cfg):
+    report=json.loads((path/'metadata.json').read_text(encoding='utf-8'))
+    if (report.get('status')!='ready' or report.get('test_used') is not False
+            or report.get('feature_state_sha256')!=sha(CACHE/'state.npz')
+            or report.get('reference_metadata_sha256')!=sha(reference/'metadata.json')
+            or report.get('repeat_seed')!=cfg['repeat_seed']):
+        raise ValueError('Prepared full cache does not match this local experiment')
+    for name,digest in report['files'].items():
+        if Path(name).name!=name or sha(path/name)!=digest:
+            raise ValueError('Prepared cache checksum mismatch: '+name)
+    return report
+
+
+def run(reference,previous_models,previous_evaluation,output,config,rebuild_sample=False,prepared_cache=None):
     if output.exists():
         raise FileExistsError('Choose a new experiment output')
     started=perf_counter();meta=verify_cache(reference)
@@ -154,27 +169,29 @@ def run(reference,previous_models,previous_evaluation,output,config):
               'reference_metadata_sha256':sha(reference/'metadata.json'),
               'candidate_sha256':meta['candidate_sha256'],'feature_state_sha256':sha(CACHE/'state.npz'),
               'trainer_source_sha256':sha(Path(__file__).with_name('route_attribution.py')),
+              'rebuild_sample_baseline':rebuild_sample,'prepared_cache':str(prepared_cache) if prepared_cache else None,
               'test_used':False,'default_changed':False}
     write_json(output/'protocol.json',protocol)
     cov=coverage(reference,output)
-    prepared=prepare(reference,output/'cache',cfg,meta)
+    cache=prepared_cache if prepared_cache is not None else output/'cache'
+    prepared=verify_prepared(cache,reference,cfg) if prepared_cache is not None else prepare(reference,cache,cfg,meta)
     users=np.load(reference/'pool_users.npy');items=np.load(reference/'pool_items.npy',mmap_mode='r')
     labels,positive,_,_=load_labels(users,items)
     xv=np.load(reference/'valid_X.npy',mmap_mode='r');yv=np.load(CACHE/'valid_y.npy')
     records={};arrays={}
     for family in cfg['families']:
         if family=='full':
-            x=np.load(output/'cache/full_X.npy',mmap_mode='r');y=np.load(CACHE/'train_y.npy',mmap_mode='r')
-            mean=np.load(output/'cache/full_mean.npy');std=np.load(output/'cache/full_std.npy')
+            x=np.load(cache/'full_X.npy',mmap_mode='r');y=np.load(CACHE/'train_y.npy',mmap_mode='r')
+            mean=np.load(cache/'full_mean.npy');std=np.load(cache/'full_std.npy')
         else:
-            x=np.load(output/'cache/sample_repeat_X.npy',mmap_mode='r');y=np.load(output/'cache/sample_repeat_y.npy',mmap_mode='r')
+            x=np.load(cache/'sample_repeat_X.npy',mmap_mode='r');y=np.load(cache/'sample_repeat_y.npy',mmap_mode='r')
             mean=np.load(reference/'mean.npy');std=np.load(reference/'std.npy')
         for arm,columns in cfg['arms'].items():
             for seed in cfg['seeds']:
                 name=f'{family}_{arm}_s{seed}'
                 scorer,train=fit(x,y,xv,yv,mean,std,columns,seed,cfg,output/'models'/name,
                     {'family':family,'original_unique_rows':cov['full_rows'] if family=='full' else cov['sample_rows'],
-                     'preparation_sha256':sha(output/'cache/metadata.json')})
+                     'preparation_sha256':sha(cache/'metadata.json')})
                 train['optimizer_steps']=cfg['epochs']*((len(x)+cfg['batch_size']-1)//cfg['batch_size'])
                 record,a=evaluate_one(name,scorer,train,reference,output,labels,positive,meta['config'])
                 records[name]=record;arrays[name]=a
@@ -186,6 +203,15 @@ def run(reference,previous_models,previous_evaluation,output,config):
                 if len({records[n]['training']['metadata'][key] for n in names})!=1:
                     raise ValueError('Full/repeat initial or row-position order differs')
             name=f'sample5_{arm}_s{seed}';old=f'{arm}_s{seed}'
+            if rebuild_sample:
+                scorer,tr=fit(np.load(reference/'train_X.npy',mmap_mode='r'),np.load(reference/'train_y.npy'),
+                    xv,yv,np.load(reference/'mean.npy'),np.load(reference/'std.npy'),cfg['arms'][arm],seed,cfg,
+                    output/'models'/name,{'family':'sample5','original_unique_rows':cov['sample_rows'],
+                        'reference_metadata_sha256':sha(reference/'metadata.json')})
+                tr['optimizer_steps']=cfg['epochs']*((cov['sample_rows']+cfg['batch_size']-1)//cfg['batch_size'])
+                records[name],arrays[name]=evaluate_one(name,scorer,tr,reference,output,labels,positive,meta['config'])
+                write_json(output/'progress.json',records)
+                continue
             a=np.load(previous_evaluation/(old+'_per_user.npz'))
             arrays[name]=tuple(a[k] for k in ('direct_hits','direct_ndcg','cascade_hits','cascade_ndcg'))
             tr=json.loads((previous_models/old/'metrics.json').read_text(encoding='utf-8'))
@@ -208,12 +234,17 @@ def run(reference,previous_models,previous_evaluation,output,config):
             a=means['full_'+arm];b=means[family+'_'+arm]
             paired['full_'+arm+'-'+family+'_'+arm]=paired_intervals(a[1]-b[1],a[0]-b[0],positive)
     result={'protocol':protocol,'preparation':prepared,'coverage':cov,'runs':records,
-            'aggregate':aggregate,'paired_direct':paired,'new_model_runs':12,
-            'baselines':json.loads((previous_evaluation/'metrics.json').read_text())['baselines'],
+            'aggregate':aggregate,'paired_direct':paired,
+            'new_model_runs':(len(cfg['families'])+int(rebuild_sample))*len(cfg['arms'])*len(cfg['seeds']),
+            'baselines':{'rrf':summary(*metric_arrays(items,np.broadcast_to(-np.arange(items.shape[1]),items.shape),labels),int(positive.sum()))}
+                if rebuild_sample else json.loads((previous_evaluation/'metrics.json').read_text())['baselines'],
             'test_used':False,'default_changed':False,'status':'complete','elapsed_seconds':perf_counter()-started}
     if sha(__file__)!=protocol['source_sha256']:
         raise ValueError('Source changed during run')
     write_json(output/'metrics.json',result)
+    for value in (items,xv,x,y):
+        if isinstance(value,np.memmap) and value._mmap is not None:
+            value._mmap.close()
     print('Full exposure controlled experiment complete',flush=True)
 
 
@@ -223,5 +254,7 @@ if __name__=='__main__':
     p.add_argument('--previous-models',type=Path,default=Path('artifacts/temporal_route_20261022/models'))
     p.add_argument('--previous-evaluation',type=Path,default=Path('artifacts/temporal_route_20261022/evaluation'))
     p.add_argument('--config',type=Path,default=Path('configs/full_exposure_control.json'))
+    p.add_argument('--rebuild-sample-baseline',action='store_true')
+    p.add_argument('--prepared-cache',type=Path)
     p.add_argument('--out',type=Path,required=True)
-    a=p.parse_args();run(a.reference,a.previous_models,a.previous_evaluation,a.out,a.config)
+    a=p.parse_args();run(a.reference,a.previous_models,a.previous_evaluation,a.out,a.config,a.rebuild_sample_baseline,a.prepared_cache)

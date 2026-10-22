@@ -25,6 +25,13 @@ class FeatureTwoTower(nn.Module):
             nn.init.normal_(embedding.weight,std=.05)
             with torch.no_grad():
                 embedding.weight[0].zero_()
+                if config.get('safe_embeddings', False):
+                    embedding.weight[1].zero_()
+        if config.get('safe_embeddings', False):
+            for name, embedding in self.embeddings.items():
+                seen = torch.zeros(embedding.num_embeddings, dtype=torch.bool)
+                seen[:2] = True
+                self.register_buffer('seen_'+name, seen)
         fields = torch.as_tensor(item_fields,dtype=torch.long)
         if fields.shape != (cardinalities['item'],3):
             raise ValueError('Item metadata shape mismatch')
@@ -38,31 +45,55 @@ class FeatureTwoTower(nn.Module):
         drop = (torch.rand(ids.shape,device=ids.device)<self.config.get('id_dropout',.1)) & (ids>=2)
         return ids.masked_fill(drop,1)
 
+    def _embed(self, name, ids, enabled=True):
+        table = self.embeddings[name+'_embedding']
+        if not enabled:
+            return table.weight.new_zeros((*ids.shape, table.embedding_dim))
+        if self.config.get('safe_embeddings', False):
+            seen = getattr(self, 'seen_'+name+'_embedding')
+            if self.training:
+                seen[ids] = True
+            else:
+                ids = torch.where(seen[ids], ids, torch.ones_like(ids))
+        return table(ids)
+
     def items(self, ids, attributes=None):
         fields = self.item_fields[ids] if attributes is None else attributes
         if fields.shape!=(*ids.shape,3):
             raise ValueError('Expected author/category/type attributes for each item')
-        parts = [self.embeddings['item_embedding'](self._id(ids))]
+        return self._project_items(self._id(ids), fields)*(ids!=0).unsqueeze(-1)
+
+    def _project_items(self, ids, fields):
+        parts = [self._embed('item',ids)]
         for j,name in enumerate(('author','category','type')):
-            value = self.embeddings[name+'_embedding'](fields[...,j])
-            parts.append(value if self.config.get('use_attributes',True) else value*0)
+            parts.append(self._embed(name, fields[...,j], self.config.get('use_attributes',True)))
         encoded = F.normalize(self.item_projection(torch.cat(parts,dim=-1)),dim=-1)
-        return encoded*(ids!=0).unsqueeze(-1)
+        return encoded
 
     def _pool(self, history, enabled):
         if not enabled:
             reference=self.embeddings['item_embedding'].weight
             return reference.new_zeros((len(history),self.config.get('dimension',64))),reference.new_zeros(len(history))
         mask = history!=0
-        vectors = self.items(history)
+        if self.config.get('deduplicate_history_compute', False):
+            # Apply dropout PER OCCURRENCE before deduplication. Attribute inputs
+            # remain those of the original item even when its ID becomes UNK.
+            # Sharing the deterministic projection does not share dropout draws.
+            dropped = self._id(history)
+            keys = history*2+dropped.ne(history).long()
+            unique, inverse = torch.unique(keys, sorted=True, return_inverse=True)
+            original = unique//2
+            ids = torch.where(unique.remainder(2).bool(), torch.ones_like(original), original)
+            encoded = self._project_items(ids, self.item_fields[original])
+            vectors = encoded[inverse]*(history!=0).unsqueeze(-1)
+        else:
+            vectors = self.items(history)
         pooled = (vectors*mask.unsqueeze(-1)).sum(1)/mask.sum(1).clamp_min(1).unsqueeze(-1)
         length = torch.log1p(mask.sum(1).float())
         return pooled,length
 
     def users(self, ids, rec_history, search_history):
-        user = self.embeddings['user_embedding'](self._id(ids))
-        if not self.config.get('use_user_id',True):
-            user = user*0
+        user = self._embed('user',self._id(ids),self.config.get('use_user_id',True))
         rec,rlen = self._pool(rec_history,self.config.get('use_history',True))
         search,slen = self._pool(search_history,self.config.get('use_search',False))
         return F.normalize(self.user_projection(torch.cat([user,rec,search,rlen[:,None],slen[:,None]],dim=-1)),dim=-1)

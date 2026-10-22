@@ -1,0 +1,21 @@
+{
+  "seeds": [2026, 2027, 2028],
+  "minimum_frequency": 5,
+  "caption_length": 8,
+  "history_length": 10,
+  "word_limit": 60000,
+  "embedding_dim": 16,
+  "max_epochs": 16,
+  "min_epochs": 5,
+  "batch_size": 4096,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.00001,
+  "lr_patience": 2,
+  "lr_factor": 0.5,
+  "early_patience": 4,
+  "min_delta": 0.00001,
+  "threads": 4,
+  "repeat_seed": 2026,
+  "selection": "minimum full validation exposure LogLoss; candidate metrics diagnostic only",
+  "scope": "train-only full-exposure categorical/content representation; BCE fixed; reused validation, no test or default change"
+}

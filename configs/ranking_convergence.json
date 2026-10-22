@@ -1,0 +1,20 @@
+{
+  "seeds": [2026, 2027, 2028],
+  "arms": {"base": [], "R": [28, 29, 30, 31, 32, 33]},
+  "max_epochs": 30,
+  "min_epochs": 10,
+  "batch_size": 4096,
+  "learning_rate": 0.001,
+  "weight_decay": 0.00001,
+  "threads": 4,
+  "lr_patience": 2,
+  "lr_factor": 0.5,
+  "min_lr": 0.00001,
+  "early_patience": 6,
+  "min_delta": 0.00001,
+  "diagnostic_users": 256,
+  "diagnostic_seed": 2026,
+  "repeat_seed": 2026,
+  "selection": "minimum full validation exposure LogLoss; list metrics diagnostic only",
+  "scope": "full exposure pointwise BCE convergence diagnosis; reused development validation, no final test or default change"
+}

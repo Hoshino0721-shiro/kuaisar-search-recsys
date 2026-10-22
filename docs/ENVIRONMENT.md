@@ -1,5 +1,7 @@
 # 运行环境与恢复
 
+最后收尾阶段仍使用项目 Python 3.12.14 / PyTorch 2.8.0+cpu。当前 `.venv` 不提供 CUDA，不沿用下方历史 v1 的 GPU 环境或性能。最新回归数量以 `experiments/closure_20261022/tests.json`（收尾发布后）为准；发布前的 99 项记录仅为当时快照。当前复现入口见 [REPRODUCE_V2.md](REPRODUCE_V2.md)。
+
 ## V2 / 索引化 ItemCF 环境
 
 新版要求 Python 3.10+，推荐使用 Python 3.12 和独立的项目 `.venv`。

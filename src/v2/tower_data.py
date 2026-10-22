@@ -30,7 +30,7 @@ def padded(history, length):
     return [0] * (length - len(values)) + values
 
 
-def prepare(data, output, history_length=30, search_length=20):
+def prepare(data, output, history_length=30, search_length=20, cutoff_ms=None):
     if output.exists():
         raise FileExistsError('Tower data is immutable; choose a new directory')
     if min(history_length, search_length) < 1:
@@ -38,7 +38,9 @@ def prepare(data, output, history_length=30, search_length=20):
     manifest = json.loads((data/'manifest.json').read_text(encoding='utf-8'))
     if manifest.get('status') != 'ready':
         raise ValueError('Dataset must be ready')
-    cutoff = manifest['cutoffs_ms'][0]
+    cutoff = manifest['cutoffs_ms'][0] if cutoff_ms is None else cutoff_ms
+    if cutoff > manifest['cutoffs_ms'][0]:
+        raise ValueError('Preparation must not include validation/test interactions')
     if (cutoff + OFFSET) % DAY:
         raise ValueError('Day-lagged preparation requires a Beijing midnight cutoff')
     db = sqlite3.connect((data/'dataset.sqlite').resolve().as_uri()+'?mode=ro', uri=True)
@@ -52,7 +54,8 @@ def prepare(data, output, history_length=30, search_length=20):
             raise ValueError('No recommendation training positives')
         item_map = {int(i): j+2 for j,i in enumerate(items)}
         user_map = {int(u): j+2 for j,u in enumerate(users)}
-        fields = np.ones((len(items)+2,3), dtype=np.int32)
+        fields = np.zeros((len(items)+2,3), dtype=np.int32)
+        fields[1] = 1
         fields[0] = 0
         vocabs = {name:{} for name in ('author','category','type')}
         for iid, author, category, typ in db.execute(
@@ -60,7 +63,7 @@ def prepare(data, output, history_length=30, search_length=20):
             if iid not in item_map:
                 continue
             for column,(name,value) in enumerate(zip(vocabs,(author,category,typ))):
-                if value not in MISSING:
+                if value not in MISSING and value != 0:
                     key=str(value)
                     fields[item_map[iid],column] = vocabs[name].setdefault(key,len(vocabs[name])+2)
         rec = defaultdict(OrderedDict)
@@ -156,5 +159,6 @@ if __name__=='__main__':
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--history-length',type=int,default=30)
     parser.add_argument('--search-length',type=int,default=20)
+    parser.add_argument('--cutoff-ms',type=int)
     args=parser.parse_args()
-    print(json.dumps(prepare(args.data,args.out,args.history_length,args.search_length),indent=2))
+    print(json.dumps(prepare(args.data,args.out,args.history_length,args.search_length,args.cutoff_ms),indent=2))
