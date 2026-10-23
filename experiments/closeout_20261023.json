@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-23",
+  "scope": "sync latest remote closeout and verify frozen public bytes; no training, evaluation or test suite executed",
+  "upstream_commit": "0d92f0035c8ede51d710239c895b525a81fd26b2",
+  "default_mode": "offline_v2_rrf",
+  "decision": "retain_existing_rrf",
+  "existing_release_test_count": 142,
+  "existing_release_test_status": "passed",
+  "existing_release_audit_status": "passed",
+  "public_assets_checked": 236,
+  "frozen_public_assets_unchanged": true,
+  "release_sha256": "bdb6efe4e5920bb4a414d5f3d86159343863493c88c526327aedd43c9965a7a1",
+  "summary_sha256": "2a6a586d183f01883f66aa4fdb3e7a64164ca164928a2ff180beb9ec2ca77d13",
+  "audit_sha256": "d51a790e4feeadf07e7a03fa84b545c0215222e8b733bcfdca8f2879c1324313",
+  "tests_sha256": "cbf0aa806d99f175a2fd8766d5bd830112fa7e56dd3090b60cb1ea49d210e57f",
+  "sync_doc_sha256": "1671cc55faa1c1feed78f1d4a4a66c0cb82ccb09d058273fd9b55030be68307c",
+  "large_artifacts": "remain local and ignored; none uploaded in this sync"
+}
