@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "scope": "documentation-only revision",
+  "source_commit": "7982214df6a9be3ea75a160c0cd4594d260fbca7",
+  "frozen_release": "experiments/closure_20261022/release.json",
+  "frozen_release_sha256": "bdb6efe4e5920bb4a414d5f3d86159343863493c88c526327aedd43c9965a7a1",
+  "documents": {
+    "docs/CURRENT_PROGRESS.md": {
+      "snapshot": "experiments/documentation_20261023/frozen/docs/CURRENT_PROGRESS.md",
+      "frozen_sha256": "f907e67c1d1e0e8d601a9735a5cee1de255e0f1b0e85ba3b8e87358e699d22f0",
+      "current_sha256": "d2427f4d03bd3238d0bb5d9c0e5e7f0e13225f271eded3d6f0842b266ec8b33b"
+    },
+    "docs/ENVIRONMENT.md": {
+      "snapshot": "experiments/documentation_20261023/frozen/docs/ENVIRONMENT.md",
+      "frozen_sha256": "ab6b5f8e0143a4803a98b578b3bbfed697d0293994e56faf6f0db3e68da44af7",
+      "current_sha256": "20da78a4aa41e1aa17de1b284ca75611fc0af6f4eb54e23dc4dc99e9dcd132eb"
+    },
+    "docs/NEXT_RANKING_DIRECTIONS.md": {
+      "snapshot": "experiments/documentation_20261023/frozen/docs/NEXT_RANKING_DIRECTIONS.md",
+      "frozen_sha256": "ab1dbc21ae8deb8592881ce0be6880390b18b8c545c5936f31fd916923d5873e",
+      "current_sha256": "6e6eff8d6401a1c37fc723d4d9f8829e508aed13c3b84d51b67619bd0f3afa6b"
+    },
+    "docs/PROJECT_FINAL_V2.md": {
+      "snapshot": "experiments/documentation_20261023/frozen/docs/PROJECT_FINAL_V2.md",
+      "frozen_sha256": "a08feae271d37201a62626e334737257c27314401f9d7e528eadd18dac1bdd9c",
+      "current_sha256": "b1f11d8a7f168340b29fb817f5a1819e675bc2d4fcd2a926025f6f366f4d7fea"
+    },
+    "docs/REPRODUCE_V2.md": {
+      "snapshot": "experiments/documentation_20261023/frozen/docs/REPRODUCE_V2.md",
+      "frozen_sha256": "2f31feaaf0cbcb113e8e121bad2e01c51a718ca041394fb2cdaa06ddc0718dce",
+      "current_sha256": "7fda6d3bfc1ff50ac730d0a56d46599cd3bbfba4c31d8a1b7e7d12fb79b5b47e"
+    },
+    "docs/RESUME_AND_INTERVIEW.md": {
+      "snapshot": "experiments/documentation_20261023/frozen/docs/RESUME_AND_INTERVIEW.md",
+      "frozen_sha256": "edab626928ac4e7096027eb9f93eae49de3c12b7e28c3803e9c6b8b8332eb7bb",
+      "current_sha256": "d97dd45b678e72aecd8e3735de206fa5f784826566e9af398360537cab77c8d7"
+    },
+    "docs/RRF_MAIN.md": {
+      "snapshot": "experiments/documentation_20261023/frozen/docs/RRF_MAIN.md",
+      "frozen_sha256": "fb843d73641b6a4a79a6e828c4320ab10a78cd030a11ade840fc4abacff0b9d6",
+      "current_sha256": "1f16e808a40674f8ba908af8c71bdae3eb9734d50bc9ff921a01b0197516bd63"
+    },
+    "README.md": {
+      "snapshot": "experiments/documentation_20261023/frozen/README.md",
+      "frozen_sha256": "a48daebb7b17e4212c38bda61903f57cc0fecb183c70638536a23cc3945e7247",
+      "current_sha256": "bc1ffbf7fdb2934abde6fdccfaeaccf75467997e02f111ee6745f71264264eb1"
+    }
+  },
+  "additional_files": {
+    "docs/README.md": "a4193ce0b67cfd2a0a099d0cc29d9ed286374ba1b4f53cbdbe4024e93debe277",
+    "docs/CLOSEOUT.md": "44b941a77729bd0d10d228cb40ac1e4c63068839e6cc698e4e34c6ba5ae606db",
+    "docs/RESUME_READY.md": "c2b1d404177b5169c3d05a256d64305d8c24557993e0608a3329a30bd3f66784",
+    "scripts/verify_repository.py": "1f2caa36ac9b11ba32490a56fd5391cd7b01a6e840983914d194cd9bfa7afbff",
+    "tests/test_repository_docs.py": "5b414bfa6e65c6c7e1cba040ab5f918dc5355e2a436aec6fcc2bc12ea967170f"
+  },
+  "training_run": false,
+  "evaluation_run": false,
+  "model_code_changed": false,
+  "experiment_metrics_changed": false
+}
